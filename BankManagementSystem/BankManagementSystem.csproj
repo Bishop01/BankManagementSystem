@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DBAdmin.cs">
       <SubType>Form</SubType>
@@ -75,6 +77,8 @@
     <Compile Include="RegisterEmployee.Designer.cs">
       <DependentUpon>RegisterEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalaryAccount.cs" />
+    <Compile Include="SavingsAccount.cs" />
     <EmbeddedResource Include="DBAdmin.resx">
       <DependentUpon>DBAdmin.cs</DependentUpon>
     </EmbeddedResource>

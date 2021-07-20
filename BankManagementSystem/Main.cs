@@ -181,9 +181,45 @@ namespace BankManagementSystem
         private void CreateButton_Click(object sender, EventArgs e)
         {
             if (CheckEmptyCreateAccountFields())
-                ValidateErrorLabel.Text = "IMPLEMENT ALL THE SHITS FIRST!";
+                ValidateErrorLabel.Text = "No fields can remain empty!";
             else
+            {
                 ValidateErrorLabel.Text = "";
+                string accType = AccountTypeComboBox.Text;
+                Client c = new Client();
+                
+                c.Firstname = FirstnameTextbox.Text;
+                c.Lastname = LastnameTextbox.Text;
+                c.Nationality = NationalityTextbox.Text;
+                c.NID = NIDTextbox.Text;
+                c.Address = AddressTextbox.Text;
+                c.Email = EmailTextbox.Text;
+                c.DOB = DOBDateTimePicker.Text;
+                c.Occupation = OccupationTextbox.Text;
+                if (MaleRadioButton.Checked)
+                {
+                    c.Gender = MaleRadioButton.Text;
+                }
+                else
+                {
+                    c.Gender = FemaleRadioButton.Text;
+                }
+                if (accType.Equals("Salary"))
+                {
+                    Account a = new SalaryAccount();
+                    c.AccountType = ((SalaryAccount)a).AccountType;
+                }
+                else if (accType.Equals("Savings"))
+                {
+                    Account a = new SavingsAccount();
+                    c.AccountType = ((SavingsAccount)a).AccountType;
+                }
+
+                if (DatabaseHandler.RegisterAccount(c))
+                {
+
+                }
+            }
         }
 
         private bool CheckEmptyCreateAccountFields()

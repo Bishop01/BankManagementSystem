@@ -126,5 +126,16 @@ namespace BankManagementSystem
                 }
             }
         }
+        public static bool RegisterAccount(Client client)
+        {
+            sql = GetConnection();
+            string query = "insert into Account() values()";
+            sqlCommand = new SqlCommand(query, sql);
+            if (sqlCommand.ExecuteNonQuery() >= 1)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
