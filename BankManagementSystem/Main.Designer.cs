@@ -61,6 +61,7 @@ namespace BankManagementSystem
             this.DashboardButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.WelcomePanel = new System.Windows.Forms.Panel();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.CurrentLabel = new System.Windows.Forms.Label();
             this.SignOutButton = new System.Windows.Forms.Button();
             this.WelcomeLabel = new System.Windows.Forms.Label();
@@ -107,7 +108,6 @@ namespace BankManagementSystem
             this.TimeLabel = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
-            this.NameLabel = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -519,6 +519,16 @@ namespace BankManagementSystem
             this.WelcomePanel.Name = "WelcomePanel";
             this.WelcomePanel.Size = new System.Drawing.Size(775, 74);
             this.WelcomePanel.TabIndex = 1;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Century", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(241, 43);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(87, 20);
+            this.NameLabel.TabIndex = 4;
+            this.NameLabel.Text = "Welcome,";
             // 
             // CurrentLabel
             // 
@@ -980,9 +990,9 @@ namespace BankManagementSystem
             // DashboardPanel
             // 
             this.DashboardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.DashboardPanel.Controls.Add(this.pictureBox6);
             this.DashboardPanel.Controls.Add(this.label3);
             this.DashboardPanel.Controls.Add(this.panel1);
-            this.DashboardPanel.Controls.Add(this.pictureBox6);
             this.DashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DashboardPanel.Location = new System.Drawing.Point(206, 74);
             this.DashboardPanel.Name = "DashboardPanel";
@@ -994,15 +1004,15 @@ namespace BankManagementSystem
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(95)))));
             this.label3.Font = new System.Drawing.Font("Century", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 69);
+            this.label3.Location = new System.Drawing.Point(238, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(518, 38);
+            this.label3.Size = new System.Drawing.Size(321, 38);
             this.label3.TabIndex = 2;
-            this.label3.Text = "SKS Bank Management System";
+            this.label3.Text = "SKS Bank Limited.";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(95)))));
             this.panel1.Controls.Add(this.SecondLabel);
             this.panel1.Controls.Add(this.TimeLabel);
             this.panel1.Location = new System.Drawing.Point(491, 375);
@@ -1043,16 +1053,6 @@ namespace BankManagementSystem
             // ClockTimer
             // 
             this.ClockTimer.Tick += new System.EventHandler(this.ClockTimer_Tick);
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Century", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(241, 43);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(87, 20);
-            this.NameLabel.TabIndex = 4;
-            this.NameLabel.Text = "Welcome,";
             // 
             // Main
             // 

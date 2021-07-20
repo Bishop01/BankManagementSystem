@@ -12,7 +12,6 @@ namespace BankManagementSystem
 {
     public partial class Main : Form
     {
-        //private List<Control> controls = new List<Control>();
         private int AccountButtonPosition;
         private int LoanButtonPosition;
         public Main(string name)
@@ -181,7 +180,33 @@ namespace BankManagementSystem
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
-            ValidateErrorLabel.Text = "IMPLEMENT ALL THE SHITS FIRST!";
+            if (CheckEmptyCreateAccountFields())
+                ValidateErrorLabel.Text = "IMPLEMENT ALL THE SHITS FIRST!";
+            else
+                ValidateErrorLabel.Text = "";
+        }
+
+        private bool CheckEmptyCreateAccountFields()
+        {
+            foreach(Control control in CreateAccountPanel.Controls)
+            {
+                if(control is TextBox)
+                {
+                    if(((TextBox)control).Text == "")
+                    {
+                        return true;
+                    }
+                }
+            }
+            if (!(MaleRadioButton.Checked || FemaleRadioButton.Checked))
+            {
+                return true;
+            }
+            if(AccountTypeComboBox.Text == "")
+            {
+                return true;
+            }
+            return false;
         }
 
         private void AccountButton_LocationChanged(object sender, EventArgs e)
