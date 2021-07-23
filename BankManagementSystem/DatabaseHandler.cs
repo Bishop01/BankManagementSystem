@@ -111,17 +111,19 @@ namespace BankManagementSystem
             data = sqlCommand.ExecuteReader();
             if (!data.HasRows)
             {
+                data.Close();
                 return null;
             }
             else
             {
-                data.Read();
                 try
                 {
+                    data.Close();
                     return (string)data["Name"];
                 }
                 catch (Exception)
                 {
+                    data.Close();
                     return null;
                 }
             }
@@ -132,6 +134,47 @@ namespace BankManagementSystem
             string query = "insert into Account() values()";
             sqlCommand = new SqlCommand(query, sql);
             if (sqlCommand.ExecuteNonQuery() >= 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool ValidateReset(int id, string nid, string pass)
+        {
+            sql = GetConnection();
+            string query = "select * from employees where id=" + id;
+            sqlCommand = new SqlCommand(query, sql);
+            data = sqlCommand.ExecuteReader();
+            if (!data.HasRows)
+            {
+                data.Close();
+                return false;
+            }
+            else
+            {
+                data.Read();
+                string Nid = (string)data["NID"];
+                string Pass = (string)data["Password"];
+
+                if(nid.Equals(Nid) && pass.Equals(Pass))
+                {
+                    data.Close();
+                    return true;
+                }
+                else
+                {
+                    data.Close();
+                    return false;
+                }
+            }
+        }
+        public static bool UpdatePassword(int id, string pass)
+        {
+            sql = GetConnection();
+            string query = "update employees set password='"+ pass +"' where id=" + id;
+            sqlCommand = new SqlCommand(query, sql);
+            int result = sqlCommand.ExecuteNonQuery();
+            if(result > 0)
             {
                 return true;
             }

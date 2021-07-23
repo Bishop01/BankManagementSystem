@@ -49,6 +49,12 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="CPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPassword.Designer.cs">
+      <DependentUpon>CPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="DBAdmin.cs">
       <SubType>Form</SubType>
@@ -79,6 +85,9 @@
     </Compile>
     <Compile Include="SalaryAccount.cs" />
     <Compile Include="SavingsAccount.cs" />
+    <EmbeddedResource Include="CPassword.resx">
+      <DependentUpon>CPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBAdmin.resx">
       <DependentUpon>DBAdmin.cs</DependentUpon>
     </EmbeddedResource>

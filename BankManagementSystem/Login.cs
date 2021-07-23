@@ -22,7 +22,7 @@ namespace BankManagementSystem
 
         private void RecoverLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            new CPassword().ShowDialog();
         }
 
         private void RecoverLinkLabel_MouseEnter(object sender, EventArgs e)
