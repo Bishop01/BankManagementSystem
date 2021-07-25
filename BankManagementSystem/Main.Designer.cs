@@ -344,7 +344,7 @@ namespace BankManagementSystem
             this.TransferButton.Text = "Transfer";
             this.TransferButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TransferButton.UseVisualStyleBackColor = true;
-            this.TransferButton.Click += new System.EventHandler(this.TransferButton_Click);
+            this.TransferButton.Click += new System.EventHandler(this.SubmenuButtonsHandler);
             // 
             // WithdrawButton
             // 
@@ -359,7 +359,7 @@ namespace BankManagementSystem
             this.WithdrawButton.Text = "Withdraw";
             this.WithdrawButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.WithdrawButton.UseVisualStyleBackColor = true;
-            this.WithdrawButton.Click += new System.EventHandler(this.WithdrawButton_Click);
+            this.WithdrawButton.Click += new System.EventHandler(this.SubmenuButtonsHandler);
             // 
             // DepositButton
             // 
@@ -374,7 +374,7 @@ namespace BankManagementSystem
             this.DepositButton.Text = "Deposit";
             this.DepositButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DepositButton.UseVisualStyleBackColor = true;
-            this.DepositButton.Click += new System.EventHandler(this.DepositButton_Click);
+            this.DepositButton.Click += new System.EventHandler(this.SubmenuButtonsHandler);
             // 
             // AccountButton
             // 
@@ -449,7 +449,7 @@ namespace BankManagementSystem
             this.RecoverAccButton.Text = "Recover Account";
             this.RecoverAccButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RecoverAccButton.UseVisualStyleBackColor = true;
-            this.RecoverAccButton.Click += new System.EventHandler(this.RecoverAccButton_Click);
+            this.RecoverAccButton.Click += new System.EventHandler(this.SubmenuButtonsHandler);
             // 
             // CloseAccButton
             // 
@@ -464,7 +464,7 @@ namespace BankManagementSystem
             this.CloseAccButton.Text = "Close Account";
             this.CloseAccButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CloseAccButton.UseVisualStyleBackColor = true;
-            this.CloseAccButton.Click += new System.EventHandler(this.CloseAccButton_Click);
+            this.CloseAccButton.Click += new System.EventHandler(this.SubmenuButtonsHandler);
             // 
             // CreateAccButton
             // 
@@ -479,7 +479,7 @@ namespace BankManagementSystem
             this.CreateAccButton.Text = "Create Account";
             this.CreateAccButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CreateAccButton.UseVisualStyleBackColor = true;
-            this.CreateAccButton.Click += new System.EventHandler(this.CreateAccButton_Click);
+            this.CreateAccButton.Click += new System.EventHandler(this.SubmenuButtonsHandler);
             // 
             // RegisterButton
             // 

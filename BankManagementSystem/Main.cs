@@ -12,20 +12,16 @@ namespace BankManagementSystem
 {
     public partial class Main : Form
     {
-        private int AccountButtonPosition;
-        private int LoanButtonPosition;
         public Main(string name)
         {
             InitializeComponent();
             HideAllPanel();
             DisableComponents();
             DashboardPanel.BringToFront();
-            AccountButtonPosition = AccountButton.Location.Y;
-            LoanButtonPosition = LoanButton.Location.Y;
+            AccountPictureBox.Location = new Point(9, AccountButton.Location.Y+10);
+            LoanPictureBox.Location = new Point(9, LoanButton.Location.Y+10); 
             ClockTimer.Start();
             NameLabel.Text = name;
-            AccountPictureBox.Location = new Point(9, 243);
-            LoanPictureBox.Location = new Point(9, 525);
         }
 
         private void DashboardButton_Click(object sender, EventArgs e)
@@ -49,23 +45,48 @@ namespace BankManagementSystem
             RegisterButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Register";
         }
-        private void CreateAccButton_Click(object sender, EventArgs e)
+        private void CreateButton_Click(object sender, EventArgs e)
         {
-            ResetChildButton(RegisterPanel);
-            CreateAccButton.BackColor = Color.FromArgb(22, 34, 54);
-            CreateAccountPanel.BringToFront();
-        }
-        private void CloseAccButton_Click(object sender, EventArgs e)
-        {
-            ResetChildButton(RegisterPanel);
-            CloseAccButton.BackColor = Color.FromArgb(22, 34, 54);
-            CloseAccountPanel.BringToFront();
-        }
-        private void RecoverAccButton_Click(object sender, EventArgs e)
-        {
-            ResetChildButton(RegisterPanel);
-            RecoverAccButton.BackColor = Color.FromArgb(22, 34, 54);
-            RecoverAccountPanel.BringToFront();
+            if (CheckEmptyCreateAccountFields())
+                ValidateErrorLabel.Text = "No fields can remain empty!";
+            else
+            {
+                ValidateErrorLabel.Text = "";
+                string accType = AccountTypeComboBox.Text;
+                Client c = new Client();
+
+                c.Firstname = FirstnameTextbox.Text;
+                c.Lastname = LastnameTextbox.Text;
+                c.Nationality = NationalityTextbox.Text;
+                c.NID = NIDTextbox.Text;
+                c.Address = AddressTextbox.Text;
+                c.Email = EmailTextbox.Text;
+                c.DOB = DOBDateTimePicker.Text;
+                c.Occupation = OccupationTextbox.Text;
+                if (MaleRadioButton.Checked)
+                {
+                    c.Gender = MaleRadioButton.Text;
+                }
+                else
+                {
+                    c.Gender = FemaleRadioButton.Text;
+                }
+                if (accType.Equals("Salary"))
+                {
+                    Account a = new SalaryAccount();
+                    c.AccountType = ((SalaryAccount)a).AccountType;
+                }
+                else if (accType.Equals("Savings"))
+                {
+                    Account a = new SavingsAccount();
+                    c.AccountType = ((SavingsAccount)a).AccountType;
+                }
+
+                if (DatabaseHandler.RegisterAccount(c))
+                {
+
+                }
+            }
         }
         #endregion Register
 
@@ -78,24 +99,6 @@ namespace BankManagementSystem
             AccountPanel.Show();
             AccountButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Account";
-        }
-        private void DepositButton_Click(object sender, EventArgs e)
-        {
-            ResetChildButton(AccountPanel);
-            DepositButton.BackColor = Color.FromArgb(22, 34, 54);
-            DepositPanel.BringToFront();
-        }
-        private void WithdrawButton_Click(object sender, EventArgs e)
-        {
-            ResetChildButton(AccountPanel);
-            WithdrawButton.BackColor = Color.FromArgb(22, 34, 54);
-            WithdrawPanel.BringToFront();
-        }
-        private void TransferButton_Click(object sender, EventArgs e)
-        {
-            ResetChildButton(AccountPanel);
-            TransferButton.BackColor = Color.FromArgb(22, 34, 54);
-            TransferPanel.BringToFront();
         }
         #endregion Account
 
@@ -180,6 +183,49 @@ namespace BankManagementSystem
             
         #endregion Reset
 
+        private void SubmenuButtonsHandler(object sender, EventArgs e)
+        {
+            if (sender is Button)
+            {
+                if (sender.Equals(CreateAccButton))
+                {
+                    ResetChildButton(RegisterPanel);
+                    CreateAccountPanel.BringToFront();
+                    CreateAccButton.BackColor = Color.FromArgb(22, 34, 54);
+                }
+                else if (sender.Equals(CloseAccButton))
+                {
+                    ResetChildButton(RegisterPanel);
+                    CloseAccountPanel.BringToFront();
+                    CloseAccButton.BackColor = Color.FromArgb(22, 34, 54);
+                }
+                else if (sender.Equals(RecoverAccButton))
+                {
+                    ResetChildButton(RegisterPanel);
+                    RecoverAccountPanel.BringToFront();
+                    RecoverAccButton.BackColor = Color.FromArgb(22, 34, 54);
+                }
+                else if (sender.Equals(DepositButton))
+                {
+                    ResetChildButton(AccountPanel);
+                    DepositPanel.BringToFront();
+                    DepositButton.BackColor = Color.FromArgb(22, 34, 54);
+                }
+                else if (sender.Equals(WithdrawButton))
+                {
+                    ResetChildButton(AccountPanel);
+                    WithdrawPanel.BringToFront();
+                    WithdrawButton.BackColor = Color.FromArgb(22, 34, 54);
+                }
+                else if (sender.Equals(TransferButton))
+                {
+                    ResetChildButton(AccountPanel);
+                    TransferPanel.BringToFront();
+                    TransferButton.BackColor = Color.FromArgb(22, 34, 54);
+                }
+            }
+        }
+
         private void HideAllPanel()
         {
             RegisterPanel.Hide();
@@ -190,56 +236,10 @@ namespace BankManagementSystem
         {
             Application.Exit();
         }
-
         private void DisableComponents()
         {
             ValidateErrorLabel.Text = "";
         }
-
-        private void CreateButton_Click(object sender, EventArgs e)
-        {
-            if (CheckEmptyCreateAccountFields())
-                ValidateErrorLabel.Text = "No fields can remain empty!";
-            else
-            {
-                ValidateErrorLabel.Text = "";
-                string accType = AccountTypeComboBox.Text;
-                Client c = new Client();
-                
-                c.Firstname = FirstnameTextbox.Text;
-                c.Lastname = LastnameTextbox.Text;
-                c.Nationality = NationalityTextbox.Text;
-                c.NID = NIDTextbox.Text;
-                c.Address = AddressTextbox.Text;
-                c.Email = EmailTextbox.Text;
-                c.DOB = DOBDateTimePicker.Text;
-                c.Occupation = OccupationTextbox.Text;
-                if (MaleRadioButton.Checked)
-                {
-                    c.Gender = MaleRadioButton.Text;
-                }
-                else
-                {
-                    c.Gender = FemaleRadioButton.Text;
-                }
-                if (accType.Equals("Salary"))
-                {
-                    Account a = new SalaryAccount();
-                    c.AccountType = ((SalaryAccount)a).AccountType;
-                }
-                else if (accType.Equals("Savings"))
-                {
-                    Account a = new SavingsAccount();
-                    c.AccountType = ((SavingsAccount)a).AccountType;
-                }
-
-                if (DatabaseHandler.RegisterAccount(c))
-                {
-
-                }
-            }
-        }
-
         private bool CheckEmptyCreateAccountFields()
         {
             foreach(Control control in CreateAccountPanel.Controls)
@@ -262,23 +262,14 @@ namespace BankManagementSystem
             }
             return false;
         }
-
         private void AccountButton_LocationChanged(object sender, EventArgs e)
         {
-            int changed = AccountButtonPosition - AccountButton.Location.Y;
-            AccountButtonPosition = AccountButton.Location.Y;
-            AccountPictureBox.Location = new Point(AccountPictureBox.Location.X, AccountPictureBox.Location.Y-changed);
+            AccountPictureBox.Location = new Point(9, AccountButton.Location.Y + 10);
         }
-
         private void LoanButton_LocationChanged(object sender, EventArgs e)
         {
-            {
-                int changed = LoanButtonPosition - LoanButton.Location.Y;
-                LoanButtonPosition = LoanButton.Location.Y;
-                LoanPictureBox.Location = new Point(LoanPictureBox.Location.X, LoanPictureBox.Location.Y - changed);
-            }
+            LoanPictureBox.Location = new Point(9, LoanButton.Location.Y + 10);
         }
-
         private void ClockTimer_Tick(object sender, EventArgs e)
         {
             TimeLabel.Text = DateTime.Now.ToString("hh:mm");
