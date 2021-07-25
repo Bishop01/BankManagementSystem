@@ -49,6 +49,7 @@ namespace BankManagementSystem
             this.CurrPasswordTextbox.Location = new System.Drawing.Point(177, 207);
             this.CurrPasswordTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.CurrPasswordTextbox.Name = "CurrPasswordTextbox";
+            this.CurrPasswordTextbox.PasswordChar = '*';
             this.CurrPasswordTextbox.Size = new System.Drawing.Size(152, 27);
             this.CurrPasswordTextbox.TabIndex = 78;
             // 
@@ -117,6 +118,7 @@ namespace BankManagementSystem
             this.NewPasswordTextbox.Location = new System.Drawing.Point(177, 242);
             this.NewPasswordTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.NewPasswordTextbox.Name = "NewPasswordTextbox";
+            this.NewPasswordTextbox.PasswordChar = '*';
             this.NewPasswordTextbox.Size = new System.Drawing.Size(152, 27);
             this.NewPasswordTextbox.TabIndex = 80;
             // 

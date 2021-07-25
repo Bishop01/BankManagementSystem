@@ -65,8 +65,8 @@ namespace BankManagementSystem
         {
             ResetChildButton(RegisterPanel);
             RecoverAccButton.BackColor = Color.FromArgb(22, 34, 54);
+            RecoverAccountPanel.BringToFront();
         }
-
         #endregion Register
 
         #region Account
@@ -78,6 +78,24 @@ namespace BankManagementSystem
             AccountPanel.Show();
             AccountButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Account";
+        }
+        private void DepositButton_Click(object sender, EventArgs e)
+        {
+            ResetChildButton(AccountPanel);
+            DepositButton.BackColor = Color.FromArgb(22, 34, 54);
+            DepositPanel.BringToFront();
+        }
+        private void WithdrawButton_Click(object sender, EventArgs e)
+        {
+            ResetChildButton(AccountPanel);
+            WithdrawButton.BackColor = Color.FromArgb(22, 34, 54);
+            WithdrawPanel.BringToFront();
+        }
+        private void TransferButton_Click(object sender, EventArgs e)
+        {
+            ResetChildButton(AccountPanel);
+            TransferButton.BackColor = Color.FromArgb(22, 34, 54);
+            TransferPanel.BringToFront();
         }
         #endregion Account
 

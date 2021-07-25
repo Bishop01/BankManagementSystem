@@ -17,7 +17,6 @@ namespace BankManagementSystem
             InitializeComponent();
             ErrorLabel.Text = "";
         }
-
         private void ResetButton_Click(object sender, EventArgs e)
         {
             int eid;
@@ -58,7 +57,6 @@ namespace BankManagementSystem
                 }
             }
         }
-
         private bool IsFieldEmpty()
         {
             if(NIDTextbox.Text == "" || EmployeeIDTextbox.Text == "" || CurrPasswordTextbox.Text == "" || NewPasswordTextbox.Text == "")
