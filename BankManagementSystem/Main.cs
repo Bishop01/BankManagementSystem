@@ -374,5 +374,18 @@ namespace BankManagementSystem
         {
             Application.Exit();
         }
+        private void SignOutButton_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmation = MessageBox.Show("Are you sure to log out?", "Warning!", MessageBoxButtons.YesNo);
+            if(confirmation == DialogResult.Yes)
+            {
+                this.Dispose();
+                new Login().Show();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
