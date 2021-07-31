@@ -34,7 +34,7 @@ namespace BankManagementSystem
                 {
                     Id = Convert.ToInt32(id);
                 }
-                catch(FormatException fe)
+                catch(FormatException)
                 {
                     ErrorMessage();
                     return;

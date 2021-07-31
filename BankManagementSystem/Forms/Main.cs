@@ -370,11 +370,6 @@ namespace BankManagementSystem
                 return;
             }
         }
-
-        private void Main_FormClosing_1(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
         private void SignOutButton_Click(object sender, EventArgs e)
         {
             DialogResult confirmation = MessageBox.Show("Are you sure to log out?", "Warning!", MessageBoxButtons.YesNo);

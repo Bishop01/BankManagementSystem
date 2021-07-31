@@ -23,8 +23,8 @@ namespace BankManagementSystem.Database
             {
                 try
                 {
-                    data.Close();
-                    return (string)data["Name"];
+                    data.Read();
+                    return data["Name"].ToString();
                 }
                 catch (Exception)
                 {

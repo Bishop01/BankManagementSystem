@@ -1,50 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 
 namespace BankManagementSystem.Database
 {
+    public delegate void CloseSql();
     static class DataHandler
     {
+        public static CloseSql closeSql = DataHandler.CloseConnection;
         private static SqlConnection sqlConnection;
         private static SqlCommand sqlCommand;
         private static SqlDataReader data;
-        static SqlConnection GetConnection()
+
+        static DataHandler()
+        {
+            EstablishConnection();
+        }
+
+        static void EstablishConnection()
         {
             if(sqlConnection != null)
-            {
-                return sqlConnection;
-            }
-            else
-            {
-                sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SKS"].ConnectionString);
-                sqlConnection.Open();
-                return sqlConnection;
-            }
+                sqlConnection.Close();
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SKS"].ConnectionString);
+            sqlConnection.Open();
         }
 
         public static SqlDataReader GetRecord(string query)
         {
+            EstablishConnection();
             try
             {
-                sqlConnection = GetConnection();
                 sqlCommand = new SqlCommand(query, sqlConnection);
-                return sqlCommand.ExecuteReader();
+                data = sqlCommand.ExecuteReader();
+                return data;
             }
             catch (Exception)
             {
+                Console.WriteLine("Exception");
                 return null;
             }
         }
         public static int ManipulateData(string query)
         {
-            sqlConnection = GetConnection();
+            EstablishConnection();
             sqlCommand = new SqlCommand(query, sqlConnection);
             return sqlCommand.ExecuteNonQuery();
+        }
+        public static void CloseConnection()
+        {
+            if(sqlConnection != null)
+                sqlConnection.Close();
         }
     }
 }

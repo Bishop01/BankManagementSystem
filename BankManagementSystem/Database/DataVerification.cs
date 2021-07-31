@@ -10,6 +10,7 @@ namespace BankManagementSystem.Database
     static class DataVerification
     {
         private static SqlDataReader data;
+
         public static bool ValidateDBAdmin(int Id, string Password)
         {
             string query = "select Password from DBAdmins where ID = " + Id;
@@ -37,26 +38,31 @@ namespace BankManagementSystem.Database
         public static bool ValidateLogin(int Id, string Password)
         {
             {
+                //CloseDataReader();
                 string query = "select Password from Employees where ID = " + Id;
                 data = DataHandler.GetRecord(query);
-                if (!data.HasRows)
+                try
                 {
-                    data.Close();
-                    return false;
-                }
-                else
-                {
-                    data.Read();
-                    if (!(data["Password"].Equals(Password)))
+                    if (!data.HasRows)
                     {
-                        data.Close();
                         return false;
                     }
                     else
                     {
-                        data.Close();
-                        return true;
+                        data.Read();
+                        if (!(data["Password"].Equals(Password)))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
                     }
+                }
+                catch (Exception)
+                {
+                    return false;
                 }
             }
         }
@@ -86,6 +92,11 @@ namespace BankManagementSystem.Database
                     return false;
                 }
             }
+        }
+        public static void CloseDataReader()
+        {
+            if(data != null)
+                data.Close();
         }
 
     }

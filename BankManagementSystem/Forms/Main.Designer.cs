@@ -182,7 +182,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 629);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 681);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +208,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 351);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 403);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1172,7 +1172,7 @@ namespace BankManagementSystem
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bank";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing_1);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.BasePanel.ResumeLayout(false);
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).EndInit();
