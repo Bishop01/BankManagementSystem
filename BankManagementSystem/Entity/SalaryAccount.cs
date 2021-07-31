@@ -11,6 +11,7 @@ namespace BankManagementSystem
         public SalaryAccount()
         {
             accountType = "Salary";
+            Console.WriteLine("");
         }
         public string AccountType
         {
