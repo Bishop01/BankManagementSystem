@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankManagementSystem.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,7 @@ namespace BankManagementSystem
                 }
             }
 
-            if (!DatabaseHandler.ValidateDBAdmin(Id, Pass))
+            if (!DataVerification.ValidateDBAdmin(Id, Pass))
             {
                 ErrorMessage();
                 return;

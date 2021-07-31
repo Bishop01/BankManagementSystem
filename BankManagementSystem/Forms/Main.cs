@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankManagementSystem.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,7 +83,7 @@ namespace BankManagementSystem
                     c.AccountType = ((SavingsAccount)a).AccountType;
                 }
 
-                if (DatabaseHandler.RegisterAccount(c))
+                if (Registration.RegisterAccount(c))
                 {
 
                 }

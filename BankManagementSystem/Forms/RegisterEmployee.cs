@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankManagementSystem.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,7 +38,7 @@ namespace BankManagementSystem
 
             if (ValidateFields(emp))
             {
-                if (DatabaseHandler.RegisterEmployee(emp))
+                if (Registration.RegisterEmployee(emp))
                 {
                     MessageBox.Show("Employee successfully registered!", "Success");
                     this.Dispose();

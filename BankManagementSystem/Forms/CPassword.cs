@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankManagementSystem.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace BankManagementSystem
                 ErrorLabel.Text = "Error! No such employee exists!";
                 return;
             }
-            else if (!DatabaseHandler.ValidateReset(eid, nid, currPass))
+            else if (!DataVerification.ValidateReset(eid, nid, currPass))
             {
                 ErrorLabel.Text = "Error! No such employee exists!";
                 return;
@@ -46,7 +47,7 @@ namespace BankManagementSystem
             else
             {
                 ErrorLabel.Text = "";
-                if(DatabaseHandler.UpdatePassword(eid, newPass))
+                if(Registration.UpdatePassword(eid, newPass))
                 {
                     MessageBox.Show("Password Updated!","Success");
                     this.Dispose();
