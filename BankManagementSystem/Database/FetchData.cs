@@ -98,5 +98,50 @@ namespace BankManagementSystem.Database
                 }
             }
         }
+        public static List<Client> GetAccountsByNID(int nid)
+        {
+            string query = "select * from Clients where NID=" + nid;
+            List<Client> clients = new List<Client>();
+            data = DataHandler.GetRecord(query);
+            if (!data.HasRows)
+            {
+                data.Close();
+                return null;
+            }
+            else
+            {
+                try
+                {   
+                    while (data.Read())
+                    {
+                        Client client = new Client();
+
+                        client.Firstname = data["FirstName"].ToString();
+                        client.Lastname = data["LastName"].ToString();
+                        client.Email = data["Email"].ToString();
+                        client.AccountID = (int)data["AccountNumber"];
+                        client.Gender = data["Gender"].ToString();
+                        client.DOB = data["DateOfBirth"].ToString();
+                        client.NID = data["NID"].ToString();
+                        client.PhoneNumber = data["PhoneNumber"].ToString();
+                        client.Nationality = data["Nationality"].ToString();
+                        client.Occupation = data["Occupation"].ToString();
+                        client.AccountStatus = data["AccountStatus"].ToString();
+                        client.AccountType = data["AccountType"].ToString();
+                        client.ImageDir = data["ImageDirectory"].ToString();
+                        client.Address = data["Address"].ToString();
+                        clients.Add(client);
+                    }
+
+                    return clients;
+
+                }
+                catch (Exception)
+                {
+                    data.Close();
+                    return null;
+                }
+            }
+        }
     }
 }

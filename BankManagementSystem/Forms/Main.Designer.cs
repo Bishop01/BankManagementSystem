@@ -60,6 +60,7 @@ namespace BankManagementSystem
             this.RegisterButton = new System.Windows.Forms.Button();
             this.DashboardButton = new System.Windows.Forms.Button();
             this.LogoPanel = new System.Windows.Forms.Panel();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.WelcomePanel = new System.Windows.Forms.Panel();
             this.NameLabel = new System.Windows.Forms.Label();
             this.CurrentLabel = new System.Windows.Forms.Label();
@@ -123,14 +124,17 @@ namespace BankManagementSystem
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
             this.RecoverAccountPanel = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.AccountOwnerPictureBox = new System.Windows.Forms.PictureBox();
+            this.AccountsResultGroupBox = new System.Windows.Forms.GroupBox();
+            this.FindButton = new System.Windows.Forms.Button();
+            this.RecoverAccountTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.DepositPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.WithdrawPanel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.TransferPanel = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -148,6 +152,7 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LogoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.WelcomePanel.SuspendLayout();
             this.CreateAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageRegister)).BeginInit();
@@ -158,10 +163,10 @@ namespace BankManagementSystem
             this.ClockPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.RecoverAccountPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox)).BeginInit();
             this.DepositPanel.SuspendLayout();
             this.WithdrawPanel.SuspendLayout();
             this.TransferPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -201,7 +206,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1305);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1409);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -227,7 +232,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1027);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1131);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -540,6 +545,17 @@ namespace BankManagementSystem
             this.LogoPanel.Name = "LogoPanel";
             this.LogoPanel.Size = new System.Drawing.Size(206, 112);
             this.LogoPanel.TabIndex = 0;
+            // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(206, 112);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPictureBox.TabIndex = 0;
+            this.LogoPictureBox.TabStop = false;
             // 
             // WelcomePanel
             // 
@@ -1255,7 +1271,11 @@ namespace BankManagementSystem
             // RecoverAccountPanel
             // 
             this.RecoverAccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.RecoverAccountPanel.Controls.Add(this.label4);
+            this.RecoverAccountPanel.Controls.Add(this.AccountOwnerPictureBox);
+            this.RecoverAccountPanel.Controls.Add(this.AccountsResultGroupBox);
+            this.RecoverAccountPanel.Controls.Add(this.FindButton);
+            this.RecoverAccountPanel.Controls.Add(this.RecoverAccountTextBox);
+            this.RecoverAccountPanel.Controls.Add(this.label2);
             this.RecoverAccountPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RecoverAccountPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecoverAccountPanel.Location = new System.Drawing.Point(206, 74);
@@ -1263,14 +1283,58 @@ namespace BankManagementSystem
             this.RecoverAccountPanel.Size = new System.Drawing.Size(775, 497);
             this.RecoverAccountPanel.TabIndex = 3;
             // 
-            // label4
+            // AccountOwnerPictureBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(353, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Recover";
+            this.AccountOwnerPictureBox.Location = new System.Drawing.Point(573, 14);
+            this.AccountOwnerPictureBox.Name = "AccountOwnerPictureBox";
+            this.AccountOwnerPictureBox.Size = new System.Drawing.Size(172, 106);
+            this.AccountOwnerPictureBox.TabIndex = 4;
+            this.AccountOwnerPictureBox.TabStop = false;
+            // 
+            // AccountsResultGroupBox
+            // 
+            this.AccountsResultGroupBox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountsResultGroupBox.ForeColor = System.Drawing.Color.White;
+            this.AccountsResultGroupBox.Location = new System.Drawing.Point(31, 126);
+            this.AccountsResultGroupBox.Name = "AccountsResultGroupBox";
+            this.AccountsResultGroupBox.Size = new System.Drawing.Size(714, 344);
+            this.AccountsResultGroupBox.TabIndex = 3;
+            this.AccountsResultGroupBox.TabStop = false;
+            this.AccountsResultGroupBox.Text = "Result";
+            // 
+            // FindButton
+            // 
+            this.FindButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton.FlatAppearance.BorderSize = 0;
+            this.FindButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton.ForeColor = System.Drawing.Color.White;
+            this.FindButton.Location = new System.Drawing.Point(161, 84);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(86, 31);
+            this.FindButton.TabIndex = 2;
+            this.FindButton.Text = "Find";
+            this.FindButton.UseVisualStyleBackColor = false;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
+            // 
+            // RecoverAccountTextBox
+            // 
+            this.RecoverAccountTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.RecoverAccountTextBox.ForeColor = System.Drawing.Color.White;
+            this.RecoverAccountTextBox.Location = new System.Drawing.Point(161, 37);
+            this.RecoverAccountTextBox.MaxLength = 8;
+            this.RecoverAccountTextBox.Name = "RecoverAccountTextBox";
+            this.RecoverAccountTextBox.Size = new System.Drawing.Size(205, 27);
+            this.RecoverAccountTextBox.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(42, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "National ID:";
             // 
             // DepositPanel
             // 
@@ -1332,28 +1396,17 @@ namespace BankManagementSystem
             this.label8.TabIndex = 0;
             this.label8.Text = "Transfer";
             // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(206, 112);
-            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPictureBox.TabIndex = 0;
-            this.LogoPictureBox.TabStop = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
             this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DepositPanel);
-            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
@@ -1383,6 +1436,7 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LogoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.WelcomePanel.ResumeLayout(false);
             this.WelcomePanel.PerformLayout();
             this.CreateAccountPanel.ResumeLayout(false);
@@ -1400,13 +1454,13 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.RecoverAccountPanel.ResumeLayout(false);
             this.RecoverAccountPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox)).EndInit();
             this.DepositPanel.ResumeLayout(false);
             this.DepositPanel.PerformLayout();
             this.WithdrawPanel.ResumeLayout(false);
             this.WithdrawPanel.PerformLayout();
             this.TransferPanel.ResumeLayout(false);
             this.TransferPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1490,7 +1544,6 @@ namespace BankManagementSystem
         private System.Windows.Forms.RadioButton MaleRadioButton;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Panel RecoverAccountPanel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel DepositPanel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel WithdrawPanel;
@@ -1513,6 +1566,11 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label AccountDeatilsNIDLabel;
         private System.Windows.Forms.Label AccountDetailsPhoneNumberLabel;
         private System.Windows.Forms.PictureBox LogoPictureBox;
+        private System.Windows.Forms.GroupBox AccountsResultGroupBox;
+        private System.Windows.Forms.Button FindButton;
+        private System.Windows.Forms.TextBox RecoverAccountTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox AccountOwnerPictureBox;
     }
 }
 

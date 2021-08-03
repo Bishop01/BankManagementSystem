@@ -34,7 +34,6 @@ namespace BankManagementSystem
             currentEmployee = FetchData.GetEmployee(id);
             NameLabel.Text = currentUser;
         }
-
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             HideAllPanel();
@@ -48,6 +47,7 @@ namespace BankManagementSystem
         }
 
         #region Register
+
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             HideAllPanel();
@@ -116,6 +116,107 @@ namespace BankManagementSystem
                 }
             }
         }
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string s = SearchTextbox.Text;
+            if (s == "")
+            {
+                MessageBox.Show("Input Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClient(id);
+                    searchedClient = c;
+                    if (c == null)
+                    {
+                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HideAccountDetails();
+                    }
+                    else
+                    {
+                        ShowAccountDetails(c);
+                        if (c.AccountStatus.Equals("Closed"))
+                        {
+                            CloseAccountButton.Enabled = false;
+                        }
+                        else
+                        {
+                            CloseAccountButton.Enabled = true;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Input Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void CloseAccountButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you wish to close this account?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                searchedClient.AccountStatus = "Closed";
+                if (UpdateData.UpdateAccountStatus(searchedClient, currentEmployee, "Closed"))
+                {
+                    MessageBox.Show("Account Closed!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error updating!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                HideAccountDetails();
+            }
+            else
+            {
+                return;
+            }
+        }
+        private void BrowseImageButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Jpg Image(*.jpg)|*.jpg|Png Image(*.png)|*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    registrationImagePath = openFileDialog.FileName;
+                    ImageRegister.ImageLocation = registrationImagePath;
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error in opening image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        private bool CheckEmptyCreateAccountFields()
+        {
+            foreach (Control control in CreateAccountPanel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    if (((TextBox)control).Text == "")
+                    {
+                        return true;
+                    }
+                }
+            }
+            if (!(MaleRadioButton.Checked || FemaleRadioButton.Checked))
+            {
+                return true;
+            }
+            if (AccountTypeComboBox.Text == "")
+            {
+                return true;
+            }
+            return false;
+        }
+
         #endregion Register
 
         #region Account
@@ -162,7 +263,6 @@ namespace BankManagementSystem
                     button.BackColor = Color.FromArgb(31, 30, 68);
             }
         }
-
         private void ResetPanel(Panel panel)
         {
             if (panel.Equals(RegisterPanel))
@@ -209,7 +309,22 @@ namespace BankManagementSystem
                 
             }
         }
-            
+        private void ResetCreateAccountDetails()
+        {
+            foreach (Control control in CreateAccountPanel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Text = "";
+                }
+            }
+            AccountTypeComboBox.Text = "";
+            DOBDateTimePicker.ResetText();
+            MaleRadioButton.Checked = false;
+            FemaleRadioButton.Checked = false;
+            ImageRegister.Image = null;
+        }
+
         #endregion Reset
 
         private void SubmenuButtonsHandler(object sender, EventArgs e)
@@ -254,13 +369,11 @@ namespace BankManagementSystem
                 }
             }
         }
-
         private void HideAllPanel()
         {
             RegisterPanel.Hide();
             AccountPanel.Hide();
         }
-
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -268,28 +381,6 @@ namespace BankManagementSystem
         private void DisableComponents()
         {
             ValidateErrorLabel.Text = "";
-        }
-        private bool CheckEmptyCreateAccountFields()
-        {
-            foreach(Control control in CreateAccountPanel.Controls)
-            {
-                if(control is TextBox)
-                {
-                    if(((TextBox)control).Text == "")
-                    {
-                        return true;
-                    }
-                }
-            }
-            if (!(MaleRadioButton.Checked || FemaleRadioButton.Checked))
-            {
-                return true;
-            }
-            if(AccountTypeComboBox.Text == "")
-            {
-                return true;
-            }
-            return false;
         }
         private void AccountButton_LocationChanged(object sender, EventArgs e)
         {
@@ -411,80 +502,6 @@ namespace BankManagementSystem
                 return;
             }
         }
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            string s = SearchTextbox.Text;
-            if(s == "")
-            {
-                MessageBox.Show("Input Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                try
-                {
-                    int id = Convert.ToInt32(s);
-                    Client c = FetchData.GetClient(id);
-                    searchedClient = c;
-                    if (c == null)
-                    {
-                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        HideAccountDetails();
-                    }
-                    else
-                    {
-                        ShowAccountDetails(c);
-                        if (c.AccountStatus.Equals("Closed"))
-                        {
-                            CloseAccountButton.Enabled = false;
-                        }
-                        else
-                        {
-                            CloseAccountButton.Enabled = true;
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Input Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void BrowseImageButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Jpg Image(*.jpg)|*.jpg|Png Image(*.png)|*.png";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    registrationImagePath = openFileDialog.FileName;
-                    ImageRegister.ImageLocation = registrationImagePath;
-                }
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error in opening image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-        private void ResetCreateAccountDetails()
-        {
-            foreach(Control control in CreateAccountPanel.Controls)
-            {
-                if(control is TextBox)
-                {
-                    ((TextBox)control).Text = "";
-                }
-            }
-            AccountTypeComboBox.Text = "";
-            DOBDateTimePicker.ResetText();
-            MaleRadioButton.Checked = false;
-            FemaleRadioButton.Checked = false;
-            ImageRegister.Image = null;
-        }
         private void HideAccountDetails()
         {
             AccountDetailsGroupBox.Hide();
@@ -509,25 +526,47 @@ namespace BankManagementSystem
             AccountDetailsGroupBox.Show();
         }
 
-        private void CloseAccountButton_Click(object sender, EventArgs e)
+        private void FindButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you wish to close this account?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            string s = RecoverAccountTextBox.Text;
+            if(s == "")
             {
-                searchedClient.AccountStatus = "Closed";
-                if (UpdateData.UpdateAccountStatus(searchedClient, currentEmployee, "Closed"))
-                {
-                    MessageBox.Show("Account Closed!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Error updating!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                HideAccountDetails();
+                return;
             }
             else
             {
-                return;
+                try
+                {
+                    int nid = Convert.ToInt32(s);
+                    List<Client> clients = FetchData.GetAccountsByNID(nid);
+                    if(clients == null)
+                    {
+                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else if(clients.Count > 0)
+                    {
+                        int x = 0;
+                        foreach(Client client in clients)
+                        {
+                            Label l1 = new Label();
+                            l1.AutoSize = true;
+                            l1.Text = "Account ID: " + client.AccountID;
+                            l1.Location = new Point(104, 69 + x * 25);
+                            Label l2 = new Label();
+                            l2.AutoSize = true;
+                            l2.Text = "Account Type: " + client.AccountType;
+                            l2.Location = new Point(380, 69 + x * 25);
+                            AccountsResultGroupBox.Controls.Add(l1);
+                            AccountsResultGroupBox.Controls.Add(l2);
+                            x++;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Insert Valid ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
