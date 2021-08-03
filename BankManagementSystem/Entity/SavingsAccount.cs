@@ -8,13 +8,6 @@ namespace BankManagementSystem
 {
     class SavingsAccount:Account
     {
-        public SavingsAccount()
-        {
-            accountType = "Savings";
-        }
-        public string AccountType
-        {
-            get { return accountType; }
-        }
+        
     }
 }

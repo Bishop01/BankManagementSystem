@@ -8,14 +8,6 @@ namespace BankManagementSystem
 {
     class SalaryAccount:Account
     {
-        public SalaryAccount()
-        {
-            accountType = "Salary";
-            Console.WriteLine("");
-        }
-        public string AccountType
-        {
-            get { return accountType; }
-        }
+        
     }
 }

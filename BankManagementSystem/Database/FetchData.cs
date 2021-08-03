@@ -57,9 +57,9 @@ namespace BankManagementSystem.Database
                 return null;
             }
         }
-        public static Client GetClient(int id)
+        public static Client GetClientByAccountID(int id)
         {
-            string query = "select * from Clients where AccountNumber=" + id;
+            string query = "select * from Clients where ClientID=(select ClientID from Accounts where AccountID="+id+")";
             data = DataHandler.GetRecord(query);
             if (!data.HasRows)
             {
@@ -76,15 +76,12 @@ namespace BankManagementSystem.Database
                     client.Firstname = data["FirstName"].ToString();
                     client.Lastname = data["LastName"].ToString();
                     client.Email = data["Email"].ToString();
-                    client.AccountID = (int)data["AccountNumber"];
                     client.Gender = data["Gender"].ToString();
                     client.DOB = data["DateOfBirth"].ToString();
                     client.NID = data["NID"].ToString();
                     client.PhoneNumber = data["PhoneNumber"].ToString();
                     client.Nationality = data["Nationality"].ToString();
                     client.Occupation = data["Occupation"].ToString();
-                    client.AccountStatus = data["AccountStatus"].ToString();
-                    client.AccountType = data["AccountType"].ToString();
                     client.ImageDir = data["ImageDirectory"].ToString();
                     client.Address = data["Address"].ToString();
 
@@ -98,10 +95,10 @@ namespace BankManagementSystem.Database
                 }
             }
         }
-        public static List<Client> GetAccountsByNID(int nid)
+        public static List<Account> GetAccountsByNID(int nid)
         {
-            string query = "select * from Clients where NID=" + nid;
-            List<Client> clients = new List<Client>();
+            string query = "select * from Accounts where ClientID=(select ClientID from clients where NID="+nid+")";
+            List<Account> accounts = new List<Account>();
             data = DataHandler.GetRecord(query);
             if (!data.HasRows)
             {
@@ -114,26 +111,29 @@ namespace BankManagementSystem.Database
                 {   
                     while (data.Read())
                     {
-                        Client client = new Client();
-
-                        client.Firstname = data["FirstName"].ToString();
-                        client.Lastname = data["LastName"].ToString();
-                        client.Email = data["Email"].ToString();
-                        client.AccountID = (int)data["AccountNumber"];
-                        client.Gender = data["Gender"].ToString();
-                        client.DOB = data["DateOfBirth"].ToString();
-                        client.NID = data["NID"].ToString();
-                        client.PhoneNumber = data["PhoneNumber"].ToString();
-                        client.Nationality = data["Nationality"].ToString();
-                        client.Occupation = data["Occupation"].ToString();
-                        client.AccountStatus = data["AccountStatus"].ToString();
-                        client.AccountType = data["AccountType"].ToString();
-                        client.ImageDir = data["ImageDirectory"].ToString();
-                        client.Address = data["Address"].ToString();
-                        clients.Add(client);
+                        Account account = new Account();
+                        account.Balance = Convert.ToDouble(data["Balance"]);
+                        account.AccountID = (int)data["AccountID"];
+                        account.AccountStatus = data["AccountStatus"].ToString();
+                        account.AccountType = data["AccountType"].ToString();
+                        accounts.Add(account);
+                        //client.Firstname = data["FirstName"].ToString();
+                        //client.Lastname = data["LastName"].ToString();
+                        //client.Email = data["Email"].ToString();
+                        //client.Gender = data["Gender"].ToString();
+                        //client.DOB = data["DateOfBirth"].ToString();
+                        //client.NID = data["NID"].ToString();
+                        //client.PhoneNumber = data["PhoneNumber"].ToString();
+                        //client.Nationality = data["Nationality"].ToString();
+                        //client.Occupation = data["Occupation"].ToString();
+                        //client.AccountStatus = data["AccountStatus"].ToString();
+                        //client.AccountType = data["AccountType"].ToString();
+                        //client.ImageDir = data["ImageDirectory"].ToString();
+                        //client.Address = data["Address"].ToString();
+                        //clients.Add(client);
                     }
 
-                    return clients;
+                    return accounts;
 
                 }
                 catch (Exception)
@@ -141,6 +141,54 @@ namespace BankManagementSystem.Database
                     data.Close();
                     return null;
                 }
+            }
+        }
+        public static Account GetAccount(int id)
+        {
+            Account account = new Account();
+            string query = "select * from Accounts where AccountID="+id;
+            data = DataHandler.GetRecord(query);
+            if (data.HasRows)
+            {
+                data.Read();
+                account.AccountID = (int)data["AccountID"];
+                account.AccountStatus = data["AccountStatus"].ToString();
+                account.AccountType = data["AccountType"].ToString();
+                account.Balance = Convert.ToDouble(data["Balance"]);
+
+                return account;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static Client GetClientByNID(int nid)
+        {
+            Client client = new Client();
+            string query = "select * from Clients where NID='"+nid+"'";
+            data = DataHandler.GetRecord(query);
+            if (data.HasRows)
+            {
+                data.Read();
+
+                client.Firstname = data["FirstName"].ToString();
+                client.Lastname = data["LastName"].ToString();
+                client.Email = data["Email"].ToString();
+                client.Gender = data["Gender"].ToString();
+                client.DOB = data["DateOfBirth"].ToString();
+                client.NID = data["NID"].ToString();
+                client.PhoneNumber = data["PhoneNumber"].ToString();
+                client.Nationality = data["Nationality"].ToString();
+                client.Occupation = data["Occupation"].ToString();
+                client.ImageDir = data["ImageDirectory"].ToString();
+                client.Address = data["Address"].ToString();
+
+                return client;
+            }
+            else
+            {
+                return null;
             }
         }
     }

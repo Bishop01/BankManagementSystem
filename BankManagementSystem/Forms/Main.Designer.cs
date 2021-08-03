@@ -130,11 +130,21 @@ namespace BankManagementSystem
             this.RecoverAccountTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DepositPanel = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.WithdrawPanel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.TransferPanel = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.SearchAccountTextbox = new System.Windows.Forms.TextBox();
+            this.FindButton_Deposit = new System.Windows.Forms.Button();
+            this.AccountOwnerPictureBox_Deposit = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AccountOwnerLabel = new System.Windows.Forms.Label();
+            this.BalanceLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.DepositTextbox = new System.Windows.Forms.TextBox();
+            this.DepositButton_Deposit = new System.Windows.Forms.Button();
+            this.AccountTypeLabel_Deposit = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -167,6 +177,8 @@ namespace BankManagementSystem
             this.DepositPanel.SuspendLayout();
             this.WithdrawPanel.SuspendLayout();
             this.TransferPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -206,7 +218,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1409);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1461);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -232,7 +244,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1131);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1183);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1288,6 +1300,7 @@ namespace BankManagementSystem
             this.AccountOwnerPictureBox.Location = new System.Drawing.Point(573, 14);
             this.AccountOwnerPictureBox.Name = "AccountOwnerPictureBox";
             this.AccountOwnerPictureBox.Size = new System.Drawing.Size(172, 106);
+            this.AccountOwnerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AccountOwnerPictureBox.TabIndex = 4;
             this.AccountOwnerPictureBox.TabStop = false;
             // 
@@ -1339,22 +1352,17 @@ namespace BankManagementSystem
             // DepositPanel
             // 
             this.DepositPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.DepositPanel.Controls.Add(this.label6);
+            this.DepositPanel.Controls.Add(this.groupBox1);
+            this.DepositPanel.Controls.Add(this.AccountOwnerPictureBox_Deposit);
+            this.DepositPanel.Controls.Add(this.FindButton_Deposit);
+            this.DepositPanel.Controls.Add(this.SearchAccountTextbox);
+            this.DepositPanel.Controls.Add(this.label4);
             this.DepositPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DepositPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepositPanel.Location = new System.Drawing.Point(206, 74);
             this.DepositPanel.Name = "DepositPanel";
             this.DepositPanel.Size = new System.Drawing.Size(775, 497);
             this.DepositPanel.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(263, 209);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Deposit";
             // 
             // WithdrawPanel
             // 
@@ -1396,17 +1404,132 @@ namespace BankManagementSystem
             this.label8.TabIndex = 0;
             this.label8.Text = "Transfer";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(51, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Account Number:";
+            // 
+            // SearchAccountTextbox
+            // 
+            this.SearchAccountTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SearchAccountTextbox.ForeColor = System.Drawing.Color.White;
+            this.SearchAccountTextbox.Location = new System.Drawing.Point(210, 47);
+            this.SearchAccountTextbox.Name = "SearchAccountTextbox";
+            this.SearchAccountTextbox.Size = new System.Drawing.Size(184, 27);
+            this.SearchAccountTextbox.TabIndex = 1;
+            // 
+            // FindButton_Deposit
+            // 
+            this.FindButton_Deposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton_Deposit.FlatAppearance.BorderSize = 0;
+            this.FindButton_Deposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton_Deposit.Location = new System.Drawing.Point(210, 88);
+            this.FindButton_Deposit.Name = "FindButton_Deposit";
+            this.FindButton_Deposit.Size = new System.Drawing.Size(107, 32);
+            this.FindButton_Deposit.TabIndex = 2;
+            this.FindButton_Deposit.Text = "Find";
+            this.FindButton_Deposit.UseVisualStyleBackColor = false;
+            this.FindButton_Deposit.Click += new System.EventHandler(this.FindButton_Deposit_Click);
+            // 
+            // AccountOwnerPictureBox_Deposit
+            // 
+            this.AccountOwnerPictureBox_Deposit.Location = new System.Drawing.Point(544, 26);
+            this.AccountOwnerPictureBox_Deposit.Name = "AccountOwnerPictureBox_Deposit";
+            this.AccountOwnerPictureBox_Deposit.Size = new System.Drawing.Size(164, 114);
+            this.AccountOwnerPictureBox_Deposit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AccountOwnerPictureBox_Deposit.TabIndex = 3;
+            this.AccountOwnerPictureBox_Deposit.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.AccountTypeLabel_Deposit);
+            this.groupBox1.Controls.Add(this.DepositButton_Deposit);
+            this.groupBox1.Controls.Add(this.DepositTextbox);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.BalanceLabel);
+            this.groupBox1.Controls.Add(this.AccountOwnerLabel);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(31, 153);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(714, 323);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Deposit";
+            // 
+            // AccountOwnerLabel
+            // 
+            this.AccountOwnerLabel.AutoSize = true;
+            this.AccountOwnerLabel.Location = new System.Drawing.Point(33, 100);
+            this.AccountOwnerLabel.Name = "AccountOwnerLabel";
+            this.AccountOwnerLabel.Size = new System.Drawing.Size(125, 20);
+            this.AccountOwnerLabel.TabIndex = 0;
+            this.AccountOwnerLabel.Text = "Account Owner:";
+            // 
+            // BalanceLabel
+            // 
+            this.BalanceLabel.AutoSize = true;
+            this.BalanceLabel.Location = new System.Drawing.Point(85, 145);
+            this.BalanceLabel.Name = "BalanceLabel";
+            this.BalanceLabel.Size = new System.Drawing.Size(73, 20);
+            this.BalanceLabel.TabIndex = 1;
+            this.BalanceLabel.Text = "Balance:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(363, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Enter Amount:";
+            // 
+            // DepositTextbox
+            // 
+            this.DepositTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.DepositTextbox.ForeColor = System.Drawing.Color.White;
+            this.DepositTextbox.Location = new System.Drawing.Point(489, 125);
+            this.DepositTextbox.Name = "DepositTextbox";
+            this.DepositTextbox.Size = new System.Drawing.Size(187, 27);
+            this.DepositTextbox.TabIndex = 4;
+            // 
+            // DepositButton_Deposit
+            // 
+            this.DepositButton_Deposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.DepositButton_Deposit.FlatAppearance.BorderSize = 0;
+            this.DepositButton_Deposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DepositButton_Deposit.Location = new System.Drawing.Point(489, 170);
+            this.DepositButton_Deposit.Name = "DepositButton_Deposit";
+            this.DepositButton_Deposit.Size = new System.Drawing.Size(97, 36);
+            this.DepositButton_Deposit.TabIndex = 5;
+            this.DepositButton_Deposit.Text = "Deposit";
+            this.DepositButton_Deposit.UseVisualStyleBackColor = false;
+            this.DepositButton_Deposit.Click += new System.EventHandler(this.DepositButton_Deposit_Click);
+            // 
+            // AccountTypeLabel_Deposit
+            // 
+            this.AccountTypeLabel_Deposit.AutoSize = true;
+            this.AccountTypeLabel_Deposit.Location = new System.Drawing.Point(44, 197);
+            this.AccountTypeLabel_Deposit.Name = "AccountTypeLabel_Deposit";
+            this.AccountTypeLabel_Deposit.Size = new System.Drawing.Size(114, 20);
+            this.AccountTypeLabel_Deposit.TabIndex = 6;
+            this.AccountTypeLabel_Deposit.Text = "Account Type:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.DepositPanel);
+            this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
-            this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.WithdrawPanel);
-            this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
@@ -1461,6 +1584,9 @@ namespace BankManagementSystem
             this.WithdrawPanel.PerformLayout();
             this.TransferPanel.ResumeLayout(false);
             this.TransferPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1545,7 +1671,6 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Panel RecoverAccountPanel;
         private System.Windows.Forms.Panel DepositPanel;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel WithdrawPanel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel TransferPanel;
@@ -1571,6 +1696,17 @@ namespace BankManagementSystem
         private System.Windows.Forms.TextBox RecoverAccountTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox AccountOwnerPictureBox;
+        private System.Windows.Forms.TextBox SearchAccountTextbox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button FindButton_Deposit;
+        private System.Windows.Forms.PictureBox AccountOwnerPictureBox_Deposit;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox DepositTextbox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label BalanceLabel;
+        private System.Windows.Forms.Label AccountOwnerLabel;
+        private System.Windows.Forms.Button DepositButton_Deposit;
+        private System.Windows.Forms.Label AccountTypeLabel_Deposit;
     }
 }
 

@@ -20,6 +20,7 @@ namespace BankManagementSystem
         private string currentUser;
         private Employee currentEmployee;
         private Client searchedClient;
+        private Account searchedAccount;
 
         public Main(int id)
         {
@@ -41,6 +42,7 @@ namespace BankManagementSystem
             ResetChildButton();
             ResetPanel(RegisterPanel);
             ResetCreateAccountDetails();
+            ResetResultGroupBox();
             DashboardPanel.BringToFront();
             DashboardButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Dashboard";
@@ -67,6 +69,7 @@ namespace BankManagementSystem
                 ValidateErrorLabel.Text = "";
                 string accType = AccountTypeComboBox.Text;
                 Client c = new Client();
+                Account account = new Account();
 
                 c.Firstname = FirstnameTextbox.Text;
                 c.Lastname = LastnameTextbox.Text;
@@ -85,8 +88,7 @@ namespace BankManagementSystem
                 {
                     c.Gender = FemaleRadioButton.Text;
                 }
-                c.AccountType = AccountTypeComboBox.Text;
-                c.AccountStatus = "Open";
+                account.AccountType = AccountTypeComboBox.Text;
                 if(registrationImagePath == null)
                 {
                     if (c.Gender.Equals("Male"))
@@ -104,11 +106,11 @@ namespace BankManagementSystem
                 }
                 
 
-                if (Registration.RegisterAccount(c, currentEmployee.ID))
+                if (Registration.RegisterAccount(c, account, currentEmployee.ID))
                 {
                     MessageBox.Show("Registration Complete!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ResetCreateAccountDetails();
-                    new PrintAccountDetails(c).ShowDialog();
+                    new PrintAccountDetails(c, account).ShowDialog();
                 }
                 else
                 {
@@ -128,8 +130,10 @@ namespace BankManagementSystem
                 try
                 {
                     int id = Convert.ToInt32(s);
-                    Client c = FetchData.GetClient(id);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
                     searchedClient = c;
+                    searchedAccount = account;
                     if (c == null)
                     {
                         MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -137,8 +141,8 @@ namespace BankManagementSystem
                     }
                     else
                     {
-                        ShowAccountDetails(c);
-                        if (c.AccountStatus.Equals("Closed"))
+                        ShowAccountDetails(c, account);
+                        if (account.AccountStatus.Equals("Closed"))
                         {
                             CloseAccountButton.Enabled = false;
                         }
@@ -159,8 +163,8 @@ namespace BankManagementSystem
             DialogResult result = MessageBox.Show("Do you wish to close this account?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                searchedClient.AccountStatus = "Closed";
-                if (UpdateData.UpdateAccountStatus(searchedClient, currentEmployee, "Closed"))
+                searchedAccount.AccountStatus = "Closed";
+                if (UpdateData.UpdateAccountStatus(searchedAccount, currentEmployee, "Closed"))
                 {
                     MessageBox.Show("Account Closed!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -506,9 +510,9 @@ namespace BankManagementSystem
         {
             AccountDetailsGroupBox.Hide();
         }
-        private void ShowAccountDetails(Client client)
+        private void ShowAccountDetails(Client client, Account account)
         {
-            AccountDeatilsAccountIDLabel.Text = "AccountID: " + client.AccountID.ToString();
+            AccountDeatilsAccountIDLabel.Text = "AccountID: " + account.AccountID.ToString();
             AccountDeatilsFirstNameLabel.Text = "Firstname: " + client.Firstname;
             AccountDeatilsLastNameLabel.Text = "Lastname: " + client.Lastname;
             AccountDeatilsGenderLabel.Text = "Gender: " + client.Gender;
@@ -519,15 +523,15 @@ namespace BankManagementSystem
             AccountDeatilsDOBLabel.Text = "Date of Birth: " + client.DOB;
             AccountDetailsPhoneNumberLabel.Text = "Phone Numebr: " + client.PhoneNumber;
             AccountDeatilsAddressLabel.Text = "Address: " + client.Address;
-            AccountDeatilsAccountTypeLabel.Text = "Account Type: " + client.AccountType;
-            AccountDeatilsAccountStatusLabel.Text = "Account Status: " + client.AccountStatus;
+            AccountDeatilsAccountTypeLabel.Text = "Account Type: " + account.AccountType;
+            AccountDeatilsAccountStatusLabel.Text = "Account Status: " + account.AccountStatus;
             ClientPictureBox.ImageLocation = client.ImageDir;
 
             AccountDetailsGroupBox.Show();
         }
-
         private void FindButton_Click(object sender, EventArgs e)
         {
+            ResetResultGroupBox();
             string s = RecoverAccountTextBox.Text;
             if(s == "")
             {
@@ -538,24 +542,26 @@ namespace BankManagementSystem
                 try
                 {
                     int nid = Convert.ToInt32(s);
-                    List<Client> clients = FetchData.GetAccountsByNID(nid);
-                    if(clients == null)
+                    List<Account> accounts = FetchData.GetAccountsByNID(nid);
+                    Client client = FetchData.GetClientByNID(nid);
+                    if(accounts == null)
                     {
                         MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    else if(clients.Count > 0)
+                    else if(accounts.Count > 0)
                     {
+                        AccountOwnerPictureBox.ImageLocation = client.ImageDir;
                         int x = 0;
-                        foreach(Client client in clients)
+                        foreach(Account account in accounts)
                         {
                             Label l1 = new Label();
                             l1.AutoSize = true;
-                            l1.Text = "Account ID: " + client.AccountID;
+                            l1.Text = "Account ID: " + account.AccountID;
                             l1.Location = new Point(104, 69 + x * 25);
                             Label l2 = new Label();
                             l2.AutoSize = true;
-                            l2.Text = "Account Type: " + client.AccountType;
+                            l2.Text = "Account Type: " + account.AccountType;
                             l2.Location = new Point(380, 69 + x * 25);
                             AccountsResultGroupBox.Controls.Add(l1);
                             AccountsResultGroupBox.Controls.Add(l2);
@@ -566,6 +572,72 @@ namespace BankManagementSystem
                 catch (Exception)
                 {
                     MessageBox.Show("Insert Valid ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void ResetResultGroupBox()
+        {
+            foreach(Control control in AccountsResultGroupBox.Controls)
+            {
+                control.Text = null;
+            }
+            AccountOwnerPictureBox.Image = null;
+        }
+
+        private void FindButton_Deposit_Click(object sender, EventArgs e)
+        {
+            if(FindButton.Text == "Find Again")
+            {
+                SearchAccountTextbox.Enabled = true;
+            }
+            string s = SearchAccountTextbox.Text;
+            if(s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    if(c == null || account == null)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    FindButton.Text = "Find Again";
+                    SearchAccountTextbox.Enabled = false;
+                    AccountOwnerLabel.Text = "Owner Name: " + c.Firstname + " " + c.Lastname;
+                    BalanceLabel.Text = "Balance: " + account.Balance;
+                    AccountTypeLabel_Deposit.Text = "Account Type: " + account.AccountType;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+
+        private void DepositButton_Deposit_Click(object sender, EventArgs e)
+        {
+            string s = DepositTextbox.Text;
+            if(s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    double amount = Convert.ToDouble(s);
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

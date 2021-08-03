@@ -8,9 +8,9 @@ namespace BankManagementSystem.Database
 {
     static class UpdateData
     {
-        public static bool UpdateAccountStatus(Client client, Employee employee, string status)
+        public static bool UpdateAccountStatus(Account account, Employee employee, string status)
         {
-            string query = "update clients set AccountStatus='"+status+"', ClosedBy='"+employee.ID+"' where AccountNumber="+client.AccountID;
+            string query = "update Accounts set AccountStatus='"+status+"', ClosedBy='"+employee.ID+"' where AccountID="+account.AccountID;
             int result = DataHandler.ManipulateData(query);
             if(result >= 1)
             {
@@ -20,6 +20,12 @@ namespace BankManagementSystem.Database
             {
                 return false;
             }
+        }
+        public static bool UpdateBalance(Account account)
+        {
+
+            string query = "";
+            return false;
         }
     }
 }

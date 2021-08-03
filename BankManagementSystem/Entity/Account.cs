@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace BankManagementSystem
 {
-    class Account
+    public class Account
     {
-        protected string accountType;
+        public double Balance { get; set; }
+        public int AccountID { get; set; }
+        public string AccountStatus { get; set; }
+        public string AccountType { get; set; }
     }
 }

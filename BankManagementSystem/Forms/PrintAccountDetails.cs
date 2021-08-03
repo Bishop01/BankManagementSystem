@@ -13,15 +13,17 @@ namespace BankManagementSystem.Forms
     public partial class PrintAccountDetails : Form
     {
         private Client client;
-        public PrintAccountDetails(Client client)
+        private Account account;
+        public PrintAccountDetails(Client client, Account account)
         {
             InitializeComponent();
             this.client = client;
+            this.account = account;
         }
 
         private void LoadDetails()
         {
-            AccountDeatilsAccountIDLabel.Text = "AccountID: "+client.AccountID.ToString();
+            AccountDeatilsAccountIDLabel.Text = "AccountID: "+account.AccountID.ToString();
             AccountDeatilsFirstNameLabel.Text = "Firstname: "+client.Firstname;
             AccountDeatilsLastNameLabel.Text = "Lastname: "+client.Lastname;
             AccountDeatilsGenderLabel.Text = "Gender: "+client.Gender;
@@ -32,8 +34,8 @@ namespace BankManagementSystem.Forms
             AccountDeatilsDOBLabel.Text = "Date of Birth: "+client.DOB;
             AccountDetailsPhoneNumberLabel.Text = "Phone Numebr: "+client.PhoneNumber;
             AccountDeatilsAddressLabel.Text = "Address: "+client.Address;
-            AccountDeatilsAccountTypeLabel.Text = "Account Type: "+client.AccountType;
-            AccountDeatilsAccountStatusLabel.Text = "Account Status: "+client.AccountStatus;
+            AccountDeatilsAccountTypeLabel.Text = "Account Type: "+account.AccountType;
+            AccountDeatilsAccountStatusLabel.Text = "Account Status: "+account.AccountStatus;
             ClientPictureBox.ImageLocation = client.ImageDir;
         }
 

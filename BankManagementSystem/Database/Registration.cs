@@ -29,17 +29,19 @@ namespace BankManagementSystem.Database
                 return false;
             }
         }
-        public static bool RegisterAccount(Client c, int eid)
+        public static bool RegisterAccount(Client c, Account account, int eid)
         {
             Employee employee = FetchData.GetEmployee(eid);
             int id = employee.ID;
             try
             {
-                string query = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, AccountType, ImageDirectory, AccountStatus, RegisteredBy) " +
+                string query1 = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, ImageDirectory, RegisteredBy) " +
                     "values('"+c.Firstname+"','"+c.Lastname+"','"+c.Address+"','"+c.Email+"','"+c.PhoneNumber+"','"+c.DOB+"'" +
-                    ",'"+c.Nationality+"','"+c.Gender+"','"+c.NID+"','"+c.Occupation+"','"+c.AccountType+"','"+c.ImageDir+"','"+c.AccountStatus+"',"+id+")";
-                int result = DataHandler.ManipulateData(query);
-                if (result >= 1)
+                    ",'"+c.Nationality+"','"+c.Gender+"','"+c.NID+"','"+c.Occupation+"','"+c.ImageDir+"',"+id+")";
+                int result1 = DataHandler.ManipulateData(query1);
+                string query2 = "insert into Accounts(AccountType) values('" + account.AccountType + "')";
+                int result2 = DataHandler.ManipulateData(query2);
+                if (result1 >= 1 && result2 >= 1)
                 {
                     return true;
                 }
