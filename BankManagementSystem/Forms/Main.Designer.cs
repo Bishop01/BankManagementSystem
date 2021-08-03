@@ -111,7 +111,7 @@ namespace BankManagementSystem
             this.AccountDeatilsLastNameLabel = new System.Windows.Forms.Label();
             this.AccountDeatilsFirstNameLabel = new System.Windows.Forms.Label();
             this.ClientPictureBox = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CloseAccountButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -130,6 +130,7 @@ namespace BankManagementSystem
             this.label7 = new System.Windows.Forms.Label();
             this.TransferPanel = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -146,6 +147,7 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.LogoPanel.SuspendLayout();
             this.WelcomePanel.SuspendLayout();
             this.CreateAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageRegister)).BeginInit();
@@ -159,6 +161,7 @@ namespace BankManagementSystem
             this.DepositPanel.SuspendLayout();
             this.WithdrawPanel.SuspendLayout();
             this.TransferPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -198,7 +201,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1253);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1305);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +227,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 975);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1027);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -531,6 +534,7 @@ namespace BankManagementSystem
             // LogoPanel
             // 
             this.LogoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.LogoPanel.Controls.Add(this.LogoPictureBox);
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Name = "LogoPanel";
@@ -989,7 +993,7 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsLastNameLabel);
             this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsFirstNameLabel);
             this.AccountDetailsGroupBox.Controls.Add(this.ClientPictureBox);
-            this.AccountDetailsGroupBox.Controls.Add(this.button1);
+            this.AccountDetailsGroupBox.Controls.Add(this.CloseAccountButton);
             this.AccountDetailsGroupBox.ForeColor = System.Drawing.Color.White;
             this.AccountDetailsGroupBox.Location = new System.Drawing.Point(25, 95);
             this.AccountDetailsGroupBox.Name = "AccountDetailsGroupBox";
@@ -1133,21 +1137,22 @@ namespace BankManagementSystem
             this.ClientPictureBox.Location = new System.Drawing.Point(463, 51);
             this.ClientPictureBox.Name = "ClientPictureBox";
             this.ClientPictureBox.Size = new System.Drawing.Size(167, 107);
-            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClientPictureBox.TabIndex = 4;
             this.ClientPictureBox.TabStop = false;
             // 
-            // button1
+            // CloseAccountButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(296, 325);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Close Account";
-            this.button1.UseVisualStyleBackColor = false;
+            this.CloseAccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
+            this.CloseAccountButton.FlatAppearance.BorderSize = 0;
+            this.CloseAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseAccountButton.Location = new System.Drawing.Point(296, 325);
+            this.CloseAccountButton.Name = "CloseAccountButton";
+            this.CloseAccountButton.Size = new System.Drawing.Size(150, 35);
+            this.CloseAccountButton.TabIndex = 3;
+            this.CloseAccountButton.Text = "Close Account";
+            this.CloseAccountButton.UseVisualStyleBackColor = false;
+            this.CloseAccountButton.Click += new System.EventHandler(this.CloseAccountButton_Click);
             // 
             // SearchButton
             // 
@@ -1327,6 +1332,17 @@ namespace BankManagementSystem
             this.label8.TabIndex = 0;
             this.label8.Text = "Transfer";
             // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(206, 112);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPictureBox.TabIndex = 0;
+            this.LogoPictureBox.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1366,6 +1382,7 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.LogoPanel.ResumeLayout(false);
             this.WelcomePanel.ResumeLayout(false);
             this.WelcomePanel.PerformLayout();
             this.CreateAccountPanel.ResumeLayout(false);
@@ -1389,6 +1406,7 @@ namespace BankManagementSystem
             this.WithdrawPanel.PerformLayout();
             this.TransferPanel.ResumeLayout(false);
             this.TransferPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1442,7 +1460,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.ComboBox AccountTypeComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox SearchTextbox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CloseAccountButton;
         private System.Windows.Forms.Button CreateButton;
         private System.Windows.Forms.Label ValidateErrorLabel;
         private System.Windows.Forms.Button DashboardButton;
@@ -1494,6 +1512,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label AccountDeatilsNationalityLabel;
         private System.Windows.Forms.Label AccountDeatilsNIDLabel;
         private System.Windows.Forms.Label AccountDetailsPhoneNumberLabel;
+        private System.Windows.Forms.PictureBox LogoPictureBox;
     }
 }
 

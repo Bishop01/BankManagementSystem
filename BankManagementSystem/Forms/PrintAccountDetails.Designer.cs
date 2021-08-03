@@ -209,6 +209,7 @@ namespace BankManagementSystem.Forms
             this.ClientPictureBox.Location = new System.Drawing.Point(463, 51);
             this.ClientPictureBox.Name = "ClientPictureBox";
             this.ClientPictureBox.Size = new System.Drawing.Size(167, 107);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClientPictureBox.TabIndex = 4;
             this.ClientPictureBox.TabStop = false;
             // 

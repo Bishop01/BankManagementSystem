@@ -43,9 +43,11 @@ namespace BankManagementSystem
             this.EmployeeIdTextbox = new System.Windows.Forms.TextBox();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.EmployeeIdLabel = new System.Windows.Forms.Label();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.LoginImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginImagePanel
@@ -71,6 +73,7 @@ namespace BankManagementSystem
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.LogoPictureBox);
             this.panel2.Controls.Add(this.RegisterButton);
             this.panel2.Controls.Add(this.LoginErrorLabel);
             this.panel2.Controls.Add(this.PasswordErrorLabel);
@@ -205,6 +208,17 @@ namespace BankManagementSystem
             this.EmployeeIdLabel.TabIndex = 0;
             this.EmployeeIdLabel.Text = "EmployeeID:";
             // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.InitialImage")));
+            this.LogoPictureBox.Location = new System.Drawing.Point(50, 30);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(200, 123);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoPictureBox.TabIndex = 10;
+            this.LogoPictureBox.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
@@ -226,6 +240,7 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +260,6 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label PasswordErrorLabel;
         private System.Windows.Forms.Label LoginErrorLabel;
         private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.PictureBox LogoPictureBox;
     }
 }

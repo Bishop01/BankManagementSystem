@@ -19,6 +19,7 @@ namespace BankManagementSystem
         private static string registrationImagePath = null;
         private string currentUser;
         private Employee currentEmployee;
+        private Client searchedClient;
 
         public Main(int id)
         {
@@ -106,8 +107,8 @@ namespace BankManagementSystem
                 if (Registration.RegisterAccount(c, currentEmployee.ID))
                 {
                     MessageBox.Show("Registration Complete!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new PrintAccountDetails(c).ShowDialog();
                     ResetCreateAccountDetails();
+                    new PrintAccountDetails(c).ShowDialog();
                 }
                 else
                 {
@@ -424,13 +425,23 @@ namespace BankManagementSystem
                 {
                     int id = Convert.ToInt32(s);
                     Client c = FetchData.GetClient(id);
+                    searchedClient = c;
                     if (c == null)
                     {
                         MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HideAccountDetails();
                     }
                     else
                     {
                         ShowAccountDetails(c);
+                        if (c.AccountStatus.Equals("Closed"))
+                        {
+                            CloseAccountButton.Enabled = false;
+                        }
+                        else
+                        {
+                            CloseAccountButton.Enabled = true;
+                        }
                     }
                 }
                 catch (Exception)
@@ -496,6 +507,28 @@ namespace BankManagementSystem
             ClientPictureBox.ImageLocation = client.ImageDir;
 
             AccountDetailsGroupBox.Show();
+        }
+
+        private void CloseAccountButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you wish to close this account?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                searchedClient.AccountStatus = "Closed";
+                if (UpdateData.UpdateAccountStatus(searchedClient, currentEmployee, "Closed"))
+                {
+                    MessageBox.Show("Account Closed!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error updating!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                HideAccountDetails();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
