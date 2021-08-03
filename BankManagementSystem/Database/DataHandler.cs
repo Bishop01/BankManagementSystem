@@ -16,7 +16,6 @@ namespace BankManagementSystem.Database
         {
             EstablishConnection();
         }
-
         static void EstablishConnection()
         {
             if(sqlConnection != null)
@@ -24,7 +23,6 @@ namespace BankManagementSystem.Database
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SKS"].ConnectionString);
             sqlConnection.Open();
         }
-
         public static SqlDataReader GetRecord(string query)
         {
             EstablishConnection();

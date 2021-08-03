@@ -226,6 +226,7 @@ namespace BankManagementSystem
         #endregion Register
 
         #region Account
+
         private void AccountButton_Click(object sender, EventArgs e)
         {
             ResetAllButton();
@@ -236,6 +237,82 @@ namespace BankManagementSystem
             AccountButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Account";
         }
+        private void FindButton_Deposit_Click(object sender, EventArgs e)
+        {
+            if (FindButton_Deposit.Text == "Find Again")
+            {
+                HideDepositGroupBox();
+                return;
+            }
+            string s = SearchAccountTextbox.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    if (c == null || account == null)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    DepositGroupBox.Show();
+                    AccountOwnerPictureBox_Deposit.ImageLocation = c.ImageDir;
+                    FindButton_Deposit.Text = "Find Again";
+                    SearchAccountTextbox.Enabled = false;
+                    AccountOwnerLabel.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    BalanceLabel.Text = "Balance: " + account.Balance;
+                    AccountTypeLabel_Deposit.Text = "Account Type: " + account.AccountType;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void DepositButton_Deposit_Click(object sender, EventArgs e)
+        {
+            string s = DepositTextbox.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    double amount = Convert.ToDouble(s);
+                    int id = Convert.ToInt32(SearchAccountTextbox.Text);
+                    if (UpdateData.UpdateBalance(id, amount))
+                    {
+                        MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HideDepositGroupBox();
+                        AccountOwnerPictureBox_Deposit.Image = null;
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void HideDepositGroupBox()
+        {
+            DepositGroupBox.Hide();
+            FindButton_Deposit.Text = "Find";
+            SearchAccountTextbox.Enabled = true;
+            DepositTextbox.Text = "";
+            SearchAccountTextbox.Text = "";
+            AccountOwnerPictureBox_Deposit.Image = null;
+        }
+
         #endregion Account
 
         #region Reset
@@ -585,78 +662,6 @@ namespace BankManagementSystem
             }
             AccountOwnerPictureBox.Image = null;
         }
-        private void FindButton_Deposit_Click(object sender, EventArgs e)
-        {
-            if(FindButton_Deposit.Text == "Find Again")
-            {
-                HideDepositGroupBox();
-                return;
-            }
-            string s = SearchAccountTextbox.Text;
-            if(s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    int id = Convert.ToInt32(s);
-                    Client c = FetchData.GetClientByAccountID(id);
-                    Account account = FetchData.GetAccount(id);
-                    if(c == null || account == null)
-                    {
-                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    DepositGroupBox.Show();
-                    FindButton_Deposit.Text = "Find Again";
-                    SearchAccountTextbox.Enabled = false;
-                    AccountOwnerLabel.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
-                    BalanceLabel.Text = "Balance: " + account.Balance;
-                    AccountTypeLabel_Deposit.Text = "Account Type: " + account.AccountType;
-                }
-                catch
-                {
-                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-        }
-        private void DepositButton_Deposit_Click(object sender, EventArgs e)
-        {
-            string s = DepositTextbox.Text;
-            if(s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    double amount = Convert.ToDouble(s);
-                    int id = Convert.ToInt32(SearchAccountTextbox.Text);
-                    if(UpdateData.UpdateBalance(id, amount))
-                    {
-                        MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        HideDepositGroupBox();
-                        AccountOwnerPictureBox_Deposit.Image = null;
-                        return;
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-        private void HideDepositGroupBox()
-        {
-            DepositGroupBox.Hide();
-            FindButton_Deposit.Text = "Find";
-            SearchAccountTextbox.Enabled = true;
-            DepositTextbox.Text = "";
-            SearchAccountTextbox.Text = "";
-        }
+
     }
 }

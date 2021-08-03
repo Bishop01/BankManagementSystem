@@ -20,7 +20,6 @@ namespace BankManagementSystem.Forms
             this.client = client;
             this.account = account;
         }
-
         private void LoadDetails()
         {
             AccountDeatilsAccountIDLabel.Text = "AccountID: "+account.AccountID.ToString();
@@ -38,18 +37,15 @@ namespace BankManagementSystem.Forms
             AccountDeatilsAccountStatusLabel.Text = "Account Status: "+account.AccountStatus;
             ClientPictureBox.ImageLocation = client.ImageDir;
         }
-
         private void PrintAccountDetails_Load(object sender, EventArgs e)
         {
             LoadDetails();
         }
-
         private void PrintButton_Click(object sender, EventArgs e)
         {
             PrintDialog printDialog = new PrintDialog();
             printDialog.ShowDialog();
         }
-
         private void PrintAccountDetails_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
