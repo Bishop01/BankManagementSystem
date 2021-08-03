@@ -55,8 +55,7 @@ namespace BankManagementSystem
             if (DataVerification.ValidateLogin(Id, Password))
             {
                 this.Hide();
-                string name = FetchData.GetEmployee(Id);
-                new Main(name).Show();
+                new Main(Id).Show();
             }
             else
             {

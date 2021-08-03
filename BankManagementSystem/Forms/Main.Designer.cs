@@ -72,7 +72,7 @@ namespace BankManagementSystem
             this.ValidateErrorLabel = new System.Windows.Forms.Label();
             this.CreateButton = new System.Windows.Forms.Button();
             this.AccountTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.UploadImageButton = new System.Windows.Forms.Button();
+            this.BrowseImageButton = new System.Windows.Forms.Button();
             this.ImageRegister = new System.Windows.Forms.PictureBox();
             this.AccountTypeLabel = new System.Windows.Forms.Label();
             this.OccupationTextbox = new System.Windows.Forms.TextBox();
@@ -86,7 +86,7 @@ namespace BankManagementSystem
             this.NationalityLabel = new System.Windows.Forms.Label();
             this.DOBDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DOBLabel = new System.Windows.Forms.Label();
-            this.PNTextbox = new System.Windows.Forms.TextBox();
+            this.PhoneNumberTextbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.PNLabel = new System.Windows.Forms.Label();
             this.EmailTextbox = new System.Windows.Forms.TextBox();
@@ -96,10 +96,24 @@ namespace BankManagementSystem
             this.FirstnameTextbox = new System.Windows.Forms.TextBox();
             this.FirstnameLabel = new System.Windows.Forms.Label();
             this.CloseAccountPanel = new System.Windows.Forms.Panel();
-            this.SearchButton = new System.Windows.Forms.Button();
+            this.AccountDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.AccountDetailsPhoneNumberLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsAccountStatusLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsAccountTypeLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsAccountIDLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsGenderLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsDOBLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsOccupationLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsNationalityLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsNIDLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsAddressLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsEmailLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsLastNameLabel = new System.Windows.Forms.Label();
+            this.AccountDeatilsFirstNameLabel = new System.Windows.Forms.Label();
+            this.ClientPictureBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DashboardPanel = new System.Windows.Forms.Panel();
             this.ClockPanel = new System.Windows.Forms.Panel();
@@ -136,6 +150,8 @@ namespace BankManagementSystem
             this.CreateAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageRegister)).BeginInit();
             this.CloseAccountPanel.SuspendLayout();
+            this.AccountDetailsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.DashboardPanel.SuspendLayout();
             this.ClockPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -182,7 +198,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 681);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1253);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +224,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 403);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 975);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -590,7 +606,7 @@ namespace BankManagementSystem
             this.CreateAccountPanel.Controls.Add(this.ValidateErrorLabel);
             this.CreateAccountPanel.Controls.Add(this.CreateButton);
             this.CreateAccountPanel.Controls.Add(this.AccountTypeComboBox);
-            this.CreateAccountPanel.Controls.Add(this.UploadImageButton);
+            this.CreateAccountPanel.Controls.Add(this.BrowseImageButton);
             this.CreateAccountPanel.Controls.Add(this.ImageRegister);
             this.CreateAccountPanel.Controls.Add(this.AccountTypeLabel);
             this.CreateAccountPanel.Controls.Add(this.OccupationTextbox);
@@ -604,7 +620,7 @@ namespace BankManagementSystem
             this.CreateAccountPanel.Controls.Add(this.NationalityLabel);
             this.CreateAccountPanel.Controls.Add(this.DOBDateTimePicker);
             this.CreateAccountPanel.Controls.Add(this.DOBLabel);
-            this.CreateAccountPanel.Controls.Add(this.PNTextbox);
+            this.CreateAccountPanel.Controls.Add(this.PhoneNumberTextbox);
             this.CreateAccountPanel.Controls.Add(this.label5);
             this.CreateAccountPanel.Controls.Add(this.PNLabel);
             this.CreateAccountPanel.Controls.Add(this.EmailTextbox);
@@ -656,11 +672,11 @@ namespace BankManagementSystem
             // ValidateErrorLabel
             // 
             this.ValidateErrorLabel.AutoSize = true;
-            this.ValidateErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValidateErrorLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ValidateErrorLabel.ForeColor = System.Drawing.Color.Red;
             this.ValidateErrorLabel.Location = new System.Drawing.Point(90, 393);
             this.ValidateErrorLabel.Name = "ValidateErrorLabel";
-            this.ValidateErrorLabel.Size = new System.Drawing.Size(45, 16);
+            this.ValidateErrorLabel.Size = new System.Drawing.Size(43, 16);
             this.ValidateErrorLabel.TabIndex = 61;
             this.ValidateErrorLabel.Text = "label3";
             // 
@@ -692,17 +708,18 @@ namespace BankManagementSystem
             this.AccountTypeComboBox.Size = new System.Drawing.Size(164, 28);
             this.AccountTypeComboBox.TabIndex = 59;
             // 
-            // UploadImageButton
+            // BrowseImageButton
             // 
-            this.UploadImageButton.FlatAppearance.BorderSize = 0;
-            this.UploadImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UploadImageButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UploadImageButton.Location = new System.Drawing.Point(512, 217);
-            this.UploadImageButton.Name = "UploadImageButton";
-            this.UploadImageButton.Size = new System.Drawing.Size(128, 29);
-            this.UploadImageButton.TabIndex = 58;
-            this.UploadImageButton.Text = "Upload Image";
-            this.UploadImageButton.UseVisualStyleBackColor = true;
+            this.BrowseImageButton.FlatAppearance.BorderSize = 0;
+            this.BrowseImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BrowseImageButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrowseImageButton.Location = new System.Drawing.Point(512, 217);
+            this.BrowseImageButton.Name = "BrowseImageButton";
+            this.BrowseImageButton.Size = new System.Drawing.Size(128, 29);
+            this.BrowseImageButton.TabIndex = 58;
+            this.BrowseImageButton.Text = "Browse";
+            this.BrowseImageButton.UseVisualStyleBackColor = true;
+            this.BrowseImageButton.Click += new System.EventHandler(this.BrowseImageButton_Click);
             // 
             // ImageRegister
             // 
@@ -710,6 +727,7 @@ namespace BankManagementSystem
             this.ImageRegister.Location = new System.Drawing.Point(491, 93);
             this.ImageRegister.Name = "ImageRegister";
             this.ImageRegister.Size = new System.Drawing.Size(164, 118);
+            this.ImageRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImageRegister.TabIndex = 57;
             this.ImageRegister.TabStop = false;
             // 
@@ -751,6 +769,7 @@ namespace BankManagementSystem
             this.NIDTextbox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NIDTextbox.ForeColor = System.Drawing.Color.White;
             this.NIDTextbox.Location = new System.Drawing.Point(543, 258);
+            this.NIDTextbox.MaxLength = 8;
             this.NIDTextbox.Name = "NIDTextbox";
             this.NIDTextbox.Size = new System.Drawing.Size(164, 27);
             this.NIDTextbox.TabIndex = 52;
@@ -840,17 +859,18 @@ namespace BankManagementSystem
             this.DOBLabel.TabIndex = 44;
             this.DOBLabel.Text = "Date of Birth:";
             // 
-            // PNTextbox
+            // PhoneNumberTextbox
             // 
-            this.PNTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.PNTextbox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PNTextbox.ForeColor = System.Drawing.Color.White;
-            this.PNTextbox.Location = new System.Drawing.Point(245, 225);
-            this.PNTextbox.Name = "PNTextbox";
-            this.PNTextbox.Size = new System.Drawing.Size(121, 27);
-            this.PNTextbox.TabIndex = 42;
-            this.PNTextbox.Enter += new System.EventHandler(this.TextBoxEnterColorChange);
-            this.PNTextbox.Leave += new System.EventHandler(this.TextBoxLeaveColorChange);
+            this.PhoneNumberTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.PhoneNumberTextbox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneNumberTextbox.ForeColor = System.Drawing.Color.White;
+            this.PhoneNumberTextbox.Location = new System.Drawing.Point(245, 225);
+            this.PhoneNumberTextbox.MaxLength = 10;
+            this.PhoneNumberTextbox.Name = "PhoneNumberTextbox";
+            this.PhoneNumberTextbox.Size = new System.Drawing.Size(121, 27);
+            this.PhoneNumberTextbox.TabIndex = 42;
+            this.PhoneNumberTextbox.Enter += new System.EventHandler(this.TextBoxEnterColorChange);
+            this.PhoneNumberTextbox.Leave += new System.EventHandler(this.TextBoxLeaveColorChange);
             // 
             // label5
             // 
@@ -941,10 +961,9 @@ namespace BankManagementSystem
             // CloseAccountPanel
             // 
             this.CloseAccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.CloseAccountPanel.Controls.Add(this.AccountDetailsGroupBox);
             this.CloseAccountPanel.Controls.Add(this.SearchButton);
-            this.CloseAccountPanel.Controls.Add(this.button1);
-            this.CloseAccountPanel.Controls.Add(this.label2);
-            this.CloseAccountPanel.Controls.Add(this.textBox1);
+            this.CloseAccountPanel.Controls.Add(this.SearchTextbox);
             this.CloseAccountPanel.Controls.Add(this.label1);
             this.CloseAccountPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CloseAccountPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -953,6 +972,182 @@ namespace BankManagementSystem
             this.CloseAccountPanel.Name = "CloseAccountPanel";
             this.CloseAccountPanel.Size = new System.Drawing.Size(775, 497);
             this.CloseAccountPanel.TabIndex = 59;
+            // 
+            // AccountDetailsGroupBox
+            // 
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDetailsPhoneNumberLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsAccountStatusLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsAccountTypeLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsAccountIDLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsGenderLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsDOBLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsOccupationLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsNationalityLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsNIDLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsAddressLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsEmailLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsLastNameLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsFirstNameLabel);
+            this.AccountDetailsGroupBox.Controls.Add(this.ClientPictureBox);
+            this.AccountDetailsGroupBox.Controls.Add(this.button1);
+            this.AccountDetailsGroupBox.ForeColor = System.Drawing.Color.White;
+            this.AccountDetailsGroupBox.Location = new System.Drawing.Point(25, 95);
+            this.AccountDetailsGroupBox.Name = "AccountDetailsGroupBox";
+            this.AccountDetailsGroupBox.Size = new System.Drawing.Size(726, 381);
+            this.AccountDetailsGroupBox.TabIndex = 5;
+            this.AccountDetailsGroupBox.TabStop = false;
+            this.AccountDetailsGroupBox.Text = "AccountDetails";
+            // 
+            // AccountDetailsPhoneNumberLabel
+            // 
+            this.AccountDetailsPhoneNumberLabel.AutoSize = true;
+            this.AccountDetailsPhoneNumberLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDetailsPhoneNumberLabel.Location = new System.Drawing.Point(380, 203);
+            this.AccountDetailsPhoneNumberLabel.Name = "AccountDetailsPhoneNumberLabel";
+            this.AccountDetailsPhoneNumberLabel.Size = new System.Drawing.Size(111, 16);
+            this.AccountDetailsPhoneNumberLabel.TabIndex = 17;
+            this.AccountDetailsPhoneNumberLabel.Text = "PhoneNumber:";
+            // 
+            // AccountDeatilsAccountStatusLabel
+            // 
+            this.AccountDeatilsAccountStatusLabel.AutoSize = true;
+            this.AccountDeatilsAccountStatusLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsAccountStatusLabel.Location = new System.Drawing.Point(373, 280);
+            this.AccountDeatilsAccountStatusLabel.Name = "AccountDeatilsAccountStatusLabel";
+            this.AccountDeatilsAccountStatusLabel.Size = new System.Drawing.Size(118, 16);
+            this.AccountDeatilsAccountStatusLabel.TabIndex = 16;
+            this.AccountDeatilsAccountStatusLabel.Text = "Account Status:";
+            // 
+            // AccountDeatilsAccountTypeLabel
+            // 
+            this.AccountDeatilsAccountTypeLabel.AutoSize = true;
+            this.AccountDeatilsAccountTypeLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsAccountTypeLabel.Location = new System.Drawing.Point(385, 252);
+            this.AccountDeatilsAccountTypeLabel.Name = "AccountDeatilsAccountTypeLabel";
+            this.AccountDeatilsAccountTypeLabel.Size = new System.Drawing.Size(106, 16);
+            this.AccountDeatilsAccountTypeLabel.TabIndex = 15;
+            this.AccountDeatilsAccountTypeLabel.Text = "Account Type:";
+            // 
+            // AccountDeatilsAccountIDLabel
+            // 
+            this.AccountDeatilsAccountIDLabel.AutoSize = true;
+            this.AccountDeatilsAccountIDLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsAccountIDLabel.Location = new System.Drawing.Point(406, 227);
+            this.AccountDeatilsAccountIDLabel.Name = "AccountDeatilsAccountIDLabel";
+            this.AccountDeatilsAccountIDLabel.Size = new System.Drawing.Size(85, 16);
+            this.AccountDeatilsAccountIDLabel.TabIndex = 14;
+            this.AccountDeatilsAccountIDLabel.Text = "AccountID:";
+            // 
+            // AccountDeatilsGenderLabel
+            // 
+            this.AccountDeatilsGenderLabel.AutoSize = true;
+            this.AccountDeatilsGenderLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsGenderLabel.Location = new System.Drawing.Point(102, 289);
+            this.AccountDeatilsGenderLabel.Name = "AccountDeatilsGenderLabel";
+            this.AccountDeatilsGenderLabel.Size = new System.Drawing.Size(62, 16);
+            this.AccountDeatilsGenderLabel.TabIndex = 13;
+            this.AccountDeatilsGenderLabel.Text = "Gender:";
+            // 
+            // AccountDeatilsDOBLabel
+            // 
+            this.AccountDeatilsDOBLabel.AutoSize = true;
+            this.AccountDeatilsDOBLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsDOBLabel.Location = new System.Drawing.Point(56, 259);
+            this.AccountDeatilsDOBLabel.Name = "AccountDeatilsDOBLabel";
+            this.AccountDeatilsDOBLabel.Size = new System.Drawing.Size(108, 16);
+            this.AccountDeatilsDOBLabel.TabIndex = 12;
+            this.AccountDeatilsDOBLabel.Text = "Date Of Birth:";
+            // 
+            // AccountDeatilsOccupationLabel
+            // 
+            this.AccountDeatilsOccupationLabel.AutoSize = true;
+            this.AccountDeatilsOccupationLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsOccupationLabel.Location = new System.Drawing.Point(74, 227);
+            this.AccountDeatilsOccupationLabel.Name = "AccountDeatilsOccupationLabel";
+            this.AccountDeatilsOccupationLabel.Size = new System.Drawing.Size(90, 16);
+            this.AccountDeatilsOccupationLabel.TabIndex = 11;
+            this.AccountDeatilsOccupationLabel.Text = "Occupation:";
+            // 
+            // AccountDeatilsNationalityLabel
+            // 
+            this.AccountDeatilsNationalityLabel.AutoSize = true;
+            this.AccountDeatilsNationalityLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsNationalityLabel.Location = new System.Drawing.Point(72, 201);
+            this.AccountDeatilsNationalityLabel.Name = "AccountDeatilsNationalityLabel";
+            this.AccountDeatilsNationalityLabel.Size = new System.Drawing.Size(92, 16);
+            this.AccountDeatilsNationalityLabel.TabIndex = 10;
+            this.AccountDeatilsNationalityLabel.Text = "Nationality:";
+            // 
+            // AccountDeatilsNIDLabel
+            // 
+            this.AccountDeatilsNIDLabel.AutoSize = true;
+            this.AccountDeatilsNIDLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsNIDLabel.Location = new System.Drawing.Point(122, 174);
+            this.AccountDeatilsNIDLabel.Name = "AccountDeatilsNIDLabel";
+            this.AccountDeatilsNIDLabel.Size = new System.Drawing.Size(42, 16);
+            this.AccountDeatilsNIDLabel.TabIndex = 9;
+            this.AccountDeatilsNIDLabel.Text = "NID:";
+            // 
+            // AccountDeatilsAddressLabel
+            // 
+            this.AccountDeatilsAddressLabel.AutoSize = true;
+            this.AccountDeatilsAddressLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsAddressLabel.Location = new System.Drawing.Point(97, 142);
+            this.AccountDeatilsAddressLabel.Name = "AccountDeatilsAddressLabel";
+            this.AccountDeatilsAddressLabel.Size = new System.Drawing.Size(67, 16);
+            this.AccountDeatilsAddressLabel.TabIndex = 8;
+            this.AccountDeatilsAddressLabel.Text = "Address:";
+            // 
+            // AccountDeatilsEmailLabel
+            // 
+            this.AccountDeatilsEmailLabel.AutoSize = true;
+            this.AccountDeatilsEmailLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsEmailLabel.Location = new System.Drawing.Point(110, 114);
+            this.AccountDeatilsEmailLabel.Name = "AccountDeatilsEmailLabel";
+            this.AccountDeatilsEmailLabel.Size = new System.Drawing.Size(54, 16);
+            this.AccountDeatilsEmailLabel.TabIndex = 7;
+            this.AccountDeatilsEmailLabel.Text = "Email:";
+            // 
+            // AccountDeatilsLastNameLabel
+            // 
+            this.AccountDeatilsLastNameLabel.AutoSize = true;
+            this.AccountDeatilsLastNameLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsLastNameLabel.Location = new System.Drawing.Point(80, 81);
+            this.AccountDeatilsLastNameLabel.Name = "AccountDeatilsLastNameLabel";
+            this.AccountDeatilsLastNameLabel.Size = new System.Drawing.Size(84, 16);
+            this.AccountDeatilsLastNameLabel.TabIndex = 6;
+            this.AccountDeatilsLastNameLabel.Text = "LastName:";
+            // 
+            // AccountDeatilsFirstNameLabel
+            // 
+            this.AccountDeatilsFirstNameLabel.AutoSize = true;
+            this.AccountDeatilsFirstNameLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountDeatilsFirstNameLabel.Location = new System.Drawing.Point(76, 49);
+            this.AccountDeatilsFirstNameLabel.Name = "AccountDeatilsFirstNameLabel";
+            this.AccountDeatilsFirstNameLabel.Size = new System.Drawing.Size(88, 16);
+            this.AccountDeatilsFirstNameLabel.TabIndex = 5;
+            this.AccountDeatilsFirstNameLabel.Text = "FirstName:";
+            // 
+            // ClientPictureBox
+            // 
+            this.ClientPictureBox.Location = new System.Drawing.Point(463, 51);
+            this.ClientPictureBox.Name = "ClientPictureBox";
+            this.ClientPictureBox.Size = new System.Drawing.Size(167, 107);
+            this.ClientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientPictureBox.TabIndex = 4;
+            this.ClientPictureBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(296, 325);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 35);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Close Account";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // SearchButton
             // 
@@ -965,34 +1160,16 @@ namespace BankManagementSystem
             this.SearchButton.TabIndex = 4;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // button1
+            // SearchTextbox
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(321, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Close Account";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Account Details:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(280, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 27);
-            this.textBox1.TabIndex = 1;
+            this.SearchTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SearchTextbox.ForeColor = System.Drawing.Color.White;
+            this.SearchTextbox.Location = new System.Drawing.Point(280, 47);
+            this.SearchTextbox.Name = "SearchTextbox";
+            this.SearchTextbox.Size = new System.Drawing.Size(204, 27);
+            this.SearchTextbox.TabIndex = 1;
             // 
             // label1
             // 
@@ -1155,13 +1332,13 @@ namespace BankManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.CloseAccountPanel);
+            this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.RecoverAccountPanel);
-            this.Controls.Add(this.CloseAccountPanel);
             this.Controls.Add(this.DashboardPanel);
-            this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
             this.ForeColor = System.Drawing.Color.White;
@@ -1196,6 +1373,9 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.ImageRegister)).EndInit();
             this.CloseAccountPanel.ResumeLayout(false);
             this.CloseAccountPanel.PerformLayout();
+            this.AccountDetailsGroupBox.ResumeLayout(false);
+            this.AccountDetailsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.DashboardPanel.ResumeLayout(false);
             this.DashboardPanel.PerformLayout();
             this.ClockPanel.ResumeLayout(false);
@@ -1235,7 +1415,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Button WithdrawButton;
         private System.Windows.Forms.Button DepositButton;
         private System.Windows.Forms.Panel CreateAccountPanel;
-        private System.Windows.Forms.Button UploadImageButton;
+        private System.Windows.Forms.Button BrowseImageButton;
         private System.Windows.Forms.PictureBox ImageRegister;
         private System.Windows.Forms.Label AccountTypeLabel;
         private System.Windows.Forms.TextBox OccupationTextbox;
@@ -1249,7 +1429,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label NationalityLabel;
         private System.Windows.Forms.DateTimePicker DOBDateTimePicker;
         private System.Windows.Forms.Label DOBLabel;
-        private System.Windows.Forms.TextBox PNTextbox;
+        private System.Windows.Forms.TextBox PhoneNumberTextbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label PNLabel;
         private System.Windows.Forms.TextBox EmailTextbox;
@@ -1261,8 +1441,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Panel CloseAccountPanel;
         private System.Windows.Forms.ComboBox AccountTypeComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox SearchTextbox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button CreateButton;
         private System.Windows.Forms.Label ValidateErrorLabel;
@@ -1300,6 +1479,21 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel TransferPanel;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox AccountDetailsGroupBox;
+        private System.Windows.Forms.PictureBox ClientPictureBox;
+        private System.Windows.Forms.Label AccountDeatilsFirstNameLabel;
+        private System.Windows.Forms.Label AccountDeatilsAddressLabel;
+        private System.Windows.Forms.Label AccountDeatilsEmailLabel;
+        private System.Windows.Forms.Label AccountDeatilsLastNameLabel;
+        private System.Windows.Forms.Label AccountDeatilsAccountStatusLabel;
+        private System.Windows.Forms.Label AccountDeatilsAccountTypeLabel;
+        private System.Windows.Forms.Label AccountDeatilsAccountIDLabel;
+        private System.Windows.Forms.Label AccountDeatilsGenderLabel;
+        private System.Windows.Forms.Label AccountDeatilsDOBLabel;
+        private System.Windows.Forms.Label AccountDeatilsOccupationLabel;
+        private System.Windows.Forms.Label AccountDeatilsNationalityLabel;
+        private System.Windows.Forms.Label AccountDeatilsNIDLabel;
+        private System.Windows.Forms.Label AccountDetailsPhoneNumberLabel;
     }
 }
 

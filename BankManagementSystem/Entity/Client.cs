@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BankManagementSystem
 {
-    class Client
+    public class Client
     {
+        public int AccountID { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Address { get; set; }
@@ -19,6 +20,8 @@ namespace BankManagementSystem
         public string NID { get; set; }
         public string Occupation { get; set; }
         public string AccountType { get; set; }
-        private Account account;
+        public string AccountStatus { get; set; }
+        public string ImageDir { get; set; }
+        //private Account account;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BankManagementSystem.Database;
+using BankManagementSystem.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,13 @@ namespace BankManagementSystem
 {
     public partial class Main : Form
     {
-        public Main(string name)
+        private static string registrationImagePathFemale = @"G:\Coding\C#\BankManagementSystem\Images\female.png";
+        private static string registrationImagePathMale = @"G:\Coding\C#\BankManagementSystem\Images\male.png";
+        private static string registrationImagePath = null;
+        private string currentUser;
+        private Employee currentEmployee;
+
+        public Main(int id)
         {
             InitializeComponent();
             HideAllPanel();
@@ -22,7 +29,9 @@ namespace BankManagementSystem
             AccountPictureBox.Location = new Point(9, AccountButton.Location.Y+10);
             LoanPictureBox.Location = new Point(9, LoanButton.Location.Y+10); 
             ClockTimer.Start();
-            NameLabel.Text = name;
+            currentUser = FetchData.GetEmployeeName(id);
+            currentEmployee = FetchData.GetEmployee(id);
+            NameLabel.Text = currentUser;
         }
 
         private void DashboardButton_Click(object sender, EventArgs e)
@@ -31,6 +40,7 @@ namespace BankManagementSystem
             ResetAllButton();
             ResetChildButton();
             ResetPanel(RegisterPanel);
+            ResetCreateAccountDetails();
             DashboardPanel.BringToFront();
             DashboardButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Dashboard";
@@ -42,6 +52,7 @@ namespace BankManagementSystem
             HideAllPanel();
             ResetAllButton();
             ResetChildButton();
+            HideAccountDetails();
             RegisterPanel.Show();
             RegisterButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Register";
@@ -61,6 +72,7 @@ namespace BankManagementSystem
                 c.Nationality = NationalityTextbox.Text;
                 c.NID = NIDTextbox.Text;
                 c.Address = AddressTextbox.Text;
+                c.PhoneNumber = PhoneNumberTextbox.Text;
                 c.Email = EmailTextbox.Text;
                 c.DOB = DOBDateTimePicker.Text;
                 c.Occupation = OccupationTextbox.Text;
@@ -72,20 +84,34 @@ namespace BankManagementSystem
                 {
                     c.Gender = FemaleRadioButton.Text;
                 }
-                if (accType.Equals("Salary"))
+                c.AccountType = AccountTypeComboBox.Text;
+                c.AccountStatus = "Open";
+                if(registrationImagePath == null)
                 {
-                    Account a = new SalaryAccount();
-                    c.AccountType = ((SalaryAccount)a).AccountType;
+                    if (c.Gender.Equals("Male"))
+                    {
+                        c.ImageDir = registrationImagePathMale;
+                    }
+                    else
+                    {
+                        c.ImageDir = registrationImagePathFemale;
+                    }
                 }
-                else if (accType.Equals("Savings"))
+                else
                 {
-                    Account a = new SavingsAccount();
-                    c.AccountType = ((SavingsAccount)a).AccountType;
+                    c.ImageDir = registrationImagePath;
                 }
+                
 
-                if (Registration.RegisterAccount(c))
+                if (Registration.RegisterAccount(c, currentEmployee.ID))
                 {
-
+                    MessageBox.Show("Registration Complete!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new PrintAccountDetails(c).ShowDialog();
+                    ResetCreateAccountDetails();
+                }
+                else
+                {
+                    MessageBox.Show("Error in registering", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -97,6 +123,7 @@ namespace BankManagementSystem
             ResetAllButton();
             HideAllPanel();
             ResetChildButton();
+            ResetCreateAccountDetails();
             AccountPanel.Show();
             AccountButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Account";
@@ -293,9 +320,9 @@ namespace BankManagementSystem
                 EmailTextbox.BackColor = Color.FromArgb(22, 67, 99);
                 return;
             }
-            else if (sender.Equals(PNTextbox))
+            else if (sender.Equals(PhoneNumberTextbox))
             {
-                PNTextbox.BackColor = Color.FromArgb(22, 67, 99);
+                PhoneNumberTextbox.BackColor = Color.FromArgb(22, 67, 99);
                 return;
             }
             else if (sender.Equals(NIDTextbox))
@@ -340,9 +367,9 @@ namespace BankManagementSystem
                 EmailTextbox.BackColor = Color.FromArgb(34, 33, 74);
                 return;
             }
-            else if (sender.Equals(PNTextbox))
+            else if (sender.Equals(PhoneNumberTextbox))
             {
-                PNTextbox.BackColor = Color.FromArgb(34, 33, 74);
+                PhoneNumberTextbox.BackColor = Color.FromArgb(34, 33, 74);
                 return;
             }
             else if (sender.Equals(NIDTextbox))
@@ -372,7 +399,7 @@ namespace BankManagementSystem
         }
         private void SignOutButton_Click(object sender, EventArgs e)
         {
-            DialogResult confirmation = MessageBox.Show("Are you sure to log out?", "Warning!", MessageBoxButtons.YesNo);
+            DialogResult confirmation = MessageBox.Show("Are you sure to log out?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(confirmation == DialogResult.Yes)
             {
                 this.Dispose();
@@ -382,6 +409,93 @@ namespace BankManagementSystem
             {
                 return;
             }
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string s = SearchTextbox.Text;
+            if(s == "")
+            {
+                MessageBox.Show("Input Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClient(id);
+                    if (c == null)
+                    {
+                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        ShowAccountDetails(c);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Input Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BrowseImageButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Jpg Image(*.jpg)|*.jpg|Png Image(*.png)|*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    registrationImagePath = openFileDialog.FileName;
+                    ImageRegister.ImageLocation = registrationImagePath;
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error in opening image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        private void ResetCreateAccountDetails()
+        {
+            foreach(Control control in CreateAccountPanel.Controls)
+            {
+                if(control is TextBox)
+                {
+                    ((TextBox)control).Text = "";
+                }
+            }
+            AccountTypeComboBox.Text = "";
+            DOBDateTimePicker.ResetText();
+            MaleRadioButton.Checked = false;
+            FemaleRadioButton.Checked = false;
+            ImageRegister.Image = null;
+        }
+        private void HideAccountDetails()
+        {
+            AccountDetailsGroupBox.Hide();
+        }
+        private void ShowAccountDetails(Client client)
+        {
+            AccountDeatilsAccountIDLabel.Text = "AccountID: " + client.AccountID.ToString();
+            AccountDeatilsFirstNameLabel.Text = "Firstname: " + client.Firstname;
+            AccountDeatilsLastNameLabel.Text = "Lastname: " + client.Lastname;
+            AccountDeatilsGenderLabel.Text = "Gender: " + client.Gender;
+            AccountDeatilsNationalityLabel.Text = "Nationality: " + client.Nationality;
+            AccountDeatilsNIDLabel.Text = "NID: " + client.NID;
+            AccountDeatilsOccupationLabel.Text = "Occupation: " + client.Occupation;
+            AccountDeatilsEmailLabel.Text = "Email: " + client.Email;
+            AccountDeatilsDOBLabel.Text = "Date of Birth: " + client.DOB;
+            AccountDetailsPhoneNumberLabel.Text = "Phone Numebr: " + client.PhoneNumber;
+            AccountDeatilsAddressLabel.Text = "Address: " + client.Address;
+            AccountDeatilsAccountTypeLabel.Text = "Account Type: " + client.AccountType;
+            AccountDeatilsAccountStatusLabel.Text = "Account Status: " + client.AccountStatus;
+            ClientPictureBox.ImageLocation = client.ImageDir;
+
+            AccountDetailsGroupBox.Show();
         }
     }
 }

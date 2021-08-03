@@ -16,5 +16,6 @@ namespace BankManagementSystem
         internal string PhoneNumber { get; set; }
         internal string Gender { get; set; }
         internal string DOB { get; set; }
+        public int ID { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace BankManagementSystem
 {
     class Account
     {
-        protected static string accountType;
+        protected string accountType;
     }
 }

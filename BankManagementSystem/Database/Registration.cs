@@ -29,15 +29,27 @@ namespace BankManagementSystem.Database
                 return false;
             }
         }
-        public static bool RegisterAccount(Client client)
+        public static bool RegisterAccount(Client c, int eid)
         {
-            string query = "insert into Account() values()";
-            int result = DataHandler.ManipulateData(query);
-            if (result >= 1)
+            Employee employee = FetchData.GetEmployee(eid);
+            int id = employee.ID;
+            try
             {
-                return true;
+                string query = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, AccountType, ImageDirectory, AccountStatus, RegisteredBy) " +
+                    "values('"+c.Firstname+"','"+c.Lastname+"','"+c.Address+"','"+c.Email+"','"+c.PhoneNumber+"','"+c.DOB+"'" +
+                    ",'"+c.Nationality+"','"+c.Gender+"','"+c.NID+"','"+c.Occupation+"','"+c.AccountType+"','"+c.ImageDir+"','"+c.AccountStatus+"',"+id+")";
+                int result = DataHandler.ManipulateData(query);
+                if (result >= 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
             }
             return false;
+            
         }
         public static bool UpdatePassword(int id, string pass)
         {
