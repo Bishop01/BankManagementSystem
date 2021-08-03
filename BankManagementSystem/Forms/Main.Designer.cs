@@ -138,7 +138,7 @@ namespace BankManagementSystem
             this.SearchAccountTextbox = new System.Windows.Forms.TextBox();
             this.FindButton_Deposit = new System.Windows.Forms.Button();
             this.AccountOwnerPictureBox_Deposit = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DepositGroupBox = new System.Windows.Forms.GroupBox();
             this.AccountOwnerLabel = new System.Windows.Forms.Label();
             this.BalanceLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -178,7 +178,7 @@ namespace BankManagementSystem
             this.WithdrawPanel.SuspendLayout();
             this.TransferPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.DepositGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -1352,7 +1352,7 @@ namespace BankManagementSystem
             // DepositPanel
             // 
             this.DepositPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.DepositPanel.Controls.Add(this.groupBox1);
+            this.DepositPanel.Controls.Add(this.DepositGroupBox);
             this.DepositPanel.Controls.Add(this.AccountOwnerPictureBox_Deposit);
             this.DepositPanel.Controls.Add(this.FindButton_Deposit);
             this.DepositPanel.Controls.Add(this.SearchAccountTextbox);
@@ -1445,21 +1445,21 @@ namespace BankManagementSystem
             this.AccountOwnerPictureBox_Deposit.TabIndex = 3;
             this.AccountOwnerPictureBox_Deposit.TabStop = false;
             // 
-            // groupBox1
+            // DepositGroupBox
             // 
-            this.groupBox1.Controls.Add(this.AccountTypeLabel_Deposit);
-            this.groupBox1.Controls.Add(this.DepositButton_Deposit);
-            this.groupBox1.Controls.Add(this.DepositTextbox);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.BalanceLabel);
-            this.groupBox1.Controls.Add(this.AccountOwnerLabel);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(31, 153);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(714, 323);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Deposit";
+            this.DepositGroupBox.Controls.Add(this.AccountTypeLabel_Deposit);
+            this.DepositGroupBox.Controls.Add(this.DepositButton_Deposit);
+            this.DepositGroupBox.Controls.Add(this.DepositTextbox);
+            this.DepositGroupBox.Controls.Add(this.label11);
+            this.DepositGroupBox.Controls.Add(this.BalanceLabel);
+            this.DepositGroupBox.Controls.Add(this.AccountOwnerLabel);
+            this.DepositGroupBox.ForeColor = System.Drawing.Color.White;
+            this.DepositGroupBox.Location = new System.Drawing.Point(31, 153);
+            this.DepositGroupBox.Name = "DepositGroupBox";
+            this.DepositGroupBox.Size = new System.Drawing.Size(714, 323);
+            this.DepositGroupBox.TabIndex = 4;
+            this.DepositGroupBox.TabStop = false;
+            this.DepositGroupBox.Text = "Deposit";
             // 
             // AccountOwnerLabel
             // 
@@ -1585,8 +1585,8 @@ namespace BankManagementSystem
             this.TransferPanel.ResumeLayout(false);
             this.TransferPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.DepositGroupBox.ResumeLayout(false);
+            this.DepositGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1700,7 +1700,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button FindButton_Deposit;
         private System.Windows.Forms.PictureBox AccountOwnerPictureBox_Deposit;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox DepositGroupBox;
         private System.Windows.Forms.TextBox DepositTextbox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label BalanceLabel;

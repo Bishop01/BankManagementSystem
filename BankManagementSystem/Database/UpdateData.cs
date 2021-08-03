@@ -21,10 +21,14 @@ namespace BankManagementSystem.Database
                 return false;
             }
         }
-        public static bool UpdateBalance(Account account)
+        public static bool UpdateBalance(int id, double amount)
         {
-
-            string query = "";
+            string query = "update Accounts set balance=balance+"+amount+" where AccountID="+id;
+            int result = DataHandler.ManipulateData(query);
+            if(result >= 1)
+            {
+                return true;
+            }
             return false;
         }
     }

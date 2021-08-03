@@ -27,6 +27,7 @@ namespace BankManagementSystem
             InitializeComponent();
             HideAllPanel();
             DisableComponents();
+            HideDepositGroupBox();
             DashboardPanel.BringToFront();
             AccountPictureBox.Location = new Point(9, AccountButton.Location.Y+10);
             LoanPictureBox.Location = new Point(9, LoanButton.Location.Y+10); 
@@ -43,6 +44,7 @@ namespace BankManagementSystem
             ResetPanel(RegisterPanel);
             ResetCreateAccountDetails();
             ResetResultGroupBox();
+            HideDepositGroupBox();
             DashboardPanel.BringToFront();
             DashboardButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Dashboard";
@@ -583,12 +585,12 @@ namespace BankManagementSystem
             }
             AccountOwnerPictureBox.Image = null;
         }
-
         private void FindButton_Deposit_Click(object sender, EventArgs e)
         {
-            if(FindButton.Text == "Find Again")
+            if(FindButton_Deposit.Text == "Find Again")
             {
-                SearchAccountTextbox.Enabled = true;
+                HideDepositGroupBox();
+                return;
             }
             string s = SearchAccountTextbox.Text;
             if(s == "")
@@ -607,9 +609,10 @@ namespace BankManagementSystem
                         MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FindButton.Text = "Find Again";
+                    DepositGroupBox.Show();
+                    FindButton_Deposit.Text = "Find Again";
                     SearchAccountTextbox.Enabled = false;
-                    AccountOwnerLabel.Text = "Owner Name: " + c.Firstname + " " + c.Lastname;
+                    AccountOwnerLabel.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
                     BalanceLabel.Text = "Balance: " + account.Balance;
                     AccountTypeLabel_Deposit.Text = "Account Type: " + account.AccountType;
                 }
@@ -620,7 +623,6 @@ namespace BankManagementSystem
                 }
             }
         }
-
         private void DepositButton_Deposit_Click(object sender, EventArgs e)
         {
             string s = DepositTextbox.Text;
@@ -633,13 +635,28 @@ namespace BankManagementSystem
                 try
                 {
                     double amount = Convert.ToDouble(s);
-
+                    int id = Convert.ToInt32(SearchAccountTextbox.Text);
+                    if(UpdateData.UpdateBalance(id, amount))
+                    {
+                        MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HideDepositGroupBox();
+                        AccountOwnerPictureBox_Deposit.Image = null;
+                        return;
+                    }
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        private void HideDepositGroupBox()
+        {
+            DepositGroupBox.Hide();
+            FindButton_Deposit.Text = "Find";
+            SearchAccountTextbox.Enabled = true;
+            DepositTextbox.Text = "";
+            SearchAccountTextbox.Text = "";
         }
     }
 }
