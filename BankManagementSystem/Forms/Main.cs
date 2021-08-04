@@ -2,12 +2,7 @@
 using BankManagementSystem.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BankManagementSystem
@@ -18,6 +13,7 @@ namespace BankManagementSystem
         private static string registrationImagePathMale = @"G:\Coding\C#\BankManagementSystem\Images\male.png";
         private static string registrationImagePath = null;
         private string currentUser;
+        private Bitmap bitmap;
         private Employee currentEmployee;
         private Client searchedClient;
         private Account searchedAccount;
@@ -106,13 +102,12 @@ namespace BankManagementSystem
                 {
                     c.ImageDir = registrationImagePath;
                 }
-                
 
                 if (Registration.RegisterAccount(c, account, currentEmployee.ID))
                 {
                     MessageBox.Show("Registration Complete!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new PrintAccountDetails(c).ShowDialog();
                     ResetCreateAccountDetails();
-                    new PrintAccountDetails(c, account).ShowDialog();
                 }
                 else
                 {
@@ -166,7 +161,7 @@ namespace BankManagementSystem
             if (result == DialogResult.Yes)
             {
                 searchedAccount.AccountStatus = "Closed";
-                if (UpdateData.UpdateAccountStatus(searchedAccount, currentEmployee, "Closed"))
+                if (ModifyData.UpdateAccountStatus(searchedAccount, currentEmployee, "Closed"))
                 {
                     MessageBox.Show("Account Closed!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -289,7 +284,7 @@ namespace BankManagementSystem
                 {
                     double amount = Convert.ToDouble(s);
                     int id = Convert.ToInt32(SearchAccountTextbox.Text);
-                    if (UpdateData.UpdateBalance(id, amount))
+                    if (ModifyData.UpdateBalance(id, amount))
                     {
                         MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         HideDepositGroupBox();
@@ -419,6 +414,9 @@ namespace BankManagementSystem
                     ResetChildButton(RegisterPanel);
                     CreateAccountPanel.BringToFront();
                     CreateAccButton.BackColor = Color.FromArgb(22, 34, 54);
+
+                    InitialDepositTextbox.Text = "500";
+                    InitialDepositTextbox.Enabled = false;
                 }
                 else if (sender.Equals(CloseAccButton))
                 {
@@ -449,6 +447,13 @@ namespace BankManagementSystem
                     ResetChildButton(AccountPanel);
                     TransferPanel.BringToFront();
                     TransferButton.BackColor = Color.FromArgb(22, 34, 54);
+                }
+                else if (sender.Equals(DetailsButton))
+                {
+                    ResetChildButton(AccountPanel);
+                    ResetAccountDetails();
+                    DetailsPanel.BringToFront();
+                    DetailsButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
             }
         }
@@ -662,6 +667,63 @@ namespace BankManagementSystem
             }
             AccountOwnerPictureBox.Image = null;
         }
-
+        private void ResetAccountDetails()
+        {
+            foreach(Control label in AccountDetailsGroupBox_Details.Controls)
+            {
+                if(label is Label)
+                {
+                    label.Text = "";
+                }
+            }
+            AccountOwnerPictureBox_Details.Image = null;
+        }
+        private void SearchAccountTextbox_Details_TextChanged(object sender, EventArgs e)
+        {
+            string s = SearchAccountTextbox_Details.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client client = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    if(client == null || account == null)
+                    {
+                        ResetAccountDetails();
+                        return;
+                    }
+                    else
+                    {
+                        AccountIDLabel_Details.Text = "AccountID: " + account.AccountID.ToString();
+                        FirstNameLabel_Details.Text = "Firstname: " + client.Firstname;
+                        LastNameLabel_Details.Text = "Lastname: " + client.Lastname;
+                        GenderLabel_Details.Text = "Gender: " + client.Gender;
+                        NationalityLabel_Details.Text = "Nationality: " + client.Nationality;
+                        NIDLabel_Details.Text = "NID: " + client.NID;
+                        OccupationLabel_Details.Text = "Occupation: " + client.Occupation;
+                        EmailLabel_Details.Text = "Email: " + client.Email;
+                        DOBLabel_Details.Text = "Date of Birth: " + client.DOB;
+                        PhoneNumberLabel_Details.Text = "Phone Numebr: " + client.PhoneNumber;
+                        AddressLabel_Details.Text = "Address: " + client.Address;
+                        AccountTypeLabel_Details.Text = "Account Type: " + account.AccountType;
+                        AccountStatusLabel_Details.Text = "Account Status: " + account.AccountStatus;
+                        AccountOwnerPictureBox_Details.ImageLocation = client.ImageDir;
+                        BalanceLabel_Details.Text = "Balance: " + account.Balance;
+                        DueLabelDetails.Text = "Due: " + account.Due;
+                        CreateDateLabel_Details.Text = "Create Date: " + account.CreateDate;
+                    }
+                }
+                catch(Exception)
+                {
+                    ResetAccountDetails();
+                    return;
+                }
+            }
+        }
     }
 }

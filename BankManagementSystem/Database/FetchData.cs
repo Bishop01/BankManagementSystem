@@ -155,6 +155,7 @@ namespace BankManagementSystem.Database
                 account.AccountStatus = data["AccountStatus"].ToString();
                 account.AccountType = data["AccountType"].ToString();
                 account.Balance = Convert.ToDouble(data["Balance"]);
+                account.CreateDate = data["CreationDate"].ToString();
 
                 return account;
             }
@@ -183,6 +184,7 @@ namespace BankManagementSystem.Database
                 client.Occupation = data["Occupation"].ToString();
                 client.ImageDir = data["ImageDirectory"].ToString();
                 client.Address = data["Address"].ToString();
+                client.ClientID = (int)data["ClientID"];
 
                 return client;
             }
@@ -190,6 +192,21 @@ namespace BankManagementSystem.Database
             {
                 return null;
             }
+        }
+        public static Account GetLastCreatedAccount()
+        {
+            Account account = new Account();
+            string q = "select * from accounts where AccountID=(select MAX(AccountID) from accounts)";
+            data = DataHandler.GetRecord(q);
+            data.Read();
+            account.AccountID = (int)data["AccountID"];
+            account.AccountStatus = data["AccountStatus"].ToString();
+            account.Balance = Convert.ToDouble(data["Balance"]);
+            account.AccountType = data["AccountType"].ToString();
+            account.CreateDate = data["CreationDate"].ToString();
+            account.Due = Convert.ToDouble(data["Due"]);
+
+            return account;
         }
     }
 }

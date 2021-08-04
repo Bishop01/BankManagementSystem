@@ -45,7 +45,7 @@ namespace BankManagementSystem
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.button10 = new System.Windows.Forms.Button();
-            this.WalletButton = new System.Windows.Forms.Button();
+            this.DetailsButton = new System.Windows.Forms.Button();
             this.TransferButton = new System.Windows.Forms.Button();
             this.WithdrawButton = new System.Windows.Forms.Button();
             this.DepositButton = new System.Windows.Forms.Button();
@@ -67,6 +67,8 @@ namespace BankManagementSystem
             this.SignOutButton = new System.Windows.Forms.Button();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.CreateAccountPanel = new System.Windows.Forms.Panel();
+            this.InitialDepositTextbox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
             this.MaleRadioButton = new System.Windows.Forms.RadioButton();
             this.GenderLabel = new System.Windows.Forms.Label();
@@ -130,21 +132,44 @@ namespace BankManagementSystem
             this.RecoverAccountTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DepositPanel = new System.Windows.Forms.Panel();
+            this.DepositGroupBox = new System.Windows.Forms.GroupBox();
+            this.AccountTypeLabel_Deposit = new System.Windows.Forms.Label();
+            this.DepositButton_Deposit = new System.Windows.Forms.Button();
+            this.DepositTextbox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.BalanceLabel = new System.Windows.Forms.Label();
+            this.AccountOwnerLabel = new System.Windows.Forms.Label();
+            this.AccountOwnerPictureBox_Deposit = new System.Windows.Forms.PictureBox();
+            this.FindButton_Deposit = new System.Windows.Forms.Button();
+            this.SearchAccountTextbox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.WithdrawPanel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.TransferPanel = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SearchAccountTextbox = new System.Windows.Forms.TextBox();
-            this.FindButton_Deposit = new System.Windows.Forms.Button();
-            this.AccountOwnerPictureBox_Deposit = new System.Windows.Forms.PictureBox();
-            this.DepositGroupBox = new System.Windows.Forms.GroupBox();
-            this.AccountOwnerLabel = new System.Windows.Forms.Label();
-            this.BalanceLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.DepositTextbox = new System.Windows.Forms.TextBox();
-            this.DepositButton_Deposit = new System.Windows.Forms.Button();
-            this.AccountTypeLabel_Deposit = new System.Windows.Forms.Label();
+            this.DetailsPanel = new System.Windows.Forms.Panel();
+            this.SearchAccountTextbox_Details = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.AccountDetailsGroupBox_Details = new System.Windows.Forms.GroupBox();
+            this.CreateDateLabel_Details = new System.Windows.Forms.Label();
+            this.DueLabelDetails = new System.Windows.Forms.Label();
+            this.BalanceLabel_Details = new System.Windows.Forms.Label();
+            this.PhoneNumberLabel_Details = new System.Windows.Forms.Label();
+            this.AccountStatusLabel_Details = new System.Windows.Forms.Label();
+            this.AccountTypeLabel_Details = new System.Windows.Forms.Label();
+            this.AccountIDLabel_Details = new System.Windows.Forms.Label();
+            this.GenderLabel_Details = new System.Windows.Forms.Label();
+            this.DOBLabel_Details = new System.Windows.Forms.Label();
+            this.OccupationLabel_Details = new System.Windows.Forms.Label();
+            this.NationalityLabel_Details = new System.Windows.Forms.Label();
+            this.NIDLabel_Details = new System.Windows.Forms.Label();
+            this.AddressLabel_Details = new System.Windows.Forms.Label();
+            this.EmailLabel_Details = new System.Windows.Forms.Label();
+            this.LastNameLabel_Details = new System.Windows.Forms.Label();
+            this.FirstNameLabel_Details = new System.Windows.Forms.Label();
+            this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -175,10 +200,13 @@ namespace BankManagementSystem
             this.RecoverAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox)).BeginInit();
             this.DepositPanel.SuspendLayout();
+            this.DepositGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).BeginInit();
             this.WithdrawPanel.SuspendLayout();
             this.TransferPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).BeginInit();
-            this.DepositGroupBox.SuspendLayout();
+            this.DetailsPanel.SuspendLayout();
+            this.AccountDetailsGroupBox_Details.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -218,7 +246,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1461);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1773);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -244,7 +272,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1183);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1495);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -279,7 +307,7 @@ namespace BankManagementSystem
             this.AccountPanel.Controls.Add(this.pictureBox8);
             this.AccountPanel.Controls.Add(this.pictureBox7);
             this.AccountPanel.Controls.Add(this.button10);
-            this.AccountPanel.Controls.Add(this.WalletButton);
+            this.AccountPanel.Controls.Add(this.DetailsButton);
             this.AccountPanel.Controls.Add(this.TransferButton);
             this.AccountPanel.Controls.Add(this.WithdrawButton);
             this.AccountPanel.Controls.Add(this.DepositButton);
@@ -353,19 +381,20 @@ namespace BankManagementSystem
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // WalletButton
+            // DetailsButton
             // 
-            this.WalletButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.WalletButton.FlatAppearance.BorderSize = 0;
-            this.WalletButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WalletButton.Location = new System.Drawing.Point(0, 138);
-            this.WalletButton.Name = "WalletButton";
-            this.WalletButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.WalletButton.Size = new System.Drawing.Size(189, 46);
-            this.WalletButton.TabIndex = 3;
-            this.WalletButton.Text = "Wallet";
-            this.WalletButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.WalletButton.UseVisualStyleBackColor = true;
+            this.DetailsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DetailsButton.FlatAppearance.BorderSize = 0;
+            this.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DetailsButton.Location = new System.Drawing.Point(0, 138);
+            this.DetailsButton.Name = "DetailsButton";
+            this.DetailsButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.DetailsButton.Size = new System.Drawing.Size(189, 46);
+            this.DetailsButton.TabIndex = 3;
+            this.DetailsButton.Text = "Details";
+            this.DetailsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DetailsButton.UseVisualStyleBackColor = true;
+            this.DetailsButton.Click += new System.EventHandler(this.SubmenuButtonsHandler);
             // 
             // TransferButton
             // 
@@ -632,6 +661,8 @@ namespace BankManagementSystem
             // CreateAccountPanel
             // 
             this.CreateAccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.CreateAccountPanel.Controls.Add(this.InitialDepositTextbox);
+            this.CreateAccountPanel.Controls.Add(this.label6);
             this.CreateAccountPanel.Controls.Add(this.FemaleRadioButton);
             this.CreateAccountPanel.Controls.Add(this.MaleRadioButton);
             this.CreateAccountPanel.Controls.Add(this.GenderLabel);
@@ -668,6 +699,29 @@ namespace BankManagementSystem
             this.CreateAccountPanel.Name = "CreateAccountPanel";
             this.CreateAccountPanel.Size = new System.Drawing.Size(775, 497);
             this.CreateAccountPanel.TabIndex = 2;
+            // 
+            // InitialDepositTextbox
+            // 
+            this.InitialDepositTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.InitialDepositTextbox.Enabled = false;
+            this.InitialDepositTextbox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InitialDepositTextbox.ForeColor = System.Drawing.Color.White;
+            this.InitialDepositTextbox.Location = new System.Drawing.Point(543, 220);
+            this.InitialDepositTextbox.MaxLength = 8;
+            this.InitialDepositTextbox.Name = "InitialDepositTextbox";
+            this.InitialDepositTextbox.Size = new System.Drawing.Size(164, 27);
+            this.InitialDepositTextbox.TabIndex = 66;
+            this.InitialDepositTextbox.Text = "500";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(408, 222);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 21);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Initial Deposit:";
             // 
             // FemaleRadioButton
             // 
@@ -745,7 +799,7 @@ namespace BankManagementSystem
             this.BrowseImageButton.FlatAppearance.BorderSize = 0;
             this.BrowseImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BrowseImageButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrowseImageButton.Location = new System.Drawing.Point(512, 217);
+            this.BrowseImageButton.Location = new System.Drawing.Point(512, 157);
             this.BrowseImageButton.Name = "BrowseImageButton";
             this.BrowseImageButton.Size = new System.Drawing.Size(128, 29);
             this.BrowseImageButton.TabIndex = 58;
@@ -756,10 +810,10 @@ namespace BankManagementSystem
             // ImageRegister
             // 
             this.ImageRegister.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImageRegister.Location = new System.Drawing.Point(491, 93);
+            this.ImageRegister.Location = new System.Drawing.Point(491, 33);
             this.ImageRegister.Name = "ImageRegister";
             this.ImageRegister.Size = new System.Drawing.Size(164, 118);
-            this.ImageRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImageRegister.TabIndex = 57;
             this.ImageRegister.TabStop = false;
             // 
@@ -1364,6 +1418,122 @@ namespace BankManagementSystem
             this.DepositPanel.Size = new System.Drawing.Size(775, 497);
             this.DepositPanel.TabIndex = 1;
             // 
+            // DepositGroupBox
+            // 
+            this.DepositGroupBox.Controls.Add(this.AccountTypeLabel_Deposit);
+            this.DepositGroupBox.Controls.Add(this.DepositButton_Deposit);
+            this.DepositGroupBox.Controls.Add(this.DepositTextbox);
+            this.DepositGroupBox.Controls.Add(this.label11);
+            this.DepositGroupBox.Controls.Add(this.BalanceLabel);
+            this.DepositGroupBox.Controls.Add(this.AccountOwnerLabel);
+            this.DepositGroupBox.ForeColor = System.Drawing.Color.White;
+            this.DepositGroupBox.Location = new System.Drawing.Point(31, 153);
+            this.DepositGroupBox.Name = "DepositGroupBox";
+            this.DepositGroupBox.Size = new System.Drawing.Size(714, 323);
+            this.DepositGroupBox.TabIndex = 4;
+            this.DepositGroupBox.TabStop = false;
+            this.DepositGroupBox.Text = "Deposit";
+            // 
+            // AccountTypeLabel_Deposit
+            // 
+            this.AccountTypeLabel_Deposit.AutoSize = true;
+            this.AccountTypeLabel_Deposit.Location = new System.Drawing.Point(44, 197);
+            this.AccountTypeLabel_Deposit.Name = "AccountTypeLabel_Deposit";
+            this.AccountTypeLabel_Deposit.Size = new System.Drawing.Size(114, 20);
+            this.AccountTypeLabel_Deposit.TabIndex = 6;
+            this.AccountTypeLabel_Deposit.Text = "Account Type:";
+            // 
+            // DepositButton_Deposit
+            // 
+            this.DepositButton_Deposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.DepositButton_Deposit.FlatAppearance.BorderSize = 0;
+            this.DepositButton_Deposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DepositButton_Deposit.Location = new System.Drawing.Point(489, 170);
+            this.DepositButton_Deposit.Name = "DepositButton_Deposit";
+            this.DepositButton_Deposit.Size = new System.Drawing.Size(97, 36);
+            this.DepositButton_Deposit.TabIndex = 5;
+            this.DepositButton_Deposit.Text = "Deposit";
+            this.DepositButton_Deposit.UseVisualStyleBackColor = false;
+            this.DepositButton_Deposit.Click += new System.EventHandler(this.DepositButton_Deposit_Click);
+            // 
+            // DepositTextbox
+            // 
+            this.DepositTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.DepositTextbox.ForeColor = System.Drawing.Color.White;
+            this.DepositTextbox.Location = new System.Drawing.Point(489, 125);
+            this.DepositTextbox.Name = "DepositTextbox";
+            this.DepositTextbox.Size = new System.Drawing.Size(187, 27);
+            this.DepositTextbox.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(363, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Enter Amount:";
+            // 
+            // BalanceLabel
+            // 
+            this.BalanceLabel.AutoSize = true;
+            this.BalanceLabel.Location = new System.Drawing.Point(85, 145);
+            this.BalanceLabel.Name = "BalanceLabel";
+            this.BalanceLabel.Size = new System.Drawing.Size(73, 20);
+            this.BalanceLabel.TabIndex = 1;
+            this.BalanceLabel.Text = "Balance:";
+            // 
+            // AccountOwnerLabel
+            // 
+            this.AccountOwnerLabel.AutoSize = true;
+            this.AccountOwnerLabel.Location = new System.Drawing.Point(33, 100);
+            this.AccountOwnerLabel.Name = "AccountOwnerLabel";
+            this.AccountOwnerLabel.Size = new System.Drawing.Size(125, 20);
+            this.AccountOwnerLabel.TabIndex = 0;
+            this.AccountOwnerLabel.Text = "Account Owner:";
+            // 
+            // AccountOwnerPictureBox_Deposit
+            // 
+            this.AccountOwnerPictureBox_Deposit.Location = new System.Drawing.Point(544, 26);
+            this.AccountOwnerPictureBox_Deposit.Name = "AccountOwnerPictureBox_Deposit";
+            this.AccountOwnerPictureBox_Deposit.Size = new System.Drawing.Size(164, 114);
+            this.AccountOwnerPictureBox_Deposit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AccountOwnerPictureBox_Deposit.TabIndex = 3;
+            this.AccountOwnerPictureBox_Deposit.TabStop = false;
+            // 
+            // FindButton_Deposit
+            // 
+            this.FindButton_Deposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton_Deposit.FlatAppearance.BorderSize = 0;
+            this.FindButton_Deposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton_Deposit.Location = new System.Drawing.Point(210, 88);
+            this.FindButton_Deposit.Name = "FindButton_Deposit";
+            this.FindButton_Deposit.Size = new System.Drawing.Size(107, 32);
+            this.FindButton_Deposit.TabIndex = 2;
+            this.FindButton_Deposit.Text = "Find";
+            this.FindButton_Deposit.UseVisualStyleBackColor = false;
+            this.FindButton_Deposit.Click += new System.EventHandler(this.FindButton_Deposit_Click);
+            // 
+            // SearchAccountTextbox
+            // 
+            this.SearchAccountTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SearchAccountTextbox.ForeColor = System.Drawing.Color.White;
+            this.SearchAccountTextbox.Location = new System.Drawing.Point(210, 47);
+            this.SearchAccountTextbox.MaxLength = 8;
+            this.SearchAccountTextbox.Name = "SearchAccountTextbox";
+            this.SearchAccountTextbox.Size = new System.Drawing.Size(184, 27);
+            this.SearchAccountTextbox.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(51, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Account Number:";
+            // 
             // WithdrawPanel
             // 
             this.WithdrawPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
@@ -1404,130 +1574,255 @@ namespace BankManagementSystem
             this.label8.TabIndex = 0;
             this.label8.Text = "Transfer";
             // 
-            // label4
+            // DetailsPanel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(51, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Account Number:";
+            this.DetailsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.DetailsPanel.Controls.Add(this.SearchAccountTextbox_Details);
+            this.DetailsPanel.Controls.Add(this.label23);
+            this.DetailsPanel.Controls.Add(this.AccountDetailsGroupBox_Details);
+            this.DetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DetailsPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetailsPanel.Location = new System.Drawing.Point(206, 74);
+            this.DetailsPanel.Name = "DetailsPanel";
+            this.DetailsPanel.Size = new System.Drawing.Size(775, 497);
+            this.DetailsPanel.TabIndex = 67;
             // 
-            // SearchAccountTextbox
+            // SearchAccountTextbox_Details
             // 
-            this.SearchAccountTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.SearchAccountTextbox.ForeColor = System.Drawing.Color.White;
-            this.SearchAccountTextbox.Location = new System.Drawing.Point(210, 47);
-            this.SearchAccountTextbox.Name = "SearchAccountTextbox";
-            this.SearchAccountTextbox.Size = new System.Drawing.Size(184, 27);
-            this.SearchAccountTextbox.TabIndex = 1;
+            this.SearchAccountTextbox_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SearchAccountTextbox_Details.ForeColor = System.Drawing.Color.White;
+            this.SearchAccountTextbox_Details.Location = new System.Drawing.Point(205, 40);
+            this.SearchAccountTextbox_Details.Name = "SearchAccountTextbox_Details";
+            this.SearchAccountTextbox_Details.Size = new System.Drawing.Size(216, 27);
+            this.SearchAccountTextbox_Details.TabIndex = 9;
+            this.SearchAccountTextbox_Details.TextChanged += new System.EventHandler(this.SearchAccountTextbox_Details_TextChanged);
             // 
-            // FindButton_Deposit
+            // label23
             // 
-            this.FindButton_Deposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.FindButton_Deposit.FlatAppearance.BorderSize = 0;
-            this.FindButton_Deposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindButton_Deposit.Location = new System.Drawing.Point(210, 88);
-            this.FindButton_Deposit.Name = "FindButton_Deposit";
-            this.FindButton_Deposit.Size = new System.Drawing.Size(107, 32);
-            this.FindButton_Deposit.TabIndex = 2;
-            this.FindButton_Deposit.Text = "Find";
-            this.FindButton_Deposit.UseVisualStyleBackColor = false;
-            this.FindButton_Deposit.Click += new System.EventHandler(this.FindButton_Deposit_Click);
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(51, 43);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(148, 20);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Search Account: ";
             // 
-            // AccountOwnerPictureBox_Deposit
+            // AccountDetailsGroupBox_Details
             // 
-            this.AccountOwnerPictureBox_Deposit.Location = new System.Drawing.Point(544, 26);
-            this.AccountOwnerPictureBox_Deposit.Name = "AccountOwnerPictureBox_Deposit";
-            this.AccountOwnerPictureBox_Deposit.Size = new System.Drawing.Size(164, 114);
-            this.AccountOwnerPictureBox_Deposit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AccountOwnerPictureBox_Deposit.TabIndex = 3;
-            this.AccountOwnerPictureBox_Deposit.TabStop = false;
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.CreateDateLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.DueLabelDetails);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.BalanceLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.PhoneNumberLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.AccountStatusLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.AccountTypeLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.AccountIDLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.GenderLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.DOBLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.OccupationLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.NationalityLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.NIDLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.AddressLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.EmailLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.LastNameLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.FirstNameLabel_Details);
+            this.AccountDetailsGroupBox_Details.Controls.Add(this.AccountOwnerPictureBox_Details);
+            this.AccountDetailsGroupBox_Details.ForeColor = System.Drawing.Color.White;
+            this.AccountDetailsGroupBox_Details.Location = new System.Drawing.Point(55, 93);
+            this.AccountDetailsGroupBox_Details.Name = "AccountDetailsGroupBox_Details";
+            this.AccountDetailsGroupBox_Details.Size = new System.Drawing.Size(668, 378);
+            this.AccountDetailsGroupBox_Details.TabIndex = 7;
+            this.AccountDetailsGroupBox_Details.TabStop = false;
+            this.AccountDetailsGroupBox_Details.Text = "AccountDetails";
             // 
-            // DepositGroupBox
+            // CreateDateLabel_Details
             // 
-            this.DepositGroupBox.Controls.Add(this.AccountTypeLabel_Deposit);
-            this.DepositGroupBox.Controls.Add(this.DepositButton_Deposit);
-            this.DepositGroupBox.Controls.Add(this.DepositTextbox);
-            this.DepositGroupBox.Controls.Add(this.label11);
-            this.DepositGroupBox.Controls.Add(this.BalanceLabel);
-            this.DepositGroupBox.Controls.Add(this.AccountOwnerLabel);
-            this.DepositGroupBox.ForeColor = System.Drawing.Color.White;
-            this.DepositGroupBox.Location = new System.Drawing.Point(31, 153);
-            this.DepositGroupBox.Name = "DepositGroupBox";
-            this.DepositGroupBox.Size = new System.Drawing.Size(714, 323);
-            this.DepositGroupBox.TabIndex = 4;
-            this.DepositGroupBox.TabStop = false;
-            this.DepositGroupBox.Text = "Deposit";
+            this.CreateDateLabel_Details.AutoSize = true;
+            this.CreateDateLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateDateLabel_Details.Location = new System.Drawing.Point(388, 319);
+            this.CreateDateLabel_Details.Name = "CreateDateLabel_Details";
+            this.CreateDateLabel_Details.Size = new System.Drawing.Size(95, 16);
+            this.CreateDateLabel_Details.TabIndex = 20;
+            this.CreateDateLabel_Details.Text = "Create Date:";
             // 
-            // AccountOwnerLabel
+            // DueLabelDetails
             // 
-            this.AccountOwnerLabel.AutoSize = true;
-            this.AccountOwnerLabel.Location = new System.Drawing.Point(33, 100);
-            this.AccountOwnerLabel.Name = "AccountOwnerLabel";
-            this.AccountOwnerLabel.Size = new System.Drawing.Size(125, 20);
-            this.AccountOwnerLabel.TabIndex = 0;
-            this.AccountOwnerLabel.Text = "Account Owner:";
+            this.DueLabelDetails.AutoSize = true;
+            this.DueLabelDetails.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DueLabelDetails.Location = new System.Drawing.Point(443, 296);
+            this.DueLabelDetails.Name = "DueLabelDetails";
+            this.DueLabelDetails.Size = new System.Drawing.Size(40, 16);
+            this.DueLabelDetails.TabIndex = 19;
+            this.DueLabelDetails.Text = "Due:";
             // 
-            // BalanceLabel
+            // BalanceLabel_Details
             // 
-            this.BalanceLabel.AutoSize = true;
-            this.BalanceLabel.Location = new System.Drawing.Point(85, 145);
-            this.BalanceLabel.Name = "BalanceLabel";
-            this.BalanceLabel.Size = new System.Drawing.Size(73, 20);
-            this.BalanceLabel.TabIndex = 1;
-            this.BalanceLabel.Text = "Balance:";
+            this.BalanceLabel_Details.AutoSize = true;
+            this.BalanceLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BalanceLabel_Details.Location = new System.Drawing.Point(416, 274);
+            this.BalanceLabel_Details.Name = "BalanceLabel_Details";
+            this.BalanceLabel_Details.Size = new System.Drawing.Size(67, 16);
+            this.BalanceLabel_Details.TabIndex = 18;
+            this.BalanceLabel_Details.Text = "Balance:";
             // 
-            // label11
+            // PhoneNumberLabel_Details
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(363, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 20);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Enter Amount:";
+            this.PhoneNumberLabel_Details.AutoSize = true;
+            this.PhoneNumberLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneNumberLabel_Details.Location = new System.Drawing.Point(18, 318);
+            this.PhoneNumberLabel_Details.Name = "PhoneNumberLabel_Details";
+            this.PhoneNumberLabel_Details.Size = new System.Drawing.Size(111, 16);
+            this.PhoneNumberLabel_Details.TabIndex = 17;
+            this.PhoneNumberLabel_Details.Text = "PhoneNumber:";
             // 
-            // DepositTextbox
+            // AccountStatusLabel_Details
             // 
-            this.DepositTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.DepositTextbox.ForeColor = System.Drawing.Color.White;
-            this.DepositTextbox.Location = new System.Drawing.Point(489, 125);
-            this.DepositTextbox.Name = "DepositTextbox";
-            this.DepositTextbox.Size = new System.Drawing.Size(187, 27);
-            this.DepositTextbox.TabIndex = 4;
+            this.AccountStatusLabel_Details.AutoSize = true;
+            this.AccountStatusLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountStatusLabel_Details.Location = new System.Drawing.Point(365, 249);
+            this.AccountStatusLabel_Details.Name = "AccountStatusLabel_Details";
+            this.AccountStatusLabel_Details.Size = new System.Drawing.Size(118, 16);
+            this.AccountStatusLabel_Details.TabIndex = 16;
+            this.AccountStatusLabel_Details.Text = "Account Status:";
             // 
-            // DepositButton_Deposit
+            // AccountTypeLabel_Details
             // 
-            this.DepositButton_Deposit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.DepositButton_Deposit.FlatAppearance.BorderSize = 0;
-            this.DepositButton_Deposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DepositButton_Deposit.Location = new System.Drawing.Point(489, 170);
-            this.DepositButton_Deposit.Name = "DepositButton_Deposit";
-            this.DepositButton_Deposit.Size = new System.Drawing.Size(97, 36);
-            this.DepositButton_Deposit.TabIndex = 5;
-            this.DepositButton_Deposit.Text = "Deposit";
-            this.DepositButton_Deposit.UseVisualStyleBackColor = false;
-            this.DepositButton_Deposit.Click += new System.EventHandler(this.DepositButton_Deposit_Click);
+            this.AccountTypeLabel_Details.AutoSize = true;
+            this.AccountTypeLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountTypeLabel_Details.Location = new System.Drawing.Point(377, 221);
+            this.AccountTypeLabel_Details.Name = "AccountTypeLabel_Details";
+            this.AccountTypeLabel_Details.Size = new System.Drawing.Size(106, 16);
+            this.AccountTypeLabel_Details.TabIndex = 15;
+            this.AccountTypeLabel_Details.Text = "Account Type:";
             // 
-            // AccountTypeLabel_Deposit
+            // AccountIDLabel_Details
             // 
-            this.AccountTypeLabel_Deposit.AutoSize = true;
-            this.AccountTypeLabel_Deposit.Location = new System.Drawing.Point(44, 197);
-            this.AccountTypeLabel_Deposit.Name = "AccountTypeLabel_Deposit";
-            this.AccountTypeLabel_Deposit.Size = new System.Drawing.Size(114, 20);
-            this.AccountTypeLabel_Deposit.TabIndex = 6;
-            this.AccountTypeLabel_Deposit.Text = "Account Type:";
+            this.AccountIDLabel_Details.AutoSize = true;
+            this.AccountIDLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountIDLabel_Details.Location = new System.Drawing.Point(398, 196);
+            this.AccountIDLabel_Details.Name = "AccountIDLabel_Details";
+            this.AccountIDLabel_Details.Size = new System.Drawing.Size(85, 16);
+            this.AccountIDLabel_Details.TabIndex = 14;
+            this.AccountIDLabel_Details.Text = "AccountID:";
+            // 
+            // GenderLabel_Details
+            // 
+            this.GenderLabel_Details.AutoSize = true;
+            this.GenderLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenderLabel_Details.Location = new System.Drawing.Point(67, 291);
+            this.GenderLabel_Details.Name = "GenderLabel_Details";
+            this.GenderLabel_Details.Size = new System.Drawing.Size(62, 16);
+            this.GenderLabel_Details.TabIndex = 13;
+            this.GenderLabel_Details.Text = "Gender:";
+            // 
+            // DOBLabel_Details
+            // 
+            this.DOBLabel_Details.AutoSize = true;
+            this.DOBLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOBLabel_Details.Location = new System.Drawing.Point(21, 261);
+            this.DOBLabel_Details.Name = "DOBLabel_Details";
+            this.DOBLabel_Details.Size = new System.Drawing.Size(108, 16);
+            this.DOBLabel_Details.TabIndex = 12;
+            this.DOBLabel_Details.Text = "Date Of Birth:";
+            // 
+            // OccupationLabel_Details
+            // 
+            this.OccupationLabel_Details.AutoSize = true;
+            this.OccupationLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OccupationLabel_Details.Location = new System.Drawing.Point(39, 229);
+            this.OccupationLabel_Details.Name = "OccupationLabel_Details";
+            this.OccupationLabel_Details.Size = new System.Drawing.Size(90, 16);
+            this.OccupationLabel_Details.TabIndex = 11;
+            this.OccupationLabel_Details.Text = "Occupation:";
+            // 
+            // NationalityLabel_Details
+            // 
+            this.NationalityLabel_Details.AutoSize = true;
+            this.NationalityLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NationalityLabel_Details.Location = new System.Drawing.Point(37, 203);
+            this.NationalityLabel_Details.Name = "NationalityLabel_Details";
+            this.NationalityLabel_Details.Size = new System.Drawing.Size(92, 16);
+            this.NationalityLabel_Details.TabIndex = 10;
+            this.NationalityLabel_Details.Text = "Nationality:";
+            // 
+            // NIDLabel_Details
+            // 
+            this.NIDLabel_Details.AutoSize = true;
+            this.NIDLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NIDLabel_Details.Location = new System.Drawing.Point(87, 176);
+            this.NIDLabel_Details.Name = "NIDLabel_Details";
+            this.NIDLabel_Details.Size = new System.Drawing.Size(42, 16);
+            this.NIDLabel_Details.TabIndex = 9;
+            this.NIDLabel_Details.Text = "NID:";
+            // 
+            // AddressLabel_Details
+            // 
+            this.AddressLabel_Details.AutoSize = true;
+            this.AddressLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressLabel_Details.Location = new System.Drawing.Point(62, 144);
+            this.AddressLabel_Details.Name = "AddressLabel_Details";
+            this.AddressLabel_Details.Size = new System.Drawing.Size(67, 16);
+            this.AddressLabel_Details.TabIndex = 8;
+            this.AddressLabel_Details.Text = "Address:";
+            // 
+            // EmailLabel_Details
+            // 
+            this.EmailLabel_Details.AutoSize = true;
+            this.EmailLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLabel_Details.Location = new System.Drawing.Point(75, 116);
+            this.EmailLabel_Details.Name = "EmailLabel_Details";
+            this.EmailLabel_Details.Size = new System.Drawing.Size(54, 16);
+            this.EmailLabel_Details.TabIndex = 7;
+            this.EmailLabel_Details.Text = "Email:";
+            // 
+            // LastNameLabel_Details
+            // 
+            this.LastNameLabel_Details.AutoSize = true;
+            this.LastNameLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameLabel_Details.Location = new System.Drawing.Point(45, 83);
+            this.LastNameLabel_Details.Name = "LastNameLabel_Details";
+            this.LastNameLabel_Details.Size = new System.Drawing.Size(84, 16);
+            this.LastNameLabel_Details.TabIndex = 6;
+            this.LastNameLabel_Details.Text = "LastName:";
+            // 
+            // FirstNameLabel_Details
+            // 
+            this.FirstNameLabel_Details.AutoSize = true;
+            this.FirstNameLabel_Details.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameLabel_Details.Location = new System.Drawing.Point(41, 51);
+            this.FirstNameLabel_Details.Name = "FirstNameLabel_Details";
+            this.FirstNameLabel_Details.Size = new System.Drawing.Size(88, 16);
+            this.FirstNameLabel_Details.TabIndex = 5;
+            this.FirstNameLabel_Details.Text = "FirstName:";
+            // 
+            // AccountOwnerPictureBox_Details
+            // 
+            this.AccountOwnerPictureBox_Details.Location = new System.Drawing.Point(433, 37);
+            this.AccountOwnerPictureBox_Details.Name = "AccountOwnerPictureBox_Details";
+            this.AccountOwnerPictureBox_Details.Size = new System.Drawing.Size(167, 107);
+            this.AccountOwnerPictureBox_Details.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AccountOwnerPictureBox_Details.TabIndex = 4;
+            this.AccountOwnerPictureBox_Details.TabStop = false;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
-            this.Controls.Add(this.DepositPanel);
+            this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.CreateAccountPanel);
-            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
+            this.Controls.Add(this.DepositPanel);
+            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DashboardPanel);
@@ -1580,13 +1875,18 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox)).EndInit();
             this.DepositPanel.ResumeLayout(false);
             this.DepositPanel.PerformLayout();
+            this.DepositGroupBox.ResumeLayout(false);
+            this.DepositGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).EndInit();
             this.WithdrawPanel.ResumeLayout(false);
             this.WithdrawPanel.PerformLayout();
             this.TransferPanel.ResumeLayout(false);
             this.TransferPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).EndInit();
-            this.DepositGroupBox.ResumeLayout(false);
-            this.DepositGroupBox.PerformLayout();
+            this.DetailsPanel.ResumeLayout(false);
+            this.DetailsPanel.PerformLayout();
+            this.AccountDetailsGroupBox_Details.ResumeLayout(false);
+            this.AccountDetailsGroupBox_Details.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1608,7 +1908,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Button AccountButton;
         private System.Windows.Forms.Panel AccountPanel;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button WalletButton;
+        private System.Windows.Forms.Button DetailsButton;
         private System.Windows.Forms.Button TransferButton;
         private System.Windows.Forms.Button WithdrawButton;
         private System.Windows.Forms.Button DepositButton;
@@ -1707,6 +2007,31 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label AccountOwnerLabel;
         private System.Windows.Forms.Button DepositButton_Deposit;
         private System.Windows.Forms.Label AccountTypeLabel_Deposit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox InitialDepositTextbox;
+        private System.Windows.Forms.Panel DetailsPanel;
+        private System.Windows.Forms.GroupBox AccountDetailsGroupBox_Details;
+        private System.Windows.Forms.Label PhoneNumberLabel_Details;
+        private System.Windows.Forms.Label AccountStatusLabel_Details;
+        private System.Windows.Forms.Label AccountTypeLabel_Details;
+        private System.Windows.Forms.Label AccountIDLabel_Details;
+        private System.Windows.Forms.Label GenderLabel_Details;
+        private System.Windows.Forms.Label DOBLabel_Details;
+        private System.Windows.Forms.Label OccupationLabel_Details;
+        private System.Windows.Forms.Label NationalityLabel_Details;
+        private System.Windows.Forms.Label NIDLabel_Details;
+        private System.Windows.Forms.Label AddressLabel_Details;
+        private System.Windows.Forms.Label EmailLabel_Details;
+        private System.Windows.Forms.Label LastNameLabel_Details;
+        private System.Windows.Forms.Label FirstNameLabel_Details;
+        private System.Windows.Forms.PictureBox AccountOwnerPictureBox_Details;
+        private System.Windows.Forms.TextBox SearchAccountTextbox_Details;
+        private System.Windows.Forms.Label label23;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Label BalanceLabel_Details;
+        private System.Windows.Forms.Label DueLabelDetails;
+        private System.Windows.Forms.Label CreateDateLabel_Details;
     }
 }
 

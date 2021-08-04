@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\UpdateData.cs" />
+    <Compile Include="Database\ModifyData.cs" />
     <Compile Include="Entity\Account.cs" />
     <Compile Include="Entity\Client.cs" />
     <Compile Include="Forms\CPassword.cs">

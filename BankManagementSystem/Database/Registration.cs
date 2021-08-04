@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace BankManagementSystem.Database
 {
     static class Registration
     {
+        private static SqlDataReader data;
         public static bool RegisterEmployee(Employee employee)
         {
             string query = "insert into Employees(Name, Password, Email, Address, Gender, NID, PhoneNumber, DateOfBirth)" +
@@ -31,23 +29,24 @@ namespace BankManagementSystem.Database
         }
         public static bool RegisterAccount(Client c, Account account, int eid)
         {
-            Employee employee = FetchData.GetEmployee(eid);
-            int id = employee.ID;
             try
             {
-                string query1 = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, ImageDirectory, RegisteredBy) " +
-                    "values('"+c.Firstname+"','"+c.Lastname+"','"+c.Address+"','"+c.Email+"','"+c.PhoneNumber+"','"+c.DOB+"'" +
-                    ",'"+c.Nationality+"','"+c.Gender+"','"+c.NID+"','"+c.Occupation+"','"+c.ImageDir+"',"+id+")";
+                string query1 = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, ImageDirectory) " +
+                    "values('"+c.Firstname+"','"+c.Lastname+"','"+c.Address+"','"+c.Email+"','"+c.PhoneNumber+"','"+c.DOB+"','"+c.Nationality+"','"+c.Gender+"','"+c.NID+"','"+c.Occupation+"','"+c.ImageDir+"')";
                 int result1 = DataHandler.ManipulateData(query1);
-                string query2 = "insert into Accounts(AccountType) values('" + account.AccountType + "')";
+                
+                Client client = FetchData.GetClientByNID(Convert.ToInt32(c.NID));
+                c.ClientID = client.ClientID;
+                string query2 = "insert into Accounts(ClientID, AccountType, RegisteredBy) values('" + client.ClientID + "','"+account.AccountType+"','"+eid+"')";
                 int result2 = DataHandler.ManipulateData(query2);
                 if (result1 >= 1 && result2 >= 1)
                 {
                     return true;
                 }
             }
-            catch (Exception)
+            catch (Exception fe)
             {
+                Console.WriteLine(fe.Message);
                 return false;
             }
             return false;

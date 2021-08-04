@@ -44,7 +44,6 @@ namespace BankManagementSystem.Forms
             this.AccountDeatilsLastNameLabel = new System.Windows.Forms.Label();
             this.AccountDeatilsFirstNameLabel = new System.Windows.Forms.Label();
             this.ClientPictureBox = new System.Windows.Forms.PictureBox();
-            this.PrintButton = new System.Windows.Forms.Button();
             this.AccountDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +64,6 @@ namespace BankManagementSystem.Forms
             this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsLastNameLabel);
             this.AccountDetailsGroupBox.Controls.Add(this.AccountDeatilsFirstNameLabel);
             this.AccountDetailsGroupBox.Controls.Add(this.ClientPictureBox);
-            this.AccountDetailsGroupBox.Controls.Add(this.PrintButton);
             this.AccountDetailsGroupBox.ForeColor = System.Drawing.Color.White;
             this.AccountDetailsGroupBox.Location = new System.Drawing.Point(12, 12);
             this.AccountDetailsGroupBox.Name = "AccountDetailsGroupBox";
@@ -213,19 +211,6 @@ namespace BankManagementSystem.Forms
             this.ClientPictureBox.TabIndex = 4;
             this.ClientPictureBox.TabStop = false;
             // 
-            // PrintButton
-            // 
-            this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
-            this.PrintButton.FlatAppearance.BorderSize = 0;
-            this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrintButton.Location = new System.Drawing.Point(273, 325);
-            this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(150, 35);
-            this.PrintButton.TabIndex = 3;
-            this.PrintButton.Text = "Print";
-            this.PrintButton.UseVisualStyleBackColor = false;
-            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
-            // 
             // PrintAccountDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
@@ -264,6 +249,5 @@ namespace BankManagementSystem.Forms
         private System.Windows.Forms.Label AccountDeatilsLastNameLabel;
         private System.Windows.Forms.Label AccountDeatilsFirstNameLabel;
         private System.Windows.Forms.PictureBox ClientPictureBox;
-        private System.Windows.Forms.Button PrintButton;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankManagementSystem.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +15,11 @@ namespace BankManagementSystem.Forms
     {
         private Client client;
         private Account account;
-        public PrintAccountDetails(Client client, Account account)
+        public PrintAccountDetails(Client client)
         {
             InitializeComponent();
             this.client = client;
-            this.account = account;
+            this.account = FetchData.GetLastCreatedAccount();
         }
         private void LoadDetails()
         {

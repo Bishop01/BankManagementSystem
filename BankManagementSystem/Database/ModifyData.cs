@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankManagementSystem.Database
 {
-    static class UpdateData
+    static class ModifyData
     {
         public static bool UpdateAccountStatus(Account account, Employee employee, string status)
         {

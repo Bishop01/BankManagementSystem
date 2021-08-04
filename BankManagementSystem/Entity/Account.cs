@@ -12,5 +12,7 @@ namespace BankManagementSystem
         public int AccountID { get; set; }
         public string AccountStatus { get; set; }
         public string AccountType { get; set; }
+        public string CreateDate { get; set; }
+        public double Due { get; set; }
     }
 }
