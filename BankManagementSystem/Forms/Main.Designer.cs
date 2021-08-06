@@ -144,9 +144,28 @@ namespace BankManagementSystem
             this.SearchAccountTextbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.WithdrawPanel = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox_Withdraw = new System.Windows.Forms.GroupBox();
+            this.AccountTypelabel_Withdraw = new System.Windows.Forms.Label();
+            this.Withdrawbutton_Withdraw = new System.Windows.Forms.Button();
+            this.WithdrawtextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Balancelabel_Withdraw = new System.Windows.Forms.Label();
+            this.AccountOwnerlabel_Withdraw = new System.Windows.Forms.Label();
+            this.AccountOwnerpictureBox_Withdraw = new System.Windows.Forms.PictureBox();
+            this.Findbutton_Withdraw = new System.Windows.Forms.Button();
+            this.SearchAccounttextBox_Withdraw = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.TransferPanel = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.DetailsPanel = new System.Windows.Forms.Panel();
             this.SearchAccountTextbox_Details = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -170,6 +189,12 @@ namespace BankManagementSystem
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -203,7 +228,11 @@ namespace BankManagementSystem
             this.DepositGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).BeginInit();
             this.WithdrawPanel.SuspendLayout();
+            this.groupBox_Withdraw.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerpictureBox_Withdraw)).BeginInit();
             this.TransferPanel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.DetailsPanel.SuspendLayout();
             this.AccountDetailsGroupBox_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
@@ -246,7 +275,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1773);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1929);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,7 +301,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1495);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1651);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -961,10 +990,10 @@ namespace BankManagementSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(199, 229);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 18);
+            this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 43;
             this.label5.Text = "+880";
             // 
@@ -1292,16 +1321,16 @@ namespace BankManagementSystem
             // SecondLabel
             // 
             this.SecondLabel.AutoSize = true;
-            this.SecondLabel.Font = new System.Drawing.Font("Castellar", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecondLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SecondLabel.Location = new System.Drawing.Point(218, 50);
             this.SecondLabel.Name = "SecondLabel";
-            this.SecondLabel.Size = new System.Drawing.Size(42, 25);
+            this.SecondLabel.Size = new System.Drawing.Size(36, 25);
             this.SecondLabel.TabIndex = 1;
             this.SecondLabel.Text = "00";
             // 
             // TimeLabel
             // 
-            this.TimeLabel.Font = new System.Drawing.Font("Castellar", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeLabel.Location = new System.Drawing.Point(0, 16);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(232, 85);
@@ -1537,7 +1566,11 @@ namespace BankManagementSystem
             // WithdrawPanel
             // 
             this.WithdrawPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.WithdrawPanel.Controls.Add(this.label7);
+            this.WithdrawPanel.Controls.Add(this.groupBox_Withdraw);
+            this.WithdrawPanel.Controls.Add(this.AccountOwnerpictureBox_Withdraw);
+            this.WithdrawPanel.Controls.Add(this.Findbutton_Withdraw);
+            this.WithdrawPanel.Controls.Add(this.SearchAccounttextBox_Withdraw);
+            this.WithdrawPanel.Controls.Add(this.label13);
             this.WithdrawPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WithdrawPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WithdrawPanel.Location = new System.Drawing.Point(206, 74);
@@ -1545,19 +1578,129 @@ namespace BankManagementSystem
             this.WithdrawPanel.Size = new System.Drawing.Size(775, 497);
             this.WithdrawPanel.TabIndex = 1;
             // 
-            // label7
+            // groupBox_Withdraw
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(209, 213);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Withdraw";
+            this.groupBox_Withdraw.Controls.Add(this.AccountTypelabel_Withdraw);
+            this.groupBox_Withdraw.Controls.Add(this.Withdrawbutton_Withdraw);
+            this.groupBox_Withdraw.Controls.Add(this.WithdrawtextBox);
+            this.groupBox_Withdraw.Controls.Add(this.label9);
+            this.groupBox_Withdraw.Controls.Add(this.Balancelabel_Withdraw);
+            this.groupBox_Withdraw.Controls.Add(this.AccountOwnerlabel_Withdraw);
+            this.groupBox_Withdraw.ForeColor = System.Drawing.Color.White;
+            this.groupBox_Withdraw.Location = new System.Drawing.Point(30, 150);
+            this.groupBox_Withdraw.Name = "groupBox_Withdraw";
+            this.groupBox_Withdraw.Size = new System.Drawing.Size(714, 323);
+            this.groupBox_Withdraw.TabIndex = 9;
+            this.groupBox_Withdraw.TabStop = false;
+            this.groupBox_Withdraw.Text = "Withdraw";
+            // 
+            // AccountTypelabel_Withdraw
+            // 
+            this.AccountTypelabel_Withdraw.AutoSize = true;
+            this.AccountTypelabel_Withdraw.Location = new System.Drawing.Point(44, 197);
+            this.AccountTypelabel_Withdraw.Name = "AccountTypelabel_Withdraw";
+            this.AccountTypelabel_Withdraw.Size = new System.Drawing.Size(114, 20);
+            this.AccountTypelabel_Withdraw.TabIndex = 6;
+            this.AccountTypelabel_Withdraw.Text = "Account Type:";
+            // 
+            // Withdrawbutton_Withdraw
+            // 
+            this.Withdrawbutton_Withdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.Withdrawbutton_Withdraw.FlatAppearance.BorderSize = 0;
+            this.Withdrawbutton_Withdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Withdrawbutton_Withdraw.Location = new System.Drawing.Point(489, 170);
+            this.Withdrawbutton_Withdraw.Name = "Withdrawbutton_Withdraw";
+            this.Withdrawbutton_Withdraw.Size = new System.Drawing.Size(97, 36);
+            this.Withdrawbutton_Withdraw.TabIndex = 5;
+            this.Withdrawbutton_Withdraw.Text = "Deposit";
+            this.Withdrawbutton_Withdraw.UseVisualStyleBackColor = false;
+            // 
+            // WithdrawtextBox
+            // 
+            this.WithdrawtextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.WithdrawtextBox.ForeColor = System.Drawing.Color.White;
+            this.WithdrawtextBox.Location = new System.Drawing.Point(489, 125);
+            this.WithdrawtextBox.Name = "WithdrawtextBox";
+            this.WithdrawtextBox.Size = new System.Drawing.Size(187, 27);
+            this.WithdrawtextBox.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(363, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 20);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Enter Amount:";
+            // 
+            // Balancelabel_Withdraw
+            // 
+            this.Balancelabel_Withdraw.AutoSize = true;
+            this.Balancelabel_Withdraw.Location = new System.Drawing.Point(85, 145);
+            this.Balancelabel_Withdraw.Name = "Balancelabel_Withdraw";
+            this.Balancelabel_Withdraw.Size = new System.Drawing.Size(73, 20);
+            this.Balancelabel_Withdraw.TabIndex = 1;
+            this.Balancelabel_Withdraw.Text = "Balance:";
+            // 
+            // AccountOwnerlabel_Withdraw
+            // 
+            this.AccountOwnerlabel_Withdraw.AutoSize = true;
+            this.AccountOwnerlabel_Withdraw.Location = new System.Drawing.Point(33, 100);
+            this.AccountOwnerlabel_Withdraw.Name = "AccountOwnerlabel_Withdraw";
+            this.AccountOwnerlabel_Withdraw.Size = new System.Drawing.Size(125, 20);
+            this.AccountOwnerlabel_Withdraw.TabIndex = 0;
+            this.AccountOwnerlabel_Withdraw.Text = "Account Owner:";
+            // 
+            // AccountOwnerpictureBox_Withdraw
+            // 
+            this.AccountOwnerpictureBox_Withdraw.Location = new System.Drawing.Point(543, 23);
+            this.AccountOwnerpictureBox_Withdraw.Name = "AccountOwnerpictureBox_Withdraw";
+            this.AccountOwnerpictureBox_Withdraw.Size = new System.Drawing.Size(164, 114);
+            this.AccountOwnerpictureBox_Withdraw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AccountOwnerpictureBox_Withdraw.TabIndex = 8;
+            this.AccountOwnerpictureBox_Withdraw.TabStop = false;
+            // 
+            // Findbutton_Withdraw
+            // 
+            this.Findbutton_Withdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.Findbutton_Withdraw.FlatAppearance.BorderSize = 0;
+            this.Findbutton_Withdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Findbutton_Withdraw.Location = new System.Drawing.Point(209, 85);
+            this.Findbutton_Withdraw.Name = "Findbutton_Withdraw";
+            this.Findbutton_Withdraw.Size = new System.Drawing.Size(107, 32);
+            this.Findbutton_Withdraw.TabIndex = 7;
+            this.Findbutton_Withdraw.Text = "Find";
+            this.Findbutton_Withdraw.UseVisualStyleBackColor = false;
+            // 
+            // SearchAccounttextBox_Withdraw
+            // 
+            this.SearchAccounttextBox_Withdraw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SearchAccounttextBox_Withdraw.ForeColor = System.Drawing.Color.White;
+            this.SearchAccounttextBox_Withdraw.Location = new System.Drawing.Point(209, 44);
+            this.SearchAccounttextBox_Withdraw.MaxLength = 8;
+            this.SearchAccounttextBox_Withdraw.Name = "SearchAccounttextBox_Withdraw";
+            this.SearchAccounttextBox_Withdraw.Size = new System.Drawing.Size(184, 27);
+            this.SearchAccounttextBox_Withdraw.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(50, 44);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(153, 20);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Account Number:";
             // 
             // TransferPanel
             // 
             this.TransferPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.TransferPanel.Controls.Add(this.label8);
+            this.TransferPanel.Controls.Add(this.label15);
+            this.TransferPanel.Controls.Add(this.groupBox1);
+            this.TransferPanel.Controls.Add(this.pictureBox12);
+            this.TransferPanel.Controls.Add(this.button2);
+            this.TransferPanel.Controls.Add(this.textBox2);
+            this.TransferPanel.Controls.Add(this.label14);
             this.TransferPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TransferPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransferPanel.Location = new System.Drawing.Point(206, 74);
@@ -1565,14 +1708,116 @@ namespace BankManagementSystem
             this.TransferPanel.Size = new System.Drawing.Size(775, 497);
             this.TransferPanel.TabIndex = 1;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(38, 142);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(166, 20);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Available Balance:";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(30, 209);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(714, 264);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Transfer";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(440, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Error Message";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(503, 218);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 36);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Transfer";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(503, 173);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(184, 27);
+            this.textBox1.TabIndex = 4;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(135, 178);
+            this.label8.Location = new System.Drawing.Point(377, 176);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Transfer";
+            this.label8.Size = new System.Drawing.Size(120, 20);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Enter Amount:";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(543, 23);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(164, 114);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 13;
+            this.pictureBox12.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(209, 85);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 32);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Find";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(209, 44);
+            this.textBox2.MaxLength = 8;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(184, 27);
+            this.textBox2.TabIndex = 11;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(50, 44);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(153, 20);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Account Number:";
             // 
             // DetailsPanel
             // 
@@ -1813,18 +2058,78 @@ namespace BankManagementSystem
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(231, 28);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(240, 20);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Account Information (Receiver)";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(164, 92);
+            this.textBox3.MaxLength = 8;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(184, 27);
+            this.textBox3.TabIndex = 13;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(14, 94);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(138, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Account Number:";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(164, 132);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 32);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Find";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(20, 180);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 20);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Account Owner:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(31, 218);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(114, 20);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "Account Type:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.TransferPanel);
+            this.Controls.Add(this.WithdrawPanel);
+            this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
-            this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.RecoverAccountPanel);
-            this.Controls.Add(this.TransferPanel);
-            this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
@@ -1880,8 +2185,14 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Deposit)).EndInit();
             this.WithdrawPanel.ResumeLayout(false);
             this.WithdrawPanel.PerformLayout();
+            this.groupBox_Withdraw.ResumeLayout(false);
+            this.groupBox_Withdraw.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerpictureBox_Withdraw)).EndInit();
             this.TransferPanel.ResumeLayout(false);
             this.TransferPanel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.DetailsPanel.ResumeLayout(false);
             this.DetailsPanel.PerformLayout();
             this.AccountDetailsGroupBox_Details.ResumeLayout(false);
@@ -1972,9 +2283,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Panel RecoverAccountPanel;
         private System.Windows.Forms.Panel DepositPanel;
         private System.Windows.Forms.Panel WithdrawPanel;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel TransferPanel;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox AccountDetailsGroupBox;
         private System.Windows.Forms.PictureBox ClientPictureBox;
         private System.Windows.Forms.Label AccountDeatilsFirstNameLabel;
@@ -2032,6 +2341,33 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label BalanceLabel_Details;
         private System.Windows.Forms.Label DueLabelDetails;
         private System.Windows.Forms.Label CreateDateLabel_Details;
+        private System.Windows.Forms.GroupBox groupBox_Withdraw;
+        private System.Windows.Forms.Label AccountTypelabel_Withdraw;
+        private System.Windows.Forms.Button Withdrawbutton_Withdraw;
+        private System.Windows.Forms.TextBox WithdrawtextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label Balancelabel_Withdraw;
+        private System.Windows.Forms.Label AccountOwnerlabel_Withdraw;
+        private System.Windows.Forms.PictureBox AccountOwnerpictureBox_Withdraw;
+        private System.Windows.Forms.Button Findbutton_Withdraw;
+        private System.Windows.Forms.TextBox SearchAccounttextBox_Withdraw;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label10;
     }
 }
 
