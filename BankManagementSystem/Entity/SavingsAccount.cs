@@ -8,6 +8,6 @@ namespace BankManagementSystem
 {
     class SavingsAccount:Account
     {
-        
+        public const double LoanInterestRate = 0.10;
     }
 }

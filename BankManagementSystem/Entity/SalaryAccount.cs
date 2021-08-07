@@ -8,6 +8,10 @@ namespace BankManagementSystem
 {
     class SalaryAccount:Account
     {
-        
+        public const double LoanInterestRate = 0.20;
+        public SalaryAccount()
+        {
+
+        }
     }
 }

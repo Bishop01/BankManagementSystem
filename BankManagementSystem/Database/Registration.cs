@@ -5,7 +5,6 @@ namespace BankManagementSystem.Database
 {
     static class Registration
     {
-        private static SqlDataReader data;
         public static bool RegisterEmployee(Employee employee)
         {
             string query = "insert into Employees(Name, Password, Email, Address, Gender, NID, PhoneNumber, DateOfBirth)" +
