@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace BankManagementSystem
 {
     partial class Main
@@ -198,11 +200,9 @@ namespace BankManagementSystem
             this.LoanPanel = new System.Windows.Forms.Panel();
             this.SearchButton_Loan = new System.Windows.Forms.Button();
             this.SearchAccountTextbox_Loan = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -2160,7 +2160,6 @@ namespace BankManagementSystem
             this.SearchButton_Loan.TabIndex = 2;
             this.SearchButton_Loan.Text = "Search";
             this.SearchButton_Loan.UseVisualStyleBackColor = false;
-            this.SearchButton_Loan.Click += new System.EventHandler(this.SearchButton_Loan_Click);
             // 
             // SearchAccountTextbox_Loan
             // 
@@ -2511,7 +2510,6 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label AccountTypelabel_Withdraw;
         private System.Windows.Forms.Button Withdrawbutton_Withdraw;
         private System.Windows.Forms.TextBox WithdrawtextBox;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label Balancelabel_Withdraw;
         private System.Windows.Forms.Label AccountOwnerlabel_Withdraw;
         private System.Windows.Forms.PictureBox AccountOwnerpictureBox_Withdraw;
@@ -2534,6 +2532,20 @@ namespace BankManagementSystem
         private System.Windows.Forms.Button recAccFindButton_Transfer;
         private System.Windows.Forms.Label accTypeLabel_Transfer;
         private System.Windows.Forms.Label accOwnerLabel_Transfer;
+        private System.Windows.Forms.Panel LoanPanel;
+        private System.Windows.Forms.Button SearchButton_Loan;
+        private System.Windows.Forms.TextBox SearchAccountTextbox_Loan;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox AccountOwnerPictureBox_Loan;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox LoanAmountTextbox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+
     }
 }
 

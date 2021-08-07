@@ -43,6 +43,10 @@ namespace BankManagementSystem
             DashboardPanel.BringToFront();
             DashboardButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Dashboard";
+            if (VerifyEmail("hello@gmail.com@"))
+            {
+
+            }
         }
 
         #region Register
@@ -60,7 +64,15 @@ namespace BankManagementSystem
         private void CreateButton_Click(object sender, EventArgs e)
         {
             if (CheckEmptyCreateAccountFields())
+            {
                 ValidateErrorLabel.Text = "No fields can remain empty!";
+                return;
+            }
+            else if (!VerifyEmail(EmailTextbox.Text))
+            {
+                ValidateErrorLabel.Text = "Invalid email format!";
+                return;
+            }
             else
             {
                 ValidateErrorLabel.Text = "";
@@ -722,6 +734,44 @@ namespace BankManagementSystem
                     ResetAccountDetails();
                     return;
                 }
+            }
+        }
+        private bool VerifyEmail(string email)
+        {
+            //int indx = email.IndexOf('@');
+            string[] slice = email.Split('@');
+            if(slice.Length != 2)
+            {
+                return false;
+            }
+            else
+            {
+                if (slice[1].Equals("gmail.com"))
+                {
+                    if (isNumber(((slice[0])[0]).ToString()))
+                    {
+                        //Console.WriteLine("asdas");
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+        private bool isNumber(string ch)
+        {
+            try
+            {
+                int x = Convert.ToInt32(ch);
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
