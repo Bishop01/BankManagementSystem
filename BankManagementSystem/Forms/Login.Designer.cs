@@ -33,7 +33,8 @@ namespace BankManagementSystem
             this.LoginImagePanel = new System.Windows.Forms.Panel();
             this.ImagePictureBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.RegisterButton = new System.Windows.Forms.Button();
+            this.ManagerCheckBox = new System.Windows.Forms.CheckBox();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.LoginErrorLabel = new System.Windows.Forms.Label();
             this.PasswordErrorLabel = new System.Windows.Forms.Label();
             this.IdErrorLabel = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace BankManagementSystem
             this.EmployeeIdTextbox = new System.Windows.Forms.TextBox();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.EmployeeIdLabel = new System.Windows.Forms.Label();
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.LoginImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePictureBox)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,8 +73,8 @@ namespace BankManagementSystem
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ManagerCheckBox);
             this.panel2.Controls.Add(this.LogoPictureBox);
-            this.panel2.Controls.Add(this.RegisterButton);
             this.panel2.Controls.Add(this.LoginErrorLabel);
             this.panel2.Controls.Add(this.PasswordErrorLabel);
             this.panel2.Controls.Add(this.IdErrorLabel);
@@ -92,18 +92,28 @@ namespace BankManagementSystem
             this.panel2.Size = new System.Drawing.Size(541, 387);
             this.panel2.TabIndex = 1;
             // 
-            // RegisterButton
+            // ManagerCheckBox
             // 
-            this.RegisterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.RegisterButton.FlatAppearance.BorderSize = 0;
-            this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegisterButton.Location = new System.Drawing.Point(336, 12);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(193, 32);
-            this.RegisterButton.TabIndex = 9;
-            this.RegisterButton.Text = "Register Employee";
-            this.RegisterButton.UseVisualStyleBackColor = false;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            this.ManagerCheckBox.AutoSize = true;
+            this.ManagerCheckBox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManagerCheckBox.Location = new System.Drawing.Point(398, 73);
+            this.ManagerCheckBox.Name = "ManagerCheckBox";
+            this.ManagerCheckBox.Size = new System.Drawing.Size(95, 24);
+            this.ManagerCheckBox.TabIndex = 11;
+            this.ManagerCheckBox.Text = "Manager";
+            this.ManagerCheckBox.UseVisualStyleBackColor = true;
+            this.ManagerCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.InitialImage")));
+            this.LogoPictureBox.Location = new System.Drawing.Point(156, 30);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(200, 123);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoPictureBox.TabIndex = 10;
+            this.LogoPictureBox.TabStop = false;
             // 
             // LoginErrorLabel
             // 
@@ -201,23 +211,12 @@ namespace BankManagementSystem
             // EmployeeIdLabel
             // 
             this.EmployeeIdLabel.AutoSize = true;
-            this.EmployeeIdLabel.Location = new System.Drawing.Point(90, 191);
+            this.EmployeeIdLabel.Location = new System.Drawing.Point(171, 194);
             this.EmployeeIdLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.EmployeeIdLabel.Name = "EmployeeIdLabel";
-            this.EmployeeIdLabel.Size = new System.Drawing.Size(116, 20);
+            this.EmployeeIdLabel.Size = new System.Drawing.Size(35, 20);
             this.EmployeeIdLabel.TabIndex = 0;
-            this.EmployeeIdLabel.Text = "EmployeeID:";
-            // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.InitialImage")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(50, 30);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(200, 123);
-            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoPictureBox.TabIndex = 10;
-            this.LogoPictureBox.TabStop = false;
+            this.EmployeeIdLabel.Text = "ID:";
             // 
             // Login
             // 
@@ -259,7 +258,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label IdErrorLabel;
         private System.Windows.Forms.Label PasswordErrorLabel;
         private System.Windows.Forms.Label LoginErrorLabel;
-        private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.PictureBox LogoPictureBox;
+        private System.Windows.Forms.CheckBox ManagerCheckBox;
     }
 }

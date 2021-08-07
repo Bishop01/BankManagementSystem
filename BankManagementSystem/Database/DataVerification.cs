@@ -11,9 +11,9 @@ namespace BankManagementSystem.Database
     {
         private static SqlDataReader data;
 
-        public static bool ValidateDBAdmin(int Id, string Password)
+        public static bool ValidateManager(int Id, string Password)
         {
-            string query = "select Password from DBAdmins where ID = " + Id;
+            string query = "select Password from manager where ID = " + Id;
             data = DataHandler.GetRecord(query);
             if (!data.HasRows)
             {
@@ -35,7 +35,7 @@ namespace BankManagementSystem.Database
                 }
             }
         }
-        public static bool ValidateLogin(int Id, string Password)
+        public static bool ValidateEmployee(int Id, string Password)
         {
             {
                 //CloseDataReader();

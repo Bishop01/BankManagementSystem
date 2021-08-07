@@ -17,7 +17,7 @@ namespace BankManagementSystem
         private Client searchedClient;
         private Account searchedAccount;
 
-        public Main(int id)
+        public Main(int id, string manager=null)
         {
             InitializeComponent();
             HideAllPanel();
@@ -25,11 +25,21 @@ namespace BankManagementSystem
             HideDepositGroupBox();
             DashboardPanel.BringToFront();
             AccountPictureBox.Location = new Point(9, AccountButton.Location.Y+10);
-            LoanPictureBox.Location = new Point(9, LoanButton.Location.Y+10); 
+            LoanPictureBox.Location = new Point(9, ManagerButton.Location.Y+10); 
             ClockTimer.Start();
             currentUser = FetchData.GetEmployeeName(id);
             currentEmployee = FetchData.GetEmployee(id);
             NameLabel.Text = currentUser;
+            if(manager == null)
+            {
+                ManagerButton.Enabled = false;
+                ManagerButton.BackColor = Color.Gray;
+            }
+            else
+            {
+                RegisterButton.Enabled = false;
+                AccountButton.Enabled = false;
+            }
         }
         private void DashboardButton_Click(object sender, EventArgs e)
         {
@@ -329,7 +339,10 @@ namespace BankManagementSystem
             foreach(Control button in MenuPanel.Controls)
             {
                 if(button is Button)
-                    button.BackColor = Color.FromArgb(31, 30, 68);
+                {
+                    if(button.Enabled)
+                        button.BackColor = Color.FromArgb(31, 30, 68);
+                }
             }
         }
         private void ResetChildButton(Panel panel)
@@ -488,7 +501,7 @@ namespace BankManagementSystem
         }
         private void LoanButton_LocationChanged(object sender, EventArgs e)
         {
-            LoanPictureBox.Location = new Point(9, LoanButton.Location.Y + 10);
+            LoanPictureBox.Location = new Point(9, ManagerButton.Location.Y + 10);
         }
         private void ClockTimer_Tick(object sender, EventArgs e)
         {

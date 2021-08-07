@@ -60,11 +60,11 @@
     <Compile Include="Database\DataHandler.cs" />
     <Compile Include="Database\DataVerification.cs" />
     <Compile Include="Database\Registration.cs" />
-    <Compile Include="Forms\DBAdmin.cs">
+    <Compile Include="Forms\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DBAdmin.Designer.cs">
-      <DependentUpon>DBAdmin.cs</DependentUpon>
+    <Compile Include="Forms\Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Forms\Login.cs">
@@ -98,8 +98,8 @@
     <EmbeddedResource Include="Forms\CPassword.resx">
       <DependentUpon>CPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DBAdmin.resx">
-      <DependentUpon>DBAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

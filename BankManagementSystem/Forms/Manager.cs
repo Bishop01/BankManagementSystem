@@ -41,7 +41,7 @@ namespace BankManagementSystem
                 }
             }
 
-            if (!DataVerification.ValidateDBAdmin(Id, Pass))
+            if (!DataVerification.ValidateManager(Id, Pass))
             {
                 ErrorMessage();
                 return;

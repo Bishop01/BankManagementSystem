@@ -52,16 +52,33 @@ namespace BankManagementSystem
                 return;
             }
 
-            if (DataVerification.ValidateLogin(Id, Password))
+            if (ManagerCheckBox.Checked)
             {
-                this.Hide();
-                new Main(Id).Show();
+                if (DataVerification.ValidateManager(Id, Password))
+                {
+                    this.Hide();
+                    new Main(Id,"manager").Show();
+                }
+                else
+                {
+                    LoginErrorLabel.Text = "Incorrect ID or Password!";
+                    return;
+                };
             }
             else
             {
-                LoginErrorLabel.Text = "Incorrect ID or Password!";
-                return;
-            };
+                if (DataVerification.ValidateEmployee(Id, Password))
+                {
+                    this.Hide();
+                    new Main(Id).Show();
+                }
+                else
+                {
+                    LoginErrorLabel.Text = "Incorrect ID or Password!";
+                    return;
+                };
+            }
+            
         }
 
         private void DisableComponent()
@@ -78,6 +95,11 @@ namespace BankManagementSystem
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,7 +36,7 @@ namespace BankManagementSystem
             this.BasePanel = new System.Windows.Forms.Panel();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.LoanPictureBox = new System.Windows.Forms.PictureBox();
-            this.LoanButton = new System.Windows.Forms.Button();
+            this.ManagerButton = new System.Windows.Forms.Button();
             this.AccountPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -195,20 +195,18 @@ namespace BankManagementSystem
             this.LastNameLabel_Details = new System.Windows.Forms.Label();
             this.FirstNameLabel_Details = new System.Windows.Forms.Label();
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.LoanPanel = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.LoanAmountTextbox = new System.Windows.Forms.TextBox();
+            this.AccountOwnerPictureBox_Loan = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SearchButton_Loan = new System.Windows.Forms.Button();
             this.SearchAccountTextbox_Loan = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.AccountOwnerPictureBox_Loan = new System.Windows.Forms.PictureBox();
-            this.LoanAmountTextbox = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -272,7 +270,7 @@ namespace BankManagementSystem
             this.MenuPanel.AutoScroll = true;
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.MenuPanel.Controls.Add(this.LoanPictureBox);
-            this.MenuPanel.Controls.Add(this.LoanButton);
+            this.MenuPanel.Controls.Add(this.ManagerButton);
             this.MenuPanel.Controls.Add(this.AccountPictureBox);
             this.MenuPanel.Controls.Add(this.pictureBox5);
             this.MenuPanel.Controls.Add(this.pictureBox4);
@@ -292,33 +290,33 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 1981);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 2033);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LoanPictureBox.TabIndex = 19;
             this.LoanPictureBox.TabStop = false;
             // 
-            // LoanButton
+            // ManagerButton
             // 
-            this.LoanButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LoanButton.FlatAppearance.BorderSize = 0;
-            this.LoanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoanButton.Location = new System.Drawing.Point(0, 514);
-            this.LoanButton.Name = "LoanButton";
-            this.LoanButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.LoanButton.Size = new System.Drawing.Size(189, 46);
-            this.LoanButton.TabIndex = 11;
-            this.LoanButton.Text = "Loan";
-            this.LoanButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LoanButton.UseVisualStyleBackColor = true;
-            this.LoanButton.LocationChanged += new System.EventHandler(this.LoanButton_LocationChanged);
+            this.ManagerButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ManagerButton.FlatAppearance.BorderSize = 0;
+            this.ManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ManagerButton.Location = new System.Drawing.Point(0, 514);
+            this.ManagerButton.Name = "ManagerButton";
+            this.ManagerButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.ManagerButton.Size = new System.Drawing.Size(189, 46);
+            this.ManagerButton.TabIndex = 11;
+            this.ManagerButton.Text = "Manager Panel";
+            this.ManagerButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ManagerButton.UseVisualStyleBackColor = true;
+            this.ManagerButton.LocationChanged += new System.EventHandler(this.LoanButton_LocationChanged);
             // 
             // AccountPictureBox
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1703);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1755);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1587,7 +1585,6 @@ namespace BankManagementSystem
             this.WithdrawPanel.Controls.Add(this.AccountOwnerpictureBox_Withdraw);
             this.WithdrawPanel.Controls.Add(this.Findbutton_Withdraw);
             this.WithdrawPanel.Controls.Add(this.SearchAccounttextBox_Withdraw);
-            this.WithdrawPanel.Controls.Add(this.label13);
             this.WithdrawPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WithdrawPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WithdrawPanel.Location = new System.Drawing.Point(206, 74);
@@ -1600,7 +1597,6 @@ namespace BankManagementSystem
             this.groupBox_Withdraw.Controls.Add(this.AccountTypelabel_Withdraw);
             this.groupBox_Withdraw.Controls.Add(this.Withdrawbutton_Withdraw);
             this.groupBox_Withdraw.Controls.Add(this.WithdrawtextBox);
-            this.groupBox_Withdraw.Controls.Add(this.label9);
             this.groupBox_Withdraw.Controls.Add(this.Balancelabel_Withdraw);
             this.groupBox_Withdraw.Controls.Add(this.AccountOwnerlabel_Withdraw);
             this.groupBox_Withdraw.ForeColor = System.Drawing.Color.White;
@@ -1644,11 +1640,11 @@ namespace BankManagementSystem
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(363, 128);
+            this.label9.Location = new System.Drawing.Point(61, 47);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 20);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Enter Amount:";
+            this.label9.Size = new System.Drawing.Size(143, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Search Account:";
             // 
             // Balancelabel_Withdraw
             // 
@@ -1703,11 +1699,11 @@ namespace BankManagementSystem
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(50, 44);
+            this.label13.Location = new System.Drawing.Point(41, 151);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(153, 20);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Account Number:";
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Account Balance:";
             // 
             // TransferPanel
             // 
@@ -2124,17 +2120,6 @@ namespace BankManagementSystem
             this.AccountOwnerPictureBox_Details.TabIndex = 4;
             this.AccountOwnerPictureBox_Details.TabStop = false;
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
             // LoanPanel
             // 
             this.LoanPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
@@ -2148,6 +2133,96 @@ namespace BankManagementSystem
             this.LoanPanel.Name = "LoanPanel";
             this.LoanPanel.Size = new System.Drawing.Size(775, 497);
             this.LoanPanel.TabIndex = 21;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.LoanAmountTextbox);
+            this.groupBox1.Controls.Add(this.AccountOwnerPictureBox_Loan);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(25, 130);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(726, 346);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Loan";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(201, 260);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(127, 20);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Loan Amount:";
+            // 
+            // LoanAmountTextbox
+            // 
+            this.LoanAmountTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.LoanAmountTextbox.ForeColor = System.Drawing.Color.White;
+            this.LoanAmountTextbox.Location = new System.Drawing.Point(334, 257);
+            this.LoanAmountTextbox.Name = "LoanAmountTextbox";
+            this.LoanAmountTextbox.Size = new System.Drawing.Size(200, 27);
+            this.LoanAmountTextbox.TabIndex = 7;
+            // 
+            // AccountOwnerPictureBox_Loan
+            // 
+            this.AccountOwnerPictureBox_Loan.Location = new System.Drawing.Point(519, 22);
+            this.AccountOwnerPictureBox_Loan.Name = "AccountOwnerPictureBox_Loan";
+            this.AccountOwnerPictureBox_Loan.Size = new System.Drawing.Size(137, 106);
+            this.AccountOwnerPictureBox_Loan.TabIndex = 6;
+            this.AccountOwnerPictureBox_Loan.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(417, 165);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 20);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Account Type:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(419, 195);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(125, 20);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Interest Rate:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(68, 186);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(125, 20);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Previous Due:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(54, 111);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(140, 20);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Account Status:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(55, 72);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Account Owner:";
             // 
             // SearchButton_Loan
             // 
@@ -2169,114 +2244,6 @@ namespace BankManagementSystem
             this.SearchAccountTextbox_Loan.Name = "SearchAccountTextbox_Loan";
             this.SearchAccountTextbox_Loan.Size = new System.Drawing.Size(201, 27);
             this.SearchAccountTextbox_Loan.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(61, 47);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Search Account:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.LoanAmountTextbox);
-            this.groupBox1.Controls.Add(this.AccountOwnerPictureBox_Loan);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(25, 130);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 346);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Loan";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(55, 72);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Account Owner:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(54, 111);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(140, 20);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Account Status:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(41, 151);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(153, 20);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Account Balance:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(68, 186);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 20);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Previous Due:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(419, 195);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(125, 20);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Interest Rate:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(417, 165);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 20);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Account Type:";
-            // 
-            // AccountOwnerPictureBox_Loan
-            // 
-            this.AccountOwnerPictureBox_Loan.Location = new System.Drawing.Point(519, 22);
-            this.AccountOwnerPictureBox_Loan.Name = "AccountOwnerPictureBox_Loan";
-            this.AccountOwnerPictureBox_Loan.Size = new System.Drawing.Size(137, 106);
-            this.AccountOwnerPictureBox_Loan.TabIndex = 6;
-            this.AccountOwnerPictureBox_Loan.TabStop = false;
-            // 
-            // LoanAmountTextbox
-            // 
-            this.LoanAmountTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.LoanAmountTextbox.ForeColor = System.Drawing.Color.White;
-            this.LoanAmountTextbox.Location = new System.Drawing.Point(334, 257);
-            this.LoanAmountTextbox.Name = "LoanAmountTextbox";
-            this.LoanAmountTextbox.Size = new System.Drawing.Size(200, 27);
-            this.LoanAmountTextbox.TabIndex = 7;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(201, 260);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(127, 20);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Loan Amount:";
             // 
             // Main
             // 
@@ -2437,7 +2404,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Panel ClockPanel;
         private System.Windows.Forms.Label SecondLabel;
         private System.Windows.Forms.Label TimeLabel;
-        private System.Windows.Forms.Button LoanButton;
+        private System.Windows.Forms.Button ManagerButton;
         private System.Windows.Forms.Timer ClockTimer;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label3;
@@ -2501,8 +2468,6 @@ namespace BankManagementSystem
         private System.Windows.Forms.PictureBox AccountOwnerPictureBox_Details;
         private System.Windows.Forms.TextBox SearchAccountTextbox_Details;
         private System.Windows.Forms.Label label23;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label BalanceLabel_Details;
         private System.Windows.Forms.Label DueLabelDetails;
         private System.Windows.Forms.Label CreateDateLabel_Details;
