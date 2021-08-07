@@ -724,39 +724,15 @@ namespace BankManagementSystem
                 }
             }
         }
-        private void SearchButton_Loan_Click(object sender, EventArgs e)
-        {
-            string s = SearchAccountTextbox_Loan.Text;
-            if (s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    int id = Convert.ToInt32(s);
-                    Account account = new Account();
-                    Client client = new Client();
-                    account = FetchData.GetAccount(id);
-                    client = FetchData.GetClientByAccountID(id);
-                    if (account == null || client == null)
-                    {
-                        MessageBox.Show("No account found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
 
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
