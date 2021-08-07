@@ -50,6 +50,7 @@
     <Compile Include="Database\ModifyData.cs" />
     <Compile Include="Entity\Account.cs" />
     <Compile Include="Entity\Client.cs" />
+    <Compile Include="Entity\Manager.cs" />
     <Compile Include="Forms\CPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +61,7 @@
     <Compile Include="Database\DataHandler.cs" />
     <Compile Include="Database\DataVerification.cs" />
     <Compile Include="Database\Registration.cs" />
+    <Compile Include="Forms\Manage.cs" />
     <Compile Include="Forms\Manager.cs">
       <SubType>Form</SubType>
     </Compile>

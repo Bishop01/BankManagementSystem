@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using BankManagementSystem.Entity;
 
 namespace BankManagementSystem.Database
 {
@@ -207,6 +208,23 @@ namespace BankManagementSystem.Database
             account.Due = Convert.ToDouble(data["Due"]);
 
             return account;
+        }
+        public static Manager GetManager(int id)
+        {
+            string query = "select * from Manager where ID="+id;
+            data = DataHandler.GetRecord(query);
+            if (data.HasRows)
+            {
+                data.Read();
+                Manager manager = new Manager();
+                manager.ID = (int)data["ID"];
+                manager.Name = data["Name"].ToString();
+                return manager;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

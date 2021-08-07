@@ -1,4 +1,5 @@
 ﻿using BankManagementSystem.Database;
+using BankManagementSystem.Entity;
 using BankManagementSystem.Forms;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,9 @@ namespace BankManagementSystem
         private Employee currentEmployee;
         private Client searchedClient;
         private Account searchedAccount;
+        private Manager manager;
 
-        public Main(int id, string manager=null)
+        public Main(int id, string m=null)
         {
             InitializeComponent();
             HideAllPanel();
@@ -27,18 +29,22 @@ namespace BankManagementSystem
             AccountPictureBox.Location = new Point(9, AccountButton.Location.Y+10);
             LoanPictureBox.Location = new Point(9, ManagerButton.Location.Y+10); 
             ClockTimer.Start();
-            currentUser = FetchData.GetEmployeeName(id);
-            currentEmployee = FetchData.GetEmployee(id);
-            NameLabel.Text = currentUser;
-            if(manager == null)
+            if(m == null)
             {
+                currentUser = FetchData.GetEmployeeName(id);
+                currentEmployee = FetchData.GetEmployee(id);
+                NameLabel.Text = currentUser;
                 ManagerButton.Enabled = false;
                 ManagerButton.BackColor = Color.Gray;
             }
             else
             {
                 RegisterButton.Enabled = false;
+                RegisterButton.BackColor = Color.Gray;
                 AccountButton.Enabled = false;
+                AccountButton.BackColor = Color.Gray;
+                this.manager = FetchData.GetManager(id);
+                NameLabel.Text = manager.Name;
             }
         }
         private void DashboardButton_Click(object sender, EventArgs e)
@@ -813,6 +819,14 @@ namespace BankManagementSystem
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ManagerButton_Click(object sender, EventArgs e)
+        {
+            DashboardButton.BackColor = Color.FromArgb(31, 30, 68);
+            ManagerPanel.BringToFront();
+            ManagerButton.BackColor = Color.FromArgb(43, 63, 97);
+            CurrentLabel.Text = "Manager";
         }
     }
 }
