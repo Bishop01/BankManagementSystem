@@ -224,7 +224,6 @@ namespace BankManagementSystem.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintAccountDetails";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrintAccountDetails_FormClosing);
-            this.Load += new System.EventHandler(this.PrintAccountDetails_Load);
             this.AccountDetailsGroupBox.ResumeLayout(false);
             this.AccountDetailsGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
