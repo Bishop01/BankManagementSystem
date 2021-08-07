@@ -43,10 +43,6 @@ namespace BankManagementSystem
             DashboardPanel.BringToFront();
             DashboardButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Dashboard";
-            if (VerifyEmail("hello@gmail.com@"))
-            {
-
-            }
         }
 
         #region Register
@@ -66,6 +62,11 @@ namespace BankManagementSystem
             if (CheckEmptyCreateAccountFields())
             {
                 ValidateErrorLabel.Text = "No fields can remain empty!";
+                return;
+            }
+            else if (!VerifyName(FirstnameTextbox.Text+LastnameTextbox.Text))
+            {
+                ValidateErrorLabel.Text = "Name cannot contain number!";
                 return;
             }
             else if (!VerifyEmail(EmailTextbox.Text))
@@ -761,6 +762,22 @@ namespace BankManagementSystem
             }
 
             return false;
+        }
+        private bool VerifyName(string name)
+        {
+            foreach(char c in name)
+            {
+                try
+                {
+                    Convert.ToInt32(c.ToString());
+                    return false;
+                }
+                catch
+                {
+                    
+                }
+            }
+            return true;
         }
         private bool isNumber(string ch)
         {
