@@ -315,6 +315,10 @@ namespace BankManagementSystem
                     int id = Convert.ToInt32(SearchAccountTextbox.Text);
                     if (ModifyData.UpdateBalance(id, amount))
                     {
+                        if (!ModifyData.UpdateTransactionHistory(currentEmployee.ID, id, "Deposit", Convert.ToInt32(amount)))
+                        {
+                            MessageBox.Show("Error updating transaction!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         HideDepositGroupBox();
                         AccountOwnerPictureBox_Deposit.Image = null;
@@ -819,6 +823,7 @@ namespace BankManagementSystem
             ManagerButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Manager";
             EnableManagerPanelButtons(null);
+            ClearManagerTextFields();
         }
         private void ManagerPanelButtonsHandler(object sender, EventArgs e)
         {
@@ -998,6 +1003,77 @@ namespace BankManagementSystem
                     return;
                 }
             }
+        }
+        private void FindButtion_Transactions_Click(object sender, EventArgs e)
+        {
+            string s = EmployeeIDTextBox_Transactions.Text;
+            if (s == "")
+            {
+                TransactionHistoryPanel.Controls.Clear();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    TransactionHistoryPanel.Controls.Clear();
+                    int id = Convert.ToInt32(s);
+                    Employee employee = FetchData.GetEmployee(id);
+                    List<Transactions> transactions = FetchData.GetTransactionHistory(id);
+                    if(transactions == null)
+                    {
+                        MessageBox.Show("Invalid employee id!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TransactionHistoryPanel.Controls.Clear();
+                        return;
+                    }
+                    foreach (Transactions transaction in transactions)
+                    {
+                        GroupBox groupBox = new GroupBox();
+                        groupBox.Text = transaction.TransactionType;
+                        groupBox.ForeColor = Color.White;
+                        //groupBox.Location = new Point(9, 9);
+                        groupBox.Dock = DockStyle.Top;
+                        groupBox.Size = new Size(720, 112);
+                        //groupBox.Padding = new Padding(0,0,0,10);
+
+                        Label l1 = new Label();
+                        l1.Text = "Employee ID: " + transaction.EmployeeID;
+                        l1.Location = new Point(70, 38);
+                        l1.AutoSize = true;
+                        Label l2 = new Label();
+                        l2.Text = "Account ID: " + transaction.AccountID;
+                        l2.Location = new Point(79, 66);
+                        l2.AutoSize = true;
+                        Label l3 = new Label();
+                        l3.Text = "Transaction ID: " + transaction.ID;
+                        l3.Location = new Point(405, 66);
+                        l3.AutoSize = true;
+                        Label l4 = new Label();
+                        l4.Text = "Employee Name: " + employee.Name;
+                        l4.Location = new Point(397, 44);
+                        l4.AutoSize = true;
+
+                        groupBox.Controls.Add(l1);
+                        groupBox.Controls.Add(l2);
+                        groupBox.Controls.Add(l3);
+                        groupBox.Controls.Add(l4);
+
+                        TransactionHistoryPanel.Controls.Add(groupBox);
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid Input!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TransactionHistoryPanel.Controls.Clear();
+                    return;
+                }
+            }
+        }
+        private void ClearManagerTextFields()
+        {
+            EmployeeIDTextBox_Transactions.Text = "";
+            EmployeeIDTextbox.Text = "";
         }
     }
 }

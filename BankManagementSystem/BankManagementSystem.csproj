@@ -51,6 +51,7 @@
     <Compile Include="Entity\Account.cs" />
     <Compile Include="Entity\Client.cs" />
     <Compile Include="Entity\Manager.cs" />
+    <Compile Include="Entity\Transactions.cs" />
     <Compile Include="Forms\CPassword.cs">
       <SubType>Form</SubType>
     </Compile>

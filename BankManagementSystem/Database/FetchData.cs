@@ -255,5 +255,29 @@ namespace BankManagementSystem.Database
                 return null;
             }
         }
+        public static List<Transactions> GetTransactionHistory(int id)
+        {
+            List<Transactions> transactions = new List<Transactions>();
+            string query = "select * from TransactionHistory where EmployeeID="+id;
+            data = DataHandler.GetRecord(query);
+            if (data.HasRows)
+            {
+                while (data.Read())
+                {
+                    Transactions t = new Transactions();
+                    t.ID = (int)data["TransactionID"];
+                    t.EmployeeID = (int)data["EmployeeID"];
+                    t.AccountID = (int)data["AccountID"];
+                    t.TransactionType = data["TransactionType"].ToString();
+
+                    transactions.Add(t);
+                }
+                return transactions;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

@@ -31,5 +31,16 @@ namespace BankManagementSystem.Database
             }
             return false;
         }
+        public static bool UpdateTransactionHistory(int eid, int aid, string type, int amount)
+        {
+            string query = "insert into TransactionHistory(EmployeeID, AccountID, TransactionType, TransactionAmount)" +
+                "values("+eid+","+aid+",'"+type+"',"+amount+")";
+            int result = DataHandler.ManipulateData(query);
+            if(result == 1)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
