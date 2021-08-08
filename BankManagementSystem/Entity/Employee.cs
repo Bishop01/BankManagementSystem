@@ -8,14 +8,14 @@ namespace BankManagementSystem
 {
     class Employee
     {
-        internal string Name { get; set; }
-        internal string Password { get; set; }
-        internal string Email { get; set; }
-        internal string Address { get; set; }
-        internal string NID { get; set; }
-        internal string PhoneNumber { get; set; }
-        internal string Gender { get; set; }
-        internal string DOB { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string NID { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Gender { get; set; }
+        public string DOB { get; set; }
         public int ID { get; set; }
     }
 }

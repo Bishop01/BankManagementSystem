@@ -226,5 +226,34 @@ namespace BankManagementSystem.Database
                 return null;
             }
         }
+        public static List<Employee> GetAllEmployees()
+        {
+            string query = "select * from employees";
+            List<Employee> employees = new List<Employee>();
+            data = DataHandler.GetRecord(query);
+            if (data.HasRows)
+            {
+                while (data.Read())
+                {
+                    Employee emp = new Employee();
+                    emp.Name = data["Name"].ToString();
+                    //Console.WriteLine(emp.Name);
+                    emp.ID = (int)data["ID"];
+                    emp.PhoneNumber = data["PhoneNumber"].ToString();
+                    emp.Address = data["Address"].ToString();
+                    emp.DOB = data["DateOfBirth"].ToString();
+                    emp.NID = data["NID"].ToString();
+                    emp.Gender = data["Gender"].ToString();
+                    emp.Email = data["Email"].ToString();
+
+                    employees.Add(emp);
+                }
+                return employees;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
