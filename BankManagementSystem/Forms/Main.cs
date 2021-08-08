@@ -828,5 +828,6 @@ namespace BankManagementSystem
             ManagerButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Manager";
         }
+
     }
 }

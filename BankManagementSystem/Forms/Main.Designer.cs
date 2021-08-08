@@ -42,11 +42,9 @@ namespace BankManagementSystem
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.AccountPanel = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.DetailsButton = new System.Windows.Forms.Button();
             this.TransferButton = new System.Windows.Forms.Button();
             this.WithdrawButton = new System.Windows.Forms.Button();
@@ -194,6 +192,11 @@ namespace BankManagementSystem
             this.FirstNameLabel_Details = new System.Windows.Forms.Label();
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
             this.ManagerPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.TransactionsButton = new System.Windows.Forms.Button();
+            this.ManageButton = new System.Windows.Forms.Button();
+            this.EditDetailsButton = new System.Windows.Forms.Button();
+            this.EmployeeDetailsButton = new System.Windows.Forms.Button();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LoanPictureBox)).BeginInit();
@@ -202,7 +205,6 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -235,6 +237,8 @@ namespace BankManagementSystem
             this.DetailsPanel.SuspendLayout();
             this.AccountDetailsGroupBox_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
+            this.ManagerPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -274,7 +278,7 @@ namespace BankManagementSystem
             // 
             this.LoanPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LoanPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LoanPictureBox.Image")));
-            this.LoanPictureBox.Location = new System.Drawing.Point(9, 2033);
+            this.LoanPictureBox.Location = new System.Drawing.Point(9, 2165);
             this.LoanPictureBox.Name = "LoanPictureBox";
             this.LoanPictureBox.Size = new System.Drawing.Size(23, 23);
             this.LoanPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -286,7 +290,7 @@ namespace BankManagementSystem
             this.ManagerButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ManagerButton.FlatAppearance.BorderSize = 0;
             this.ManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ManagerButton.Location = new System.Drawing.Point(0, 514);
+            this.ManagerButton.Location = new System.Drawing.Point(0, 467);
             this.ManagerButton.Name = "ManagerButton";
             this.ManagerButton.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.ManagerButton.Size = new System.Drawing.Size(189, 46);
@@ -301,7 +305,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1755);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 1887);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -331,11 +335,9 @@ namespace BankManagementSystem
             // AccountPanel
             // 
             this.AccountPanel.Controls.Add(this.pictureBox11);
-            this.AccountPanel.Controls.Add(this.pictureBox10);
             this.AccountPanel.Controls.Add(this.pictureBox9);
             this.AccountPanel.Controls.Add(this.pictureBox8);
             this.AccountPanel.Controls.Add(this.pictureBox7);
-            this.AccountPanel.Controls.Add(this.button10);
             this.AccountPanel.Controls.Add(this.DetailsButton);
             this.AccountPanel.Controls.Add(this.TransferButton);
             this.AccountPanel.Controls.Add(this.WithdrawButton);
@@ -343,7 +345,7 @@ namespace BankManagementSystem
             this.AccountPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.AccountPanel.Location = new System.Drawing.Point(0, 279);
             this.AccountPanel.Name = "AccountPanel";
-            this.AccountPanel.Size = new System.Drawing.Size(189, 235);
+            this.AccountPanel.Size = new System.Drawing.Size(189, 188);
             this.AccountPanel.TabIndex = 10;
             // 
             // pictureBox11
@@ -355,16 +357,6 @@ namespace BankManagementSystem
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 18;
             this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(36, 191);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 17;
-            this.pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
@@ -395,20 +387,6 @@ namespace BankManagementSystem
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 14;
             this.pictureBox7.TabStop = false;
-            // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(0, 184);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(189, 46);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Transaction History";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
             // 
             // DetailsButton
             // 
@@ -2089,12 +2067,71 @@ namespace BankManagementSystem
             // ManagerPanel
             // 
             this.ManagerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.ManagerPanel.Controls.Add(this.panel1);
             this.ManagerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManagerPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ManagerPanel.Location = new System.Drawing.Point(206, 74);
             this.ManagerPanel.Name = "ManagerPanel";
             this.ManagerPanel.Size = new System.Drawing.Size(775, 497);
             this.ManagerPanel.TabIndex = 16;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.TransactionsButton);
+            this.panel1.Controls.Add(this.ManageButton);
+            this.panel1.Controls.Add(this.EditDetailsButton);
+            this.panel1.Controls.Add(this.EmployeeDetailsButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(775, 31);
+            this.panel1.TabIndex = 0;
+            // 
+            // TransactionsButton
+            // 
+            this.TransactionsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TransactionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TransactionsButton.Location = new System.Drawing.Point(599, 0);
+            this.TransactionsButton.Name = "TransactionsButton";
+            this.TransactionsButton.Size = new System.Drawing.Size(176, 31);
+            this.TransactionsButton.TabIndex = 3;
+            this.TransactionsButton.Text = "Transactions";
+            this.TransactionsButton.UseVisualStyleBackColor = true;
+            // 
+            // ManageButton
+            // 
+            this.ManageButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ManageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ManageButton.Location = new System.Drawing.Point(407, 0);
+            this.ManageButton.Name = "ManageButton";
+            this.ManageButton.Size = new System.Drawing.Size(192, 31);
+            this.ManageButton.TabIndex = 2;
+            this.ManageButton.Text = "Manage";
+            this.ManageButton.UseVisualStyleBackColor = true;
+            // 
+            // EditDetailsButton
+            // 
+            this.EditDetailsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.EditDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditDetailsButton.Location = new System.Drawing.Point(204, 0);
+            this.EditDetailsButton.Name = "EditDetailsButton";
+            this.EditDetailsButton.Size = new System.Drawing.Size(203, 31);
+            this.EditDetailsButton.TabIndex = 1;
+            this.EditDetailsButton.Text = "Edit Details";
+            this.EditDetailsButton.UseVisualStyleBackColor = true;
+            // 
+            // EmployeeDetailsButton
+            // 
+            this.EmployeeDetailsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.EmployeeDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmployeeDetailsButton.Location = new System.Drawing.Point(0, 0);
+            this.EmployeeDetailsButton.Name = "EmployeeDetailsButton";
+            this.EmployeeDetailsButton.Size = new System.Drawing.Size(204, 31);
+            this.EmployeeDetailsButton.TabIndex = 0;
+            this.EmployeeDetailsButton.Text = "Employee Details";
+            this.EmployeeDetailsButton.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -2129,7 +2166,6 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.AccountPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -2177,6 +2213,8 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.ResumeLayout(false);
             this.AccountDetailsGroupBox_Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).EndInit();
+            this.ManagerPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2197,7 +2235,6 @@ namespace BankManagementSystem
         private System.Windows.Forms.Button CreateAccButton;
         private System.Windows.Forms.Button AccountButton;
         private System.Windows.Forms.Panel AccountPanel;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button DetailsButton;
         private System.Windows.Forms.Button TransferButton;
         private System.Windows.Forms.Button WithdrawButton;
@@ -2240,7 +2277,6 @@ namespace BankManagementSystem
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox AccountPictureBox;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -2344,6 +2380,11 @@ namespace BankManagementSystem
         private System.Windows.Forms.Label accTypeLabel_Transfer;
         private System.Windows.Forms.Label accOwnerLabel_Transfer;
         private Panel ManagerPanel;
+        private Panel panel1;
+        private Button EmployeeDetailsButton;
+        private Button TransactionsButton;
+        private Button ManageButton;
+        private Button EditDetailsButton;
     }
 }
 
