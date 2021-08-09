@@ -217,6 +217,20 @@ namespace BankManagementSystem
             this.ManageButton = new System.Windows.Forms.Button();
             this.EditDetailsButton = new System.Windows.Forms.Button();
             this.EmployeeDetailsButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ID_ED = new System.Windows.Forms.Label();
+            this.Name_ED = new System.Windows.Forms.Label();
+            this.Email_ED = new System.Windows.Forms.Label();
+            this.PhoneNumber_ED = new System.Windows.Forms.Label();
+            this.Address_ED = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).BeginInit();
@@ -258,12 +272,15 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
             this.ManagerPanel.SuspendLayout();
+            this.EditDetailsPanel.SuspendLayout();
             this.EmployeeDetailsPanel.SuspendLayout();
             this.DetailsGroupBox.SuspendLayout();
             this.TransactionsPanel.SuspendLayout();
             this.TransactionHistoryGroupBox.SuspendLayout();
             this.ManagePanel.SuspendLayout();
             this.ManagerButtonsPanel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -303,7 +320,7 @@ namespace BankManagementSystem
             // 
             this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2501);
+            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2529);
             this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
             this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
             this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -330,7 +347,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2223);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2251);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2132,6 +2149,10 @@ namespace BankManagementSystem
             // 
             // EditDetailsPanel
             // 
+            this.EditDetailsPanel.Controls.Add(this.groupBox1);
+            this.EditDetailsPanel.Controls.Add(this.button1);
+            this.EditDetailsPanel.Controls.Add(this.textBox1);
+            this.EditDetailsPanel.Controls.Add(this.label13);
             this.EditDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditDetailsPanel.Location = new System.Drawing.Point(0, 31);
             this.EditDetailsPanel.Name = "EditDetailsPanel";
@@ -2378,19 +2399,156 @@ namespace BankManagementSystem
             this.EmployeeDetailsButton.UseVisualStyleBackColor = true;
             this.EmployeeDetailsButton.Click += new System.EventHandler(this.ManagerPanelButtonsHandler);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(27, 110);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(721, 323);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Edit Details";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.Address_ED);
+            this.panel1.Controls.Add(this.PhoneNumber_ED);
+            this.panel1.Controls.Add(this.Email_ED);
+            this.panel1.Controls.Add(this.Name_ED);
+            this.panel1.Controls.Add(this.ID_ED);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(3, 23);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(715, 297);
+            this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(191, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 28);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Find";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(191, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(174, 27);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(69, 37);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 20);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "EmployeeID:";
+            // 
+            // ID_ED
+            // 
+            this.ID_ED.AutoSize = true;
+            this.ID_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_ED.Location = new System.Drawing.Point(101, 30);
+            this.ID_ED.Name = "ID_ED";
+            this.ID_ED.Size = new System.Drawing.Size(32, 20);
+            this.ID_ED.TabIndex = 0;
+            this.ID_ED.Text = "ID:";
+            // 
+            // Name_ED
+            // 
+            this.Name_ED.AutoSize = true;
+            this.Name_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_ED.Location = new System.Drawing.Point(75, 61);
+            this.Name_ED.Name = "Name_ED";
+            this.Name_ED.Size = new System.Drawing.Size(57, 20);
+            this.Name_ED.TabIndex = 1;
+            this.Name_ED.Text = "Name:";
+            // 
+            // Email_ED
+            // 
+            this.Email_ED.AutoSize = true;
+            this.Email_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email_ED.Location = new System.Drawing.Point(73, 97);
+            this.Email_ED.Name = "Email_ED";
+            this.Email_ED.Size = new System.Drawing.Size(58, 20);
+            this.Email_ED.TabIndex = 2;
+            this.Email_ED.Text = "Email:";
+            // 
+            // PhoneNumber_ED
+            // 
+            this.PhoneNumber_ED.AutoSize = true;
+            this.PhoneNumber_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneNumber_ED.Location = new System.Drawing.Point(7, 135);
+            this.PhoneNumber_ED.Name = "PhoneNumber_ED";
+            this.PhoneNumber_ED.Size = new System.Drawing.Size(125, 20);
+            this.PhoneNumber_ED.TabIndex = 3;
+            this.PhoneNumber_ED.Text = "Phone Number:";
+            // 
+            // Address_ED
+            // 
+            this.Address_ED.AutoSize = true;
+            this.Address_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Address_ED.Location = new System.Drawing.Point(60, 176);
+            this.Address_ED.Name = "Address_ED";
+            this.Address_ED.Size = new System.Drawing.Size(72, 20);
+            this.Address_ED.TabIndex = 4;
+            this.Address_ED.Text = "Address:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(138, 57);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(174, 23);
+            this.textBox2.TabIndex = 14;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(138, 97);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(174, 23);
+            this.textBox3.TabIndex = 15;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(138, 134);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(174, 23);
+            this.textBox4.TabIndex = 16;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(138, 173);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(174, 23);
+            this.textBox5.TabIndex = 17;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
-            this.Controls.Add(this.TransferPanel);
+            this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.WithdrawPanel);
+            this.Controls.Add(this.RecoverAccountPanel);
+            this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.CreateAccountPanel);
-            this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.CloseAccountPanel);
-            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
@@ -2459,6 +2617,8 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).EndInit();
             this.ManagerPanel.ResumeLayout(false);
+            this.EditDetailsPanel.ResumeLayout(false);
+            this.EditDetailsPanel.PerformLayout();
             this.EmployeeDetailsPanel.ResumeLayout(false);
             this.EmployeeDetailsPanel.PerformLayout();
             this.DetailsGroupBox.ResumeLayout(false);
@@ -2467,6 +2627,9 @@ namespace BankManagementSystem
             this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.ManagePanel.ResumeLayout(false);
             this.ManagerButtonsPanel.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2657,6 +2820,20 @@ namespace BankManagementSystem
         private Label label12;
         private Label label10;
         private Label label9;
+        private GroupBox groupBox1;
+        private Panel panel1;
+        private Button button1;
+        private TextBox textBox1;
+        private Label label13;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private Label Address_ED;
+        private Label PhoneNumber_ED;
+        private Label Email_ED;
+        private Label Name_ED;
+        private Label ID_ED;
     }
 }
 

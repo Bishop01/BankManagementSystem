@@ -401,7 +401,7 @@ namespace BankManagementSystem
                 {
                     double amount = Convert.ToDouble(s);
                     int id = Convert.ToInt32(SearchAccounttextBox_Withdraw.Text);
-                    if (ModifyData.UpdateBalance_Withdraw(id, amount))
+                    if (ModifyData.UpdateBalance(id, (-amount)))
                     {
                         if (!ModifyData.UpdateTransactionHistory(currentEmployee.ID, id, "Withdraw", Convert.ToInt32(amount)))
                         {
