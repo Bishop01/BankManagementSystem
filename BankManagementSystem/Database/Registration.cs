@@ -31,7 +31,7 @@ namespace BankManagementSystem.Database
             try
             {
                 string query1 = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, ImageDirectory) " +
-                    "values('"+c.Firstname+"','"+c.Lastname+"','"+c.Address+"','"+c.Email+"','"+c.PhoneNumber+"','"+c.DOB+"','"+c.Nationality+"','"+c.Gender+"','"+c.NID+"','"+c.Occupation+"','"+c.ImageDir+"')";
+                    "values('"+c.Firstname+"','"+c.Lastname+"','"+c.Address+"','"+c.Email+"',"+c.PhoneNumber+",'"+c.DOB+"','"+c.Nationality+"','"+c.Gender+"',"+c.NID+",'"+c.Occupation+"','"+c.ImageDir+"')";
                 int result1 = DataHandler.ManipulateData(query1);
                 
                 Client client = FetchData.GetClientByNID(Convert.ToInt32(c.NID));

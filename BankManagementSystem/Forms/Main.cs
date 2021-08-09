@@ -101,9 +101,9 @@ namespace BankManagementSystem
                 c.Firstname = FirstnameTextbox.Text;
                 c.Lastname = LastnameTextbox.Text;
                 c.Nationality = NationalityTextbox.Text;
-                c.NID = NIDTextbox.Text;
+                c.NID = Convert.ToInt32(NIDTextbox.Text);
                 c.Address = AddressTextbox.Text;
-                c.PhoneNumber = PhoneNumberTextbox.Text;
+                c.PhoneNumber = Convert.ToInt32(PhoneNumberTextbox.Text);
                 c.Email = EmailTextbox.Text;
                 c.DOB = DOBDateTimePicker.Text;
                 c.Occupation = OccupationTextbox.Text;
@@ -528,6 +528,8 @@ namespace BankManagementSystem
         }
 
         #endregion Reset
+
+        #endregion Account
 
         private void SubmenuButtonsHandler(object sender, EventArgs e)
         {
@@ -1263,4 +1265,3 @@ namespace BankManagementSystem
         #endregion
     }
 }
-#endregion
