@@ -79,8 +79,8 @@ namespace BankManagementSystem.Database
                     client.Email = data["Email"].ToString();
                     client.Gender = data["Gender"].ToString();
                     client.DOB = data["DateOfBirth"].ToString();
-                    client.NID = data["NID"].ToString();
-                    client.PhoneNumber = data["PhoneNumber"].ToString();
+                    client.NID = (int)data["NID"];
+                    client.PhoneNumber = (int)data["PhoneNumber"];
                     client.Nationality = data["Nationality"].ToString();
                     client.Occupation = data["Occupation"].ToString();
                     client.ImageDir = data["ImageDirectory"].ToString();
@@ -179,8 +179,8 @@ namespace BankManagementSystem.Database
                 client.Email = data["Email"].ToString();
                 client.Gender = data["Gender"].ToString();
                 client.DOB = data["DateOfBirth"].ToString();
-                client.NID = data["NID"].ToString();
-                client.PhoneNumber = data["PhoneNumber"].ToString();
+                client.NID = (int)data["NID"];
+                client.PhoneNumber = (int)data["PhoneNumber"];
                 client.Nationality = data["Nationality"].ToString();
                 client.Occupation = data["Occupation"].ToString();
                 client.ImageDir = data["ImageDirectory"].ToString();
