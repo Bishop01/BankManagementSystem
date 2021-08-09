@@ -156,10 +156,10 @@ namespace BankManagementSystem
             this.SearchAccounttextBox_Withdraw = new System.Windows.Forms.TextBox();
             this.TransferPanel = new System.Windows.Forms.Panel();
             this.transferGroupBox_Transfer = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.AccountOwnerpictureBox_T = new System.Windows.Forms.PictureBox();
+            this.senderBalanceLabel_Transfer = new System.Windows.Forms.Label();
+            this.AccountOwnerpictureBox_Transfer = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.senderAccOwnerLabel_Transfer = new System.Windows.Forms.Label();
             this.accTypeLabel_Transfer = new System.Windows.Forms.Label();
             this.accOwnerLabel_Transfer = new System.Windows.Forms.Label();
             this.recAccFindButton_Transfer = new System.Windows.Forms.Button();
@@ -194,11 +194,7 @@ namespace BankManagementSystem
             this.FirstNameLabel_Details = new System.Windows.Forms.Label();
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
             this.ManagerPanel = new System.Windows.Forms.Panel();
-            this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
-            this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
-            this.FindButtion_Transactions = new System.Windows.Forms.Button();
-            this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.EditDetailsPanel = new System.Windows.Forms.Panel();
             this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
             this.DetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.DetailsPanel_EmployeeDetails = new System.Windows.Forms.Panel();
@@ -207,11 +203,15 @@ namespace BankManagementSystem
             this.EmployeeIDTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TransactionsPanel = new System.Windows.Forms.Panel();
+            this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
+            this.FindButtion_Transactions = new System.Windows.Forms.Button();
+            this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.ManagePanel = new System.Windows.Forms.Panel();
             this.RemoveEmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.RegisterEmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.ManagerPanelDefaultPanel = new System.Windows.Forms.Panel();
-            this.EditDetailsPanel = new System.Windows.Forms.Panel();
             this.ManagerButtonsPanel = new System.Windows.Forms.Panel();
             this.TransactionsButton = new System.Windows.Forms.Button();
             this.ManageButton = new System.Windows.Forms.Button();
@@ -253,13 +253,11 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerpictureBox_Withdraw)).BeginInit();
             this.TransferPanel.SuspendLayout();
             this.transferGroupBox_Transfer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerpictureBox_T)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerpictureBox_Transfer)).BeginInit();
             this.DetailsPanel.SuspendLayout();
             this.AccountDetailsGroupBox_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
             this.ManagerPanel.SuspendLayout();
-            this.TransactionsPanel.SuspendLayout();
-            this.TransactionHistoryGroupBox.SuspendLayout();
             this.EmployeeDetailsPanel.SuspendLayout();
             this.DetailsGroupBox.SuspendLayout();
             this.TransactionsPanel.SuspendLayout();
@@ -305,7 +303,7 @@ namespace BankManagementSystem
             // 
             this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2501);
+            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2585);
             this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
             this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
             this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -332,7 +330,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2223);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2307);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -643,7 +641,7 @@ namespace BankManagementSystem
             this.WelcomePanel.ForeColor = System.Drawing.Color.White;
             this.WelcomePanel.Location = new System.Drawing.Point(206, 0);
             this.WelcomePanel.Name = "WelcomePanel";
-            this.WelcomePanel.Size = new System.Drawing.Size(775, 74);
+            this.WelcomePanel.Size = new System.Drawing.Size(771, 74);
             this.WelcomePanel.TabIndex = 1;
             // 
             // NameLabel
@@ -674,7 +672,7 @@ namespace BankManagementSystem
             this.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignOutButton.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOutButton.ForeColor = System.Drawing.Color.Red;
-            this.SignOutButton.Location = new System.Drawing.Point(664, 12);
+            this.SignOutButton.Location = new System.Drawing.Point(662, 12);
             this.SignOutButton.Name = "SignOutButton";
             this.SignOutButton.Size = new System.Drawing.Size(93, 32);
             this.SignOutButton.TabIndex = 2;
@@ -731,7 +729,7 @@ namespace BankManagementSystem
             this.CreateAccountPanel.ForeColor = System.Drawing.Color.White;
             this.CreateAccountPanel.Location = new System.Drawing.Point(206, 74);
             this.CreateAccountPanel.Name = "CreateAccountPanel";
-            this.CreateAccountPanel.Size = new System.Drawing.Size(775, 497);
+            this.CreateAccountPanel.Size = new System.Drawing.Size(771, 497);
             this.CreateAccountPanel.TabIndex = 2;
             // 
             // InitialDepositTextbox
@@ -1090,7 +1088,7 @@ namespace BankManagementSystem
             this.CloseAccountPanel.ForeColor = System.Drawing.Color.White;
             this.CloseAccountPanel.Location = new System.Drawing.Point(206, 74);
             this.CloseAccountPanel.Name = "CloseAccountPanel";
-            this.CloseAccountPanel.Size = new System.Drawing.Size(775, 497);
+            this.CloseAccountPanel.Size = new System.Drawing.Size(771, 497);
             this.CloseAccountPanel.TabIndex = 59;
             // 
             // AccountDetailsGroupBox
@@ -1310,7 +1308,7 @@ namespace BankManagementSystem
             this.DashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DashboardPanel.Location = new System.Drawing.Point(206, 74);
             this.DashboardPanel.Name = "DashboardPanel";
-            this.DashboardPanel.Size = new System.Drawing.Size(775, 497);
+            this.DashboardPanel.Size = new System.Drawing.Size(771, 497);
             this.DashboardPanel.TabIndex = 62;
             // 
             // ClockPanel
@@ -1359,7 +1357,7 @@ namespace BankManagementSystem
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(775, 497);
+            this.pictureBox6.Size = new System.Drawing.Size(771, 497);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
@@ -1449,7 +1447,7 @@ namespace BankManagementSystem
             this.DepositPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepositPanel.Location = new System.Drawing.Point(206, 74);
             this.DepositPanel.Name = "DepositPanel";
-            this.DepositPanel.Size = new System.Drawing.Size(775, 497);
+            this.DepositPanel.Size = new System.Drawing.Size(771, 497);
             this.DepositPanel.TabIndex = 1;
             // 
             // DepositGroupBox
@@ -1580,7 +1578,7 @@ namespace BankManagementSystem
             this.WithdrawPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WithdrawPanel.Location = new System.Drawing.Point(206, 74);
             this.WithdrawPanel.Name = "WithdrawPanel";
-            this.WithdrawPanel.Size = new System.Drawing.Size(775, 497);
+            this.WithdrawPanel.Size = new System.Drawing.Size(771, 497);
             this.WithdrawPanel.TabIndex = 1;
             // 
             // AccountOwnerLabel_W
@@ -1701,15 +1699,16 @@ namespace BankManagementSystem
             this.TransferPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransferPanel.Location = new System.Drawing.Point(206, 74);
             this.TransferPanel.Name = "TransferPanel";
-            this.TransferPanel.Size = new System.Drawing.Size(775, 497);
+            this.TransferPanel.Size = new System.Drawing.Size(771, 497);
             this.TransferPanel.TabIndex = 1;
+            this.TransferPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TransferPanel_Paint);
             // 
             // transferGroupBox_Transfer
             // 
-            this.transferGroupBox_Transfer.Controls.Add(this.label12);
-            this.transferGroupBox_Transfer.Controls.Add(this.AccountOwnerpictureBox_T);
+            this.transferGroupBox_Transfer.Controls.Add(this.senderBalanceLabel_Transfer);
+            this.transferGroupBox_Transfer.Controls.Add(this.AccountOwnerpictureBox_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.label10);
-            this.transferGroupBox_Transfer.Controls.Add(this.label9);
+            this.transferGroupBox_Transfer.Controls.Add(this.senderAccOwnerLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.accTypeLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.accOwnerLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.recAccFindButton_Transfer);
@@ -1722,29 +1721,29 @@ namespace BankManagementSystem
             this.transferGroupBox_Transfer.ForeColor = System.Drawing.Color.White;
             this.transferGroupBox_Transfer.Location = new System.Drawing.Point(30, 123);
             this.transferGroupBox_Transfer.Name = "transferGroupBox_Transfer";
-            this.transferGroupBox_Transfer.Size = new System.Drawing.Size(714, 350);
+            this.transferGroupBox_Transfer.Size = new System.Drawing.Size(714, 355);
             this.transferGroupBox_Transfer.TabIndex = 14;
             this.transferGroupBox_Transfer.TabStop = false;
             this.transferGroupBox_Transfer.Text = "Transfer";
             this.transferGroupBox_Transfer.Visible = false;
             // 
-            // label12
+            // senderBalanceLabel_Transfer
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(73, 88);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 20);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Balance:";
+            this.senderBalanceLabel_Transfer.AutoSize = true;
+            this.senderBalanceLabel_Transfer.Location = new System.Drawing.Point(73, 88);
+            this.senderBalanceLabel_Transfer.Name = "senderBalanceLabel_Transfer";
+            this.senderBalanceLabel_Transfer.Size = new System.Drawing.Size(73, 20);
+            this.senderBalanceLabel_Transfer.TabIndex = 21;
+            this.senderBalanceLabel_Transfer.Text = "Balance:";
             // 
-            // AccountOwnerpictureBox_T
+            // AccountOwnerpictureBox_Transfer
             // 
-            this.AccountOwnerpictureBox_T.Location = new System.Drawing.Point(504, 29);
-            this.AccountOwnerpictureBox_T.Name = "AccountOwnerpictureBox_T";
-            this.AccountOwnerpictureBox_T.Size = new System.Drawing.Size(146, 104);
-            this.AccountOwnerpictureBox_T.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AccountOwnerpictureBox_T.TabIndex = 13;
-            this.AccountOwnerpictureBox_T.TabStop = false;
+            this.AccountOwnerpictureBox_Transfer.Location = new System.Drawing.Point(504, 29);
+            this.AccountOwnerpictureBox_Transfer.Name = "AccountOwnerpictureBox_Transfer";
+            this.AccountOwnerpictureBox_Transfer.Size = new System.Drawing.Size(146, 104);
+            this.AccountOwnerpictureBox_Transfer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AccountOwnerpictureBox_Transfer.TabIndex = 13;
+            this.AccountOwnerpictureBox_Transfer.TabStop = false;
             // 
             // label10
             // 
@@ -1755,14 +1754,14 @@ namespace BankManagementSystem
             this.label10.TabIndex = 20;
             this.label10.Text = "Account Information (Sender)";
             // 
-            // label9
+            // senderAccOwnerLabel_Transfer
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 58);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 20);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Account Owner:";
+            this.senderAccOwnerLabel_Transfer.AutoSize = true;
+            this.senderAccOwnerLabel_Transfer.Location = new System.Drawing.Point(21, 58);
+            this.senderAccOwnerLabel_Transfer.Name = "senderAccOwnerLabel_Transfer";
+            this.senderAccOwnerLabel_Transfer.Size = new System.Drawing.Size(125, 20);
+            this.senderAccOwnerLabel_Transfer.TabIndex = 19;
+            this.senderAccOwnerLabel_Transfer.Text = "Account Owner:";
             // 
             // accTypeLabel_Transfer
             // 
@@ -1793,6 +1792,7 @@ namespace BankManagementSystem
             this.recAccFindButton_Transfer.TabIndex = 16;
             this.recAccFindButton_Transfer.Text = "Find";
             this.recAccFindButton_Transfer.UseVisualStyleBackColor = false;
+            this.recAccFindButton_Transfer.Click += new System.EventHandler(this.recAccFindButton_Transfer_Click);
             // 
             // recAccNumberTextBox_Transfer
             // 
@@ -1834,6 +1834,7 @@ namespace BankManagementSystem
             this.transferButton_Transfer.TabIndex = 5;
             this.transferButton_Transfer.Text = "Transfer";
             this.transferButton_Transfer.UseVisualStyleBackColor = false;
+            this.transferButton_Transfer.Click += new System.EventHandler(this.transferButton_Transfer_Click);
             // 
             // enterAmountTextBox_Transfer
             // 
@@ -1864,6 +1865,7 @@ namespace BankManagementSystem
             this.findButton_Transfer.TabIndex = 12;
             this.findButton_Transfer.Text = "Find";
             this.findButton_Transfer.UseVisualStyleBackColor = false;
+            this.findButton_Transfer.Click += new System.EventHandler(this.findButton_Transfer_Click);
             // 
             // accNumberSearchTextBox_Transfer
             // 
@@ -1895,7 +1897,7 @@ namespace BankManagementSystem
             this.DetailsPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetailsPanel.Location = new System.Drawing.Point(206, 74);
             this.DetailsPanel.Name = "DetailsPanel";
-            this.DetailsPanel.Size = new System.Drawing.Size(775, 497);
+            this.DetailsPanel.Size = new System.Drawing.Size(771, 497);
             this.DetailsPanel.TabIndex = 67;
             // 
             // SearchAccountTextbox_Details
@@ -2126,7 +2128,7 @@ namespace BankManagementSystem
             this.ManagerPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ManagerPanel.Location = new System.Drawing.Point(206, 74);
             this.ManagerPanel.Name = "ManagerPanel";
-            this.ManagerPanel.Size = new System.Drawing.Size(775, 497);
+            this.ManagerPanel.Size = new System.Drawing.Size(771, 497);
             this.ManagerPanel.TabIndex = 16;
             // 
             // EditDetailsPanel
@@ -2134,7 +2136,7 @@ namespace BankManagementSystem
             this.EditDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditDetailsPanel.Location = new System.Drawing.Point(0, 31);
             this.EditDetailsPanel.Name = "EditDetailsPanel";
-            this.EditDetailsPanel.Size = new System.Drawing.Size(775, 466);
+            this.EditDetailsPanel.Size = new System.Drawing.Size(771, 466);
             this.EditDetailsPanel.TabIndex = 0;
             // 
             // EmployeeDetailsPanel
@@ -2147,7 +2149,7 @@ namespace BankManagementSystem
             this.EmployeeDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeDetailsPanel.Location = new System.Drawing.Point(0, 31);
             this.EmployeeDetailsPanel.Name = "EmployeeDetailsPanel";
-            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(775, 466);
+            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(771, 466);
             this.EmployeeDetailsPanel.TabIndex = 1;
             // 
             // DetailsGroupBox
@@ -2223,7 +2225,7 @@ namespace BankManagementSystem
             this.TransactionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TransactionsPanel.Location = new System.Drawing.Point(0, 31);
             this.TransactionsPanel.Name = "TransactionsPanel";
-            this.TransactionsPanel.Size = new System.Drawing.Size(775, 466);
+            this.TransactionsPanel.Size = new System.Drawing.Size(771, 466);
             this.TransactionsPanel.TabIndex = 0;
             // 
             // TransactionHistoryGroupBox
@@ -2284,7 +2286,7 @@ namespace BankManagementSystem
             this.ManagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManagePanel.Location = new System.Drawing.Point(0, 31);
             this.ManagePanel.Name = "ManagePanel";
-            this.ManagePanel.Size = new System.Drawing.Size(775, 466);
+            this.ManagePanel.Size = new System.Drawing.Size(771, 466);
             this.ManagePanel.TabIndex = 0;
             // 
             // RemoveEmployeeGroupBox
@@ -2312,7 +2314,7 @@ namespace BankManagementSystem
             this.ManagerPanelDefaultPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManagerPanelDefaultPanel.Location = new System.Drawing.Point(0, 31);
             this.ManagerPanelDefaultPanel.Name = "ManagerPanelDefaultPanel";
-            this.ManagerPanelDefaultPanel.Size = new System.Drawing.Size(775, 466);
+            this.ManagerPanelDefaultPanel.Size = new System.Drawing.Size(771, 466);
             this.ManagerPanelDefaultPanel.TabIndex = 0;
             // 
             // ManagerButtonsPanel
@@ -2326,7 +2328,7 @@ namespace BankManagementSystem
             this.ManagerButtonsPanel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ManagerButtonsPanel.Location = new System.Drawing.Point(0, 0);
             this.ManagerButtonsPanel.Name = "ManagerButtonsPanel";
-            this.ManagerButtonsPanel.Size = new System.Drawing.Size(775, 31);
+            this.ManagerButtonsPanel.Size = new System.Drawing.Size(771, 31);
             this.ManagerButtonsPanel.TabIndex = 0;
             // 
             // TransactionsButton
@@ -2381,10 +2383,10 @@ namespace BankManagementSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 571);
+            this.ClientSize = new System.Drawing.Size(977, 571);
             this.Controls.Add(this.TransferPanel);
-            this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DepositPanel);
+            this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.DetailsPanel);
@@ -2450,16 +2452,13 @@ namespace BankManagementSystem
             this.TransferPanel.PerformLayout();
             this.transferGroupBox_Transfer.ResumeLayout(false);
             this.transferGroupBox_Transfer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerpictureBox_T)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerpictureBox_Transfer)).EndInit();
             this.DetailsPanel.ResumeLayout(false);
             this.DetailsPanel.PerformLayout();
             this.AccountDetailsGroupBox_Details.ResumeLayout(false);
             this.AccountDetailsGroupBox_Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).EndInit();
             this.ManagerPanel.ResumeLayout(false);
-            this.TransactionsPanel.ResumeLayout(false);
-            this.TransactionsPanel.PerformLayout();
-            this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.EmployeeDetailsPanel.ResumeLayout(false);
             this.EmployeeDetailsPanel.PerformLayout();
             this.DetailsGroupBox.ResumeLayout(false);
@@ -2620,7 +2619,7 @@ namespace BankManagementSystem
         private System.Windows.Forms.Button transferButton_Transfer;
         private System.Windows.Forms.TextBox enterAmountTextBox_Transfer;
         private System.Windows.Forms.Label enterAmountLabel_Transfer;
-        private System.Windows.Forms.PictureBox AccountOwnerpictureBox_T;
+        private System.Windows.Forms.PictureBox AccountOwnerpictureBox_Transfer;
         private System.Windows.Forms.Button findButton_Transfer;
         private System.Windows.Forms.TextBox accNumberSearchTextBox_Transfer;
         private System.Windows.Forms.Label accNumberLabel_Transfer;
@@ -2655,9 +2654,9 @@ namespace BankManagementSystem
         private GroupBox TransactionHistoryGroupBox;
         private Panel TransactionHistoryPanel;
         private Label AccountOwnerLabel_W;
-        private Label label12;
+        private Label senderBalanceLabel_Transfer;
         private Label label10;
-        private Label label9;
+        private Label senderAccOwnerLabel_Transfer;
     }
 }
 
