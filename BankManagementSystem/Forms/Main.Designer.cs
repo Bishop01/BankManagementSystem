@@ -194,8 +194,6 @@ namespace BankManagementSystem
             this.FirstNameLabel_Details = new System.Windows.Forms.Label();
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
             this.ManagerPanel = new System.Windows.Forms.Panel();
-            this.EditDetailsPanel = new System.Windows.Forms.Panel();
-            this.TransactionsPanel = new System.Windows.Forms.Panel();
             this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
             this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
             this.FindButtion_Transactions = new System.Windows.Forms.Button();
@@ -209,11 +207,6 @@ namespace BankManagementSystem
             this.EmployeeIDTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TransactionsPanel = new System.Windows.Forms.Panel();
-            this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
-            this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
-            this.FindButtion_Transactions = new System.Windows.Forms.Button();
-            this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.ManagePanel = new System.Windows.Forms.Panel();
             this.RemoveEmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.RegisterEmployeeGroupBox = new System.Windows.Forms.GroupBox();
@@ -1800,7 +1793,6 @@ namespace BankManagementSystem
             this.recAccFindButton_Transfer.TabIndex = 16;
             this.recAccFindButton_Transfer.Text = "Find";
             this.recAccFindButton_Transfer.UseVisualStyleBackColor = false;
-            this.recAccFindButton_Transfer.Click += new System.EventHandler(this.recAccFindButton_Transfer_Click);
             // 
             // recAccNumberTextBox_Transfer
             // 
@@ -1842,7 +1834,6 @@ namespace BankManagementSystem
             this.transferButton_Transfer.TabIndex = 5;
             this.transferButton_Transfer.Text = "Transfer";
             this.transferButton_Transfer.UseVisualStyleBackColor = false;
-            this.transferButton_Transfer.Click += new System.EventHandler(this.transferButton_Transfer_Click);
             // 
             // enterAmountTextBox_Transfer
             // 
@@ -1873,7 +1864,6 @@ namespace BankManagementSystem
             this.findButton_Transfer.TabIndex = 12;
             this.findButton_Transfer.Text = "Find";
             this.findButton_Transfer.UseVisualStyleBackColor = false;
-            this.findButton_Transfer.Click += new System.EventHandler(this.findButton_Transfer_Click);
             // 
             // accNumberSearchTextBox_Transfer
             // 
