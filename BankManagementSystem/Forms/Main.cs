@@ -1166,16 +1166,32 @@ namespace BankManagementSystem
             EmployeeIDTextbox.Text = "";
         }
 
-        
-
         #region Transfer
-        
+
+        private void HidetransferGroupBox()
+        {
+            transferGroupBox_Transfer.Hide();
+            findButton_Transfer.Text = "Find";
+            accNumberSearchTextBox_Transfer.Enabled = true;
+            enterAmountTextBox_Transfer.Text = "";
+            accNumberSearchTextBox_Transfer.Text = "";
+            AccountOwnerpictureBox_Transfer.Image = null;
+        }
+
+        private void ResetTransfer()
+        {
+            recAccNumberTextBox_Transfer.Text = "";
+            accOwnerLabel_Transfer.Text = "Account Owner: ";
+            accTypeLabel_Transfer.Text = "Account Type";
+            recAccFindButton_Transfer.Text = "Find";
+            recAccNumberTextBox_Transfer.Enabled = true;
+        }
         private void findButton_Transfer_Click(object sender, EventArgs e)
         {
-          /*  if (findButton_Transfer.Text == "Find Again")
+            if (findButton_Transfer.Text == "Find Again")
             {
-                HideTransferGroupBox();
-                availableBalanceLabel_Transfer.Enabled = false;
+                HidetransferGroupBox();
+                ResetTransfer();
                 return;
             }
             string s = accNumberSearchTextBox_Transfer.Text;
@@ -1195,38 +1211,29 @@ namespace BankManagementSystem
                         MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    availableBalanceLabel_Transfer.Show();
                     transferGroupBox_Transfer.Show();
-                    AccountOwnerpictureBox_T.ImageLocation = c.ImageDir;
+                    AccountOwnerpictureBox_Transfer.ImageLocation = c.ImageDir;
                     findButton_Transfer.Text = "Find Again";
-                    SearchAccounttextBox_Withdraw.Enabled = false;
-                    //AccountOwnerLabel_W.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
-                    availableBalanceLabel_Transfer.Text = "Available Balance: " + account.Balance;
-                    //AccountTypelabel_Withdraw.Text = "Account Type: " + account.AccountType;
+                    accNumberSearchTextBox_Transfer.Enabled = false;
+                    senderAccOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    senderBalanceLabel_Transfer.Text = "Balance: " + account.Balance;
                 }
                 catch
                 {
                     MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            }*/
+            }
         }
-
 
         private void recAccFindButton_Transfer_Click(object sender, EventArgs e)
         {
-            /*if (recAccFindButton_Transfer.Text == "Find Again")
+            if (recAccFindButton_Transfer.Text == "Find Again")
             {
-                //  HideWithdrawGroupBox();
-                accOwnerLabel_Transfer.Hide();
-                accTypeLabel_Transfer.Hide();
-                enterAmountLabel_Transfer.Hide();
-                enterAmountTextBox_Transfer.Hide();
-                transferButton_Transfer.Hide();
-                return;
+                ResetTransfer();
             }
-            string s1 = SearchAccounttextBox_Withdraw.Text;
-            if (s1 == "")
+            string s = recAccNumberTextBox_Transfer.Text;
+            if (s == "")
             {
                 return;
             }
@@ -1234,39 +1241,66 @@ namespace BankManagementSystem
             {
                 try
                 {
-                    int id1 = Convert.ToInt32(s1);
-                    Client c1 = FetchData.GetClientByAccountID(id1);
-                    Account account1 = FetchData.GetAccount(id1);
-                    if (c1 == null || account1 == null)
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    int senderId = Convert.ToInt32(accNumberSearchTextBox_Transfer.Text);
+                    if (c == null || account == null || account.AccountID == senderId)
                     {
                         MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        recAccNumberTextBox_Transfer.Text = "";
                         return;
                     }
-                    //groupBox_Withdraw.Show();
-                    //AccountOwnerpictureBox_Withdraw.ImageLocation = c.ImageDir;
+                    transferGroupBox_Transfer.Show();
                     recAccFindButton_Transfer.Text = "Find Again";
                     recAccNumberTextBox_Transfer.Enabled = false;
-                    accOwnerLabel_Transfer.Text = "Account Owner: " + c1.Firstname + " " + c1.Lastname;
-                    //Balancelabel_Withdraw.Text = "Balance: " + account.Balance;
-                    accTypeLabel_Transfer.Text = "Account Type: " + account1.AccountType;
+                    accOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    accTypeLabel_Transfer.Text = "Account Type: " + account.AccountType;
                 }
                 catch
                 {
                     MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            }*/
+            }
         }
 
         private void transferButton_Transfer_Click(object sender, EventArgs e)
         {
-
+            string s = enterAmountTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    double amount = Convert.ToDouble(s);
+                    int recId = Convert.ToInt32(recAccNumberTextBox_Transfer.Text);
+                    int senderId = Convert.ToInt32(accNumberSearchTextBox_Transfer.Text);
+                    if ((ModifyData.UpdateBalance(recId, amount)) && (ModifyData.UpdateBalance(senderId, (-amount))))
+                    {
+                        if (!ModifyData.UpdateTransactionHistory(currentEmployee.ID, recId, "Transfer", Convert.ToInt32(amount)))
+                        {
+                            MessageBox.Show("Error updating transaction!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HidetransferGroupBox();
+                        accOwnerLabel_Transfer.Text = "Account Owner: ";
+                        accTypeLabel_Transfer.Text = "Account Type";
+                        AccountOwnerpictureBox_Transfer.Image = null;
+                        ResetTransfer();
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
         #endregion
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
