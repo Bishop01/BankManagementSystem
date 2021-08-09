@@ -261,6 +261,9 @@ namespace BankManagementSystem
             AccountButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Account";
         }
+
+        #region Deposit
+
         private void FindButton_Deposit_Click(object sender, EventArgs e)
         {
             if (FindButton_Deposit.Text == "Find Again")
@@ -301,7 +304,8 @@ namespace BankManagementSystem
             }
         }
         private void DepositButton_Deposit_Click(object sender, EventArgs e)
-        {
+        {   
+
             string s = DepositTextbox.Text;
             if (s == "")
             {
@@ -341,7 +345,91 @@ namespace BankManagementSystem
             AccountOwnerPictureBox_Deposit.Image = null;
         }
 
-        #endregion Account
+        #endregion
+
+        #region Withdraw
+
+        private void Findbutton_Withdraw_Click(object sender, EventArgs e)
+        {   
+            if (Findbutton_Withdraw.Text == "Find Again")
+            {
+                HideWithdrawGroupBox();
+                return;
+            }
+            string s = SearchAccounttextBox_Withdraw.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    if (c == null || account == null)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    groupBox_Withdraw.Show();
+                    AccountOwnerpictureBox_Withdraw.ImageLocation = c.ImageDir;
+                    Findbutton_Withdraw.Text = "Find Again";
+                    SearchAccounttextBox_Withdraw.Enabled = false;
+                    AccountOwnerlabel_Withdraw.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    Balancelabel_Withdraw.Text = "Balance: " + account.Balance;
+                    AccountTypelabel_Withdraw.Text = "Account Type: " + account.AccountType;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void Withdrawbutton_Withdraw_Click(object sender, EventArgs e)
+        {
+            string s = WithdrawtextBox.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    double amount = Convert.ToDouble(s);
+                    int id = Convert.ToInt32(SearchAccounttextBox_Withdraw.Text);
+                    if (ModifyData.UpdateBalance_Withdraw(id, amount))
+                    {
+                        if (!ModifyData.UpdateTransactionHistory(currentEmployee.ID, id, "Withdraw", Convert.ToInt32(amount)))
+                        {
+                            MessageBox.Show("Error updating transaction!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        MessageBox.Show("Amount successfully withdrawn!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HideWithdrawGroupBox();
+                        AccountOwnerpictureBox_Withdraw.Image = null;
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void HideWithdrawGroupBox()
+        {
+            groupBox_Withdraw.Hide();
+            Findbutton_Withdraw.Text = "Find";
+            SearchAccounttextBox_Withdraw.Enabled = true;
+            WithdrawtextBox.Text = "";
+            SearchAccounttextBox_Withdraw.Text = "";
+            AccountOwnerpictureBox_Withdraw.Image = null;
+        }
+
+        #endregion
 
         #region Reset
 
@@ -1075,5 +1163,104 @@ namespace BankManagementSystem
             EmployeeIDTextBox_Transactions.Text = "";
             EmployeeIDTextbox.Text = "";
         }
+
+        
+
+        #region Transfer
+        
+        private void findButton_Transfer_Click(object sender, EventArgs e)
+        {
+          /*  if (findButton_Transfer.Text == "Find Again")
+            {
+                HideTransferGroupBox();
+                availableBalanceLabel_Transfer.Enabled = false;
+                return;
+            }
+            string s = accNumberSearchTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    if (c == null || account == null)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    availableBalanceLabel_Transfer.Show();
+                    transferGroupBox_Transfer.Show();
+                    AccountOwnerpictureBox_T.ImageLocation = c.ImageDir;
+                    findButton_Transfer.Text = "Find Again";
+                    SearchAccounttextBox_Withdraw.Enabled = false;
+                    //AccountOwnerLabel_W.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    availableBalanceLabel_Transfer.Text = "Available Balance: " + account.Balance;
+                    //AccountTypelabel_Withdraw.Text = "Account Type: " + account.AccountType;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }*/
+        }
+
+
+        private void recAccFindButton_Transfer_Click(object sender, EventArgs e)
+        {
+            /*if (recAccFindButton_Transfer.Text == "Find Again")
+            {
+                //  HideWithdrawGroupBox();
+                accOwnerLabel_Transfer.Hide();
+                accTypeLabel_Transfer.Hide();
+                enterAmountLabel_Transfer.Hide();
+                enterAmountTextBox_Transfer.Hide();
+                transferButton_Transfer.Hide();
+                return;
+            }
+            string s1 = SearchAccounttextBox_Withdraw.Text;
+            if (s1 == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id1 = Convert.ToInt32(s1);
+                    Client c1 = FetchData.GetClientByAccountID(id1);
+                    Account account1 = FetchData.GetAccount(id1);
+                    if (c1 == null || account1 == null)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    //groupBox_Withdraw.Show();
+                    //AccountOwnerpictureBox_Withdraw.ImageLocation = c.ImageDir;
+                    recAccFindButton_Transfer.Text = "Find Again";
+                    recAccNumberTextBox_Transfer.Enabled = false;
+                    accOwnerLabel_Transfer.Text = "Account Owner: " + c1.Firstname + " " + c1.Lastname;
+                    //Balancelabel_Withdraw.Text = "Balance: " + account.Balance;
+                    accTypeLabel_Transfer.Text = "Account Type: " + account1.AccountType;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }*/
+        }
+
+        private void transferButton_Transfer_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
+#endregion
