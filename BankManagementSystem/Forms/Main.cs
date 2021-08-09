@@ -1263,5 +1263,10 @@ namespace BankManagementSystem
 
         }
         #endregion
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -231,6 +231,26 @@ namespace BankManagementSystem
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label18 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).BeginInit();
@@ -278,6 +298,8 @@ namespace BankManagementSystem
             this.TransactionsPanel.SuspendLayout();
             this.TransactionHistoryGroupBox.SuspendLayout();
             this.ManagePanel.SuspendLayout();
+            this.RemoveEmployeeGroupBox.SuspendLayout();
+            this.RegisterEmployeeGroupBox.SuspendLayout();
             this.ManagerButtonsPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2134,10 +2156,10 @@ namespace BankManagementSystem
             // ManagerPanel
             // 
             this.ManagerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.ManagerPanel.Controls.Add(this.ManagePanel);
             this.ManagerPanel.Controls.Add(this.EditDetailsPanel);
             this.ManagerPanel.Controls.Add(this.EmployeeDetailsPanel);
             this.ManagerPanel.Controls.Add(this.TransactionsPanel);
-            this.ManagerPanel.Controls.Add(this.ManagePanel);
             this.ManagerPanel.Controls.Add(this.ManagerPanelDefaultPanel);
             this.ManagerPanel.Controls.Add(this.ManagerButtonsPanel);
             this.ManagerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2311,6 +2333,9 @@ namespace BankManagementSystem
             // 
             // RemoveEmployeeGroupBox
             // 
+            this.RemoveEmployeeGroupBox.Controls.Add(this.button2);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.textBox12);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.label22);
             this.RemoveEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
             this.RemoveEmployeeGroupBox.Location = new System.Drawing.Point(25, 277);
             this.RemoveEmployeeGroupBox.Name = "RemoveEmployeeGroupBox";
@@ -2321,6 +2346,23 @@ namespace BankManagementSystem
             // 
             // RegisterEmployeeGroupBox
             // 
+            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox11);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox10);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox9);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox8);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox7);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox6);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.dateTimePicker1);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label21);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label20);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label19);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.radioButton2);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label18);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.radioButton1);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label17);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label16);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label15);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label14);
             this.RegisterEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
             this.RegisterEmployeeGroupBox.Location = new System.Drawing.Point(25, 12);
             this.RegisterEmployeeGroupBox.Name = "RegisterEmployeeGroupBox";
@@ -2536,16 +2578,199 @@ namespace BankManagementSystem
             this.textBox5.Size = new System.Drawing.Size(174, 23);
             this.textBox5.TabIndex = 17;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(82, 36);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Name:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(80, 68);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 20);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Email:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(9, 158);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(125, 20);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Phone Number:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(55, 98);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 20);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Password:";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(143, 192);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(64, 24);
+            this.radioButton1.TabIndex = 4;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Male";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(65, 194);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 20);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Gender:";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(223, 192);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(82, 24);
+            this.radioButton2.TabIndex = 6;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Female";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(83, 220);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 20);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "NID:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(64, 129);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 20);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Address:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(347, 186);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(109, 20);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "Date of Birth:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(466, 182);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(215, 27);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(143, 33);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(185, 27);
+            this.textBox6.TabIndex = 11;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(143, 65);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(185, 27);
+            this.textBox7.TabIndex = 12;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(143, 96);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(185, 27);
+            this.textBox8.TabIndex = 13;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(143, 127);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(185, 27);
+            this.textBox9.TabIndex = 14;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(143, 158);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(185, 27);
+            this.textBox10.TabIndex = 15;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(142, 217);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(185, 27);
+            this.textBox11.TabIndex = 16;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(351, 85);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 28);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(314, 48);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(174, 27);
+            this.textBox12.TabIndex = 14;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(192, 51);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(116, 20);
+            this.label22.TabIndex = 13;
+            this.label22.Text = "EmployeeID:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.TransferPanel);
-            this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.CloseAccountPanel);
@@ -2626,6 +2851,10 @@ namespace BankManagementSystem
             this.TransactionsPanel.PerformLayout();
             this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.ManagePanel.ResumeLayout(false);
+            this.RemoveEmployeeGroupBox.ResumeLayout(false);
+            this.RemoveEmployeeGroupBox.PerformLayout();
+            this.RegisterEmployeeGroupBox.ResumeLayout(false);
+            this.RegisterEmployeeGroupBox.PerformLayout();
             this.ManagerButtonsPanel.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -2834,6 +3063,26 @@ namespace BankManagementSystem
         private Label Email_ED;
         private Label Name_ED;
         private Label ID_ED;
+        private Label label18;
+        private RadioButton radioButton1;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label19;
+        private RadioButton radioButton2;
+        private TextBox textBox11;
+        private TextBox textBox10;
+        private TextBox textBox9;
+        private TextBox textBox8;
+        private TextBox textBox7;
+        private TextBox textBox6;
+        private DateTimePicker dateTimePicker1;
+        private Label label21;
+        private Label label20;
+        private Button button2;
+        private TextBox textBox12;
+        private Label label22;
     }
 }
 
