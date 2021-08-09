@@ -246,6 +246,52 @@ namespace BankManagementSystem
             }
             return false;
         }
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            ResetResultGroupBox();
+            string s = RecoverAccountTextBox.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int nid = Convert.ToInt32(s);
+                    List<Account> accounts = FetchData.GetAccountsByNID(nid);
+                    Client client = FetchData.GetClientByNID(nid);
+                    if (accounts == null)
+                    {
+                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else if (accounts.Count > 0)
+                    {
+                        AccountOwnerPictureBox.ImageLocation = client.ImageDir;
+                        int x = 0;
+                        foreach (Account account in accounts)
+                        {
+                            Label l1 = new Label();
+                            l1.AutoSize = true;
+                            l1.Text = "Account ID: " + account.AccountID;
+                            l1.Location = new Point(104, 69 + x * 25);
+                            Label l2 = new Label();
+                            l2.AutoSize = true;
+                            l2.Text = "Account Type: " + account.AccountType;
+                            l2.Location = new Point(380, 69 + x * 25);
+                            AccountsResultGroupBox.Controls.Add(l1);
+                            AccountsResultGroupBox.Controls.Add(l2);
+                            x++;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Insert Valid ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         #endregion Register
 
@@ -440,6 +486,271 @@ namespace BankManagementSystem
         }
 
         #endregion Reset
+
+        #region Manager
+
+        private void ManagerButton_Click(object sender, EventArgs e)
+        {
+            ManagerPanelDefaultPanel.BringToFront();
+            DashboardButton.BackColor = Color.FromArgb(31, 30, 68);
+            ManagerPanel.BringToFront();
+            ManagerButton.BackColor = Color.FromArgb(43, 63, 97);
+            CurrentLabel.Text = "Manager";
+            EnableManagerPanelButtons(null);
+            ClearManagerTextFields();
+        }
+        private void ManagerPanelButtonsHandler(object sender, EventArgs e)
+        {
+            if (sender.Equals(EmployeeDetailsButton))
+            {
+                EmployeeDetailsPanel.BringToFront();
+                EmployeeDetailsButton.Enabled = false;
+                EmployeeDetailsButton.BackColor = Color.Gray;
+                EnableManagerPanelButtons(sender);
+            }
+            else if (sender.Equals(EditDetailsButton))
+            {
+                EditDetailsPanel.BringToFront();
+                EditDetailsButton.Enabled = false;
+                EditDetailsButton.BackColor = Color.Gray;
+                EnableManagerPanelButtons(sender);
+            }
+            else if (sender.Equals(ManageButton))
+            {
+                ManagePanel.BringToFront();
+                ManageButton.Enabled = false;
+                ManageButton.BackColor = Color.Gray;
+                EnableManagerPanelButtons(sender);
+            }
+            else if (sender.Equals(TransactionsButton))
+            {
+                TransactionsPanel.BringToFront();
+                TransactionsButton.Enabled = false;
+                TransactionsButton.BackColor = Color.Gray;
+                EnableManagerPanelButtons(sender);
+            }
+        }
+        private void EnableManagerPanelButtons(object sender)
+        {
+            foreach (Button button in ManagerButtonsPanel.Controls)
+            {
+                if (sender != null)
+                {
+                    if (sender.Equals(button))
+                    {
+                        continue;
+                    }
+                }
+
+                button.Enabled = true;
+                button.BackColor = Color.FromArgb(26, 25, 62);
+            }
+        }
+        private void FindAllButton_Click(object sender, EventArgs e)
+        {
+            DetailsPanel_EmployeeDetails.Controls.Clear();
+            List<Employee> employees = FetchData.GetAllEmployees();
+            foreach (Employee employee in employees)
+            {
+                GroupBox groupBox = new GroupBox();
+                groupBox.Text = "Employee";
+                groupBox.ForeColor = Color.White;
+                groupBox.Location = new Point(9, 9);
+                groupBox.Dock = DockStyle.Top;
+                groupBox.Size = new Size(715, 143);
+                //groupBox.Padding = new Padding(0,0,0,10);
+
+                Label l1 = new Label();
+                l1.Text = "Name: " + employee.Name;
+                l1.Location = new Point(39, 41);
+                l1.AutoSize = true;
+                Label l2 = new Label();
+                l2.Text = "ID: " + employee.ID;
+                l2.Location = new Point(60, 90);
+                l2.AutoSize = true;
+                Label l3 = new Label();
+                l3.Text = "NID: " + employee.NID;
+                l3.Location = new Point(220, 90);
+                l3.AutoSize = true;
+                Label l4 = new Label();
+                l4.Text = "Gender: " + employee.Gender;
+                l4.Location = new Point(434, 40);
+                l4.AutoSize = true;
+                Label l5 = new Label();
+                l5.Text = "Date of Birth: " + employee.DOB;
+                l5.Location = new Point(399, 90);
+                l5.AutoSize = true;
+                Label l6 = new Label();
+                l6.Text = "Address: " + employee.Address;
+                l6.Location = new Point(430, 64);
+                l6.AutoSize = true;
+                Label l7 = new Label();
+                l7.Text = "Email: " + employee.Email;
+                l7.Location = new Point(39, 67);
+                l7.AutoSize = true;
+
+                groupBox.Controls.Add(l1);
+                groupBox.Controls.Add(l2);
+                groupBox.Controls.Add(l3);
+                groupBox.Controls.Add(l4);
+                groupBox.Controls.Add(l5);
+                groupBox.Controls.Add(l6);
+                groupBox.Controls.Add(l7);
+
+                DetailsPanel_EmployeeDetails.Controls.Add(groupBox);
+            }
+        }
+        private void FindButton_EmployeeDetails_Click(object sender, EventArgs e)
+        {
+            string s = EmployeeIDTextbox.Text;
+            if (s == "")
+            {
+                DetailsPanel_EmployeeDetails.Controls.Clear();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    DetailsPanel_EmployeeDetails.Controls.Clear();
+                    int id = Convert.ToInt32(s);
+                    Employee employee = FetchData.GetEmployee(id);
+                    if (employee == null)
+                    {
+                        MessageBox.Show("Invalid employee id!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DetailsPanel_EmployeeDetails.Controls.Clear();
+                        return;
+                    }
+                    else
+                    {
+                        GroupBox groupBox = new GroupBox();
+                        groupBox.Text = "Employee";
+                        groupBox.ForeColor = Color.White;
+                        groupBox.Location = new Point(9, 9);
+                        groupBox.Dock = DockStyle.Top;
+                        groupBox.Size = new Size(715, 143);
+
+                        Label l1 = new Label();
+                        l1.Text = "Name: " + employee.Name;
+                        l1.Location = new Point(39, 41);
+                        l1.AutoSize = true;
+                        Label l2 = new Label();
+                        l2.Text = "ID: " + employee.ID;
+                        l2.Location = new Point(60, 90);
+                        l2.AutoSize = true;
+                        Label l3 = new Label();
+                        l3.Text = "NID: " + employee.NID;
+                        l3.Location = new Point(220, 90);
+                        l3.AutoSize = true;
+                        Label l4 = new Label();
+                        l4.Text = "Gender: " + employee.Gender;
+                        l4.Location = new Point(434, 40);
+                        l4.AutoSize = true;
+                        Label l5 = new Label();
+                        l5.Text = "Date of Birth: " + employee.DOB;
+                        l5.Location = new Point(399, 90);
+                        l5.AutoSize = true;
+                        Label l6 = new Label();
+                        l6.Text = "Address: " + employee.Address;
+                        l6.Location = new Point(430, 64);
+                        l6.AutoSize = true;
+                        Label l7 = new Label();
+                        l7.Text = "Email: " + employee.Email;
+                        l7.Location = new Point(39, 67);
+                        l7.AutoSize = true;
+
+                        groupBox.Controls.Add(l1);
+                        groupBox.Controls.Add(l2);
+                        groupBox.Controls.Add(l3);
+                        groupBox.Controls.Add(l4);
+                        groupBox.Controls.Add(l5);
+                        groupBox.Controls.Add(l6);
+                        groupBox.Controls.Add(l7);
+
+                        DetailsPanel_EmployeeDetails.Controls.Add(groupBox);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid Input!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DetailsPanel_EmployeeDetails.Controls.Clear();
+                    return;
+                }
+            }
+        }
+        private void FindButtion_Transactions_Click(object sender, EventArgs e)
+        {
+            string s = EmployeeIDTextBox_Transactions.Text;
+            if (s == "")
+            {
+                TransactionHistoryPanel.Controls.Clear();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    TransactionHistoryPanel.Controls.Clear();
+                    int id = Convert.ToInt32(s);
+                    Employee employee = FetchData.GetEmployee(id);
+                    List<Transactions> transactions = FetchData.GetTransactionHistory(id);
+                    if (transactions == null)
+                    {
+                        MessageBox.Show("Invalid employee id!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TransactionHistoryPanel.Controls.Clear();
+                        return;
+                    }
+                    foreach (Transactions transaction in transactions)
+                    {
+                        GroupBox groupBox = new GroupBox();
+                        groupBox.Text = transaction.TransactionType;
+                        groupBox.ForeColor = Color.White;
+                        //groupBox.Location = new Point(9, 9);
+                        groupBox.Dock = DockStyle.Top;
+                        groupBox.Size = new Size(720, 112);
+                        //groupBox.Padding = new Padding(0,0,0,10);
+
+                        Label l1 = new Label();
+                        l1.Text = "Employee ID: " + transaction.EmployeeID;
+                        l1.Location = new Point(70, 38);
+                        l1.AutoSize = true;
+                        Label l2 = new Label();
+                        l2.Text = "Account ID: " + transaction.AccountID;
+                        l2.Location = new Point(79, 66);
+                        l2.AutoSize = true;
+                        Label l3 = new Label();
+                        l3.Text = "Transaction ID: " + transaction.ID;
+                        l3.Location = new Point(405, 66);
+                        l3.AutoSize = true;
+                        Label l4 = new Label();
+                        l4.Text = "Employee Name: " + employee.Name;
+                        l4.Location = new Point(397, 44);
+                        l4.AutoSize = true;
+
+                        groupBox.Controls.Add(l1);
+                        groupBox.Controls.Add(l2);
+                        groupBox.Controls.Add(l3);
+                        groupBox.Controls.Add(l4);
+
+                        TransactionHistoryPanel.Controls.Add(groupBox);
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid Input!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TransactionHistoryPanel.Controls.Clear();
+                    return;
+                }
+            }
+        }
+        private void ClearManagerTextFields()
+        {
+            EmployeeIDTextBox_Transactions.Text = "";
+            EmployeeIDTextbox.Text = "";
+        }
+
+        #endregion Manager
 
         private void SubmenuButtonsHandler(object sender, EventArgs e)
         {
@@ -649,52 +960,6 @@ namespace BankManagementSystem
 
             AccountDetailsGroupBox.Show();
         }
-        private void FindButton_Click(object sender, EventArgs e)
-        {
-            ResetResultGroupBox();
-            string s = RecoverAccountTextBox.Text;
-            if(s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    int nid = Convert.ToInt32(s);
-                    List<Account> accounts = FetchData.GetAccountsByNID(nid);
-                    Client client = FetchData.GetClientByNID(nid);
-                    if(accounts == null)
-                    {
-                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else if(accounts.Count > 0)
-                    {
-                        AccountOwnerPictureBox.ImageLocation = client.ImageDir;
-                        int x = 0;
-                        foreach(Account account in accounts)
-                        {
-                            Label l1 = new Label();
-                            l1.AutoSize = true;
-                            l1.Text = "Account ID: " + account.AccountID;
-                            l1.Location = new Point(104, 69 + x * 25);
-                            Label l2 = new Label();
-                            l2.AutoSize = true;
-                            l2.Text = "Account Type: " + account.AccountType;
-                            l2.Location = new Point(380, 69 + x * 25);
-                            AccountsResultGroupBox.Controls.Add(l1);
-                            AccountsResultGroupBox.Controls.Add(l2);
-                            x++;
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Insert Valid ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
         private void ResetResultGroupBox()
         {
             foreach(Control control in AccountsResultGroupBox.Controls)
@@ -815,265 +1080,6 @@ namespace BankManagementSystem
                 return false;
             }
         }
-        private void ManagerButton_Click(object sender, EventArgs e)
-        {
-            ManagerPanelDefaultPanel.BringToFront();
-            DashboardButton.BackColor = Color.FromArgb(31, 30, 68);
-            ManagerPanel.BringToFront();
-            ManagerButton.BackColor = Color.FromArgb(43, 63, 97);
-            CurrentLabel.Text = "Manager";
-            EnableManagerPanelButtons(null);
-            ClearManagerTextFields();
-        }
-        private void ManagerPanelButtonsHandler(object sender, EventArgs e)
-        {
-            if(sender.Equals(EmployeeDetailsButton))
-            {
-                EmployeeDetailsPanel.BringToFront();
-                EmployeeDetailsButton.Enabled = false;
-                EmployeeDetailsButton.BackColor = Color.Gray;
-                EnableManagerPanelButtons(sender);
-            }
-            else if (sender.Equals(EditDetailsButton))
-            {
-                EditDetailsPanel.BringToFront();
-                EditDetailsButton.Enabled = false;
-                EditDetailsButton.BackColor = Color.Gray;
-                EnableManagerPanelButtons(sender);
-            }
-            else if (sender.Equals(ManageButton))
-            {
-                ManagePanel.BringToFront();
-                ManageButton.Enabled = false;
-                ManageButton.BackColor = Color.Gray;
-                EnableManagerPanelButtons(sender);
-            }
-            else if (sender.Equals(TransactionsButton))
-            {
-                TransactionsPanel.BringToFront();
-                TransactionsButton.Enabled = false;
-                TransactionsButton.BackColor = Color.Gray;
-                EnableManagerPanelButtons(sender);
-            }
-        }
-        private void EnableManagerPanelButtons(object sender)
-        {
-            foreach(Button button in ManagerButtonsPanel.Controls)
-            {
-                if(sender != null)
-                {
-                    if (sender.Equals(button))
-                    {
-                        continue;
-                    }
-                }
-                
-                button.Enabled = true;
-                button.BackColor = Color.FromArgb(26, 25, 62);
-            }
-        }
-        private void FindAllButton_Click(object sender, EventArgs e)
-        {
-            DetailsPanel_EmployeeDetails.Controls.Clear();
-            List<Employee> employees = FetchData.GetAllEmployees();
-            foreach (Employee employee in employees)
-            {
-                GroupBox groupBox = new GroupBox();
-                groupBox.Text = "Employee";
-                groupBox.ForeColor = Color.White;
-                groupBox.Location = new Point(9, 9);
-                groupBox.Dock = DockStyle.Top;
-                groupBox.Size = new Size(715, 143);
-                //groupBox.Padding = new Padding(0,0,0,10);
-
-                Label l1 = new Label();
-                l1.Text = "Name: " + employee.Name;
-                l1.Location = new Point(39, 41);
-                l1.AutoSize = true;
-                Label l2 = new Label();
-                l2.Text = "ID: " + employee.ID;
-                l2.Location = new Point(60, 90);
-                l2.AutoSize = true;
-                Label l3 = new Label();
-                l3.Text = "NID: " + employee.NID;
-                l3.Location = new Point(220, 90);
-                l3.AutoSize = true;
-                Label l4 = new Label();
-                l4.Text = "Gender: " + employee.Gender;
-                l4.Location = new Point(434, 40);
-                l4.AutoSize = true;
-                Label l5 = new Label();
-                l5.Text = "Date of Birth: " + employee.DOB;
-                l5.Location = new Point(399, 90);
-                l5.AutoSize = true;
-                Label l6 = new Label();
-                l6.Text = "Address: " + employee.Address;
-                l6.Location = new Point(430, 64);
-                l6.AutoSize = true;
-                Label l7 = new Label();
-                l7.Text = "Email: " + employee.Email;
-                l7.Location = new Point(39, 67);
-                l7.AutoSize = true;
-
-                groupBox.Controls.Add(l1);
-                groupBox.Controls.Add(l2);
-                groupBox.Controls.Add(l3);
-                groupBox.Controls.Add(l4);
-                groupBox.Controls.Add(l5);
-                groupBox.Controls.Add(l6);
-                groupBox.Controls.Add(l7);
-
-                DetailsPanel_EmployeeDetails.Controls.Add(groupBox);
-            }
-        }
-        private void FindButton_EmployeeDetails_Click(object sender, EventArgs e)
-        {
-            string s = EmployeeIDTextbox.Text;
-            if(s == "")
-            {
-                DetailsPanel_EmployeeDetails.Controls.Clear();
-                return;
-            }
-            else
-            {
-                try
-                {
-                    DetailsPanel_EmployeeDetails.Controls.Clear();
-                    int id = Convert.ToInt32(s);
-                    Employee employee = FetchData.GetEmployee(id);
-                    if(employee == null)
-                    {
-                        MessageBox.Show("Invalid employee id!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        DetailsPanel_EmployeeDetails.Controls.Clear();
-                        return;
-                    }
-                    else
-                    {
-                        GroupBox groupBox = new GroupBox();
-                        groupBox.Text = "Employee";
-                        groupBox.ForeColor = Color.White;
-                        groupBox.Location = new Point(9, 9);
-                        groupBox.Dock = DockStyle.Top;
-                        groupBox.Size = new Size(715, 143);
-
-                        Label l1 = new Label();
-                        l1.Text = "Name: " + employee.Name;
-                        l1.Location = new Point(39, 41);
-                        l1.AutoSize = true;
-                        Label l2 = new Label();
-                        l2.Text = "ID: " + employee.ID;
-                        l2.Location = new Point(60, 90);
-                        l2.AutoSize = true;
-                        Label l3 = new Label();
-                        l3.Text = "NID: " + employee.NID;
-                        l3.Location = new Point(220, 90);
-                        l3.AutoSize = true;
-                        Label l4 = new Label();
-                        l4.Text = "Gender: " + employee.Gender;
-                        l4.Location = new Point(434, 40);
-                        l4.AutoSize = true;
-                        Label l5 = new Label();
-                        l5.Text = "Date of Birth: " + employee.DOB;
-                        l5.Location = new Point(399, 90);
-                        l5.AutoSize = true;
-                        Label l6 = new Label();
-                        l6.Text = "Address: " + employee.Address;
-                        l6.Location = new Point(430, 64);
-                        l6.AutoSize = true;
-                        Label l7 = new Label();
-                        l7.Text = "Email: " + employee.Email;
-                        l7.Location = new Point(39, 67);
-                        l7.AutoSize = true;
-
-                        groupBox.Controls.Add(l1);
-                        groupBox.Controls.Add(l2);
-                        groupBox.Controls.Add(l3);
-                        groupBox.Controls.Add(l4);
-                        groupBox.Controls.Add(l5);
-                        groupBox.Controls.Add(l6);
-                        groupBox.Controls.Add(l7);
-
-                        DetailsPanel_EmployeeDetails.Controls.Add(groupBox);
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Invalid Input!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    DetailsPanel_EmployeeDetails.Controls.Clear();
-                    return;
-                }
-            }
-        }
-        private void FindButtion_Transactions_Click(object sender, EventArgs e)
-        {
-            string s = EmployeeIDTextBox_Transactions.Text;
-            if (s == "")
-            {
-                TransactionHistoryPanel.Controls.Clear();
-                return;
-            }
-            else
-            {
-                try
-                {
-                    TransactionHistoryPanel.Controls.Clear();
-                    int id = Convert.ToInt32(s);
-                    Employee employee = FetchData.GetEmployee(id);
-                    List<Transactions> transactions = FetchData.GetTransactionHistory(id);
-                    if(transactions == null)
-                    {
-                        MessageBox.Show("Invalid employee id!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        TransactionHistoryPanel.Controls.Clear();
-                        return;
-                    }
-                    foreach (Transactions transaction in transactions)
-                    {
-                        GroupBox groupBox = new GroupBox();
-                        groupBox.Text = transaction.TransactionType;
-                        groupBox.ForeColor = Color.White;
-                        //groupBox.Location = new Point(9, 9);
-                        groupBox.Dock = DockStyle.Top;
-                        groupBox.Size = new Size(720, 112);
-                        //groupBox.Padding = new Padding(0,0,0,10);
-
-                        Label l1 = new Label();
-                        l1.Text = "Employee ID: " + transaction.EmployeeID;
-                        l1.Location = new Point(70, 38);
-                        l1.AutoSize = true;
-                        Label l2 = new Label();
-                        l2.Text = "Account ID: " + transaction.AccountID;
-                        l2.Location = new Point(79, 66);
-                        l2.AutoSize = true;
-                        Label l3 = new Label();
-                        l3.Text = "Transaction ID: " + transaction.ID;
-                        l3.Location = new Point(405, 66);
-                        l3.AutoSize = true;
-                        Label l4 = new Label();
-                        l4.Text = "Employee Name: " + employee.Name;
-                        l4.Location = new Point(397, 44);
-                        l4.AutoSize = true;
-
-                        groupBox.Controls.Add(l1);
-                        groupBox.Controls.Add(l2);
-                        groupBox.Controls.Add(l3);
-                        groupBox.Controls.Add(l4);
-
-                        TransactionHistoryPanel.Controls.Add(groupBox);
-                    }
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Invalid Input!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    TransactionHistoryPanel.Controls.Clear();
-                    return;
-                }
-            }
-        }
-        private void ClearManagerTextFields()
-        {
-            EmployeeIDTextBox_Transactions.Text = "";
-            EmployeeIDTextbox.Text = "";
-        }
+        
     }
 }

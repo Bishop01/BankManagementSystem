@@ -192,7 +192,12 @@ namespace BankManagementSystem
             this.FirstNameLabel_Details = new System.Windows.Forms.Label();
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
             this.ManagerPanel = new System.Windows.Forms.Panel();
-            this.ManagerPanelDefaultPanel = new System.Windows.Forms.Panel();
+            this.TransactionsPanel = new System.Windows.Forms.Panel();
+            this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
+            this.FindButtion_Transactions = new System.Windows.Forms.Button();
+            this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
             this.DetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.DetailsPanel_EmployeeDetails = new System.Windows.Forms.Panel();
@@ -200,21 +205,16 @@ namespace BankManagementSystem
             this.FindButton_EmployeeDetails = new System.Windows.Forms.Button();
             this.EmployeeIDTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TransactionsPanel = new System.Windows.Forms.Panel();
             this.ManagePanel = new System.Windows.Forms.Panel();
+            this.RemoveEmployeeGroupBox = new System.Windows.Forms.GroupBox();
+            this.RegisterEmployeeGroupBox = new System.Windows.Forms.GroupBox();
+            this.ManagerPanelDefaultPanel = new System.Windows.Forms.Panel();
             this.EditDetailsPanel = new System.Windows.Forms.Panel();
             this.ManagerButtonsPanel = new System.Windows.Forms.Panel();
             this.TransactionsButton = new System.Windows.Forms.Button();
             this.ManageButton = new System.Windows.Forms.Button();
             this.EditDetailsButton = new System.Windows.Forms.Button();
             this.EmployeeDetailsButton = new System.Windows.Forms.Button();
-            this.RegisterEmployeeGroupBox = new System.Windows.Forms.GroupBox();
-            this.RemoveEmployeeGroupBox = new System.Windows.Forms.GroupBox();
-            this.FindButtion_Transactions = new System.Windows.Forms.Button();
-            this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
-            this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).BeginInit();
@@ -256,12 +256,12 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
             this.ManagerPanel.SuspendLayout();
+            this.TransactionsPanel.SuspendLayout();
+            this.TransactionHistoryGroupBox.SuspendLayout();
             this.EmployeeDetailsPanel.SuspendLayout();
             this.DetailsGroupBox.SuspendLayout();
-            this.TransactionsPanel.SuspendLayout();
             this.ManagePanel.SuspendLayout();
             this.ManagerButtonsPanel.SuspendLayout();
-            this.TransactionHistoryGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -301,7 +301,7 @@ namespace BankManagementSystem
             // 
             this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2361);
+            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2389);
             this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
             this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
             this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -328,7 +328,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2083);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2111);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2101,13 +2101,68 @@ namespace BankManagementSystem
             this.ManagerPanel.Size = new System.Drawing.Size(775, 497);
             this.ManagerPanel.TabIndex = 16;
             // 
-            // ManagerPanelDefaultPanel
+            // TransactionsPanel
             // 
-            this.ManagerPanelDefaultPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ManagerPanelDefaultPanel.Location = new System.Drawing.Point(0, 31);
-            this.ManagerPanelDefaultPanel.Name = "ManagerPanelDefaultPanel";
-            this.ManagerPanelDefaultPanel.Size = new System.Drawing.Size(775, 466);
-            this.ManagerPanelDefaultPanel.TabIndex = 0;
+            this.TransactionsPanel.Controls.Add(this.TransactionHistoryGroupBox);
+            this.TransactionsPanel.Controls.Add(this.FindButtion_Transactions);
+            this.TransactionsPanel.Controls.Add(this.EmployeeIDTextBox_Transactions);
+            this.TransactionsPanel.Controls.Add(this.label8);
+            this.TransactionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TransactionsPanel.Location = new System.Drawing.Point(0, 31);
+            this.TransactionsPanel.Name = "TransactionsPanel";
+            this.TransactionsPanel.Size = new System.Drawing.Size(775, 466);
+            this.TransactionsPanel.TabIndex = 0;
+            // 
+            // TransactionHistoryGroupBox
+            // 
+            this.TransactionHistoryGroupBox.Controls.Add(this.TransactionHistoryPanel);
+            this.TransactionHistoryGroupBox.ForeColor = System.Drawing.Color.White;
+            this.TransactionHistoryGroupBox.Location = new System.Drawing.Point(25, 119);
+            this.TransactionHistoryGroupBox.Name = "TransactionHistoryGroupBox";
+            this.TransactionHistoryGroupBox.Size = new System.Drawing.Size(726, 326);
+            this.TransactionHistoryGroupBox.TabIndex = 13;
+            this.TransactionHistoryGroupBox.TabStop = false;
+            this.TransactionHistoryGroupBox.Text = "Transaction History";
+            // 
+            // TransactionHistoryPanel
+            // 
+            this.TransactionHistoryPanel.AutoScroll = true;
+            this.TransactionHistoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TransactionHistoryPanel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransactionHistoryPanel.Location = new System.Drawing.Point(3, 23);
+            this.TransactionHistoryPanel.Name = "TransactionHistoryPanel";
+            this.TransactionHistoryPanel.Size = new System.Drawing.Size(720, 300);
+            this.TransactionHistoryPanel.TabIndex = 0;
+            // 
+            // FindButtion_Transactions
+            // 
+            this.FindButtion_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButtion_Transactions.FlatAppearance.BorderSize = 0;
+            this.FindButtion_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButtion_Transactions.ForeColor = System.Drawing.Color.White;
+            this.FindButtion_Transactions.Location = new System.Drawing.Point(202, 79);
+            this.FindButtion_Transactions.Name = "FindButtion_Transactions";
+            this.FindButtion_Transactions.Size = new System.Drawing.Size(92, 28);
+            this.FindButtion_Transactions.TabIndex = 11;
+            this.FindButtion_Transactions.Text = "Find";
+            this.FindButtion_Transactions.UseVisualStyleBackColor = false;
+            this.FindButtion_Transactions.Click += new System.EventHandler(this.FindButtion_Transactions_Click);
+            // 
+            // EmployeeIDTextBox_Transactions
+            // 
+            this.EmployeeIDTextBox_Transactions.Location = new System.Drawing.Point(202, 37);
+            this.EmployeeIDTextBox_Transactions.Name = "EmployeeIDTextBox_Transactions";
+            this.EmployeeIDTextBox_Transactions.Size = new System.Drawing.Size(174, 27);
+            this.EmployeeIDTextBox_Transactions.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(80, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 20);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "EmployeeID:";
             // 
             // EmployeeDetailsPanel
             // 
@@ -2186,18 +2241,6 @@ namespace BankManagementSystem
             this.label7.TabIndex = 5;
             this.label7.Text = "EmployeeID:";
             // 
-            // TransactionsPanel
-            // 
-            this.TransactionsPanel.Controls.Add(this.TransactionHistoryGroupBox);
-            this.TransactionsPanel.Controls.Add(this.FindButtion_Transactions);
-            this.TransactionsPanel.Controls.Add(this.EmployeeIDTextBox_Transactions);
-            this.TransactionsPanel.Controls.Add(this.label8);
-            this.TransactionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TransactionsPanel.Location = new System.Drawing.Point(0, 31);
-            this.TransactionsPanel.Name = "TransactionsPanel";
-            this.TransactionsPanel.Size = new System.Drawing.Size(775, 466);
-            this.TransactionsPanel.TabIndex = 0;
-            // 
             // ManagePanel
             // 
             this.ManagePanel.Controls.Add(this.RemoveEmployeeGroupBox);
@@ -2207,6 +2250,34 @@ namespace BankManagementSystem
             this.ManagePanel.Name = "ManagePanel";
             this.ManagePanel.Size = new System.Drawing.Size(775, 466);
             this.ManagePanel.TabIndex = 0;
+            // 
+            // RemoveEmployeeGroupBox
+            // 
+            this.RemoveEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
+            this.RemoveEmployeeGroupBox.Location = new System.Drawing.Point(25, 277);
+            this.RemoveEmployeeGroupBox.Name = "RemoveEmployeeGroupBox";
+            this.RemoveEmployeeGroupBox.Size = new System.Drawing.Size(726, 176);
+            this.RemoveEmployeeGroupBox.TabIndex = 1;
+            this.RemoveEmployeeGroupBox.TabStop = false;
+            this.RemoveEmployeeGroupBox.Text = "Remove Employee";
+            // 
+            // RegisterEmployeeGroupBox
+            // 
+            this.RegisterEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
+            this.RegisterEmployeeGroupBox.Location = new System.Drawing.Point(25, 12);
+            this.RegisterEmployeeGroupBox.Name = "RegisterEmployeeGroupBox";
+            this.RegisterEmployeeGroupBox.Size = new System.Drawing.Size(726, 258);
+            this.RegisterEmployeeGroupBox.TabIndex = 0;
+            this.RegisterEmployeeGroupBox.TabStop = false;
+            this.RegisterEmployeeGroupBox.Text = "Register Employee";
+            // 
+            // ManagerPanelDefaultPanel
+            // 
+            this.ManagerPanelDefaultPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManagerPanelDefaultPanel.Location = new System.Drawing.Point(0, 31);
+            this.ManagerPanelDefaultPanel.Name = "ManagerPanelDefaultPanel";
+            this.ManagerPanelDefaultPanel.Size = new System.Drawing.Size(775, 466);
+            this.ManagerPanelDefaultPanel.TabIndex = 0;
             // 
             // EditDetailsPanel
             // 
@@ -2278,82 +2349,12 @@ namespace BankManagementSystem
             this.EmployeeDetailsButton.UseVisualStyleBackColor = true;
             this.EmployeeDetailsButton.Click += new System.EventHandler(this.ManagerPanelButtonsHandler);
             // 
-            // RegisterEmployeeGroupBox
-            // 
-            this.RegisterEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
-            this.RegisterEmployeeGroupBox.Location = new System.Drawing.Point(25, 12);
-            this.RegisterEmployeeGroupBox.Name = "RegisterEmployeeGroupBox";
-            this.RegisterEmployeeGroupBox.Size = new System.Drawing.Size(726, 258);
-            this.RegisterEmployeeGroupBox.TabIndex = 0;
-            this.RegisterEmployeeGroupBox.TabStop = false;
-            this.RegisterEmployeeGroupBox.Text = "Register Employee";
-            // 
-            // RemoveEmployeeGroupBox
-            // 
-            this.RemoveEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
-            this.RemoveEmployeeGroupBox.Location = new System.Drawing.Point(25, 277);
-            this.RemoveEmployeeGroupBox.Name = "RemoveEmployeeGroupBox";
-            this.RemoveEmployeeGroupBox.Size = new System.Drawing.Size(726, 176);
-            this.RemoveEmployeeGroupBox.TabIndex = 1;
-            this.RemoveEmployeeGroupBox.TabStop = false;
-            this.RemoveEmployeeGroupBox.Text = "Remove Employee";
-            // 
-            // FindButtion_Transactions
-            // 
-            this.FindButtion_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.FindButtion_Transactions.FlatAppearance.BorderSize = 0;
-            this.FindButtion_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindButtion_Transactions.ForeColor = System.Drawing.Color.White;
-            this.FindButtion_Transactions.Location = new System.Drawing.Point(202, 79);
-            this.FindButtion_Transactions.Name = "FindButtion_Transactions";
-            this.FindButtion_Transactions.Size = new System.Drawing.Size(92, 28);
-            this.FindButtion_Transactions.TabIndex = 11;
-            this.FindButtion_Transactions.Text = "Find";
-            this.FindButtion_Transactions.UseVisualStyleBackColor = false;
-            this.FindButtion_Transactions.Click += new System.EventHandler(this.FindButtion_Transactions_Click);
-            // 
-            // EmployeeIDTextBox_Transactions
-            // 
-            this.EmployeeIDTextBox_Transactions.Location = new System.Drawing.Point(202, 37);
-            this.EmployeeIDTextBox_Transactions.Name = "EmployeeIDTextBox_Transactions";
-            this.EmployeeIDTextBox_Transactions.Size = new System.Drawing.Size(174, 27);
-            this.EmployeeIDTextBox_Transactions.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(80, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 20);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "EmployeeID:";
-            // 
-            // TransactionHistoryGroupBox
-            // 
-            this.TransactionHistoryGroupBox.Controls.Add(this.TransactionHistoryPanel);
-            this.TransactionHistoryGroupBox.ForeColor = System.Drawing.Color.White;
-            this.TransactionHistoryGroupBox.Location = new System.Drawing.Point(25, 119);
-            this.TransactionHistoryGroupBox.Name = "TransactionHistoryGroupBox";
-            this.TransactionHistoryGroupBox.Size = new System.Drawing.Size(726, 326);
-            this.TransactionHistoryGroupBox.TabIndex = 13;
-            this.TransactionHistoryGroupBox.TabStop = false;
-            this.TransactionHistoryGroupBox.Text = "Transaction History";
-            // 
-            // TransactionHistoryPanel
-            // 
-            this.TransactionHistoryPanel.AutoScroll = true;
-            this.TransactionHistoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TransactionHistoryPanel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransactionHistoryPanel.Location = new System.Drawing.Point(3, 23);
-            this.TransactionHistoryPanel.Name = "TransactionHistoryPanel";
-            this.TransactionHistoryPanel.Size = new System.Drawing.Size(720, 300);
-            this.TransactionHistoryPanel.TabIndex = 0;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.WithdrawPanel);
@@ -2361,7 +2362,6 @@ namespace BankManagementSystem
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
-            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
@@ -2430,14 +2430,14 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).EndInit();
             this.ManagerPanel.ResumeLayout(false);
+            this.TransactionsPanel.ResumeLayout(false);
+            this.TransactionsPanel.PerformLayout();
+            this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.EmployeeDetailsPanel.ResumeLayout(false);
             this.EmployeeDetailsPanel.PerformLayout();
             this.DetailsGroupBox.ResumeLayout(false);
-            this.TransactionsPanel.ResumeLayout(false);
-            this.TransactionsPanel.PerformLayout();
             this.ManagePanel.ResumeLayout(false);
             this.ManagerButtonsPanel.ResumeLayout(false);
-            this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
