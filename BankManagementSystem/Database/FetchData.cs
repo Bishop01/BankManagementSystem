@@ -46,8 +46,8 @@ namespace BankManagementSystem.Database
                 employee.Name = data["Name"].ToString();
                 employee.Email = data["Email"].ToString();
                 employee.DOB = data["DateOfBirth"].ToString();
-                employee.NID = data["NID"].ToString();
-                employee.PhoneNumber = data["PhoneNumber"].ToString();
+                employee.NID = Convert.ToInt32(data["NID"]);
+                employee.PhoneNumber = Convert.ToInt64(data["PhoneNumber"]);
                 employee.Gender = data["Gender"].ToString();
                 employee.Address = data["Address"].ToString();
 
@@ -74,6 +74,7 @@ namespace BankManagementSystem.Database
                     Client client = new Client();
                     data.Read();
 
+                    client.ClientID = (int)data["ClientID"];
                     client.Firstname = data["FirstName"].ToString();
                     client.Lastname = data["LastName"].ToString();
                     client.Email = data["Email"].ToString();
@@ -239,10 +240,10 @@ namespace BankManagementSystem.Database
                     emp.Name = data["Name"].ToString();
                     //Console.WriteLine(emp.Name);
                     emp.ID = (int)data["ID"];
-                    emp.PhoneNumber = data["PhoneNumber"].ToString();
+                    emp.PhoneNumber = Convert.ToInt64(data["PhoneNumber"]);
                     emp.Address = data["Address"].ToString();
                     emp.DOB = data["DateOfBirth"].ToString();
-                    emp.NID = data["NID"].ToString();
+                    emp.NID = Convert.ToInt32(data["NID"]);
                     emp.Gender = data["Gender"].ToString();
                     emp.Email = data["Email"].ToString();
 

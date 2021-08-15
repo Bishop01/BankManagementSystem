@@ -87,11 +87,6 @@ namespace BankManagementSystem
             PasswordErrorLabel.Hide();
             LoginErrorLabel.Text = null;
         }
-
-        private void RegisterButton_Click(object sender, EventArgs e)
-        {
-            new DBAdmin().ShowDialog();
-        }
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

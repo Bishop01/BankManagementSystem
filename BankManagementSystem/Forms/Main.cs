@@ -43,23 +43,30 @@ namespace BankManagementSystem
                 RegisterButton.BackColor = Color.Gray;
                 AccountButton.Enabled = false;
                 AccountButton.BackColor = Color.Gray;
-                this.manager = FetchData.GetManager(id);
+                manager = FetchData.GetManager(id);
                 NameLabel.Text = manager.Name;
             }
         }
         private void DashboardButton_Click(object sender, EventArgs e)
         {
-            HideAllPanel();
             ResetAllButton();
-            ResetChildButton();
-            ResetPanel(RegisterPanel);
-            ResetCreateAccountDetails();
-            ResetResultGroupBox();
-            HideDepositGroupBox();
             EnableManagerPanelButtons(null);
             DashboardPanel.BringToFront();
             DashboardButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Dashboard";
+            if(manager != null)
+            {
+                ResetAllMangerPanelControls();
+            }
+            if(currentEmployee != null)
+            {
+                HideAllPanel();
+                ResetChildButton();
+                ResetPanel(RegisterPanel);
+                ResetCreateAccountDetails();
+                ResetResultGroupBox();
+                HideDepositGroupBox();
+            }
         }
 
         #region Register
@@ -316,6 +323,11 @@ namespace BankManagementSystem
                 try
                 {
                     double amount = Convert.ToDouble(s);
+                    if(amount <= 0)
+                    {
+                        DepositErrorLabel.Text = "Amount must be greater than 0.";
+                        return;
+                    }
                     int id = Convert.ToInt32(SearchAccountTextbox.Text);
                     if (ModifyData.UpdateBalance(id, amount))
                     {
@@ -343,6 +355,7 @@ namespace BankManagementSystem
             DepositTextbox.Text = "";
             SearchAccountTextbox.Text = "";
             AccountOwnerPictureBox_Deposit.Image = null;
+            DepositErrorLabel.Text = "";
         }
 
         #endregion
@@ -400,6 +413,11 @@ namespace BankManagementSystem
                 try
                 {
                     double amount = Convert.ToDouble(s);
+                    if (amount <= 0)
+                    {
+                        WithdrawErrorLabel.Text = "Amount must be greater than 0.";
+                        return;
+                    }
                     int id = Convert.ToInt32(SearchAccounttextBox_Withdraw.Text);
                     if (ModifyData.UpdateBalance(id, (-amount)))
                     {
@@ -427,6 +445,7 @@ namespace BankManagementSystem
             WithdrawtextBox.Text = "";
             SearchAccounttextBox_Withdraw.Text = "";
             AccountOwnerpictureBox_Withdraw.Image = null;
+            WithdrawErrorLabel.Text = "";
         }
 
         #endregion
@@ -577,7 +596,8 @@ namespace BankManagementSystem
                 else if (sender.Equals(DetailsButton))
                 {
                     ResetChildButton(AccountPanel);
-                    ResetAccountDetails();
+                    //AccountDetailsGroupBox_Details.Controls.Clear();
+                    ResetGroupBoxControls(AccountDetailsGroupBox_Details);
                     DetailsPanel.BringToFront();
                     DetailsButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
@@ -793,22 +813,13 @@ namespace BankManagementSystem
             }
             AccountOwnerPictureBox.Image = null;
         }
-        private void ResetAccountDetails()
-        {
-            foreach(Control label in AccountDetailsGroupBox_Details.Controls)
-            {
-                if(label is Label)
-                {
-                    label.Text = "";
-                }
-            }
-            AccountOwnerPictureBox_Details.Image = null;
-        }
+        
         private void SearchAccountTextbox_Details_TextChanged(object sender, EventArgs e)
         {
             string s = SearchAccountTextbox_Details.Text;
             if (s == "")
             {
+                ResetGroupBoxControls(AccountDetailsGroupBox_Details);
                 return;
             }
             else
@@ -818,9 +829,11 @@ namespace BankManagementSystem
                     int id = Convert.ToInt32(s);
                     Client client = FetchData.GetClientByAccountID(id);
                     Account account = FetchData.GetAccount(id);
+                    
                     if(client == null || account == null)
                     {
-                        ResetAccountDetails();
+                        //AccountDetailsGroupBox_Details.Controls.Clear();
+                        ResetGroupBoxControls(AccountDetailsGroupBox_Details);
                         return;
                     }
                     else
@@ -846,7 +859,8 @@ namespace BankManagementSystem
                 }
                 catch(Exception)
                 {
-                    ResetAccountDetails();
+                    //AccountDetailsGroupBox_Details.Controls.Clear();
+                    ResetGroupBoxControls(AccountDetailsGroupBox_Details);
                     return;
                 }
             }
@@ -863,7 +877,7 @@ namespace BankManagementSystem
             {
                 if (slice[1].Equals("gmail.com"))
                 {
-                    if (isNumber(((slice[0])[0]).ToString()))
+                    if (IsNumber(((slice[0])[0]).ToString()))
                     {
                         //Console.WriteLine("asdas");
                         return false;
@@ -893,7 +907,7 @@ namespace BankManagementSystem
             }
             return true;
         }
-        private bool isNumber(string ch)
+        private bool IsNumber(string ch)
         {
             try
             {
@@ -913,7 +927,16 @@ namespace BankManagementSystem
             ManagerButton.BackColor = Color.FromArgb(43, 63, 97);
             CurrentLabel.Text = "Manager";
             EnableManagerPanelButtons(null);
-            ClearManagerTextFields();
+            ResetAllMangerPanelControls();
+        }
+        private void ResetAllMangerPanelControls()
+        {
+            ResetGroupBoxControls(RegisterEmployeeGroupBox);
+            ResetGroupBoxControls(RemoveEmployeeGroupBox);
+            TransactionHistoryPanel.Controls.Clear();
+            DetailsPanel_EmployeeDetails.Controls.Clear();
+            ResetPanelControls(EmployeeDetailsPanel);
+            ResetPanelControls(TransactionsPanel);
         }
         private void ManagerPanelButtonsHandler(object sender, EventArgs e)
         {
@@ -936,6 +959,7 @@ namespace BankManagementSystem
                 ManagePanel.BringToFront();
                 ManageButton.Enabled = false;
                 ManageButton.BackColor = Color.Gray;
+                ErrorLabel_Employee.Text = "";
                 EnableManagerPanelButtons(sender);
             }
             else if (sender.Equals(TransactionsButton))
@@ -1110,9 +1134,14 @@ namespace BankManagementSystem
                     int id = Convert.ToInt32(s);
                     Employee employee = FetchData.GetEmployee(id);
                     List<Transactions> transactions = FetchData.GetTransactionHistory(id);
-                    if(transactions == null)
+                    if(employee == null)
                     {
                         MessageBox.Show("Invalid employee id!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TransactionHistoryPanel.Controls.Clear();
+                        return;
+                    }
+                    else if(transactions == null)
+                    {
                         TransactionHistoryPanel.Controls.Clear();
                         return;
                     }
@@ -1121,10 +1150,8 @@ namespace BankManagementSystem
                         GroupBox groupBox = new GroupBox();
                         groupBox.Text = transaction.TransactionType;
                         groupBox.ForeColor = Color.White;
-                        //groupBox.Location = new Point(9, 9);
                         groupBox.Dock = DockStyle.Top;
                         groupBox.Size = new Size(720, 112);
-                        //groupBox.Padding = new Padding(0,0,0,10);
 
                         Label l1 = new Label();
                         l1.Text = "Employee ID: " + transaction.EmployeeID;
@@ -1160,11 +1187,6 @@ namespace BankManagementSystem
                 }
             }
         }
-        private void ClearManagerTextFields()
-        {
-            EmployeeIDTextBox_Transactions.Text = "";
-            EmployeeIDTextbox.Text = "";
-        }
 
         #region Transfer
 
@@ -1177,7 +1199,6 @@ namespace BankManagementSystem
             accNumberSearchTextBox_Transfer.Text = "";
             AccountOwnerpictureBox_Transfer.Image = null;
         }
-
         private void ResetTransfer()
         {
             recAccNumberTextBox_Transfer.Text = "";
@@ -1225,7 +1246,6 @@ namespace BankManagementSystem
                 }
             }
         }
-
         private void recAccFindButton_Transfer_Click(object sender, EventArgs e)
         {
             if (recAccFindButton_Transfer.Text == "Find Again")
@@ -1264,7 +1284,6 @@ namespace BankManagementSystem
                 }
             }
         }
-
         private void transferButton_Transfer_Click(object sender, EventArgs e)
         {
             string s = enterAmountTextBox_Transfer.Text;
@@ -1302,5 +1321,225 @@ namespace BankManagementSystem
         }
 
         #endregion
+
+        private void RegisterButton_Manage_Click(object sender, EventArgs e)
+        {
+            if (CheckRegisterEmployeeEmptyFields())
+            {
+                if (!VerifyName(NameTextBox_Employee.Text))
+                {
+                    ErrorLabel_Employee.Text = "Name can't contain numeric value!";
+                    return;
+                }
+                else if (!VerifyEmail(EmailTextBox_Employee.Text))
+                {
+                    ErrorLabel_Employee.Text = "Invalid email format!";
+                    return;
+                }
+                else
+                {
+                    ErrorLabel_Employee.Text = "";
+                    Employee employee = new Employee();
+                    employee.Name = NameTextBox_Employee.Text;
+                    employee.Address = AddressTextBox_Employee.Text;
+                    employee.Password = PasswordTextBox_Employee.Text;
+                    employee.NID = Convert.ToInt32(NIDTextBox_Employee.Text);
+                    employee.PhoneNumber = Convert.ToInt64(PhoneNumberTextBox_Employee.Text);
+                    employee.Email = EmailTextBox_Employee.Text;
+                    if (MaleRadioButton_Employee.Checked)
+                        employee.Gender = MaleRadioButton_Employee.Text;
+                    else
+                        employee.Gender = FemaleRadioButton_Employee.Text;
+                    employee.DOB = DateTimePicker_Employee.Text;
+                    if (Registration.RegisterEmployee(employee))
+                    {
+                        MessageBox.Show("Employee created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ResetGroupBoxControls(RegisterEmployeeGroupBox);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error creating new employee!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //Modified Testing
+                        ResetGroupBoxControls(RegisterEmployeeGroupBox);
+                        return;
+                    }
+                }
+                
+            }
+            else
+            {
+                ErrorLabel_Employee.Text = "Fields can't be empty!";
+                return;
+            }
+        }
+        private bool CheckRegisterEmployeeEmptyFields()
+        {
+            foreach(Control control in RegisterEmployeeGroupBox.Controls)
+            {
+                if(control is TextBox)
+                {
+                    if(control.Text == "")
+                    {
+                        return false;
+                    }
+                }
+            }
+            if(!MaleRadioButton_Employee.Checked && !FemaleRadioButton_Employee.Checked)
+            {
+                return false;
+            }
+
+            return true;
+        }
+        //TODO
+        /*private void ClearManagerPanelManageControls()
+        {
+            foreach(Control control in RegisterEmployeeGroupBox.Controls)
+            {
+                if(control is TextBox)
+                {
+                    control.Text = "";
+                }
+                else if(control is RadioButton)
+                {
+                    ((RadioButton)control).Checked = false;
+                }
+                else
+                {
+                    DateTimePicker_Employee.ResetText();
+                }
+            }
+        }*/
+        private void FindButton_RemoveEmployee_Click(object sender, EventArgs e)
+        {
+            string s = FindEmployeeTextbox_RemoveEmployee.Text;
+            if(FindButton_RemoveEmployee.Text.Equals("Find Again"))
+            {
+                ResetGroupBoxControls(RemoveEmployeeGroupBox);
+                RemoveButton.Enabled = false;
+                FindButton_RemoveEmployee.Text = "Find";
+                FindEmployeeTextbox_RemoveEmployee.Enabled = true;
+                return;
+            }
+            if(s == "")
+            {
+                ResetGroupBoxControls(RemoveEmployeeGroupBox);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Employee employee = FetchData.GetEmployee(id);
+                    if(employee == null)
+                    {
+                        ResetGroupBoxControls(RemoveEmployeeGroupBox);
+                        MessageBox.Show("No employee found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else
+                    {
+                        NameLabel_RemoveEmployee.Text = "Name: " + employee.Name;
+                        PhoneNumberLabel_RemoveEmployee.Text = "Phone Number: " + employee.PhoneNumber;
+                        NIDLabel_RemoveEmployee.Text = "National ID: " + employee.NID;
+                        FindButton_RemoveEmployee.Text = "Find Again";  //reset to default
+                        FindEmployeeTextbox_RemoveEmployee.Enabled = false;
+                        RemoveButton.Enabled = true ;
+                    }
+                }
+                catch(Exception)
+                {
+                    ResetGroupBoxControls(RemoveEmployeeGroupBox);
+                    MessageBox.Show("Invalid id!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you wish to remove this employee?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dr == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(FindEmployeeTextbox_RemoveEmployee.Text);
+                if (ModifyData.RemoveEmployee(id))
+                {
+                    ResetGroupBoxControls(RemoveEmployeeGroupBox);
+                    MessageBox.Show("Employee removed!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    ResetGroupBoxControls(RemoveEmployeeGroupBox);
+                    MessageBox.Show("Error in removing employee!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+            
+        }
+        private void ResetPanelControls(Panel panel)
+        {
+            foreach(Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    control.Text = "";
+                }
+                else if (control is Label)
+                {
+                    if (control.Name.StartsWith("label"))
+                        continue;
+                    else
+                        control.Text = "";
+                }
+                else if (control is RadioButton)
+                {
+                    ((RadioButton)control).Checked = false;
+                }
+                else if (control is DateTimePicker)
+                {
+                    ((DateTimePicker)control).ResetText();
+                }
+                else if(control is PictureBox)
+                {
+                    ((PictureBox)control).ImageLocation = null;
+                }
+            }
+        }
+        private void ResetGroupBoxControls(GroupBox groupBox)
+        {
+            foreach (Control control in groupBox.Controls)
+            {
+                if (control is TextBox)
+                {
+                    control.Text = "";
+                }
+                else if (control is Label)
+                {
+                    if(groupBox.Name.Equals("RegisterEmployeeGroupBox"))
+                        continue;
+                    else if (control.Name.StartsWith("label"))
+                        continue;
+                    else
+                        control.Text = "";
+                }
+                else if (control is RadioButton)
+                {
+                    ((RadioButton)control).Checked = false;
+                }
+                else if(control is DateTimePicker)
+                {
+                    ((DateTimePicker)control).ResetText();
+                }
+                else if (control is PictureBox)
+                {
+                    ((PictureBox)control).ImageLocation = null;
+                }
+            }
+        }
     }
 }

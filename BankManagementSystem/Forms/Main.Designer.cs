@@ -126,8 +126,8 @@ namespace BankManagementSystem
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
             this.RecoverAccountPanel = new System.Windows.Forms.Panel();
-            this.AccountOwnerPictureBox = new System.Windows.Forms.PictureBox();
             this.AccountsResultGroupBox = new System.Windows.Forms.GroupBox();
+            this.AccountOwnerPictureBox = new System.Windows.Forms.PictureBox();
             this.FindButton = new System.Windows.Forms.Button();
             this.RecoverAccountTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -194,29 +194,13 @@ namespace BankManagementSystem
             this.FirstNameLabel_Details = new System.Windows.Forms.Label();
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
             this.ManagerPanel = new System.Windows.Forms.Panel();
-            this.ManagePanel = new System.Windows.Forms.Panel();
-            this.RemoveEmployeeGroupBox = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.RegisterEmployeeGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label18 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
+            this.DetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DetailsPanel_EmployeeDetails = new System.Windows.Forms.Panel();
+            this.FindAllButton = new System.Windows.Forms.Button();
+            this.FindButton_EmployeeDetails = new System.Windows.Forms.Button();
+            this.EmployeeIDTextbox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.EditDetailsPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -232,25 +216,49 @@ namespace BankManagementSystem
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
-            this.DetailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.DetailsPanel_EmployeeDetails = new System.Windows.Forms.Panel();
-            this.FindAllButton = new System.Windows.Forms.Button();
-            this.FindButton_EmployeeDetails = new System.Windows.Forms.Button();
-            this.EmployeeIDTextbox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.TransactionsPanel = new System.Windows.Forms.Panel();
             this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
             this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
             this.FindButtion_Transactions = new System.Windows.Forms.Button();
             this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.ManagePanel = new System.Windows.Forms.Panel();
+            this.RemoveEmployeeGroupBox = new System.Windows.Forms.GroupBox();
+            this.NIDLabel_RemoveEmployee = new System.Windows.Forms.Label();
+            this.PhoneNumberLabel_RemoveEmployee = new System.Windows.Forms.Label();
+            this.NameLabel_RemoveEmployee = new System.Windows.Forms.Label();
+            this.FindButton_RemoveEmployee = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.FindEmployeeTextbox_RemoveEmployee = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.RegisterEmployeeGroupBox = new System.Windows.Forms.GroupBox();
+            this.ErrorLabel_Employee = new System.Windows.Forms.Label();
+            this.RegisterButton_Manage = new System.Windows.Forms.Button();
+            this.NIDTextBox_Employee = new System.Windows.Forms.TextBox();
+            this.PhoneNumberTextBox_Employee = new System.Windows.Forms.TextBox();
+            this.AddressTextBox_Employee = new System.Windows.Forms.TextBox();
+            this.PasswordTextBox_Employee = new System.Windows.Forms.TextBox();
+            this.EmailTextBox_Employee = new System.Windows.Forms.TextBox();
+            this.NameTextBox_Employee = new System.Windows.Forms.TextBox();
+            this.DateTimePicker_Employee = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.FemaleRadioButton_Employee = new System.Windows.Forms.RadioButton();
+            this.label18 = new System.Windows.Forms.Label();
+            this.MaleRadioButton_Employee = new System.Windows.Forms.RadioButton();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.ManagerPanelDefaultPanel = new System.Windows.Forms.Panel();
             this.ManagerButtonsPanel = new System.Windows.Forms.Panel();
             this.TransactionsButton = new System.Windows.Forms.Button();
             this.ManageButton = new System.Windows.Forms.Button();
             this.EditDetailsButton = new System.Windows.Forms.Button();
             this.EmployeeDetailsButton = new System.Windows.Forms.Button();
+            this.DepositErrorLabel = new System.Windows.Forms.Label();
+            this.WithdrawErrorLabel = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).BeginInit();
@@ -292,16 +300,16 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
             this.ManagerPanel.SuspendLayout();
-            this.ManagePanel.SuspendLayout();
-            this.RemoveEmployeeGroupBox.SuspendLayout();
-            this.RegisterEmployeeGroupBox.SuspendLayout();
+            this.EmployeeDetailsPanel.SuspendLayout();
+            this.DetailsGroupBox.SuspendLayout();
             this.EditDetailsPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.EmployeeDetailsPanel.SuspendLayout();
-            this.DetailsGroupBox.SuspendLayout();
             this.TransactionsPanel.SuspendLayout();
             this.TransactionHistoryGroupBox.SuspendLayout();
+            this.ManagePanel.SuspendLayout();
+            this.RemoveEmployeeGroupBox.SuspendLayout();
+            this.RegisterEmployeeGroupBox.SuspendLayout();
             this.ManagerButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -342,7 +350,7 @@ namespace BankManagementSystem
             // 
             this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2557);
+            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2809);
             this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
             this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
             this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -369,7 +377,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2279);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2531);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1408,8 +1416,8 @@ namespace BankManagementSystem
             // RecoverAccountPanel
             // 
             this.RecoverAccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.RecoverAccountPanel.Controls.Add(this.AccountOwnerPictureBox);
             this.RecoverAccountPanel.Controls.Add(this.AccountsResultGroupBox);
+            this.RecoverAccountPanel.Controls.Add(this.AccountOwnerPictureBox);
             this.RecoverAccountPanel.Controls.Add(this.FindButton);
             this.RecoverAccountPanel.Controls.Add(this.RecoverAccountTextBox);
             this.RecoverAccountPanel.Controls.Add(this.label2);
@@ -1419,15 +1427,6 @@ namespace BankManagementSystem
             this.RecoverAccountPanel.Name = "RecoverAccountPanel";
             this.RecoverAccountPanel.Size = new System.Drawing.Size(775, 497);
             this.RecoverAccountPanel.TabIndex = 3;
-            // 
-            // AccountOwnerPictureBox
-            // 
-            this.AccountOwnerPictureBox.Location = new System.Drawing.Point(573, 14);
-            this.AccountOwnerPictureBox.Name = "AccountOwnerPictureBox";
-            this.AccountOwnerPictureBox.Size = new System.Drawing.Size(172, 106);
-            this.AccountOwnerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AccountOwnerPictureBox.TabIndex = 4;
-            this.AccountOwnerPictureBox.TabStop = false;
             // 
             // AccountsResultGroupBox
             // 
@@ -1439,6 +1438,15 @@ namespace BankManagementSystem
             this.AccountsResultGroupBox.TabIndex = 3;
             this.AccountsResultGroupBox.TabStop = false;
             this.AccountsResultGroupBox.Text = "Result";
+            // 
+            // AccountOwnerPictureBox
+            // 
+            this.AccountOwnerPictureBox.Location = new System.Drawing.Point(573, 14);
+            this.AccountOwnerPictureBox.Name = "AccountOwnerPictureBox";
+            this.AccountOwnerPictureBox.Size = new System.Drawing.Size(172, 106);
+            this.AccountOwnerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AccountOwnerPictureBox.TabIndex = 4;
+            this.AccountOwnerPictureBox.TabStop = false;
             // 
             // FindButton
             // 
@@ -1491,6 +1499,7 @@ namespace BankManagementSystem
             // 
             // DepositGroupBox
             // 
+            this.DepositGroupBox.Controls.Add(this.DepositErrorLabel);
             this.DepositGroupBox.Controls.Add(this.AccountTypeLabel_Deposit);
             this.DepositGroupBox.Controls.Add(this.DepositButton_Deposit);
             this.DepositGroupBox.Controls.Add(this.DepositTextbox);
@@ -1632,6 +1641,7 @@ namespace BankManagementSystem
             // 
             // groupBox_Withdraw
             // 
+            this.groupBox_Withdraw.Controls.Add(this.WithdrawErrorLabel);
             this.groupBox_Withdraw.Controls.Add(this.AccountTypelabel_Withdraw);
             this.groupBox_Withdraw.Controls.Add(this.Withdrawbutton_Withdraw);
             this.groupBox_Withdraw.Controls.Add(this.WithdrawtextBox);
@@ -2156,10 +2166,10 @@ namespace BankManagementSystem
             // ManagerPanel
             // 
             this.ManagerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ManagerPanel.Controls.Add(this.ManagePanel);
-            this.ManagerPanel.Controls.Add(this.EditDetailsPanel);
             this.ManagerPanel.Controls.Add(this.EmployeeDetailsPanel);
+            this.ManagerPanel.Controls.Add(this.EditDetailsPanel);
             this.ManagerPanel.Controls.Add(this.TransactionsPanel);
+            this.ManagerPanel.Controls.Add(this.ManagePanel);
             this.ManagerPanel.Controls.Add(this.ManagerPanelDefaultPanel);
             this.ManagerPanel.Controls.Add(this.ManagerButtonsPanel);
             this.ManagerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2169,237 +2179,84 @@ namespace BankManagementSystem
             this.ManagerPanel.Size = new System.Drawing.Size(775, 497);
             this.ManagerPanel.TabIndex = 16;
             // 
-            // ManagePanel
+            // EmployeeDetailsPanel
             // 
-            this.ManagePanel.Controls.Add(this.RemoveEmployeeGroupBox);
-            this.ManagePanel.Controls.Add(this.RegisterEmployeeGroupBox);
-            this.ManagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ManagePanel.Location = new System.Drawing.Point(0, 31);
-            this.ManagePanel.Name = "ManagePanel";
-            this.ManagePanel.Size = new System.Drawing.Size(775, 466);
-            this.ManagePanel.TabIndex = 0;
+            this.EmployeeDetailsPanel.Controls.Add(this.DetailsGroupBox);
+            this.EmployeeDetailsPanel.Controls.Add(this.FindAllButton);
+            this.EmployeeDetailsPanel.Controls.Add(this.FindButton_EmployeeDetails);
+            this.EmployeeDetailsPanel.Controls.Add(this.EmployeeIDTextbox);
+            this.EmployeeDetailsPanel.Controls.Add(this.label7);
+            this.EmployeeDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeeDetailsPanel.Location = new System.Drawing.Point(0, 31);
+            this.EmployeeDetailsPanel.Name = "EmployeeDetailsPanel";
+            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(775, 466);
+            this.EmployeeDetailsPanel.TabIndex = 1;
             // 
-            // RemoveEmployeeGroupBox
+            // DetailsGroupBox
             // 
-            this.RemoveEmployeeGroupBox.Controls.Add(this.button2);
-            this.RemoveEmployeeGroupBox.Controls.Add(this.textBox12);
-            this.RemoveEmployeeGroupBox.Controls.Add(this.label22);
-            this.RemoveEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
-            this.RemoveEmployeeGroupBox.Location = new System.Drawing.Point(25, 277);
-            this.RemoveEmployeeGroupBox.Name = "RemoveEmployeeGroupBox";
-            this.RemoveEmployeeGroupBox.Size = new System.Drawing.Size(726, 176);
-            this.RemoveEmployeeGroupBox.TabIndex = 1;
-            this.RemoveEmployeeGroupBox.TabStop = false;
-            this.RemoveEmployeeGroupBox.Text = "Remove Employee";
+            this.DetailsGroupBox.Controls.Add(this.DetailsPanel_EmployeeDetails);
+            this.DetailsGroupBox.ForeColor = System.Drawing.Color.White;
+            this.DetailsGroupBox.Location = new System.Drawing.Point(27, 110);
+            this.DetailsGroupBox.Name = "DetailsGroupBox";
+            this.DetailsGroupBox.Size = new System.Drawing.Size(721, 323);
+            this.DetailsGroupBox.TabIndex = 9;
+            this.DetailsGroupBox.TabStop = false;
+            this.DetailsGroupBox.Text = "Details";
             // 
-            // button2
+            // DetailsPanel_EmployeeDetails
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(351, 85);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 28);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = false;
+            this.DetailsPanel_EmployeeDetails.AutoScroll = true;
+            this.DetailsPanel_EmployeeDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DetailsPanel_EmployeeDetails.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetailsPanel_EmployeeDetails.Location = new System.Drawing.Point(3, 23);
+            this.DetailsPanel_EmployeeDetails.Name = "DetailsPanel_EmployeeDetails";
+            this.DetailsPanel_EmployeeDetails.Size = new System.Drawing.Size(715, 297);
+            this.DetailsPanel_EmployeeDetails.TabIndex = 0;
             // 
-            // textBox12
+            // FindAllButton
             // 
-            this.textBox12.Location = new System.Drawing.Point(314, 48);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(174, 27);
-            this.textBox12.TabIndex = 14;
+            this.FindAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindAllButton.FlatAppearance.BorderSize = 0;
+            this.FindAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindAllButton.Location = new System.Drawing.Point(570, 34);
+            this.FindAllButton.Name = "FindAllButton";
+            this.FindAllButton.Size = new System.Drawing.Size(110, 27);
+            this.FindAllButton.TabIndex = 8;
+            this.FindAllButton.Text = "Find All";
+            this.FindAllButton.UseVisualStyleBackColor = false;
+            this.FindAllButton.Click += new System.EventHandler(this.FindAllButton_Click);
             // 
-            // label22
+            // FindButton_EmployeeDetails
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(192, 51);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(116, 20);
-            this.label22.TabIndex = 13;
-            this.label22.Text = "EmployeeID:";
+            this.FindButton_EmployeeDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton_EmployeeDetails.FlatAppearance.BorderSize = 0;
+            this.FindButton_EmployeeDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton_EmployeeDetails.ForeColor = System.Drawing.Color.White;
+            this.FindButton_EmployeeDetails.Location = new System.Drawing.Point(191, 76);
+            this.FindButton_EmployeeDetails.Name = "FindButton_EmployeeDetails";
+            this.FindButton_EmployeeDetails.Size = new System.Drawing.Size(92, 28);
+            this.FindButton_EmployeeDetails.TabIndex = 7;
+            this.FindButton_EmployeeDetails.Text = "Find";
+            this.FindButton_EmployeeDetails.UseVisualStyleBackColor = false;
+            this.FindButton_EmployeeDetails.Click += new System.EventHandler(this.FindButton_EmployeeDetails_Click);
             // 
-            // RegisterEmployeeGroupBox
+            // EmployeeIDTextbox
             // 
-            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox11);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox10);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox9);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox8);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox7);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.textBox6);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.dateTimePicker1);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label21);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label20);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label19);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.radioButton2);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label18);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.radioButton1);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label17);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label16);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label15);
-            this.RegisterEmployeeGroupBox.Controls.Add(this.label14);
-            this.RegisterEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
-            this.RegisterEmployeeGroupBox.Location = new System.Drawing.Point(25, 12);
-            this.RegisterEmployeeGroupBox.Name = "RegisterEmployeeGroupBox";
-            this.RegisterEmployeeGroupBox.Size = new System.Drawing.Size(726, 258);
-            this.RegisterEmployeeGroupBox.TabIndex = 0;
-            this.RegisterEmployeeGroupBox.TabStop = false;
-            this.RegisterEmployeeGroupBox.Text = "Register Employee";
+            this.EmployeeIDTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.EmployeeIDTextbox.ForeColor = System.Drawing.Color.White;
+            this.EmployeeIDTextbox.Location = new System.Drawing.Point(191, 34);
+            this.EmployeeIDTextbox.Name = "EmployeeIDTextbox";
+            this.EmployeeIDTextbox.Size = new System.Drawing.Size(174, 27);
+            this.EmployeeIDTextbox.TabIndex = 6;
             // 
-            // textBox11
+            // label7
             // 
-            this.textBox11.Location = new System.Drawing.Point(142, 217);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(185, 27);
-            this.textBox11.TabIndex = 16;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(143, 158);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(185, 27);
-            this.textBox10.TabIndex = 15;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(143, 127);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(185, 27);
-            this.textBox9.TabIndex = 14;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(143, 96);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(185, 27);
-            this.textBox8.TabIndex = 13;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(143, 65);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(185, 27);
-            this.textBox7.TabIndex = 12;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(143, 33);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(185, 27);
-            this.textBox6.TabIndex = 11;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(466, 182);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 27);
-            this.dateTimePicker1.TabIndex = 10;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(347, 186);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(109, 20);
-            this.label21.TabIndex = 9;
-            this.label21.Text = "Date of Birth:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(64, 129);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 20);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "Address:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(83, 220);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(45, 20);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "NID:";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(223, 192);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(82, 24);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(65, 194);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(67, 20);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "Gender:";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(143, 192);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(64, 24);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(55, 98);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(82, 20);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Password:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(9, 158);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(125, 20);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Phone Number:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(80, 68);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 20);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Email:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(82, 36);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 20);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Name:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(69, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "EmployeeID:";
             // 
             // EditDetailsPanel
             // 
@@ -2550,83 +2407,6 @@ namespace BankManagementSystem
             this.label13.TabIndex = 10;
             this.label13.Text = "EmployeeID:";
             // 
-            // EmployeeDetailsPanel
-            // 
-            this.EmployeeDetailsPanel.Controls.Add(this.DetailsGroupBox);
-            this.EmployeeDetailsPanel.Controls.Add(this.FindAllButton);
-            this.EmployeeDetailsPanel.Controls.Add(this.FindButton_EmployeeDetails);
-            this.EmployeeDetailsPanel.Controls.Add(this.EmployeeIDTextbox);
-            this.EmployeeDetailsPanel.Controls.Add(this.label7);
-            this.EmployeeDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmployeeDetailsPanel.Location = new System.Drawing.Point(0, 31);
-            this.EmployeeDetailsPanel.Name = "EmployeeDetailsPanel";
-            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(775, 466);
-            this.EmployeeDetailsPanel.TabIndex = 1;
-            // 
-            // DetailsGroupBox
-            // 
-            this.DetailsGroupBox.Controls.Add(this.DetailsPanel_EmployeeDetails);
-            this.DetailsGroupBox.ForeColor = System.Drawing.Color.White;
-            this.DetailsGroupBox.Location = new System.Drawing.Point(27, 110);
-            this.DetailsGroupBox.Name = "DetailsGroupBox";
-            this.DetailsGroupBox.Size = new System.Drawing.Size(721, 323);
-            this.DetailsGroupBox.TabIndex = 9;
-            this.DetailsGroupBox.TabStop = false;
-            this.DetailsGroupBox.Text = "Details";
-            // 
-            // DetailsPanel_EmployeeDetails
-            // 
-            this.DetailsPanel_EmployeeDetails.AutoScroll = true;
-            this.DetailsPanel_EmployeeDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DetailsPanel_EmployeeDetails.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailsPanel_EmployeeDetails.Location = new System.Drawing.Point(3, 23);
-            this.DetailsPanel_EmployeeDetails.Name = "DetailsPanel_EmployeeDetails";
-            this.DetailsPanel_EmployeeDetails.Size = new System.Drawing.Size(715, 297);
-            this.DetailsPanel_EmployeeDetails.TabIndex = 0;
-            // 
-            // FindAllButton
-            // 
-            this.FindAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.FindAllButton.FlatAppearance.BorderSize = 0;
-            this.FindAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindAllButton.Location = new System.Drawing.Point(570, 34);
-            this.FindAllButton.Name = "FindAllButton";
-            this.FindAllButton.Size = new System.Drawing.Size(110, 27);
-            this.FindAllButton.TabIndex = 8;
-            this.FindAllButton.Text = "Find All";
-            this.FindAllButton.UseVisualStyleBackColor = false;
-            this.FindAllButton.Click += new System.EventHandler(this.FindAllButton_Click);
-            // 
-            // FindButton_EmployeeDetails
-            // 
-            this.FindButton_EmployeeDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.FindButton_EmployeeDetails.FlatAppearance.BorderSize = 0;
-            this.FindButton_EmployeeDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindButton_EmployeeDetails.ForeColor = System.Drawing.Color.White;
-            this.FindButton_EmployeeDetails.Location = new System.Drawing.Point(191, 76);
-            this.FindButton_EmployeeDetails.Name = "FindButton_EmployeeDetails";
-            this.FindButton_EmployeeDetails.Size = new System.Drawing.Size(92, 28);
-            this.FindButton_EmployeeDetails.TabIndex = 7;
-            this.FindButton_EmployeeDetails.Text = "Find";
-            this.FindButton_EmployeeDetails.UseVisualStyleBackColor = false;
-            this.FindButton_EmployeeDetails.Click += new System.EventHandler(this.FindButton_EmployeeDetails_Click);
-            // 
-            // EmployeeIDTextbox
-            // 
-            this.EmployeeIDTextbox.Location = new System.Drawing.Point(191, 34);
-            this.EmployeeIDTextbox.Name = "EmployeeIDTextbox";
-            this.EmployeeIDTextbox.Size = new System.Drawing.Size(174, 27);
-            this.EmployeeIDTextbox.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(69, 37);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "EmployeeID:";
-            // 
             // TransactionsPanel
             // 
             this.TransactionsPanel.Controls.Add(this.TransactionHistoryGroupBox);
@@ -2676,6 +2456,8 @@ namespace BankManagementSystem
             // 
             // EmployeeIDTextBox_Transactions
             // 
+            this.EmployeeIDTextBox_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.EmployeeIDTextBox_Transactions.ForeColor = System.Drawing.Color.White;
             this.EmployeeIDTextBox_Transactions.Location = new System.Drawing.Point(202, 37);
             this.EmployeeIDTextBox_Transactions.Name = "EmployeeIDTextBox_Transactions";
             this.EmployeeIDTextBox_Transactions.Size = new System.Drawing.Size(174, 27);
@@ -2689,6 +2471,331 @@ namespace BankManagementSystem
             this.label8.Size = new System.Drawing.Size(116, 20);
             this.label8.TabIndex = 9;
             this.label8.Text = "EmployeeID:";
+            // 
+            // ManagePanel
+            // 
+            this.ManagePanel.Controls.Add(this.RemoveEmployeeGroupBox);
+            this.ManagePanel.Controls.Add(this.RegisterEmployeeGroupBox);
+            this.ManagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManagePanel.Location = new System.Drawing.Point(0, 31);
+            this.ManagePanel.Name = "ManagePanel";
+            this.ManagePanel.Size = new System.Drawing.Size(775, 466);
+            this.ManagePanel.TabIndex = 0;
+            // 
+            // RemoveEmployeeGroupBox
+            // 
+            this.RemoveEmployeeGroupBox.Controls.Add(this.NIDLabel_RemoveEmployee);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.PhoneNumberLabel_RemoveEmployee);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.NameLabel_RemoveEmployee);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.FindButton_RemoveEmployee);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.RemoveButton);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.FindEmployeeTextbox_RemoveEmployee);
+            this.RemoveEmployeeGroupBox.Controls.Add(this.label22);
+            this.RemoveEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
+            this.RemoveEmployeeGroupBox.Location = new System.Drawing.Point(25, 277);
+            this.RemoveEmployeeGroupBox.Name = "RemoveEmployeeGroupBox";
+            this.RemoveEmployeeGroupBox.Size = new System.Drawing.Size(726, 176);
+            this.RemoveEmployeeGroupBox.TabIndex = 1;
+            this.RemoveEmployeeGroupBox.TabStop = false;
+            this.RemoveEmployeeGroupBox.Text = "Remove Employee";
+            // 
+            // NIDLabel_RemoveEmployee
+            // 
+            this.NIDLabel_RemoveEmployee.AutoSize = true;
+            this.NIDLabel_RemoveEmployee.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NIDLabel_RemoveEmployee.Location = new System.Drawing.Point(66, 133);
+            this.NIDLabel_RemoveEmployee.Name = "NIDLabel_RemoveEmployee";
+            this.NIDLabel_RemoveEmployee.Size = new System.Drawing.Size(101, 20);
+            this.NIDLabel_RemoveEmployee.TabIndex = 19;
+            this.NIDLabel_RemoveEmployee.Text = "National ID:";
+            // 
+            // PhoneNumberLabel_RemoveEmployee
+            // 
+            this.PhoneNumberLabel_RemoveEmployee.AutoSize = true;
+            this.PhoneNumberLabel_RemoveEmployee.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneNumberLabel_RemoveEmployee.Location = new System.Drawing.Point(44, 106);
+            this.PhoneNumberLabel_RemoveEmployee.Name = "PhoneNumberLabel_RemoveEmployee";
+            this.PhoneNumberLabel_RemoveEmployee.Size = new System.Drawing.Size(125, 20);
+            this.PhoneNumberLabel_RemoveEmployee.TabIndex = 18;
+            this.PhoneNumberLabel_RemoveEmployee.Text = "Phone Number:";
+            // 
+            // NameLabel_RemoveEmployee
+            // 
+            this.NameLabel_RemoveEmployee.AutoSize = true;
+            this.NameLabel_RemoveEmployee.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel_RemoveEmployee.Location = new System.Drawing.Point(110, 81);
+            this.NameLabel_RemoveEmployee.Name = "NameLabel_RemoveEmployee";
+            this.NameLabel_RemoveEmployee.Size = new System.Drawing.Size(57, 20);
+            this.NameLabel_RemoveEmployee.TabIndex = 17;
+            this.NameLabel_RemoveEmployee.Text = "Name:";
+            // 
+            // FindButton_RemoveEmployee
+            // 
+            this.FindButton_RemoveEmployee.AutoSize = true;
+            this.FindButton_RemoveEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton_RemoveEmployee.FlatAppearance.BorderSize = 0;
+            this.FindButton_RemoveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton_RemoveEmployee.ForeColor = System.Drawing.Color.White;
+            this.FindButton_RemoveEmployee.Location = new System.Drawing.Point(497, 35);
+            this.FindButton_RemoveEmployee.Name = "FindButton_RemoveEmployee";
+            this.FindButton_RemoveEmployee.Size = new System.Drawing.Size(94, 30);
+            this.FindButton_RemoveEmployee.TabIndex = 16;
+            this.FindButton_RemoveEmployee.Text = "Find";
+            this.FindButton_RemoveEmployee.UseVisualStyleBackColor = false;
+            this.FindButton_RemoveEmployee.Click += new System.EventHandler(this.FindButton_RemoveEmployee_Click);
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.RemoveButton.FlatAppearance.BorderSize = 0;
+            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveButton.ForeColor = System.Drawing.Color.White;
+            this.RemoveButton.Location = new System.Drawing.Point(574, 125);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(92, 28);
+            this.RemoveButton.TabIndex = 15;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = false;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
+            // FindEmployeeTextbox_RemoveEmployee
+            // 
+            this.FindEmployeeTextbox_RemoveEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.FindEmployeeTextbox_RemoveEmployee.ForeColor = System.Drawing.Color.White;
+            this.FindEmployeeTextbox_RemoveEmployee.Location = new System.Drawing.Point(305, 35);
+            this.FindEmployeeTextbox_RemoveEmployee.Name = "FindEmployeeTextbox_RemoveEmployee";
+            this.FindEmployeeTextbox_RemoveEmployee.Size = new System.Drawing.Size(174, 27);
+            this.FindEmployeeTextbox_RemoveEmployee.TabIndex = 14;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(183, 38);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(116, 20);
+            this.label22.TabIndex = 13;
+            this.label22.Text = "EmployeeID:";
+            // 
+            // RegisterEmployeeGroupBox
+            // 
+            this.RegisterEmployeeGroupBox.Controls.Add(this.ErrorLabel_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.RegisterButton_Manage);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.NIDTextBox_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.PhoneNumberTextBox_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.AddressTextBox_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.PasswordTextBox_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.EmailTextBox_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.NameTextBox_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.DateTimePicker_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label21);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label20);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label19);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.FemaleRadioButton_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label18);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.MaleRadioButton_Employee);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label17);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label16);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label15);
+            this.RegisterEmployeeGroupBox.Controls.Add(this.label14);
+            this.RegisterEmployeeGroupBox.ForeColor = System.Drawing.Color.White;
+            this.RegisterEmployeeGroupBox.Location = new System.Drawing.Point(25, 12);
+            this.RegisterEmployeeGroupBox.Name = "RegisterEmployeeGroupBox";
+            this.RegisterEmployeeGroupBox.Size = new System.Drawing.Size(726, 258);
+            this.RegisterEmployeeGroupBox.TabIndex = 0;
+            this.RegisterEmployeeGroupBox.TabStop = false;
+            this.RegisterEmployeeGroupBox.Text = "Register Employee";
+            // 
+            // ErrorLabel_Employee
+            // 
+            this.ErrorLabel_Employee.AutoSize = true;
+            this.ErrorLabel_Employee.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorLabel_Employee.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLabel_Employee.Location = new System.Drawing.Point(55, 180);
+            this.ErrorLabel_Employee.Name = "ErrorLabel_Employee";
+            this.ErrorLabel_Employee.Size = new System.Drawing.Size(45, 16);
+            this.ErrorLabel_Employee.TabIndex = 18;
+            this.ErrorLabel_Employee.Text = "Error:";
+            // 
+            // RegisterButton_Manage
+            // 
+            this.RegisterButton_Manage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.RegisterButton_Manage.FlatAppearance.BorderSize = 0;
+            this.RegisterButton_Manage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegisterButton_Manage.Location = new System.Drawing.Point(314, 206);
+            this.RegisterButton_Manage.Name = "RegisterButton_Manage";
+            this.RegisterButton_Manage.Size = new System.Drawing.Size(94, 34);
+            this.RegisterButton_Manage.TabIndex = 17;
+            this.RegisterButton_Manage.Text = "Register";
+            this.RegisterButton_Manage.UseVisualStyleBackColor = false;
+            this.RegisterButton_Manage.Click += new System.EventHandler(this.RegisterButton_Manage_Click);
+            // 
+            // NIDTextBox_Employee
+            // 
+            this.NIDTextBox_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.NIDTextBox_Employee.ForeColor = System.Drawing.Color.White;
+            this.NIDTextBox_Employee.Location = new System.Drawing.Point(493, 43);
+            this.NIDTextBox_Employee.MaxLength = 8;
+            this.NIDTextBox_Employee.Name = "NIDTextBox_Employee";
+            this.NIDTextBox_Employee.Size = new System.Drawing.Size(185, 27);
+            this.NIDTextBox_Employee.TabIndex = 16;
+            // 
+            // PhoneNumberTextBox_Employee
+            // 
+            this.PhoneNumberTextBox_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.PhoneNumberTextBox_Employee.ForeColor = System.Drawing.Color.White;
+            this.PhoneNumberTextBox_Employee.Location = new System.Drawing.Point(494, 103);
+            this.PhoneNumberTextBox_Employee.MaxLength = 11;
+            this.PhoneNumberTextBox_Employee.Name = "PhoneNumberTextBox_Employee";
+            this.PhoneNumberTextBox_Employee.Size = new System.Drawing.Size(189, 27);
+            this.PhoneNumberTextBox_Employee.TabIndex = 15;
+            // 
+            // AddressTextBox_Employee
+            // 
+            this.AddressTextBox_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.AddressTextBox_Employee.ForeColor = System.Drawing.Color.White;
+            this.AddressTextBox_Employee.Location = new System.Drawing.Point(132, 134);
+            this.AddressTextBox_Employee.Name = "AddressTextBox_Employee";
+            this.AddressTextBox_Employee.Size = new System.Drawing.Size(185, 27);
+            this.AddressTextBox_Employee.TabIndex = 14;
+            // 
+            // PasswordTextBox_Employee
+            // 
+            this.PasswordTextBox_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.PasswordTextBox_Employee.ForeColor = System.Drawing.Color.White;
+            this.PasswordTextBox_Employee.Location = new System.Drawing.Point(132, 103);
+            this.PasswordTextBox_Employee.Name = "PasswordTextBox_Employee";
+            this.PasswordTextBox_Employee.PasswordChar = '*';
+            this.PasswordTextBox_Employee.Size = new System.Drawing.Size(185, 27);
+            this.PasswordTextBox_Employee.TabIndex = 13;
+            // 
+            // EmailTextBox_Employee
+            // 
+            this.EmailTextBox_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.EmailTextBox_Employee.ForeColor = System.Drawing.Color.White;
+            this.EmailTextBox_Employee.Location = new System.Drawing.Point(132, 72);
+            this.EmailTextBox_Employee.Name = "EmailTextBox_Employee";
+            this.EmailTextBox_Employee.Size = new System.Drawing.Size(185, 27);
+            this.EmailTextBox_Employee.TabIndex = 12;
+            // 
+            // NameTextBox_Employee
+            // 
+            this.NameTextBox_Employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.NameTextBox_Employee.ForeColor = System.Drawing.Color.White;
+            this.NameTextBox_Employee.Location = new System.Drawing.Point(132, 40);
+            this.NameTextBox_Employee.Name = "NameTextBox_Employee";
+            this.NameTextBox_Employee.Size = new System.Drawing.Size(185, 27);
+            this.NameTextBox_Employee.TabIndex = 11;
+            // 
+            // DateTimePicker_Employee
+            // 
+            this.DateTimePicker_Employee.Location = new System.Drawing.Point(493, 140);
+            this.DateTimePicker_Employee.Name = "DateTimePicker_Employee";
+            this.DateTimePicker_Employee.Size = new System.Drawing.Size(190, 27);
+            this.DateTimePicker_Employee.TabIndex = 10;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(374, 144);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(109, 20);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "Date of Birth:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(53, 136);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 20);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Address:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(434, 46);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 20);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "NID:";
+            // 
+            // FemaleRadioButton_Employee
+            // 
+            this.FemaleRadioButton_Employee.AutoSize = true;
+            this.FemaleRadioButton_Employee.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FemaleRadioButton_Employee.Location = new System.Drawing.Point(573, 70);
+            this.FemaleRadioButton_Employee.Name = "FemaleRadioButton_Employee";
+            this.FemaleRadioButton_Employee.Size = new System.Drawing.Size(82, 24);
+            this.FemaleRadioButton_Employee.TabIndex = 6;
+            this.FemaleRadioButton_Employee.TabStop = true;
+            this.FemaleRadioButton_Employee.Text = "Female";
+            this.FemaleRadioButton_Employee.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(415, 72);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(67, 20);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Gender:";
+            // 
+            // MaleRadioButton_Employee
+            // 
+            this.MaleRadioButton_Employee.AutoSize = true;
+            this.MaleRadioButton_Employee.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaleRadioButton_Employee.Location = new System.Drawing.Point(493, 70);
+            this.MaleRadioButton_Employee.Name = "MaleRadioButton_Employee";
+            this.MaleRadioButton_Employee.Size = new System.Drawing.Size(64, 24);
+            this.MaleRadioButton_Employee.TabIndex = 4;
+            this.MaleRadioButton_Employee.TabStop = true;
+            this.MaleRadioButton_Employee.Text = "Male";
+            this.MaleRadioButton_Employee.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(44, 105);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 20);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Password:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(360, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(125, 20);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Phone Number:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(69, 75);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 20);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Email:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(71, 43);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Name:";
             // 
             // ManagerPanelDefaultPanel
             // 
@@ -2760,19 +2867,41 @@ namespace BankManagementSystem
             this.EmployeeDetailsButton.UseVisualStyleBackColor = true;
             this.EmployeeDetailsButton.Click += new System.EventHandler(this.ManagerPanelButtonsHandler);
             // 
+            // DepositErrorLabel
+            // 
+            this.DepositErrorLabel.AutoSize = true;
+            this.DepositErrorLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepositErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.DepositErrorLabel.Location = new System.Drawing.Point(488, 223);
+            this.DepositErrorLabel.Name = "DepositErrorLabel";
+            this.DepositErrorLabel.Size = new System.Drawing.Size(43, 16);
+            this.DepositErrorLabel.TabIndex = 7;
+            this.DepositErrorLabel.Text = "label9";
+            // 
+            // WithdrawErrorLabel
+            // 
+            this.WithdrawErrorLabel.AutoSize = true;
+            this.WithdrawErrorLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WithdrawErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.WithdrawErrorLabel.Location = new System.Drawing.Point(488, 225);
+            this.WithdrawErrorLabel.Name = "WithdrawErrorLabel";
+            this.WithdrawErrorLabel.Size = new System.Drawing.Size(43, 16);
+            this.WithdrawErrorLabel.TabIndex = 7;
+            this.WithdrawErrorLabel.Text = "label9";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
-            this.Controls.Add(this.TransferPanel);
-            this.Controls.Add(this.DepositPanel);
-            this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.WithdrawPanel);
-            this.Controls.Add(this.RecoverAccountPanel);
-            this.Controls.Add(this.CreateAccountPanel);
+            this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.DetailsPanel);
+            this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
+            this.Controls.Add(this.ManagerPanel);
+            this.Controls.Add(this.TransferPanel);
+            this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
@@ -2841,22 +2970,22 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).EndInit();
             this.ManagerPanel.ResumeLayout(false);
-            this.ManagePanel.ResumeLayout(false);
-            this.RemoveEmployeeGroupBox.ResumeLayout(false);
-            this.RemoveEmployeeGroupBox.PerformLayout();
-            this.RegisterEmployeeGroupBox.ResumeLayout(false);
-            this.RegisterEmployeeGroupBox.PerformLayout();
+            this.EmployeeDetailsPanel.ResumeLayout(false);
+            this.EmployeeDetailsPanel.PerformLayout();
+            this.DetailsGroupBox.ResumeLayout(false);
             this.EditDetailsPanel.ResumeLayout(false);
             this.EditDetailsPanel.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.EmployeeDetailsPanel.ResumeLayout(false);
-            this.EmployeeDetailsPanel.PerformLayout();
-            this.DetailsGroupBox.ResumeLayout(false);
             this.TransactionsPanel.ResumeLayout(false);
             this.TransactionsPanel.PerformLayout();
             this.TransactionHistoryGroupBox.ResumeLayout(false);
+            this.ManagePanel.ResumeLayout(false);
+            this.RemoveEmployeeGroupBox.ResumeLayout(false);
+            this.RemoveEmployeeGroupBox.PerformLayout();
+            this.RegisterEmployeeGroupBox.ResumeLayout(false);
+            this.RegisterEmployeeGroupBox.PerformLayout();
             this.ManagerButtonsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -3063,25 +3192,33 @@ namespace BankManagementSystem
         private Label Name_ED;
         private Label ID_ED;
         private Label label18;
-        private RadioButton radioButton1;
+        private RadioButton MaleRadioButton_Employee;
         private Label label17;
         private Label label16;
         private Label label15;
         private Label label14;
         private Label label19;
-        private RadioButton radioButton2;
-        private TextBox textBox11;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private DateTimePicker dateTimePicker1;
+        private RadioButton FemaleRadioButton_Employee;
+        private TextBox NIDTextBox_Employee;
+        private TextBox PhoneNumberTextBox_Employee;
+        private TextBox AddressTextBox_Employee;
+        private TextBox PasswordTextBox_Employee;
+        private TextBox EmailTextBox_Employee;
+        private TextBox NameTextBox_Employee;
+        private DateTimePicker DateTimePicker_Employee;
         private Label label21;
         private Label label20;
-        private Button button2;
-        private TextBox textBox12;
+        private Button RemoveButton;
+        private TextBox FindEmployeeTextbox_RemoveEmployee;
         private Label label22;
+        private Button RegisterButton_Manage;
+        private Label ErrorLabel_Employee;
+        private Button FindButton_RemoveEmployee;
+        private Label NIDLabel_RemoveEmployee;
+        private Label PhoneNumberLabel_RemoveEmployee;
+        private Label NameLabel_RemoveEmployee;
+        private Label DepositErrorLabel;
+        private Label WithdrawErrorLabel;
     }
 }
 

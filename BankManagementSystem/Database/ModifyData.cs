@@ -52,5 +52,18 @@ namespace BankManagementSystem.Database
             }
             return false;
         }
+        public static bool RemoveEmployee(int id)
+        {
+            string query = "Delete from employees where ID = "+id;
+            int result = DataHandler.ManipulateData(query);
+            if(result >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

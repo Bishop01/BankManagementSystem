@@ -8,7 +8,7 @@ namespace BankManagementSystem.Database
         public static bool RegisterEmployee(Employee employee)
         {
             string query = "insert into Employees(Name, Password, Email, Address, Gender, NID, PhoneNumber, DateOfBirth)" +
-                " values('" + employee.Name + "','" + employee.Password + "','" + employee.Email + "','" + employee.Address + "','" + employee.Gender + "','" + employee.NID + "','" + employee.PhoneNumber + "','" + employee.DOB + "')";
+                " values('" + employee.Name + "','" + employee.Password + "','" + employee.Email + "','" + employee.Address + "','" + employee.Gender + "'," + employee.NID + "," + employee.PhoneNumber + ",'" + employee.DOB + "')";
             try
             {
                 int result = DataHandler.ManipulateData(query);
@@ -30,15 +30,20 @@ namespace BankManagementSystem.Database
         {
             try
             {
-                string query1 = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, ImageDirectory) " +
-                    "values('"+c.Firstname+"','"+c.Lastname+"','"+c.Address+"','"+c.Email+"',"+c.PhoneNumber+",'"+c.DOB+"','"+c.Nationality+"','"+c.Gender+"',"+c.NID+",'"+c.Occupation+"','"+c.ImageDir+"')";
-                int result1 = DataHandler.ManipulateData(query1);
+                Client client1 = FetchData.GetClientByNID(c.NID);
+                if (client1 == null)
+                {
+                    string query1 = "insert into Clients(FirstName, LastName, Address, Email, PhoneNumber, DateOfBirth, Nationality, Gender, NID, Occupation, ImageDirectory) " +
+                    "values('" + c.Firstname + "','" + c.Lastname + "','" + c.Address + "','" + c.Email + "'," + c.PhoneNumber + ",'" + c.DOB + "','" + c.Nationality + "','" + c.Gender + "'," + c.NID + ",'" + c.Occupation + "','" + c.ImageDir + "')";
+                    int result1 = DataHandler.ManipulateData(query1);
+                    client1 = FetchData.GetClientByNID(c.NID);
+                }
                 
-                Client client = FetchData.GetClientByNID(Convert.ToInt32(c.NID));
-                c.ClientID = client.ClientID;
-                string query2 = "insert into Accounts(ClientID, AccountType, RegisteredBy) values('" + client.ClientID + "','"+account.AccountType+"','"+eid+"')";
+                //Client client = FetchData.GetClientByNID(Convert.ToInt32(c.NID));
+                c.ClientID = client1.ClientID;
+                string query2 = "insert into Accounts(ClientID, AccountType, RegisteredBy) values('" + c.ClientID + "','"+account.AccountType+"','"+eid+"')";
                 int result2 = DataHandler.ManipulateData(query2);
-                if (result1 >= 1 && result2 >= 1)
+                if (result2 >= 1)
                 {
                     return true;
                 }
