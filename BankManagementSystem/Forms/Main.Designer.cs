@@ -133,6 +133,7 @@ namespace BankManagementSystem
             this.label2 = new System.Windows.Forms.Label();
             this.DepositPanel = new System.Windows.Forms.Panel();
             this.DepositGroupBox = new System.Windows.Forms.GroupBox();
+            this.DepositErrorLabel = new System.Windows.Forms.Label();
             this.AccountTypeLabel_Deposit = new System.Windows.Forms.Label();
             this.DepositButton_Deposit = new System.Windows.Forms.Button();
             this.DepositTextbox = new System.Windows.Forms.TextBox();
@@ -146,6 +147,7 @@ namespace BankManagementSystem
             this.WithdrawPanel = new System.Windows.Forms.Panel();
             this.AccountOwnerLabel_W = new System.Windows.Forms.Label();
             this.groupBox_Withdraw = new System.Windows.Forms.GroupBox();
+            this.WithdrawErrorLabel = new System.Windows.Forms.Label();
             this.AccountTypelabel_Withdraw = new System.Windows.Forms.Label();
             this.Withdrawbutton_Withdraw = new System.Windows.Forms.Button();
             this.WithdrawtextBox = new System.Windows.Forms.TextBox();
@@ -194,34 +196,21 @@ namespace BankManagementSystem
             this.FirstNameLabel_Details = new System.Windows.Forms.Label();
             this.AccountOwnerPictureBox_Details = new System.Windows.Forms.PictureBox();
             this.ManagerPanel = new System.Windows.Forms.Panel();
-            this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
-            this.DetailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.DetailsPanel_EmployeeDetails = new System.Windows.Forms.Panel();
-            this.FindAllButton = new System.Windows.Forms.Button();
-            this.FindButton_EmployeeDetails = new System.Windows.Forms.Button();
-            this.EmployeeIDTextbox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.EditDetailsPanel = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox_ED = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Update_Button_ED = new System.Windows.Forms.Button();
+            this.AddresstextBox_ED = new System.Windows.Forms.TextBox();
+            this.PhonetextBox_ED = new System.Windows.Forms.TextBox();
+            this.EmailtextBox_ED = new System.Windows.Forms.TextBox();
             this.Address_ED = new System.Windows.Forms.Label();
             this.PhoneNumber_ED = new System.Windows.Forms.Label();
             this.Email_ED = new System.Windows.Forms.Label();
             this.Name_ED = new System.Windows.Forms.Label();
-            this.ID_ED = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EmployeeID_ED = new System.Windows.Forms.Label();
+            this.FindButton_ED = new System.Windows.Forms.Button();
+            this.SearchboxEmployee_ED = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.TransactionsPanel = new System.Windows.Forms.Panel();
-            this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
-            this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
-            this.FindButtion_Transactions = new System.Windows.Forms.Button();
-            this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.ManagePanel = new System.Windows.Forms.Panel();
             this.RemoveEmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.NIDLabel_RemoveEmployee = new System.Windows.Forms.Label();
@@ -251,14 +240,27 @@ namespace BankManagementSystem
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.EmployeeDetailsPanel = new System.Windows.Forms.Panel();
+            this.DetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DetailsPanel_EmployeeDetails = new System.Windows.Forms.Panel();
+            this.FindAllButton = new System.Windows.Forms.Button();
+            this.FindButton_EmployeeDetails = new System.Windows.Forms.Button();
+            this.EmployeeIDTextbox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TransactionsPanel = new System.Windows.Forms.Panel();
+            this.TransactionHistoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.TransactionHistoryPanel = new System.Windows.Forms.Panel();
+            this.FindButtion_Transactions = new System.Windows.Forms.Button();
+            this.EmployeeIDTextBox_Transactions = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.ManagerPanelDefaultPanel = new System.Windows.Forms.Panel();
             this.ManagerButtonsPanel = new System.Windows.Forms.Panel();
             this.TransactionsButton = new System.Windows.Forms.Button();
             this.ManageButton = new System.Windows.Forms.Button();
             this.EditDetailsButton = new System.Windows.Forms.Button();
             this.EmployeeDetailsButton = new System.Windows.Forms.Button();
-            this.DepositErrorLabel = new System.Windows.Forms.Label();
-            this.WithdrawErrorLabel = new System.Windows.Forms.Label();
+            this.EmailError_ED = new System.Windows.Forms.Label();
+            this.NumberError_ED = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).BeginInit();
@@ -300,16 +302,16 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).BeginInit();
             this.ManagerPanel.SuspendLayout();
-            this.EmployeeDetailsPanel.SuspendLayout();
-            this.DetailsGroupBox.SuspendLayout();
             this.EditDetailsPanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_ED.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.TransactionsPanel.SuspendLayout();
-            this.TransactionHistoryGroupBox.SuspendLayout();
             this.ManagePanel.SuspendLayout();
             this.RemoveEmployeeGroupBox.SuspendLayout();
             this.RegisterEmployeeGroupBox.SuspendLayout();
+            this.EmployeeDetailsPanel.SuspendLayout();
+            this.DetailsGroupBox.SuspendLayout();
+            this.TransactionsPanel.SuspendLayout();
+            this.TransactionHistoryGroupBox.SuspendLayout();
             this.ManagerButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -350,7 +352,7 @@ namespace BankManagementSystem
             // 
             this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2809);
+            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2893);
             this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
             this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
             this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -377,7 +379,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2531);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2615);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1514,6 +1516,17 @@ namespace BankManagementSystem
             this.DepositGroupBox.TabStop = false;
             this.DepositGroupBox.Text = "Deposit";
             // 
+            // DepositErrorLabel
+            // 
+            this.DepositErrorLabel.AutoSize = true;
+            this.DepositErrorLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepositErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.DepositErrorLabel.Location = new System.Drawing.Point(488, 223);
+            this.DepositErrorLabel.Name = "DepositErrorLabel";
+            this.DepositErrorLabel.Size = new System.Drawing.Size(43, 16);
+            this.DepositErrorLabel.TabIndex = 7;
+            this.DepositErrorLabel.Text = "label9";
+            // 
             // AccountTypeLabel_Deposit
             // 
             this.AccountTypeLabel_Deposit.AutoSize = true;
@@ -1655,6 +1668,16 @@ namespace BankManagementSystem
             this.groupBox_Withdraw.TabStop = false;
             this.groupBox_Withdraw.Text = "Withdraw";
             this.groupBox_Withdraw.Visible = false;
+            // 
+            // WithdrawErrorLabel
+            // 
+            this.WithdrawErrorLabel.AutoSize = true;
+            this.WithdrawErrorLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WithdrawErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.WithdrawErrorLabel.Location = new System.Drawing.Point(488, 225);
+            this.WithdrawErrorLabel.Name = "WithdrawErrorLabel";
+            this.WithdrawErrorLabel.Size = new System.Drawing.Size(0, 16);
+            this.WithdrawErrorLabel.TabIndex = 7;
             // 
             // AccountTypelabel_Withdraw
             // 
@@ -2166,10 +2189,10 @@ namespace BankManagementSystem
             // ManagerPanel
             // 
             this.ManagerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ManagerPanel.Controls.Add(this.EmployeeDetailsPanel);
             this.ManagerPanel.Controls.Add(this.EditDetailsPanel);
-            this.ManagerPanel.Controls.Add(this.TransactionsPanel);
             this.ManagerPanel.Controls.Add(this.ManagePanel);
+            this.ManagerPanel.Controls.Add(this.EmployeeDetailsPanel);
+            this.ManagerPanel.Controls.Add(this.TransactionsPanel);
             this.ManagerPanel.Controls.Add(this.ManagerPanelDefaultPanel);
             this.ManagerPanel.Controls.Add(this.ManagerButtonsPanel);
             this.ManagerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2179,90 +2202,11 @@ namespace BankManagementSystem
             this.ManagerPanel.Size = new System.Drawing.Size(775, 497);
             this.ManagerPanel.TabIndex = 16;
             // 
-            // EmployeeDetailsPanel
-            // 
-            this.EmployeeDetailsPanel.Controls.Add(this.DetailsGroupBox);
-            this.EmployeeDetailsPanel.Controls.Add(this.FindAllButton);
-            this.EmployeeDetailsPanel.Controls.Add(this.FindButton_EmployeeDetails);
-            this.EmployeeDetailsPanel.Controls.Add(this.EmployeeIDTextbox);
-            this.EmployeeDetailsPanel.Controls.Add(this.label7);
-            this.EmployeeDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmployeeDetailsPanel.Location = new System.Drawing.Point(0, 31);
-            this.EmployeeDetailsPanel.Name = "EmployeeDetailsPanel";
-            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(775, 466);
-            this.EmployeeDetailsPanel.TabIndex = 1;
-            // 
-            // DetailsGroupBox
-            // 
-            this.DetailsGroupBox.Controls.Add(this.DetailsPanel_EmployeeDetails);
-            this.DetailsGroupBox.ForeColor = System.Drawing.Color.White;
-            this.DetailsGroupBox.Location = new System.Drawing.Point(27, 110);
-            this.DetailsGroupBox.Name = "DetailsGroupBox";
-            this.DetailsGroupBox.Size = new System.Drawing.Size(721, 323);
-            this.DetailsGroupBox.TabIndex = 9;
-            this.DetailsGroupBox.TabStop = false;
-            this.DetailsGroupBox.Text = "Details";
-            // 
-            // DetailsPanel_EmployeeDetails
-            // 
-            this.DetailsPanel_EmployeeDetails.AutoScroll = true;
-            this.DetailsPanel_EmployeeDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DetailsPanel_EmployeeDetails.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetailsPanel_EmployeeDetails.Location = new System.Drawing.Point(3, 23);
-            this.DetailsPanel_EmployeeDetails.Name = "DetailsPanel_EmployeeDetails";
-            this.DetailsPanel_EmployeeDetails.Size = new System.Drawing.Size(715, 297);
-            this.DetailsPanel_EmployeeDetails.TabIndex = 0;
-            // 
-            // FindAllButton
-            // 
-            this.FindAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.FindAllButton.FlatAppearance.BorderSize = 0;
-            this.FindAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindAllButton.Location = new System.Drawing.Point(570, 34);
-            this.FindAllButton.Name = "FindAllButton";
-            this.FindAllButton.Size = new System.Drawing.Size(110, 27);
-            this.FindAllButton.TabIndex = 8;
-            this.FindAllButton.Text = "Find All";
-            this.FindAllButton.UseVisualStyleBackColor = false;
-            this.FindAllButton.Click += new System.EventHandler(this.FindAllButton_Click);
-            // 
-            // FindButton_EmployeeDetails
-            // 
-            this.FindButton_EmployeeDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.FindButton_EmployeeDetails.FlatAppearance.BorderSize = 0;
-            this.FindButton_EmployeeDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindButton_EmployeeDetails.ForeColor = System.Drawing.Color.White;
-            this.FindButton_EmployeeDetails.Location = new System.Drawing.Point(191, 76);
-            this.FindButton_EmployeeDetails.Name = "FindButton_EmployeeDetails";
-            this.FindButton_EmployeeDetails.Size = new System.Drawing.Size(92, 28);
-            this.FindButton_EmployeeDetails.TabIndex = 7;
-            this.FindButton_EmployeeDetails.Text = "Find";
-            this.FindButton_EmployeeDetails.UseVisualStyleBackColor = false;
-            this.FindButton_EmployeeDetails.Click += new System.EventHandler(this.FindButton_EmployeeDetails_Click);
-            // 
-            // EmployeeIDTextbox
-            // 
-            this.EmployeeIDTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.EmployeeIDTextbox.ForeColor = System.Drawing.Color.White;
-            this.EmployeeIDTextbox.Location = new System.Drawing.Point(191, 34);
-            this.EmployeeIDTextbox.Name = "EmployeeIDTextbox";
-            this.EmployeeIDTextbox.Size = new System.Drawing.Size(174, 27);
-            this.EmployeeIDTextbox.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(69, 37);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "EmployeeID:";
-            // 
             // EditDetailsPanel
             // 
-            this.EditDetailsPanel.Controls.Add(this.groupBox1);
-            this.EditDetailsPanel.Controls.Add(this.button1);
-            this.EditDetailsPanel.Controls.Add(this.textBox1);
+            this.EditDetailsPanel.Controls.Add(this.groupBox_ED);
+            this.EditDetailsPanel.Controls.Add(this.FindButton_ED);
+            this.EditDetailsPanel.Controls.Add(this.SearchboxEmployee_ED);
             this.EditDetailsPanel.Controls.Add(this.label13);
             this.EditDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditDetailsPanel.Location = new System.Drawing.Point(0, 31);
@@ -2270,29 +2214,32 @@ namespace BankManagementSystem
             this.EditDetailsPanel.Size = new System.Drawing.Size(775, 466);
             this.EditDetailsPanel.TabIndex = 0;
             // 
-            // groupBox1
+            // groupBox_ED
             // 
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(27, 110);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(721, 323);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Edit Details";
+            this.groupBox_ED.Controls.Add(this.panel1);
+            this.groupBox_ED.ForeColor = System.Drawing.Color.White;
+            this.groupBox_ED.Location = new System.Drawing.Point(27, 110);
+            this.groupBox_ED.Name = "groupBox_ED";
+            this.groupBox_ED.Size = new System.Drawing.Size(721, 323);
+            this.groupBox_ED.TabIndex = 13;
+            this.groupBox_ED.TabStop = false;
+            this.groupBox_ED.Text = "Edit Details";
+            this.groupBox_ED.Visible = false;
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.NumberError_ED);
+            this.panel1.Controls.Add(this.EmailError_ED);
+            this.panel1.Controls.Add(this.Update_Button_ED);
+            this.panel1.Controls.Add(this.AddresstextBox_ED);
+            this.panel1.Controls.Add(this.PhonetextBox_ED);
+            this.panel1.Controls.Add(this.EmailtextBox_ED);
             this.panel1.Controls.Add(this.Address_ED);
             this.panel1.Controls.Add(this.PhoneNumber_ED);
             this.panel1.Controls.Add(this.Email_ED);
             this.panel1.Controls.Add(this.Name_ED);
-            this.panel1.Controls.Add(this.ID_ED);
+            this.panel1.Controls.Add(this.EmployeeID_ED);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(3, 23);
@@ -2300,39 +2247,47 @@ namespace BankManagementSystem
             this.panel1.Size = new System.Drawing.Size(715, 297);
             this.panel1.TabIndex = 0;
             // 
-            // textBox5
+            // Update_Button_ED
             // 
-            this.textBox5.Location = new System.Drawing.Point(138, 173);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(174, 23);
-            this.textBox5.TabIndex = 17;
+            this.Update_Button_ED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.Update_Button_ED.FlatAppearance.BorderSize = 0;
+            this.Update_Button_ED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Update_Button_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_Button_ED.Location = new System.Drawing.Point(168, 214);
+            this.Update_Button_ED.Name = "Update_Button_ED";
+            this.Update_Button_ED.Size = new System.Drawing.Size(94, 34);
+            this.Update_Button_ED.TabIndex = 18;
+            this.Update_Button_ED.Text = "Update";
+            this.Update_Button_ED.UseVisualStyleBackColor = false;
+            this.Update_Button_ED.Click += new System.EventHandler(this.Update_Button_ED_Click);
             // 
-            // textBox4
+            // AddresstextBox_ED
             // 
-            this.textBox4.Location = new System.Drawing.Point(138, 134);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(174, 23);
-            this.textBox4.TabIndex = 16;
+            this.AddresstextBox_ED.Location = new System.Drawing.Point(133, 171);
+            this.AddresstextBox_ED.Name = "AddresstextBox_ED";
+            this.AddresstextBox_ED.Size = new System.Drawing.Size(174, 23);
+            this.AddresstextBox_ED.TabIndex = 17;
             // 
-            // textBox3
+            // PhonetextBox_ED
             // 
-            this.textBox3.Location = new System.Drawing.Point(138, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 23);
-            this.textBox3.TabIndex = 15;
+            this.PhonetextBox_ED.Location = new System.Drawing.Point(133, 134);
+            this.PhonetextBox_ED.MaxLength = 10;
+            this.PhonetextBox_ED.Name = "PhonetextBox_ED";
+            this.PhonetextBox_ED.Size = new System.Drawing.Size(174, 23);
+            this.PhonetextBox_ED.TabIndex = 16;
             // 
-            // textBox2
+            // EmailtextBox_ED
             // 
-            this.textBox2.Location = new System.Drawing.Point(138, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 23);
-            this.textBox2.TabIndex = 14;
+            this.EmailtextBox_ED.Location = new System.Drawing.Point(133, 97);
+            this.EmailtextBox_ED.Name = "EmailtextBox_ED";
+            this.EmailtextBox_ED.Size = new System.Drawing.Size(174, 23);
+            this.EmailtextBox_ED.TabIndex = 15;
             // 
             // Address_ED
             // 
             this.Address_ED.AutoSize = true;
             this.Address_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address_ED.Location = new System.Drawing.Point(60, 176);
+            this.Address_ED.Location = new System.Drawing.Point(60, 174);
             this.Address_ED.Name = "Address_ED";
             this.Address_ED.Size = new System.Drawing.Size(72, 20);
             this.Address_ED.TabIndex = 4;
@@ -2368,35 +2323,37 @@ namespace BankManagementSystem
             this.Name_ED.TabIndex = 1;
             this.Name_ED.Text = "Name:";
             // 
-            // ID_ED
+            // EmployeeID_ED
             // 
-            this.ID_ED.AutoSize = true;
-            this.ID_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_ED.Location = new System.Drawing.Point(101, 30);
-            this.ID_ED.Name = "ID_ED";
-            this.ID_ED.Size = new System.Drawing.Size(32, 20);
-            this.ID_ED.TabIndex = 0;
-            this.ID_ED.Text = "ID:";
+            this.EmployeeID_ED.AutoSize = true;
+            this.EmployeeID_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeID_ED.Location = new System.Drawing.Point(101, 30);
+            this.EmployeeID_ED.Name = "EmployeeID_ED";
+            this.EmployeeID_ED.Size = new System.Drawing.Size(32, 20);
+            this.EmployeeID_ED.TabIndex = 0;
+            this.EmployeeID_ED.Text = "ID:";
             // 
-            // button1
+            // FindButton_ED
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(191, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 28);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = false;
+            this.FindButton_ED.AutoSize = true;
+            this.FindButton_ED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton_ED.FlatAppearance.BorderSize = 0;
+            this.FindButton_ED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton_ED.ForeColor = System.Drawing.Color.White;
+            this.FindButton_ED.Location = new System.Drawing.Point(191, 76);
+            this.FindButton_ED.Name = "FindButton_ED";
+            this.FindButton_ED.Size = new System.Drawing.Size(92, 30);
+            this.FindButton_ED.TabIndex = 12;
+            this.FindButton_ED.Text = "Find";
+            this.FindButton_ED.UseVisualStyleBackColor = false;
+            this.FindButton_ED.Click += new System.EventHandler(this.FindButton_ED_Click);
             // 
-            // textBox1
+            // SearchboxEmployee_ED
             // 
-            this.textBox1.Location = new System.Drawing.Point(191, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 27);
-            this.textBox1.TabIndex = 11;
+            this.SearchboxEmployee_ED.Location = new System.Drawing.Point(191, 34);
+            this.SearchboxEmployee_ED.Name = "SearchboxEmployee_ED";
+            this.SearchboxEmployee_ED.Size = new System.Drawing.Size(174, 27);
+            this.SearchboxEmployee_ED.TabIndex = 11;
             // 
             // label13
             // 
@@ -2406,71 +2363,6 @@ namespace BankManagementSystem
             this.label13.Size = new System.Drawing.Size(116, 20);
             this.label13.TabIndex = 10;
             this.label13.Text = "EmployeeID:";
-            // 
-            // TransactionsPanel
-            // 
-            this.TransactionsPanel.Controls.Add(this.TransactionHistoryGroupBox);
-            this.TransactionsPanel.Controls.Add(this.FindButtion_Transactions);
-            this.TransactionsPanel.Controls.Add(this.EmployeeIDTextBox_Transactions);
-            this.TransactionsPanel.Controls.Add(this.label8);
-            this.TransactionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TransactionsPanel.Location = new System.Drawing.Point(0, 31);
-            this.TransactionsPanel.Name = "TransactionsPanel";
-            this.TransactionsPanel.Size = new System.Drawing.Size(775, 466);
-            this.TransactionsPanel.TabIndex = 0;
-            // 
-            // TransactionHistoryGroupBox
-            // 
-            this.TransactionHistoryGroupBox.Controls.Add(this.TransactionHistoryPanel);
-            this.TransactionHistoryGroupBox.ForeColor = System.Drawing.Color.White;
-            this.TransactionHistoryGroupBox.Location = new System.Drawing.Point(25, 119);
-            this.TransactionHistoryGroupBox.Name = "TransactionHistoryGroupBox";
-            this.TransactionHistoryGroupBox.Size = new System.Drawing.Size(726, 326);
-            this.TransactionHistoryGroupBox.TabIndex = 13;
-            this.TransactionHistoryGroupBox.TabStop = false;
-            this.TransactionHistoryGroupBox.Text = "Transaction History";
-            // 
-            // TransactionHistoryPanel
-            // 
-            this.TransactionHistoryPanel.AutoScroll = true;
-            this.TransactionHistoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TransactionHistoryPanel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransactionHistoryPanel.Location = new System.Drawing.Point(3, 23);
-            this.TransactionHistoryPanel.Name = "TransactionHistoryPanel";
-            this.TransactionHistoryPanel.Size = new System.Drawing.Size(720, 300);
-            this.TransactionHistoryPanel.TabIndex = 0;
-            // 
-            // FindButtion_Transactions
-            // 
-            this.FindButtion_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.FindButtion_Transactions.FlatAppearance.BorderSize = 0;
-            this.FindButtion_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FindButtion_Transactions.ForeColor = System.Drawing.Color.White;
-            this.FindButtion_Transactions.Location = new System.Drawing.Point(202, 79);
-            this.FindButtion_Transactions.Name = "FindButtion_Transactions";
-            this.FindButtion_Transactions.Size = new System.Drawing.Size(92, 28);
-            this.FindButtion_Transactions.TabIndex = 11;
-            this.FindButtion_Transactions.Text = "Find";
-            this.FindButtion_Transactions.UseVisualStyleBackColor = false;
-            this.FindButtion_Transactions.Click += new System.EventHandler(this.FindButtion_Transactions_Click);
-            // 
-            // EmployeeIDTextBox_Transactions
-            // 
-            this.EmployeeIDTextBox_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.EmployeeIDTextBox_Transactions.ForeColor = System.Drawing.Color.White;
-            this.EmployeeIDTextBox_Transactions.Location = new System.Drawing.Point(202, 37);
-            this.EmployeeIDTextBox_Transactions.Name = "EmployeeIDTextBox_Transactions";
-            this.EmployeeIDTextBox_Transactions.Size = new System.Drawing.Size(174, 27);
-            this.EmployeeIDTextBox_Transactions.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(80, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 20);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "EmployeeID:";
             // 
             // ManagePanel
             // 
@@ -2797,6 +2689,150 @@ namespace BankManagementSystem
             this.label14.TabIndex = 0;
             this.label14.Text = "Name:";
             // 
+            // EmployeeDetailsPanel
+            // 
+            this.EmployeeDetailsPanel.Controls.Add(this.DetailsGroupBox);
+            this.EmployeeDetailsPanel.Controls.Add(this.FindAllButton);
+            this.EmployeeDetailsPanel.Controls.Add(this.FindButton_EmployeeDetails);
+            this.EmployeeDetailsPanel.Controls.Add(this.EmployeeIDTextbox);
+            this.EmployeeDetailsPanel.Controls.Add(this.label7);
+            this.EmployeeDetailsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeeDetailsPanel.Location = new System.Drawing.Point(0, 31);
+            this.EmployeeDetailsPanel.Name = "EmployeeDetailsPanel";
+            this.EmployeeDetailsPanel.Size = new System.Drawing.Size(775, 466);
+            this.EmployeeDetailsPanel.TabIndex = 1;
+            // 
+            // DetailsGroupBox
+            // 
+            this.DetailsGroupBox.Controls.Add(this.DetailsPanel_EmployeeDetails);
+            this.DetailsGroupBox.ForeColor = System.Drawing.Color.White;
+            this.DetailsGroupBox.Location = new System.Drawing.Point(27, 110);
+            this.DetailsGroupBox.Name = "DetailsGroupBox";
+            this.DetailsGroupBox.Size = new System.Drawing.Size(721, 323);
+            this.DetailsGroupBox.TabIndex = 9;
+            this.DetailsGroupBox.TabStop = false;
+            this.DetailsGroupBox.Text = "Details";
+            // 
+            // DetailsPanel_EmployeeDetails
+            // 
+            this.DetailsPanel_EmployeeDetails.AutoScroll = true;
+            this.DetailsPanel_EmployeeDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DetailsPanel_EmployeeDetails.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetailsPanel_EmployeeDetails.Location = new System.Drawing.Point(3, 23);
+            this.DetailsPanel_EmployeeDetails.Name = "DetailsPanel_EmployeeDetails";
+            this.DetailsPanel_EmployeeDetails.Size = new System.Drawing.Size(715, 297);
+            this.DetailsPanel_EmployeeDetails.TabIndex = 0;
+            // 
+            // FindAllButton
+            // 
+            this.FindAllButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindAllButton.FlatAppearance.BorderSize = 0;
+            this.FindAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindAllButton.Location = new System.Drawing.Point(570, 34);
+            this.FindAllButton.Name = "FindAllButton";
+            this.FindAllButton.Size = new System.Drawing.Size(110, 27);
+            this.FindAllButton.TabIndex = 8;
+            this.FindAllButton.Text = "Find All";
+            this.FindAllButton.UseVisualStyleBackColor = false;
+            this.FindAllButton.Click += new System.EventHandler(this.FindAllButton_Click);
+            // 
+            // FindButton_EmployeeDetails
+            // 
+            this.FindButton_EmployeeDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton_EmployeeDetails.FlatAppearance.BorderSize = 0;
+            this.FindButton_EmployeeDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton_EmployeeDetails.ForeColor = System.Drawing.Color.White;
+            this.FindButton_EmployeeDetails.Location = new System.Drawing.Point(191, 76);
+            this.FindButton_EmployeeDetails.Name = "FindButton_EmployeeDetails";
+            this.FindButton_EmployeeDetails.Size = new System.Drawing.Size(92, 28);
+            this.FindButton_EmployeeDetails.TabIndex = 7;
+            this.FindButton_EmployeeDetails.Text = "Find";
+            this.FindButton_EmployeeDetails.UseVisualStyleBackColor = false;
+            this.FindButton_EmployeeDetails.Click += new System.EventHandler(this.FindButton_EmployeeDetails_Click);
+            // 
+            // EmployeeIDTextbox
+            // 
+            this.EmployeeIDTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.EmployeeIDTextbox.ForeColor = System.Drawing.Color.White;
+            this.EmployeeIDTextbox.Location = new System.Drawing.Point(191, 34);
+            this.EmployeeIDTextbox.Name = "EmployeeIDTextbox";
+            this.EmployeeIDTextbox.Size = new System.Drawing.Size(174, 27);
+            this.EmployeeIDTextbox.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(69, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "EmployeeID:";
+            // 
+            // TransactionsPanel
+            // 
+            this.TransactionsPanel.Controls.Add(this.TransactionHistoryGroupBox);
+            this.TransactionsPanel.Controls.Add(this.FindButtion_Transactions);
+            this.TransactionsPanel.Controls.Add(this.EmployeeIDTextBox_Transactions);
+            this.TransactionsPanel.Controls.Add(this.label8);
+            this.TransactionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TransactionsPanel.Location = new System.Drawing.Point(0, 31);
+            this.TransactionsPanel.Name = "TransactionsPanel";
+            this.TransactionsPanel.Size = new System.Drawing.Size(775, 466);
+            this.TransactionsPanel.TabIndex = 0;
+            // 
+            // TransactionHistoryGroupBox
+            // 
+            this.TransactionHistoryGroupBox.Controls.Add(this.TransactionHistoryPanel);
+            this.TransactionHistoryGroupBox.ForeColor = System.Drawing.Color.White;
+            this.TransactionHistoryGroupBox.Location = new System.Drawing.Point(25, 119);
+            this.TransactionHistoryGroupBox.Name = "TransactionHistoryGroupBox";
+            this.TransactionHistoryGroupBox.Size = new System.Drawing.Size(726, 326);
+            this.TransactionHistoryGroupBox.TabIndex = 13;
+            this.TransactionHistoryGroupBox.TabStop = false;
+            this.TransactionHistoryGroupBox.Text = "Transaction History";
+            // 
+            // TransactionHistoryPanel
+            // 
+            this.TransactionHistoryPanel.AutoScroll = true;
+            this.TransactionHistoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TransactionHistoryPanel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransactionHistoryPanel.Location = new System.Drawing.Point(3, 23);
+            this.TransactionHistoryPanel.Name = "TransactionHistoryPanel";
+            this.TransactionHistoryPanel.Size = new System.Drawing.Size(720, 300);
+            this.TransactionHistoryPanel.TabIndex = 0;
+            // 
+            // FindButtion_Transactions
+            // 
+            this.FindButtion_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButtion_Transactions.FlatAppearance.BorderSize = 0;
+            this.FindButtion_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButtion_Transactions.ForeColor = System.Drawing.Color.White;
+            this.FindButtion_Transactions.Location = new System.Drawing.Point(202, 79);
+            this.FindButtion_Transactions.Name = "FindButtion_Transactions";
+            this.FindButtion_Transactions.Size = new System.Drawing.Size(92, 28);
+            this.FindButtion_Transactions.TabIndex = 11;
+            this.FindButtion_Transactions.Text = "Find";
+            this.FindButtion_Transactions.UseVisualStyleBackColor = false;
+            this.FindButtion_Transactions.Click += new System.EventHandler(this.FindButtion_Transactions_Click);
+            // 
+            // EmployeeIDTextBox_Transactions
+            // 
+            this.EmployeeIDTextBox_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.EmployeeIDTextBox_Transactions.ForeColor = System.Drawing.Color.White;
+            this.EmployeeIDTextBox_Transactions.Location = new System.Drawing.Point(202, 37);
+            this.EmployeeIDTextBox_Transactions.Name = "EmployeeIDTextBox_Transactions";
+            this.EmployeeIDTextBox_Transactions.Size = new System.Drawing.Size(174, 27);
+            this.EmployeeIDTextBox_Transactions.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(80, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 20);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "EmployeeID:";
+            // 
             // ManagerPanelDefaultPanel
             // 
             this.ManagerPanelDefaultPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2867,39 +2903,39 @@ namespace BankManagementSystem
             this.EmployeeDetailsButton.UseVisualStyleBackColor = true;
             this.EmployeeDetailsButton.Click += new System.EventHandler(this.ManagerPanelButtonsHandler);
             // 
-            // DepositErrorLabel
+            // EmailError_ED
             // 
-            this.DepositErrorLabel.AutoSize = true;
-            this.DepositErrorLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DepositErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.DepositErrorLabel.Location = new System.Drawing.Point(488, 223);
-            this.DepositErrorLabel.Name = "DepositErrorLabel";
-            this.DepositErrorLabel.Size = new System.Drawing.Size(43, 16);
-            this.DepositErrorLabel.TabIndex = 7;
-            this.DepositErrorLabel.Text = "label9";
+            this.EmailError_ED.AutoSize = true;
+            this.EmailError_ED.ForeColor = System.Drawing.Color.Red;
+            this.EmailError_ED.Location = new System.Drawing.Point(321, 100);
+            this.EmailError_ED.Name = "EmailError_ED";
+            this.EmailError_ED.Size = new System.Drawing.Size(43, 16);
+            this.EmailError_ED.TabIndex = 19;
+            this.EmailError_ED.Text = "label9";
+            this.EmailError_ED.Visible = false;
             // 
-            // WithdrawErrorLabel
+            // NumberError_ED
             // 
-            this.WithdrawErrorLabel.AutoSize = true;
-            this.WithdrawErrorLabel.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WithdrawErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.WithdrawErrorLabel.Location = new System.Drawing.Point(488, 225);
-            this.WithdrawErrorLabel.Name = "WithdrawErrorLabel";
-            this.WithdrawErrorLabel.Size = new System.Drawing.Size(43, 16);
-            this.WithdrawErrorLabel.TabIndex = 7;
-            this.WithdrawErrorLabel.Text = "label9";
+            this.NumberError_ED.AutoSize = true;
+            this.NumberError_ED.ForeColor = System.Drawing.Color.Red;
+            this.NumberError_ED.Location = new System.Drawing.Point(321, 139);
+            this.NumberError_ED.Name = "NumberError_ED";
+            this.NumberError_ED.Size = new System.Drawing.Size(43, 16);
+            this.NumberError_ED.TabIndex = 20;
+            this.NumberError_ED.Text = "label9";
+            this.NumberError_ED.Visible = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
-            this.Controls.Add(this.WithdrawPanel);
+            this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.DepositPanel);
+            this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
-            this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.CreateAccountPanel);
             this.Controls.Add(this.DashboardPanel);
@@ -2970,22 +3006,22 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox_Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox_Details)).EndInit();
             this.ManagerPanel.ResumeLayout(false);
-            this.EmployeeDetailsPanel.ResumeLayout(false);
-            this.EmployeeDetailsPanel.PerformLayout();
-            this.DetailsGroupBox.ResumeLayout(false);
             this.EditDetailsPanel.ResumeLayout(false);
             this.EditDetailsPanel.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBox_ED.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.TransactionsPanel.ResumeLayout(false);
-            this.TransactionsPanel.PerformLayout();
-            this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.ManagePanel.ResumeLayout(false);
             this.RemoveEmployeeGroupBox.ResumeLayout(false);
             this.RemoveEmployeeGroupBox.PerformLayout();
             this.RegisterEmployeeGroupBox.ResumeLayout(false);
             this.RegisterEmployeeGroupBox.PerformLayout();
+            this.EmployeeDetailsPanel.ResumeLayout(false);
+            this.EmployeeDetailsPanel.PerformLayout();
+            this.DetailsGroupBox.ResumeLayout(false);
+            this.TransactionsPanel.ResumeLayout(false);
+            this.TransactionsPanel.PerformLayout();
+            this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.ManagerButtonsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -3177,20 +3213,19 @@ namespace BankManagementSystem
         private Label senderBalanceLabel_Transfer;
         private Label label10;
         private Label senderAccOwnerLabel_Transfer;
-        private GroupBox groupBox1;
+        private GroupBox groupBox_ED;
         private Panel panel1;
-        private Button button1;
-        private TextBox textBox1;
+        private Button FindButton_ED;
+        private TextBox SearchboxEmployee_ED;
         private Label label13;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox AddresstextBox_ED;
+        private TextBox PhonetextBox_ED;
+        private TextBox EmailtextBox_ED;
         private Label Address_ED;
         private Label PhoneNumber_ED;
         private Label Email_ED;
         private Label Name_ED;
-        private Label ID_ED;
+        private Label EmployeeID_ED;
         private Label label18;
         private RadioButton MaleRadioButton_Employee;
         private Label label17;
@@ -3219,6 +3254,9 @@ namespace BankManagementSystem
         private Label NameLabel_RemoveEmployee;
         private Label DepositErrorLabel;
         private Label WithdrawErrorLabel;
+        private Button Update_Button_ED;
+        private Label EmailError_ED;
+        private Label NumberError_ED;
     }
 }
 

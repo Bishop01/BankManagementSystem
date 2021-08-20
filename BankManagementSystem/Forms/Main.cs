@@ -919,6 +919,7 @@ namespace BankManagementSystem
                 return false;
             }
         }
+
         private void ManagerButton_Click(object sender, EventArgs e)
         {
             ManagerPanelDefaultPanel.BringToFront();
@@ -1538,6 +1539,118 @@ namespace BankManagementSystem
                 else if (control is PictureBox)
                 {
                     ((PictureBox)control).ImageLocation = null;
+                }
+            }
+        }
+
+        private void FindButton_ED_Click(object sender, EventArgs e)
+        {
+            if (FindButton_ED.Text == "Find Again")
+            {
+               HideEditDetailsGroupBox();
+                return;
+            }
+            string s = SearchboxEmployee_ED.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Employee employee = FetchData.GetEmployee(id);
+                    if (employee == null)
+                    {
+                        MessageBox.Show("No Employee Found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                   
+                    else
+                    {
+                        FindButton_ED.Text = "Find Again";
+                        groupBox_ED.Show();
+                        SearchboxEmployee_ED.Enabled = false;
+                        EmployeeID_ED.Text = "ID: " + employee.ID;
+                        Name_ED.Text = "Name: " + employee.Name;
+                        EmailtextBox_ED.Text = employee.Email;
+                        PhonetextBox_ED.Text = Convert.ToString(employee.PhoneNumber);
+                        AddresstextBox_ED.Text = employee.Address;
+                        
+
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Employee ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void HideEditDetailsGroupBox()
+        {
+            groupBox_ED.Hide();
+            FindButton_ED.Text = "Find";
+            SearchboxEmployee_ED.Enabled = true;
+            SearchboxEmployee_ED.Text = "";
+            EmailError_ED.Hide();
+            EmailError_ED.Text = "";
+            NumberError_ED.Hide();
+            NumberError_ED.Text = ""; 
+
+        }
+        private void Update_Button_ED_Click(object sender, EventArgs e)
+        {
+            string email = EmailtextBox_ED.Text;   //st VerifyEmail
+            string s2 = PhonetextBox_ED.Text;  //long
+            string address = AddresstextBox_ED.Text; //st 
+
+            if (email == "" || s2 == "" || address == "")
+            {
+                MessageBox.Show("Fields can not be empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+            else
+            {
+                try
+                {
+
+                    long phoneNumber = Convert.ToInt64(s2);
+                    int id = Convert.ToInt32(SearchboxEmployee_ED.Text);
+                    if (!VerifyEmail(email))
+                    {
+
+                        EmailError_ED.Text = "Invalid email format!";
+                        EmailError_ED.Show();
+                        return;
+                       
+                    }
+                    else
+                    {
+                        EmailError_ED.Hide();
+                    }
+                    
+                    if (ModifyData.UpdateEmployeeInfo(id, email, phoneNumber, address) && VerifyEmail(email))
+                    {
+
+                        MessageBox.Show("Details successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HideEditDetailsGroupBox();
+                        return;
+                    }
+
+                    else
+                    {
+
+                        MessageBox.Show("Error updating details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+                    NumberError_ED.Show();
+                    NumberError_ED.Text = "Number can not contain any character!";
                 }
             }
         }
