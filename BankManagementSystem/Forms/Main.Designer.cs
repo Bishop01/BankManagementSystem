@@ -199,6 +199,8 @@ namespace BankManagementSystem
             this.EditDetailsPanel = new System.Windows.Forms.Panel();
             this.groupBox_ED = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NumberError_ED = new System.Windows.Forms.Label();
+            this.EmailError_ED = new System.Windows.Forms.Label();
             this.Update_Button_ED = new System.Windows.Forms.Button();
             this.AddresstextBox_ED = new System.Windows.Forms.TextBox();
             this.PhonetextBox_ED = new System.Windows.Forms.TextBox();
@@ -259,8 +261,7 @@ namespace BankManagementSystem
             this.ManageButton = new System.Windows.Forms.Button();
             this.EditDetailsButton = new System.Windows.Forms.Button();
             this.EmployeeDetailsButton = new System.Windows.Forms.Button();
-            this.EmailError_ED = new System.Windows.Forms.Label();
-            this.NumberError_ED = new System.Windows.Forms.Label();
+            this.AccountStatusLabel_Deposit = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).BeginInit();
@@ -352,7 +353,7 @@ namespace BankManagementSystem
             // 
             this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2893);
+            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 2949);
             this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
             this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
             this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -379,7 +380,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2615);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2671);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1501,6 +1502,7 @@ namespace BankManagementSystem
             // 
             // DepositGroupBox
             // 
+            this.DepositGroupBox.Controls.Add(this.AccountStatusLabel_Deposit);
             this.DepositGroupBox.Controls.Add(this.DepositErrorLabel);
             this.DepositGroupBox.Controls.Add(this.AccountTypeLabel_Deposit);
             this.DepositGroupBox.Controls.Add(this.DepositButton_Deposit);
@@ -2247,13 +2249,35 @@ namespace BankManagementSystem
             this.panel1.Size = new System.Drawing.Size(715, 297);
             this.panel1.TabIndex = 0;
             // 
+            // NumberError_ED
+            // 
+            this.NumberError_ED.AutoSize = true;
+            this.NumberError_ED.ForeColor = System.Drawing.Color.Red;
+            this.NumberError_ED.Location = new System.Drawing.Point(391, 138);
+            this.NumberError_ED.Name = "NumberError_ED";
+            this.NumberError_ED.Size = new System.Drawing.Size(43, 16);
+            this.NumberError_ED.TabIndex = 20;
+            this.NumberError_ED.Text = "label9";
+            this.NumberError_ED.Visible = false;
+            // 
+            // EmailError_ED
+            // 
+            this.EmailError_ED.AutoSize = true;
+            this.EmailError_ED.ForeColor = System.Drawing.Color.Red;
+            this.EmailError_ED.Location = new System.Drawing.Point(391, 99);
+            this.EmailError_ED.Name = "EmailError_ED";
+            this.EmailError_ED.Size = new System.Drawing.Size(43, 16);
+            this.EmailError_ED.TabIndex = 19;
+            this.EmailError_ED.Text = "label9";
+            this.EmailError_ED.Visible = false;
+            // 
             // Update_Button_ED
             // 
             this.Update_Button_ED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.Update_Button_ED.FlatAppearance.BorderSize = 0;
             this.Update_Button_ED.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Update_Button_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_Button_ED.Location = new System.Drawing.Point(168, 214);
+            this.Update_Button_ED.Location = new System.Drawing.Point(322, 238);
             this.Update_Button_ED.Name = "Update_Button_ED";
             this.Update_Button_ED.Size = new System.Drawing.Size(94, 34);
             this.Update_Button_ED.TabIndex = 18;
@@ -2263,14 +2287,18 @@ namespace BankManagementSystem
             // 
             // AddresstextBox_ED
             // 
-            this.AddresstextBox_ED.Location = new System.Drawing.Point(133, 171);
+            this.AddresstextBox_ED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.AddresstextBox_ED.ForeColor = System.Drawing.Color.White;
+            this.AddresstextBox_ED.Location = new System.Drawing.Point(203, 170);
             this.AddresstextBox_ED.Name = "AddresstextBox_ED";
             this.AddresstextBox_ED.Size = new System.Drawing.Size(174, 23);
             this.AddresstextBox_ED.TabIndex = 17;
             // 
             // PhonetextBox_ED
             // 
-            this.PhonetextBox_ED.Location = new System.Drawing.Point(133, 134);
+            this.PhonetextBox_ED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.PhonetextBox_ED.ForeColor = System.Drawing.Color.White;
+            this.PhonetextBox_ED.Location = new System.Drawing.Point(203, 133);
             this.PhonetextBox_ED.MaxLength = 10;
             this.PhonetextBox_ED.Name = "PhonetextBox_ED";
             this.PhonetextBox_ED.Size = new System.Drawing.Size(174, 23);
@@ -2278,7 +2306,9 @@ namespace BankManagementSystem
             // 
             // EmailtextBox_ED
             // 
-            this.EmailtextBox_ED.Location = new System.Drawing.Point(133, 97);
+            this.EmailtextBox_ED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.EmailtextBox_ED.ForeColor = System.Drawing.Color.White;
+            this.EmailtextBox_ED.Location = new System.Drawing.Point(203, 96);
             this.EmailtextBox_ED.Name = "EmailtextBox_ED";
             this.EmailtextBox_ED.Size = new System.Drawing.Size(174, 23);
             this.EmailtextBox_ED.TabIndex = 15;
@@ -2287,7 +2317,7 @@ namespace BankManagementSystem
             // 
             this.Address_ED.AutoSize = true;
             this.Address_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address_ED.Location = new System.Drawing.Point(60, 174);
+            this.Address_ED.Location = new System.Drawing.Point(130, 173);
             this.Address_ED.Name = "Address_ED";
             this.Address_ED.Size = new System.Drawing.Size(72, 20);
             this.Address_ED.TabIndex = 4;
@@ -2297,7 +2327,7 @@ namespace BankManagementSystem
             // 
             this.PhoneNumber_ED.AutoSize = true;
             this.PhoneNumber_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneNumber_ED.Location = new System.Drawing.Point(7, 135);
+            this.PhoneNumber_ED.Location = new System.Drawing.Point(77, 134);
             this.PhoneNumber_ED.Name = "PhoneNumber_ED";
             this.PhoneNumber_ED.Size = new System.Drawing.Size(125, 20);
             this.PhoneNumber_ED.TabIndex = 3;
@@ -2307,7 +2337,7 @@ namespace BankManagementSystem
             // 
             this.Email_ED.AutoSize = true;
             this.Email_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_ED.Location = new System.Drawing.Point(73, 97);
+            this.Email_ED.Location = new System.Drawing.Point(143, 96);
             this.Email_ED.Name = "Email_ED";
             this.Email_ED.Size = new System.Drawing.Size(58, 20);
             this.Email_ED.TabIndex = 2;
@@ -2317,7 +2347,7 @@ namespace BankManagementSystem
             // 
             this.Name_ED.AutoSize = true;
             this.Name_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_ED.Location = new System.Drawing.Point(75, 61);
+            this.Name_ED.Location = new System.Drawing.Point(145, 60);
             this.Name_ED.Name = "Name_ED";
             this.Name_ED.Size = new System.Drawing.Size(57, 20);
             this.Name_ED.TabIndex = 1;
@@ -2327,7 +2357,7 @@ namespace BankManagementSystem
             // 
             this.EmployeeID_ED.AutoSize = true;
             this.EmployeeID_ED.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeID_ED.Location = new System.Drawing.Point(101, 30);
+            this.EmployeeID_ED.Location = new System.Drawing.Point(171, 29);
             this.EmployeeID_ED.Name = "EmployeeID_ED";
             this.EmployeeID_ED.Size = new System.Drawing.Size(32, 20);
             this.EmployeeID_ED.TabIndex = 0;
@@ -2350,6 +2380,8 @@ namespace BankManagementSystem
             // 
             // SearchboxEmployee_ED
             // 
+            this.SearchboxEmployee_ED.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SearchboxEmployee_ED.ForeColor = System.Drawing.Color.White;
             this.SearchboxEmployee_ED.Location = new System.Drawing.Point(191, 34);
             this.SearchboxEmployee_ED.Name = "SearchboxEmployee_ED";
             this.SearchboxEmployee_ED.Size = new System.Drawing.Size(174, 27);
@@ -2903,37 +2935,24 @@ namespace BankManagementSystem
             this.EmployeeDetailsButton.UseVisualStyleBackColor = true;
             this.EmployeeDetailsButton.Click += new System.EventHandler(this.ManagerPanelButtonsHandler);
             // 
-            // EmailError_ED
+            // AccountStatusLabel_Deposit
             // 
-            this.EmailError_ED.AutoSize = true;
-            this.EmailError_ED.ForeColor = System.Drawing.Color.Red;
-            this.EmailError_ED.Location = new System.Drawing.Point(321, 100);
-            this.EmailError_ED.Name = "EmailError_ED";
-            this.EmailError_ED.Size = new System.Drawing.Size(43, 16);
-            this.EmailError_ED.TabIndex = 19;
-            this.EmailError_ED.Text = "label9";
-            this.EmailError_ED.Visible = false;
-            // 
-            // NumberError_ED
-            // 
-            this.NumberError_ED.AutoSize = true;
-            this.NumberError_ED.ForeColor = System.Drawing.Color.Red;
-            this.NumberError_ED.Location = new System.Drawing.Point(321, 139);
-            this.NumberError_ED.Name = "NumberError_ED";
-            this.NumberError_ED.Size = new System.Drawing.Size(43, 16);
-            this.NumberError_ED.TabIndex = 20;
-            this.NumberError_ED.Text = "label9";
-            this.NumberError_ED.Visible = false;
+            this.AccountStatusLabel_Deposit.AutoSize = true;
+            this.AccountStatusLabel_Deposit.Location = new System.Drawing.Point(33, 238);
+            this.AccountStatusLabel_Deposit.Name = "AccountStatusLabel_Deposit";
+            this.AccountStatusLabel_Deposit.Size = new System.Drawing.Size(125, 20);
+            this.AccountStatusLabel_Deposit.TabIndex = 8;
+            this.AccountStatusLabel_Deposit.Text = "Account Status:";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
-            this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.DepositPanel);
-            this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DetailsPanel);
+            this.Controls.Add(this.ManagerPanel);
+            this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
             this.Controls.Add(this.TransferPanel);
@@ -3257,6 +3276,7 @@ namespace BankManagementSystem
         private Button Update_Button_ED;
         private Label EmailError_ED;
         private Label NumberError_ED;
+        private Label AccountStatusLabel_Deposit;
     }
 }
 

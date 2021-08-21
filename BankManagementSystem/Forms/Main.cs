@@ -295,6 +295,10 @@ namespace BankManagementSystem
                         MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        DepositButton_Deposit.Enabled = false;
+                    }
                     DepositGroupBox.Show();
                     AccountOwnerPictureBox_Deposit.ImageLocation = c.ImageDir;
                     FindButton_Deposit.Text = "Find Again";
@@ -302,6 +306,7 @@ namespace BankManagementSystem
                     AccountOwnerLabel.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
                     BalanceLabel.Text = "Balance: " + account.Balance;
                     AccountTypeLabel_Deposit.Text = "Account Type: " + account.AccountType;
+                    AccountStatusLabel_Deposit.Text = "Account Status: " + account.AccountStatus;
                 }
                 catch
                 {
@@ -349,6 +354,7 @@ namespace BankManagementSystem
         }
         private void HideDepositGroupBox()
         {
+            DepositButton_Deposit.Enabled = true;
             DepositGroupBox.Hide();
             FindButton_Deposit.Text = "Find";
             SearchAccountTextbox.Enabled = true;
@@ -552,6 +558,8 @@ namespace BankManagementSystem
 
         private void SubmenuButtonsHandler(object sender, EventArgs e)
         {
+            AccountDetailsGroupBox.Hide();  // Hide/Reset all active modules
+
             if (sender is Button)
             {
                 if (sender.Equals(CreateAccButton))
@@ -1632,8 +1640,12 @@ namespace BankManagementSystem
                     {
                         EmailError_ED.Hide();
                     }
-                    
-                    if (ModifyData.UpdateEmployeeInfo(id, email, phoneNumber, address) && VerifyEmail(email))
+                    DialogResult dr = MessageBox.Show("Do you want to confirm these changes?", "Confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(dr == DialogResult.No)
+                    {
+                        return;
+                    }
+                    if (ModifyData.UpdateEmployeeInfo(id, email, phoneNumber, address))
                     {
 
                         MessageBox.Show("Details successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
