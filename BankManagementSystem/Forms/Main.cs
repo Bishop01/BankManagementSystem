@@ -1224,6 +1224,8 @@ namespace BankManagementSystem
             accTypeLabel_Transfer.Text = "Account Type";
             recAccFindButton_Transfer.Text = "Find";
             recAccNumberTextBox_Transfer.Enabled = true;
+            enterAmountTextBox_Transfer.Text = "";
+            transferErrorLabel.Text = "";
         }
         private void findButton_Transfer_Click(object sender, EventArgs e)
         {
