@@ -392,6 +392,15 @@ namespace BankManagementSystem
                         MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        Withdrawbutton_Withdraw.Enabled = false;
+                    }
+                    else
+                    {
+                        Withdrawbutton_Withdraw.Enabled = true;
+
+                    }
                     groupBox_Withdraw.Show();
                     AccountOwnerpictureBox_Withdraw.ImageLocation = c.ImageDir;
                     Findbutton_Withdraw.Text = "Find Again";
