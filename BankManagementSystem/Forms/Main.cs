@@ -399,7 +399,6 @@ namespace BankManagementSystem
                     else
                     {
                         Withdrawbutton_Withdraw.Enabled = true;
-
                     }
                     groupBox_Withdraw.Show();
                     AccountOwnerpictureBox_Withdraw.ImageLocation = c.ImageDir;
@@ -1216,6 +1215,7 @@ namespace BankManagementSystem
             enterAmountTextBox_Transfer.Text = "";
             accNumberSearchTextBox_Transfer.Text = "";
             AccountOwnerpictureBox_Transfer.Image = null;
+            transferErrorLabel.Text = "";
         }
         private void ResetTransfer()
         {
@@ -1289,6 +1289,14 @@ namespace BankManagementSystem
                         recAccNumberTextBox_Transfer.Text = "";
                         return;
                     }
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        transferButton_Transfer.Enabled = false;
+                    }
+                    else
+                    {
+                        transferButton_Transfer.Enabled = true;
+                    }
                     transferGroupBox_Transfer.Show();
                     recAccFindButton_Transfer.Text = "Find Again";
                     recAccNumberTextBox_Transfer.Enabled = false;
@@ -1314,6 +1322,11 @@ namespace BankManagementSystem
                 try
                 {
                     double amount = Convert.ToDouble(s);
+                    if (amount <= 0)
+                    {
+                        transferErrorLabel.Text = "Amount must be greater than 0.";
+                        return;
+                    }
                     int recId = Convert.ToInt32(recAccNumberTextBox_Transfer.Text);
                     int senderId = Convert.ToInt32(accNumberSearchTextBox_Transfer.Text);
                     if ((ModifyData.UpdateBalance(recId, amount)) && (ModifyData.UpdateBalance(senderId, (-amount))))
