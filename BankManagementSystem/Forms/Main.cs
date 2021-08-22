@@ -558,7 +558,8 @@ namespace BankManagementSystem
 
         private void SubmenuButtonsHandler(object sender, EventArgs e)
         {
-            AccountDetailsGroupBox.Hide();  // Hide/Reset all active modules
+            // Hide/Reset all active modules
+            AccountDetailsGroupBox.Hide();
 
             if (sender is Button)
             {
@@ -1143,6 +1144,7 @@ namespace BankManagementSystem
                     int id = Convert.ToInt32(s);
                     Employee employee = FetchData.GetEmployee(id);
                     List<Transactions> transactions = FetchData.GetTransactionHistory(id);
+                    Client client;
                     if(employee == null)
                     {
                         MessageBox.Show("Invalid employee id!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1156,6 +1158,8 @@ namespace BankManagementSystem
                     }
                     foreach (Transactions transaction in transactions)
                     {
+                        client = FetchData.GetClientByAccountID(transaction.AccountID);
+
                         GroupBox groupBox = new GroupBox();
                         groupBox.Text = transaction.TransactionType;
                         groupBox.ForeColor = Color.White;
@@ -1163,20 +1167,20 @@ namespace BankManagementSystem
                         groupBox.Size = new Size(720, 112);
 
                         Label l1 = new Label();
-                        l1.Text = "Employee ID: " + transaction.EmployeeID;
+                        l1.Text = "Transaction Amount: " + transaction.TransactionAmount;
                         l1.Location = new Point(70, 38);
                         l1.AutoSize = true;
                         Label l2 = new Label();
                         l2.Text = "Account ID: " + transaction.AccountID;
-                        l2.Location = new Point(79, 66);
+                        l2.Location = new Point(127, 66);
                         l2.AutoSize = true;
                         Label l3 = new Label();
                         l3.Text = "Transaction ID: " + transaction.ID;
                         l3.Location = new Point(405, 66);
                         l3.AutoSize = true;
                         Label l4 = new Label();
-                        l4.Text = "Employee Name: " + employee.Name;
-                        l4.Location = new Point(397, 44);
+                        l4.Text = "Owner Name: " + (client.Firstname+" "+client.Lastname);
+                        l4.Location = new Point(417, 44);
                         l4.AutoSize = true;
 
                         groupBox.Controls.Add(l1);

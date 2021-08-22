@@ -12,5 +12,6 @@ namespace BankManagementSystem.Entity
         public int EmployeeID { get; set; }
         public string TransactionType { get; set; }
         public int AccountID { get; set; }
+        public int TransactionAmount { get; set; }
     }
 }
