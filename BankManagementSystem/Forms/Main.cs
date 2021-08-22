@@ -384,6 +384,7 @@ namespace BankManagementSystem
             {
                 try
                 {
+                    WithdrawErrorLabel.Text = "";
                     int id = Convert.ToInt32(s);
                     Client c = FetchData.GetClientByAccountID(id);
                     Account account = FetchData.GetAccount(id);
@@ -1244,6 +1245,7 @@ namespace BankManagementSystem
             {
                 try
                 {
+                    transferErrorLabel.Text = "";
                     int id = Convert.ToInt32(s);
                     Client c = FetchData.GetClientByAccountID(id);
                     Account account = FetchData.GetAccount(id);

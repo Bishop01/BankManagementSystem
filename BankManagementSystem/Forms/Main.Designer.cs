@@ -354,7 +354,7 @@ namespace BankManagementSystem
             // 
             this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 3005);
+            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 3033);
             this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
             this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
             this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -381,7 +381,7 @@ namespace BankManagementSystem
             // 
             this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2727);
+            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2755);
             this.AccountPictureBox.Name = "AccountPictureBox";
             this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
             this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1688,8 +1688,9 @@ namespace BankManagementSystem
             this.WithdrawErrorLabel.ForeColor = System.Drawing.Color.Red;
             this.WithdrawErrorLabel.Location = new System.Drawing.Point(488, 225);
             this.WithdrawErrorLabel.Name = "WithdrawErrorLabel";
-            this.WithdrawErrorLabel.Size = new System.Drawing.Size(0, 16);
+            this.WithdrawErrorLabel.Size = new System.Drawing.Size(47, 16);
             this.WithdrawErrorLabel.TabIndex = 7;
+            this.WithdrawErrorLabel.Text = "label 9";
             // 
             // AccountTypelabel_Withdraw
             // 
@@ -1788,6 +1789,7 @@ namespace BankManagementSystem
             // 
             // transferGroupBox_Transfer
             // 
+            this.transferGroupBox_Transfer.Controls.Add(this.transferButton_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.transferErrorLabel);
             this.transferGroupBox_Transfer.Controls.Add(this.senderBalanceLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.AccountOwnerpictureBox_Transfer);
@@ -1799,7 +1801,6 @@ namespace BankManagementSystem
             this.transferGroupBox_Transfer.Controls.Add(this.recAccNumberTextBox_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.recAccNumberLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.accInfoLabel_Transfer);
-            this.transferGroupBox_Transfer.Controls.Add(this.transferButton_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.enterAmountTextBox_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.enterAmountLabel_Transfer);
             this.transferGroupBox_Transfer.ForeColor = System.Drawing.Color.White;
@@ -1818,8 +1819,9 @@ namespace BankManagementSystem
             this.transferErrorLabel.ForeColor = System.Drawing.Color.Red;
             this.transferErrorLabel.Location = new System.Drawing.Point(471, 314);
             this.transferErrorLabel.Name = "transferErrorLabel";
-            this.transferErrorLabel.Size = new System.Drawing.Size(0, 16);
+            this.transferErrorLabel.Size = new System.Drawing.Size(47, 16);
             this.transferErrorLabel.TabIndex = 22;
+            this.transferErrorLabel.Text = "lable 9";
             // 
             // senderBalanceLabel_Transfer
             // 
@@ -2961,8 +2963,8 @@ namespace BankManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
-            this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.WithdrawPanel);
+            this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.ManagerPanel);
