@@ -270,6 +270,7 @@ namespace BankManagementSystem.Database
                     t.EmployeeID = (int)data["EmployeeID"];
                     t.AccountID = (int)data["AccountID"];
                     t.TransactionType = data["TransactionType"].ToString();
+                    t.TransactionAmount = (int)data["TransactionAmount"];
 
                     transactions.Add(t);
                 }
