@@ -293,12 +293,12 @@ namespace BankManagementSystem.Database
         }
         public static int GetTotalAccountsToday()
         {
-            string query = "select count(AccountID) from Accounts where convert(varchar, CreationDate, 10)=getdate()";
+            string query = "select count(AccountID) from Accounts where convert(date, CreationDate)=convert(varchar, getdate(), 23)";
             return DataHandler.GetScalarData(query);
         }
         public static int GetTotalTransactionsToday()
         {
-            string query = "select count(TransactionID) from TransactionHistory where convert(varchar, TransactionDate, 10)=getdate()";
+            string query = "select count(TransactionID) from TransactionHistory where convert(date, TransactionDate)=convert(varchar, getdate(), 23)";
             return DataHandler.GetScalarData(query);
         }
     }
