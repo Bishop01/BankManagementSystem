@@ -35,25 +35,25 @@ namespace BankManagementSystem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.BasePanel = new System.Windows.Forms.Panel();
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.ManagerPanelPictureBox = new System.Windows.Forms.PictureBox();
+            this.ManagerLogo = new System.Windows.Forms.PictureBox();
             this.ManagerButton = new System.Windows.Forms.Button();
-            this.AccountPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.AccountLogo = new System.Windows.Forms.PictureBox();
+            this.RegisterLogo = new System.Windows.Forms.PictureBox();
+            this.DashboardLogo = new System.Windows.Forms.PictureBox();
             this.AccountPanel = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.DetailsLogo = new System.Windows.Forms.PictureBox();
+            this.TransferLogo = new System.Windows.Forms.PictureBox();
+            this.WithdrawLogo = new System.Windows.Forms.PictureBox();
+            this.DepositLogo = new System.Windows.Forms.PictureBox();
             this.DetailsButton = new System.Windows.Forms.Button();
             this.TransferButton = new System.Windows.Forms.Button();
             this.WithdrawButton = new System.Windows.Forms.Button();
             this.DepositButton = new System.Windows.Forms.Button();
             this.AccountButton = new System.Windows.Forms.Button();
             this.RegisterPanel = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CreateAccountLogo = new System.Windows.Forms.PictureBox();
+            this.CloseAccountLogo = new System.Windows.Forms.PictureBox();
+            this.RecoverAccountLogo = new System.Windows.Forms.PictureBox();
             this.RecoverAccButton = new System.Windows.Forms.Button();
             this.CloseAccButton = new System.Windows.Forms.Button();
             this.CreateAccButton = new System.Windows.Forms.Button();
@@ -265,19 +265,19 @@ namespace BankManagementSystem
             this.EmployeeDetailsButton = new System.Windows.Forms.Button();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ManagerLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RegisterLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DashboardLogo)).BeginInit();
             this.AccountPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetailsLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransferLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WithdrawLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepositLogo)).BeginInit();
             this.RegisterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreateAccountLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseAccountLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecoverAccountLogo)).BeginInit();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.WelcomePanel.SuspendLayout();
@@ -333,11 +333,11 @@ namespace BankManagementSystem
             // 
             this.MenuPanel.AutoScroll = true;
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.MenuPanel.Controls.Add(this.ManagerPanelPictureBox);
+            this.MenuPanel.Controls.Add(this.DashboardLogo);
+            this.MenuPanel.Controls.Add(this.ManagerLogo);
             this.MenuPanel.Controls.Add(this.ManagerButton);
-            this.MenuPanel.Controls.Add(this.AccountPictureBox);
-            this.MenuPanel.Controls.Add(this.pictureBox5);
-            this.MenuPanel.Controls.Add(this.pictureBox4);
+            this.MenuPanel.Controls.Add(this.AccountLogo);
+            this.MenuPanel.Controls.Add(this.RegisterLogo);
             this.MenuPanel.Controls.Add(this.AccountPanel);
             this.MenuPanel.Controls.Add(this.AccountButton);
             this.MenuPanel.Controls.Add(this.RegisterPanel);
@@ -350,16 +350,16 @@ namespace BankManagementSystem
             this.MenuPanel.Size = new System.Drawing.Size(206, 456);
             this.MenuPanel.TabIndex = 1;
             // 
-            // ManagerPanelPictureBox
+            // ManagerLogo
             // 
-            this.ManagerPanelPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ManagerPanelPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ManagerPanelPictureBox.Image")));
-            this.ManagerPanelPictureBox.Location = new System.Drawing.Point(9, 3005);
-            this.ManagerPanelPictureBox.Name = "ManagerPanelPictureBox";
-            this.ManagerPanelPictureBox.Size = new System.Drawing.Size(23, 23);
-            this.ManagerPanelPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ManagerPanelPictureBox.TabIndex = 19;
-            this.ManagerPanelPictureBox.TabStop = false;
+            this.ManagerLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ManagerLogo.Image = ((System.Drawing.Image)(resources.GetObject("ManagerLogo.Image")));
+            this.ManagerLogo.Location = new System.Drawing.Point(9, 490);
+            this.ManagerLogo.Name = "ManagerLogo";
+            this.ManagerLogo.Size = new System.Drawing.Size(23, 23);
+            this.ManagerLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ManagerLogo.TabIndex = 19;
+            this.ManagerLogo.TabStop = false;
             // 
             // ManagerButton
             // 
@@ -377,43 +377,43 @@ namespace BankManagementSystem
             this.ManagerButton.LocationChanged += new System.EventHandler(this.LoanButton_LocationChanged);
             this.ManagerButton.Click += new System.EventHandler(this.ManagerButton_Click);
             // 
-            // AccountPictureBox
+            // AccountLogo
             // 
-            this.AccountPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AccountPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("AccountPictureBox.Image")));
-            this.AccountPictureBox.Location = new System.Drawing.Point(9, 2727);
-            this.AccountPictureBox.Name = "AccountPictureBox";
-            this.AccountPictureBox.Size = new System.Drawing.Size(23, 23);
-            this.AccountPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AccountPictureBox.TabIndex = 13;
-            this.AccountPictureBox.TabStop = false;
+            this.AccountLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AccountLogo.Image = ((System.Drawing.Image)(resources.GetObject("AccountLogo.Image")));
+            this.AccountLogo.Location = new System.Drawing.Point(9, 273);
+            this.AccountLogo.Name = "AccountLogo";
+            this.AccountLogo.Size = new System.Drawing.Size(23, 23);
+            this.AccountLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AccountLogo.TabIndex = 13;
+            this.AccountLogo.TabStop = false;
             // 
-            // pictureBox5
+            // RegisterLogo
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(9, 57);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 6;
-            this.pictureBox5.TabStop = false;
+            this.RegisterLogo.Image = ((System.Drawing.Image)(resources.GetObject("RegisterLogo.Image")));
+            this.RegisterLogo.Location = new System.Drawing.Point(9, 57);
+            this.RegisterLogo.Name = "RegisterLogo";
+            this.RegisterLogo.Size = new System.Drawing.Size(23, 23);
+            this.RegisterLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RegisterLogo.TabIndex = 6;
+            this.RegisterLogo.TabStop = false;
             // 
-            // pictureBox4
+            // DashboardLogo
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(9, 9);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
+            this.DashboardLogo.Image = ((System.Drawing.Image)(resources.GetObject("DashboardLogo.Image")));
+            this.DashboardLogo.Location = new System.Drawing.Point(9, 9);
+            this.DashboardLogo.Name = "DashboardLogo";
+            this.DashboardLogo.Size = new System.Drawing.Size(23, 23);
+            this.DashboardLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DashboardLogo.TabIndex = 12;
+            this.DashboardLogo.TabStop = false;
             // 
             // AccountPanel
             // 
-            this.AccountPanel.Controls.Add(this.pictureBox11);
-            this.AccountPanel.Controls.Add(this.pictureBox9);
-            this.AccountPanel.Controls.Add(this.pictureBox8);
-            this.AccountPanel.Controls.Add(this.pictureBox7);
+            this.AccountPanel.Controls.Add(this.DetailsLogo);
+            this.AccountPanel.Controls.Add(this.TransferLogo);
+            this.AccountPanel.Controls.Add(this.WithdrawLogo);
+            this.AccountPanel.Controls.Add(this.DepositLogo);
             this.AccountPanel.Controls.Add(this.DetailsButton);
             this.AccountPanel.Controls.Add(this.TransferButton);
             this.AccountPanel.Controls.Add(this.WithdrawButton);
@@ -424,55 +424,54 @@ namespace BankManagementSystem
             this.AccountPanel.Size = new System.Drawing.Size(189, 188);
             this.AccountPanel.TabIndex = 10;
             // 
-            // pictureBox11
+            // DetailsLogo
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(37, 149);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 18;
-            this.pictureBox11.TabStop = false;
+            this.DetailsLogo.Image = ((System.Drawing.Image)(resources.GetObject("DetailsLogo.Image")));
+            this.DetailsLogo.Location = new System.Drawing.Point(37, 149);
+            this.DetailsLogo.Name = "DetailsLogo";
+            this.DetailsLogo.Size = new System.Drawing.Size(23, 23);
+            this.DetailsLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DetailsLogo.TabIndex = 18;
+            this.DetailsLogo.TabStop = false;
             // 
-            // pictureBox9
+            // TransferLogo
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(36, 104);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 16;
-            this.pictureBox9.TabStop = false;
+            this.TransferLogo.Image = ((System.Drawing.Image)(resources.GetObject("TransferLogo.Image")));
+            this.TransferLogo.Location = new System.Drawing.Point(36, 104);
+            this.TransferLogo.Name = "TransferLogo";
+            this.TransferLogo.Size = new System.Drawing.Size(23, 23);
+            this.TransferLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TransferLogo.TabIndex = 16;
+            this.TransferLogo.TabStop = false;
             // 
-            // pictureBox8
+            // WithdrawLogo
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(36, 58);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 15;
-            this.pictureBox8.TabStop = false;
+            this.WithdrawLogo.Image = ((System.Drawing.Image)(resources.GetObject("WithdrawLogo.Image")));
+            this.WithdrawLogo.Location = new System.Drawing.Point(36, 58);
+            this.WithdrawLogo.Name = "WithdrawLogo";
+            this.WithdrawLogo.Size = new System.Drawing.Size(23, 23);
+            this.WithdrawLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.WithdrawLogo.TabIndex = 15;
+            this.WithdrawLogo.TabStop = false;
             // 
-            // pictureBox7
+            // DepositLogo
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(36, 12);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 14;
-            this.pictureBox7.TabStop = false;
+            this.DepositLogo.Image = ((System.Drawing.Image)(resources.GetObject("DepositLogo.Image")));
+            this.DepositLogo.Location = new System.Drawing.Point(36, 12);
+            this.DepositLogo.Name = "DepositLogo";
+            this.DepositLogo.Size = new System.Drawing.Size(23, 23);
+            this.DepositLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DepositLogo.TabIndex = 14;
+            this.DepositLogo.TabStop = false;
             // 
             // DetailsButton
             // 
-            this.DetailsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.DetailsButton.FlatAppearance.BorderSize = 0;
             this.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DetailsButton.Location = new System.Drawing.Point(0, 138);
             this.DetailsButton.Name = "DetailsButton";
             this.DetailsButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.DetailsButton.Size = new System.Drawing.Size(189, 46);
+            this.DetailsButton.Size = new System.Drawing.Size(206, 46);
             this.DetailsButton.TabIndex = 3;
             this.DetailsButton.Text = "Details";
             this.DetailsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -481,13 +480,12 @@ namespace BankManagementSystem
             // 
             // TransferButton
             // 
-            this.TransferButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.TransferButton.FlatAppearance.BorderSize = 0;
             this.TransferButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TransferButton.Location = new System.Drawing.Point(0, 92);
             this.TransferButton.Name = "TransferButton";
             this.TransferButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.TransferButton.Size = new System.Drawing.Size(189, 46);
+            this.TransferButton.Size = new System.Drawing.Size(206, 46);
             this.TransferButton.TabIndex = 2;
             this.TransferButton.Text = "Transfer";
             this.TransferButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -496,13 +494,12 @@ namespace BankManagementSystem
             // 
             // WithdrawButton
             // 
-            this.WithdrawButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.WithdrawButton.FlatAppearance.BorderSize = 0;
             this.WithdrawButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WithdrawButton.Location = new System.Drawing.Point(0, 46);
             this.WithdrawButton.Name = "WithdrawButton";
             this.WithdrawButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.WithdrawButton.Size = new System.Drawing.Size(189, 46);
+            this.WithdrawButton.Size = new System.Drawing.Size(206, 46);
             this.WithdrawButton.TabIndex = 1;
             this.WithdrawButton.Text = "Withdraw";
             this.WithdrawButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -511,13 +508,12 @@ namespace BankManagementSystem
             // 
             // DepositButton
             // 
-            this.DepositButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.DepositButton.FlatAppearance.BorderSize = 0;
             this.DepositButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DepositButton.Location = new System.Drawing.Point(0, 0);
             this.DepositButton.Name = "DepositButton";
             this.DepositButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.DepositButton.Size = new System.Drawing.Size(189, 46);
+            this.DepositButton.Size = new System.Drawing.Size(206, 46);
             this.DepositButton.TabIndex = 0;
             this.DepositButton.Text = "Deposit";
             this.DepositButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -538,13 +534,13 @@ namespace BankManagementSystem
             this.AccountButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AccountButton.UseVisualStyleBackColor = true;
             this.AccountButton.LocationChanged += new System.EventHandler(this.AccountButton_LocationChanged);
-            this.AccountButton.Click += new System.EventHandler(this.AccountButton_Click);
+            this.AccountButton.Click += new System.EventHandler(this.MenuButtonsHandler);
             // 
             // RegisterPanel
             // 
-            this.RegisterPanel.Controls.Add(this.pictureBox3);
-            this.RegisterPanel.Controls.Add(this.pictureBox2);
-            this.RegisterPanel.Controls.Add(this.pictureBox1);
+            this.RegisterPanel.Controls.Add(this.CreateAccountLogo);
+            this.RegisterPanel.Controls.Add(this.CloseAccountLogo);
+            this.RegisterPanel.Controls.Add(this.RecoverAccountLogo);
             this.RegisterPanel.Controls.Add(this.RecoverAccButton);
             this.RegisterPanel.Controls.Add(this.CloseAccButton);
             this.RegisterPanel.Controls.Add(this.CreateAccButton);
@@ -554,45 +550,44 @@ namespace BankManagementSystem
             this.RegisterPanel.Size = new System.Drawing.Size(189, 141);
             this.RegisterPanel.TabIndex = 8;
             // 
-            // pictureBox3
+            // CreateAccountLogo
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(36, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.CreateAccountLogo.Image = ((System.Drawing.Image)(resources.GetObject("CreateAccountLogo.Image")));
+            this.CreateAccountLogo.Location = new System.Drawing.Point(36, 14);
+            this.CreateAccountLogo.Name = "CreateAccountLogo";
+            this.CreateAccountLogo.Size = new System.Drawing.Size(23, 23);
+            this.CreateAccountLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CreateAccountLogo.TabIndex = 5;
+            this.CreateAccountLogo.TabStop = false;
             // 
-            // pictureBox2
+            // CloseAccountLogo
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(36, 58);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.CloseAccountLogo.Image = ((System.Drawing.Image)(resources.GetObject("CloseAccountLogo.Image")));
+            this.CloseAccountLogo.Location = new System.Drawing.Point(36, 58);
+            this.CloseAccountLogo.Name = "CloseAccountLogo";
+            this.CloseAccountLogo.Size = new System.Drawing.Size(23, 23);
+            this.CloseAccountLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CloseAccountLogo.TabIndex = 4;
+            this.CloseAccountLogo.TabStop = false;
             // 
-            // pictureBox1
+            // RecoverAccountLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 103);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.RecoverAccountLogo.Image = ((System.Drawing.Image)(resources.GetObject("RecoverAccountLogo.Image")));
+            this.RecoverAccountLogo.Location = new System.Drawing.Point(36, 103);
+            this.RecoverAccountLogo.Name = "RecoverAccountLogo";
+            this.RecoverAccountLogo.Size = new System.Drawing.Size(23, 23);
+            this.RecoverAccountLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RecoverAccountLogo.TabIndex = 3;
+            this.RecoverAccountLogo.TabStop = false;
             // 
             // RecoverAccButton
             // 
-            this.RecoverAccButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.RecoverAccButton.FlatAppearance.BorderSize = 0;
             this.RecoverAccButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RecoverAccButton.Location = new System.Drawing.Point(0, 92);
             this.RecoverAccButton.Name = "RecoverAccButton";
             this.RecoverAccButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.RecoverAccButton.Size = new System.Drawing.Size(189, 46);
+            this.RecoverAccButton.Size = new System.Drawing.Size(206, 46);
             this.RecoverAccButton.TabIndex = 2;
             this.RecoverAccButton.Text = "Recover Account";
             this.RecoverAccButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -601,13 +596,12 @@ namespace BankManagementSystem
             // 
             // CloseAccButton
             // 
-            this.CloseAccButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.CloseAccButton.FlatAppearance.BorderSize = 0;
             this.CloseAccButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseAccButton.Location = new System.Drawing.Point(0, 46);
             this.CloseAccButton.Name = "CloseAccButton";
             this.CloseAccButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.CloseAccButton.Size = new System.Drawing.Size(189, 46);
+            this.CloseAccButton.Size = new System.Drawing.Size(206, 46);
             this.CloseAccButton.TabIndex = 1;
             this.CloseAccButton.Text = "Close Account";
             this.CloseAccButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -616,13 +610,12 @@ namespace BankManagementSystem
             // 
             // CreateAccButton
             // 
-            this.CreateAccButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.CreateAccButton.FlatAppearance.BorderSize = 0;
             this.CreateAccButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateAccButton.Location = new System.Drawing.Point(0, 0);
             this.CreateAccButton.Name = "CreateAccButton";
             this.CreateAccButton.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.CreateAccButton.Size = new System.Drawing.Size(189, 46);
+            this.CreateAccButton.Size = new System.Drawing.Size(206, 46);
             this.CreateAccButton.TabIndex = 0;
             this.CreateAccButton.Text = "Create Account";
             this.CreateAccButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -642,7 +635,7 @@ namespace BankManagementSystem
             this.RegisterButton.Text = "Register";
             this.RegisterButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RegisterButton.UseVisualStyleBackColor = true;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            this.RegisterButton.Click += new System.EventHandler(this.MenuButtonsHandler);
             // 
             // DashboardButton
             // 
@@ -658,7 +651,7 @@ namespace BankManagementSystem
             this.DashboardButton.Text = "Dashboard";
             this.DashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardButton.UseVisualStyleBackColor = true;
-            this.DashboardButton.Click += new System.EventHandler(this.DashboardButton_Click);
+            this.DashboardButton.Click += new System.EventHandler(this.MenuButtonsHandler);
             // 
             // LogoPanel
             // 
@@ -2983,19 +2976,19 @@ namespace BankManagementSystem
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.BasePanel.ResumeLayout(false);
             this.MenuPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ManagerPanelPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ManagerLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RegisterLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DashboardLogo)).EndInit();
             this.AccountPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetailsLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransferLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WithdrawLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepositLogo)).EndInit();
             this.RegisterPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreateAccountLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseAccountLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecoverAccountLogo)).EndInit();
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.WelcomePanel.ResumeLayout(false);
@@ -3110,17 +3103,17 @@ namespace BankManagementSystem
         private System.Windows.Forms.Button CreateButton;
         private System.Windows.Forms.Label ValidateErrorLabel;
         private System.Windows.Forms.Button DashboardButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox AccountPictureBox;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox ManagerPanelPictureBox;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox RecoverAccountLogo;
+        private System.Windows.Forms.PictureBox DashboardLogo;
+        private System.Windows.Forms.PictureBox CreateAccountLogo;
+        private System.Windows.Forms.PictureBox CloseAccountLogo;
+        private System.Windows.Forms.PictureBox AccountLogo;
+        private System.Windows.Forms.PictureBox RegisterLogo;
+        private System.Windows.Forms.PictureBox TransferLogo;
+        private System.Windows.Forms.PictureBox WithdrawLogo;
+        private System.Windows.Forms.PictureBox DepositLogo;
+        private System.Windows.Forms.PictureBox ManagerLogo;
+        private System.Windows.Forms.PictureBox DetailsLogo;
         private System.Windows.Forms.Panel DashboardPanel;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Panel ClockPanel;

@@ -19,6 +19,9 @@ namespace BankManagementSystem
         private Account searchedAccount;
         private Manager manager;
 
+        //TODO: Dummy Data for Employees
+        //TODO: Organize the Methods
+
         public Main(int id, string m=null)
         {
             InitializeComponent();
@@ -26,8 +29,8 @@ namespace BankManagementSystem
             DisableComponents();
             HideDepositGroupBox();
             DashboardPanel.BringToFront();
-            AccountPictureBox.Location = new Point(9, AccountButton.Location.Y+10);
-            ManagerPanelPictureBox.Location = new Point(9, ManagerButton.Location.Y+10); 
+            AccountLogo.Location = new Point(9, AccountButton.Location.Y+10);
+            ManagerLogo.Location = new Point(9, ManagerButton.Location.Y+10); 
             ClockTimer.Start();
             if(m == null)
             {
@@ -47,39 +50,42 @@ namespace BankManagementSystem
                 NameLabel.Text = manager.Name;
             }
         }
-        private void DashboardButton_Click(object sender, EventArgs e)
-        {
-            ResetAllButton();
-            EnableManagerPanelButtons(null);
-            DashboardPanel.BringToFront();
-            DashboardButton.BackColor = Color.FromArgb(43, 63, 97);
-            CurrentLabel.Text = "Dashboard";
-            if(manager != null)
-            {
-                ResetAllMangerPanelControls();
-            }
-            if(currentEmployee != null)
-            {
-                HideAllPanel();
-                ResetChildButton();
-                ResetPanel(RegisterPanel);
-                ResetCreateAccountDetails();
-                ResetResultGroupBox();
-                HideDepositGroupBox();
-            }
-        }
 
         #region Register
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private void MenuButtonsHandler(object sender, EventArgs e)
         {
             HideAllPanel();
             ResetAllButton();
             ResetChildButton();
-            HideAccountDetails();
-            RegisterPanel.Show();
-            RegisterButton.BackColor = Color.FromArgb(43, 63, 97);
-            CurrentLabel.Text = "Register";
+            ((Button)sender).BackColor = Color.FromArgb(43, 63, 97);
+            CurrentLabel.Text = ((Button)sender).Text;
+            if (sender.Equals(DashboardButton))
+            {
+                EnableManagerPanelButtons(null);
+                DashboardPanel.BringToFront();
+                if (manager != null)
+                {
+                    ResetAllMangerPanelControls();
+                }
+                if (currentEmployee != null)
+                {
+                    ResetPanel(RegisterPanel);
+                    ResetCreateAccountDetails();
+                    ResetResultGroupBox();
+                    HideDepositGroupBox();
+                }
+            }
+            else if (sender.Equals(RegisterButton))
+            {
+                HideAccountDetails();
+                RegisterPanel.Show();
+            }
+            else if (sender.Equals(AccountButton))
+            {
+                ResetCreateAccountDetails();
+                AccountPanel.Show();
+            }
         }
         private void CreateButton_Click(object sender, EventArgs e)
         {
@@ -257,17 +263,6 @@ namespace BankManagementSystem
         #endregion Register
 
         #region Account
-
-        private void AccountButton_Click(object sender, EventArgs e)
-        {
-            ResetAllButton();
-            HideAllPanel();
-            ResetChildButton();
-            ResetCreateAccountDetails();
-            AccountPanel.Show();
-            AccountButton.BackColor = Color.FromArgb(43, 63, 97);
-            CurrentLabel.Text = "Account";
-        }
 
         #region Deposit
 
@@ -472,8 +467,26 @@ namespace BankManagementSystem
             {
                 if(button is Button)
                 {
-                    if(button.Enabled)
-                        button.BackColor = Color.FromArgb(31, 30, 68);
+                    if (!button.Enabled)
+                        continue;
+                    button.Enabled = true;
+                    button.BackColor = Color.FromArgb(31, 30, 68);  
+                }
+            }
+            foreach(Control button in RegisterPanel.Controls)
+            {
+                if(button is Button)
+                {
+                    button.Enabled = true;
+                    button.BackColor = Color.FromArgb(31, 30, 68);
+                }
+            }
+            foreach (Control button in AccountPanel.Controls)
+            {
+                if (button is Button)
+                {
+                    button.Enabled = true;
+                    button.BackColor = Color.FromArgb(31, 30, 68);
                 }
             }
         }
@@ -482,7 +495,10 @@ namespace BankManagementSystem
             foreach(Control button in panel.Controls)
             {
                 if(button is Button)
+                {
                     button.BackColor = Color.FromArgb(31, 30, 68);
+                    button.Enabled = true;
+                }
             }
         }
         private void ResetChildButton()
@@ -571,54 +587,60 @@ namespace BankManagementSystem
 
             if (sender is Button)
             {
+                ResetChildButton(RegisterPanel);
+                ResetChildButton(AccountPanel);
+                ((Button)sender).BackColor = Color.LightGray;
+                ((Button)sender).Enabled = false;
+                LogoBringToFront();
+                CurrentLabel.Text = CurrentLabel.Text.Split(' ')[0] + " : " + ((Button)sender).Text;
+
                 if (sender.Equals(CreateAccButton))
                 {
-                    ResetChildButton(RegisterPanel);
                     CreateAccountPanel.BringToFront();
-                    CreateAccButton.BackColor = Color.FromArgb(22, 34, 54);
 
                     InitialDepositTextbox.Text = "500";
                     InitialDepositTextbox.Enabled = false;
                 }
                 else if (sender.Equals(CloseAccButton))
                 {
-                    ResetChildButton(RegisterPanel);
                     CloseAccountPanel.BringToFront();
-                    CloseAccButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
                 else if (sender.Equals(RecoverAccButton))
                 {
-                    ResetChildButton(RegisterPanel);
                     RecoverAccountPanel.BringToFront();
-                    RecoverAccButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
                 else if (sender.Equals(DepositButton))
                 {
-                    ResetChildButton(AccountPanel);
                     DepositPanel.BringToFront();
-                    DepositButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
                 else if (sender.Equals(WithdrawButton))
                 {
-                    ResetChildButton(AccountPanel);
                     WithdrawPanel.BringToFront();
-                    WithdrawButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
                 else if (sender.Equals(TransferButton))
                 {
-                    ResetChildButton(AccountPanel);
                     TransferPanel.BringToFront();
-                    TransferButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
                 else if (sender.Equals(DetailsButton))
                 {
-                    ResetChildButton(AccountPanel);
                     //AccountDetailsGroupBox_Details.Controls.Clear();
                     ResetGroupBoxControls(AccountDetailsGroupBox_Details);
                     DetailsPanel.BringToFront();
-                    DetailsButton.BackColor = Color.FromArgb(22, 34, 54);
                 }
             }
+        }
+        private void LogoBringToFront()
+        {
+            AccountLogo.BringToFront();
+            CloseAccountLogo.BringToFront();
+            CreateAccountLogo.BringToFront();
+            DashboardLogo.BringToFront();
+            DepositLogo.BringToFront();
+            DetailsLogo.BringToFront();
+            RecoverAccountLogo.BringToFront();
+            RegisterLogo.BringToFront();
+            TransferLogo.BringToFront();
+            WithdrawLogo.BringToFront();
         }
         private void HideAllPanel()
         {
@@ -635,11 +657,11 @@ namespace BankManagementSystem
         }
         private void AccountButton_LocationChanged(object sender, EventArgs e)
         {
-            AccountPictureBox.Location = new Point(9, AccountButton.Location.Y + 10);
+            AccountLogo.Location = new Point(9, AccountButton.Location.Y + 10);
         }
         private void LoanButton_LocationChanged(object sender, EventArgs e)
         {
-            ManagerPanelPictureBox.Location = new Point(9, ManagerButton.Location.Y + 10);
+            ManagerLogo.Location = new Point(9, ManagerButton.Location.Y + 10);
         }
         private void ClockTimer_Tick(object sender, EventArgs e)
         {
