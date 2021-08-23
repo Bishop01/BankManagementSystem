@@ -32,6 +32,7 @@ namespace BankManagementSystem
             AccountLogo.Location = new Point(9, AccountButton.Location.Y+10);
             ManagerLogo.Location = new Point(9, ManagerButton.Location.Y+10); 
             ClockTimer.Start();
+            UpdateDashboard();
             if(m == null)
             {
                 currentUser = FetchData.GetEmployeeName(id);
@@ -52,7 +53,13 @@ namespace BankManagementSystem
         }
 
         #region Register
-
+        private void UpdateDashboard()
+        {
+            TotalTransacCounterLabel.Text = FetchData.GetTotalTransations().ToString();
+            TotalAccountCounterLabel.Text = FetchData.GetTotalAccounts().ToString();
+            AccountTodayLabel.Text = FetchData.GetTotalAccountsToday().ToString();
+            TransacTodayLabel.Text = FetchData.GetTotalTransactionsToday().ToString();
+        }
         private void MenuButtonsHandler(object sender, EventArgs e)
         {
             HideAllPanel();
@@ -62,6 +69,7 @@ namespace BankManagementSystem
             CurrentLabel.Text = ((Button)sender).Text;
             if (sender.Equals(DashboardButton))
             {
+                UpdateDashboard();
                 EnableManagerPanelButtons(null);
                 DashboardPanel.BringToFront();
                 if (manager != null)
@@ -592,7 +600,6 @@ namespace BankManagementSystem
                 ResetChildButton(AccountPanel);
                 ((Button)sender).BackColor = Color.LightGray;
                 ((Button)sender).Enabled = false;
-                LogoBringToFront();
                 CurrentLabel.Text = CurrentLabel.Text.Split(' ')[0] + " : " + ((Button)sender).Text;
 
                 if (sender.Equals(CreateAccButton))
@@ -629,19 +636,6 @@ namespace BankManagementSystem
                     DetailsPanel.BringToFront();
                 }
             }
-        }
-        private void LogoBringToFront()
-        {
-            AccountLogo.BringToFront();
-            CloseAccountLogo.BringToFront();
-            CreateAccountLogo.BringToFront();
-            DashboardLogo.BringToFront();
-            DepositLogo.BringToFront();
-            DetailsLogo.BringToFront();
-            RecoverAccountLogo.BringToFront();
-            RegisterLogo.BringToFront();
-            TransferLogo.BringToFront();
-            WithdrawLogo.BringToFront();
         }
         private void HideAllPanel()
         {

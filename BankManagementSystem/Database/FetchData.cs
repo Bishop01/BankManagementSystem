@@ -281,5 +281,25 @@ namespace BankManagementSystem.Database
                 return null;
             }
         }
+        public static int GetTotalTransations()
+        {
+            string query = "select count(TransactionID) from TransactionHistory";
+            return DataHandler.GetScalarData(query);
+        }
+        public static int GetTotalAccounts()
+        {
+            string query = "select count(AccountID) from Accounts";
+            return DataHandler.GetScalarData(query);
+        }
+        public static int GetTotalAccountsToday()
+        {
+            string query = "select count(AccountID) from Accounts where convert(varchar, CreationDate, 10)=getdate()";
+            return DataHandler.GetScalarData(query);
+        }
+        public static int GetTotalTransactionsToday()
+        {
+            string query = "select count(TransactionID) from TransactionHistory where convert(varchar, TransactionDate, 10)=getdate()";
+            return DataHandler.GetScalarData(query);
+        }
     }
 }

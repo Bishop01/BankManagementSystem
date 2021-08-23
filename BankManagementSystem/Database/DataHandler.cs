@@ -44,6 +44,12 @@ namespace BankManagementSystem.Database
             sqlCommand = new SqlCommand(query, sqlConnection);
             return sqlCommand.ExecuteNonQuery();
         }
+        public static int GetScalarData(string query)
+        {
+            EstablishConnection();
+            sqlCommand = new SqlCommand(query, sqlConnection);
+            return (int)sqlCommand.ExecuteScalar();
+        }
         public static void CloseConnection()
         {
             if(sqlConnection != null)

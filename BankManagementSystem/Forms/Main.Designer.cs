@@ -35,11 +35,11 @@ namespace BankManagementSystem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.BasePanel = new System.Windows.Forms.Panel();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.DashboardLogo = new System.Windows.Forms.PictureBox();
             this.ManagerLogo = new System.Windows.Forms.PictureBox();
             this.ManagerButton = new System.Windows.Forms.Button();
             this.AccountLogo = new System.Windows.Forms.PictureBox();
             this.RegisterLogo = new System.Windows.Forms.PictureBox();
-            this.DashboardLogo = new System.Windows.Forms.PictureBox();
             this.AccountPanel = new System.Windows.Forms.Panel();
             this.DetailsLogo = new System.Windows.Forms.PictureBox();
             this.TransferLogo = new System.Windows.Forms.PictureBox();
@@ -119,11 +119,7 @@ namespace BankManagementSystem
             this.SearchTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DashboardPanel = new System.Windows.Forms.Panel();
-            this.ClockPanel = new System.Windows.Forms.Panel();
-            this.SecondLabel = new System.Windows.Forms.Label();
-            this.TimeLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
             this.RecoverAccountPanel = new System.Windows.Forms.Panel();
             this.AccountsResultGroupBox = new System.Windows.Forms.GroupBox();
@@ -159,6 +155,7 @@ namespace BankManagementSystem
             this.SearchAccounttextBox_Withdraw = new System.Windows.Forms.TextBox();
             this.TransferPanel = new System.Windows.Forms.Panel();
             this.transferGroupBox_Transfer = new System.Windows.Forms.GroupBox();
+            this.transferButton_Transfer = new System.Windows.Forms.Button();
             this.transferErrorLabel = new System.Windows.Forms.Label();
             this.senderBalanceLabel_Transfer = new System.Windows.Forms.Label();
             this.AccountOwnerpictureBox_Transfer = new System.Windows.Forms.PictureBox();
@@ -170,7 +167,6 @@ namespace BankManagementSystem
             this.recAccNumberTextBox_Transfer = new System.Windows.Forms.TextBox();
             this.recAccNumberLabel_Transfer = new System.Windows.Forms.Label();
             this.accInfoLabel_Transfer = new System.Windows.Forms.Label();
-            this.transferButton_Transfer = new System.Windows.Forms.Button();
             this.enterAmountTextBox_Transfer = new System.Windows.Forms.TextBox();
             this.enterAmountLabel_Transfer = new System.Windows.Forms.Label();
             this.findButton_Transfer = new System.Windows.Forms.Button();
@@ -263,12 +259,25 @@ namespace BankManagementSystem
             this.ManageButton = new System.Windows.Forms.Button();
             this.EditDetailsButton = new System.Windows.Forms.Button();
             this.EmployeeDetailsButton = new System.Windows.Forms.Button();
+            this.ClockPanel = new System.Windows.Forms.Panel();
+            this.SecondLabel = new System.Windows.Forms.Label();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.CounterGroupBox = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TotalAccountCounterLabel = new System.Windows.Forms.Label();
+            this.AccountTodayLabel = new System.Windows.Forms.Label();
+            this.TransacTodayLabel = new System.Windows.Forms.Label();
+            this.TotalTransacCounterLabel = new System.Windows.Forms.Label();
+            this.EmployeeOfTheMonthLabel = new System.Windows.Forms.Label();
             this.BasePanel.SuspendLayout();
             this.MenuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DashboardLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DashboardLogo)).BeginInit();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DetailsLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TransferLogo)).BeginInit();
@@ -287,8 +296,6 @@ namespace BankManagementSystem
             this.AccountDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).BeginInit();
             this.DashboardPanel.SuspendLayout();
-            this.ClockPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.RecoverAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox)).BeginInit();
             this.DepositPanel.SuspendLayout();
@@ -315,6 +322,8 @@ namespace BankManagementSystem
             this.TransactionsPanel.SuspendLayout();
             this.TransactionHistoryGroupBox.SuspendLayout();
             this.ManagerButtonsPanel.SuspendLayout();
+            this.ClockPanel.SuspendLayout();
+            this.CounterGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasePanel
@@ -350,11 +359,21 @@ namespace BankManagementSystem
             this.MenuPanel.Size = new System.Drawing.Size(206, 456);
             this.MenuPanel.TabIndex = 1;
             // 
+            // DashboardLogo
+            // 
+            this.DashboardLogo.Image = ((System.Drawing.Image)(resources.GetObject("DashboardLogo.Image")));
+            this.DashboardLogo.Location = new System.Drawing.Point(9, 9);
+            this.DashboardLogo.Name = "DashboardLogo";
+            this.DashboardLogo.Size = new System.Drawing.Size(23, 23);
+            this.DashboardLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DashboardLogo.TabIndex = 12;
+            this.DashboardLogo.TabStop = false;
+            // 
             // ManagerLogo
             // 
             this.ManagerLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerLogo.Image = ((System.Drawing.Image)(resources.GetObject("ManagerLogo.Image")));
-            this.ManagerLogo.Location = new System.Drawing.Point(9, 490);
+            this.ManagerLogo.Location = new System.Drawing.Point(9, 518);
             this.ManagerLogo.Name = "ManagerLogo";
             this.ManagerLogo.Size = new System.Drawing.Size(23, 23);
             this.ManagerLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -381,7 +400,7 @@ namespace BankManagementSystem
             // 
             this.AccountLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountLogo.Image = ((System.Drawing.Image)(resources.GetObject("AccountLogo.Image")));
-            this.AccountLogo.Location = new System.Drawing.Point(9, 273);
+            this.AccountLogo.Location = new System.Drawing.Point(9, 301);
             this.AccountLogo.Name = "AccountLogo";
             this.AccountLogo.Size = new System.Drawing.Size(23, 23);
             this.AccountLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -397,16 +416,6 @@ namespace BankManagementSystem
             this.RegisterLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RegisterLogo.TabIndex = 6;
             this.RegisterLogo.TabStop = false;
-            // 
-            // DashboardLogo
-            // 
-            this.DashboardLogo.Image = ((System.Drawing.Image)(resources.GetObject("DashboardLogo.Image")));
-            this.DashboardLogo.Location = new System.Drawing.Point(9, 9);
-            this.DashboardLogo.Name = "DashboardLogo";
-            this.DashboardLogo.Size = new System.Drawing.Size(23, 23);
-            this.DashboardLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DashboardLogo.TabIndex = 12;
-            this.DashboardLogo.TabStop = false;
             // 
             // AccountPanel
             // 
@@ -1346,65 +1355,27 @@ namespace BankManagementSystem
             // DashboardPanel
             // 
             this.DashboardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.DashboardPanel.Controls.Add(this.EmployeeOfTheMonthLabel);
+            this.DashboardPanel.Controls.Add(this.CounterGroupBox);
             this.DashboardPanel.Controls.Add(this.ClockPanel);
             this.DashboardPanel.Controls.Add(this.label3);
-            this.DashboardPanel.Controls.Add(this.pictureBox6);
             this.DashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DashboardPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardPanel.Location = new System.Drawing.Point(206, 74);
             this.DashboardPanel.Name = "DashboardPanel";
             this.DashboardPanel.Size = new System.Drawing.Size(775, 497);
             this.DashboardPanel.TabIndex = 62;
             // 
-            // ClockPanel
-            // 
-            this.ClockPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(95)))));
-            this.ClockPanel.Controls.Add(this.SecondLabel);
-            this.ClockPanel.Controls.Add(this.TimeLabel);
-            this.ClockPanel.Location = new System.Drawing.Point(491, 375);
-            this.ClockPanel.Name = "ClockPanel";
-            this.ClockPanel.Size = new System.Drawing.Size(275, 93);
-            this.ClockPanel.TabIndex = 0;
-            // 
-            // SecondLabel
-            // 
-            this.SecondLabel.AutoSize = true;
-            this.SecondLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SecondLabel.Location = new System.Drawing.Point(218, 50);
-            this.SecondLabel.Name = "SecondLabel";
-            this.SecondLabel.Size = new System.Drawing.Size(36, 25);
-            this.SecondLabel.TabIndex = 1;
-            this.SecondLabel.Text = "00";
-            // 
-            // TimeLabel
-            // 
-            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLabel.Location = new System.Drawing.Point(0, 16);
-            this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(232, 85);
-            this.TimeLabel.TabIndex = 0;
-            this.TimeLabel.Text = "00:00";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(46)))), ((int)(((byte)(95)))));
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.label3.Font = new System.Drawing.Font("Century", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 77);
+            this.label3.Location = new System.Drawing.Point(238, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(321, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "SKS Bank Limited.";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(775, 497);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
             // 
             // ClockTimer
             // 
@@ -1805,6 +1776,19 @@ namespace BankManagementSystem
             this.transferGroupBox_Transfer.Text = "Transfer";
             this.transferGroupBox_Transfer.Visible = false;
             // 
+            // transferButton_Transfer
+            // 
+            this.transferButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.transferButton_Transfer.FlatAppearance.BorderSize = 0;
+            this.transferButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transferButton_Transfer.Location = new System.Drawing.Point(553, 267);
+            this.transferButton_Transfer.Name = "transferButton_Transfer";
+            this.transferButton_Transfer.Size = new System.Drawing.Size(97, 36);
+            this.transferButton_Transfer.TabIndex = 5;
+            this.transferButton_Transfer.Text = "Transfer";
+            this.transferButton_Transfer.UseVisualStyleBackColor = false;
+            this.transferButton_Transfer.Click += new System.EventHandler(this.transferButton_Transfer_Click);
+            // 
             // transferErrorLabel
             // 
             this.transferErrorLabel.AutoSize = true;
@@ -1911,19 +1895,6 @@ namespace BankManagementSystem
             this.accInfoLabel_Transfer.Size = new System.Drawing.Size(240, 20);
             this.accInfoLabel_Transfer.TabIndex = 7;
             this.accInfoLabel_Transfer.Text = "Account Information (Receiver)";
-            // 
-            // transferButton_Transfer
-            // 
-            this.transferButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.transferButton_Transfer.FlatAppearance.BorderSize = 0;
-            this.transferButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transferButton_Transfer.Location = new System.Drawing.Point(553, 267);
-            this.transferButton_Transfer.Name = "transferButton_Transfer";
-            this.transferButton_Transfer.Size = new System.Drawing.Size(97, 36);
-            this.transferButton_Transfer.TabIndex = 5;
-            this.transferButton_Transfer.Text = "Transfer";
-            this.transferButton_Transfer.UseVisualStyleBackColor = false;
-            this.transferButton_Transfer.Click += new System.EventHandler(this.transferButton_Transfer_Click);
             // 
             // enterAmountTextBox_Transfer
             // 
@@ -2951,11 +2922,149 @@ namespace BankManagementSystem
             this.EmployeeDetailsButton.UseVisualStyleBackColor = true;
             this.EmployeeDetailsButton.Click += new System.EventHandler(this.ManagerPanelButtonsHandler);
             // 
+            // ClockPanel
+            // 
+            this.ClockPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.ClockPanel.Controls.Add(this.SecondLabel);
+            this.ClockPanel.Controls.Add(this.TimeLabel);
+            this.ClockPanel.Location = new System.Drawing.Point(503, 402);
+            this.ClockPanel.Name = "ClockPanel";
+            this.ClockPanel.Size = new System.Drawing.Size(263, 85);
+            this.ClockPanel.TabIndex = 3;
+            // 
+            // SecondLabel
+            // 
+            this.SecondLabel.AutoSize = true;
+            this.SecondLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecondLabel.Location = new System.Drawing.Point(184, 41);
+            this.SecondLabel.Name = "SecondLabel";
+            this.SecondLabel.Size = new System.Drawing.Size(36, 25);
+            this.SecondLabel.TabIndex = 1;
+            this.SecondLabel.Text = "00";
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.Location = new System.Drawing.Point(-4, 0);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(232, 85);
+            this.TimeLabel.TabIndex = 0;
+            this.TimeLabel.Text = "00:00";
+            // 
+            // CounterGroupBox
+            // 
+            this.CounterGroupBox.Controls.Add(this.TotalTransacCounterLabel);
+            this.CounterGroupBox.Controls.Add(this.TransacTodayLabel);
+            this.CounterGroupBox.Controls.Add(this.AccountTodayLabel);
+            this.CounterGroupBox.Controls.Add(this.TotalAccountCounterLabel);
+            this.CounterGroupBox.Controls.Add(this.label25);
+            this.CounterGroupBox.Controls.Add(this.label24);
+            this.CounterGroupBox.Controls.Add(this.label12);
+            this.CounterGroupBox.Controls.Add(this.label9);
+            this.CounterGroupBox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CounterGroupBox.ForeColor = System.Drawing.Color.White;
+            this.CounterGroupBox.Location = new System.Drawing.Point(46, 112);
+            this.CounterGroupBox.Name = "CounterGroupBox";
+            this.CounterGroupBox.Size = new System.Drawing.Size(699, 182);
+            this.CounterGroupBox.TabIndex = 4;
+            this.CounterGroupBox.TabStop = false;
+            this.CounterGroupBox.Text = "Counter";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(362, 64);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(228, 20);
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Transactions Made Today:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(362, 126);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(171, 20);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Total Transactions:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(31, 124);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(208, 20);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Account Created Today:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(31, 64);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Total Account:";
+            // 
+            // TotalAccountCounterLabel
+            // 
+            this.TotalAccountCounterLabel.AutoSize = true;
+            this.TotalAccountCounterLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAccountCounterLabel.Location = new System.Drawing.Point(180, 64);
+            this.TotalAccountCounterLabel.Name = "TotalAccountCounterLabel";
+            this.TotalAccountCounterLabel.Size = new System.Drawing.Size(63, 20);
+            this.TotalAccountCounterLabel.TabIndex = 12;
+            this.TotalAccountCounterLabel.Text = "label26";
+            // 
+            // AccountTodayLabel
+            // 
+            this.AccountTodayLabel.AutoSize = true;
+            this.AccountTodayLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AccountTodayLabel.Location = new System.Drawing.Point(255, 124);
+            this.AccountTodayLabel.Name = "AccountTodayLabel";
+            this.AccountTodayLabel.Size = new System.Drawing.Size(63, 20);
+            this.AccountTodayLabel.TabIndex = 13;
+            this.AccountTodayLabel.Text = "label26";
+            // 
+            // TransacTodayLabel
+            // 
+            this.TransacTodayLabel.AutoSize = true;
+            this.TransacTodayLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransacTodayLabel.Location = new System.Drawing.Point(598, 64);
+            this.TransacTodayLabel.Name = "TransacTodayLabel";
+            this.TransacTodayLabel.Size = new System.Drawing.Size(63, 20);
+            this.TransacTodayLabel.TabIndex = 14;
+            this.TransacTodayLabel.Text = "label27";
+            // 
+            // TotalTransacCounterLabel
+            // 
+            this.TotalTransacCounterLabel.AutoSize = true;
+            this.TotalTransacCounterLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTransacCounterLabel.Location = new System.Drawing.Point(545, 127);
+            this.TotalTransacCounterLabel.Name = "TotalTransacCounterLabel";
+            this.TotalTransacCounterLabel.Size = new System.Drawing.Size(63, 20);
+            this.TotalTransacCounterLabel.TabIndex = 15;
+            this.TotalTransacCounterLabel.Text = "label28";
+            // 
+            // EmployeeOfTheMonthLabel
+            // 
+            this.EmployeeOfTheMonthLabel.AutoSize = true;
+            this.EmployeeOfTheMonthLabel.Location = new System.Drawing.Point(280, 337);
+            this.EmployeeOfTheMonthLabel.Name = "EmployeeOfTheMonthLabel";
+            this.EmployeeOfTheMonthLabel.Size = new System.Drawing.Size(244, 20);
+            this.EmployeeOfTheMonthLabel.TabIndex = 5;
+            this.EmployeeOfTheMonthLabel.Text = "Employee of The Month: Bishop";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.DepositPanel);
@@ -2964,7 +3073,6 @@ namespace BankManagementSystem
             this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
             this.Controls.Add(this.CreateAccountPanel);
-            this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WelcomePanel);
             this.Controls.Add(this.BasePanel);
             this.ForeColor = System.Drawing.Color.White;
@@ -2978,10 +3086,10 @@ namespace BankManagementSystem
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.BasePanel.ResumeLayout(false);
             this.MenuPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DashboardLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegisterLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DashboardLogo)).EndInit();
             this.AccountPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DetailsLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TransferLogo)).EndInit();
@@ -3005,9 +3113,6 @@ namespace BankManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.ClientPictureBox)).EndInit();
             this.DashboardPanel.ResumeLayout(false);
             this.DashboardPanel.PerformLayout();
-            this.ClockPanel.ResumeLayout(false);
-            this.ClockPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.RecoverAccountPanel.ResumeLayout(false);
             this.RecoverAccountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountOwnerPictureBox)).EndInit();
@@ -3049,6 +3154,10 @@ namespace BankManagementSystem
             this.TransactionsPanel.PerformLayout();
             this.TransactionHistoryGroupBox.ResumeLayout(false);
             this.ManagerButtonsPanel.ResumeLayout(false);
+            this.ClockPanel.ResumeLayout(false);
+            this.ClockPanel.PerformLayout();
+            this.CounterGroupBox.ResumeLayout(false);
+            this.CounterGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3118,12 +3227,8 @@ namespace BankManagementSystem
         private System.Windows.Forms.PictureBox DetailsLogo;
         private System.Windows.Forms.Panel DashboardPanel;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.Panel ClockPanel;
-        private System.Windows.Forms.Label SecondLabel;
-        private System.Windows.Forms.Label TimeLabel;
         private System.Windows.Forms.Button ManagerButton;
         private System.Windows.Forms.Timer ClockTimer;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label GenderLabel;
         private System.Windows.Forms.RadioButton FemaleRadioButton;
@@ -3285,6 +3390,19 @@ namespace BankManagementSystem
         private Label NumberError_ED;
         private Label AccountStatusLabel_Deposit;
         private Label transferErrorLabel;
+        private Panel ClockPanel;
+        private Label SecondLabel;
+        private Label TimeLabel;
+        private GroupBox CounterGroupBox;
+        private Label label25;
+        private Label label24;
+        private Label label12;
+        private Label label9;
+        private Label TotalAccountCounterLabel;
+        private Label TotalTransacCounterLabel;
+        private Label TransacTodayLabel;
+        private Label AccountTodayLabel;
+        private Label EmployeeOfTheMonthLabel;
     }
 }
 
