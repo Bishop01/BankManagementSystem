@@ -168,7 +168,7 @@ namespace BankManagementSystem
             this.SearchAccounttextBox_Withdraw = new System.Windows.Forms.TextBox();
             this.TransferPanel = new System.Windows.Forms.Panel();
             this.transferGroupBox_Transfer = new System.Windows.Forms.GroupBox();
-            this.transferButton_Transfer = new System.Windows.Forms.Button();
+            this.TransferButton_Transfer = new System.Windows.Forms.Button();
             this.transferErrorLabel = new System.Windows.Forms.Label();
             this.senderBalanceLabel_Transfer = new System.Windows.Forms.Label();
             this.AccountOwnerpictureBox_Transfer = new System.Windows.Forms.PictureBox();
@@ -176,14 +176,14 @@ namespace BankManagementSystem
             this.senderAccOwnerLabel_Transfer = new System.Windows.Forms.Label();
             this.accTypeLabel_Transfer = new System.Windows.Forms.Label();
             this.accOwnerLabel_Transfer = new System.Windows.Forms.Label();
-            this.recAccFindButton_Transfer = new System.Windows.Forms.Button();
-            this.recAccNumberTextBox_Transfer = new System.Windows.Forms.TextBox();
+            this.RecAccFindButton_Transfer = new System.Windows.Forms.Button();
+            this.RecAccNumberTextBox_Transfer = new System.Windows.Forms.TextBox();
             this.recAccNumberLabel_Transfer = new System.Windows.Forms.Label();
             this.accInfoLabel_Transfer = new System.Windows.Forms.Label();
-            this.enterAmountTextBox_Transfer = new System.Windows.Forms.TextBox();
+            this.EnterAmountTextBox_Transfer = new System.Windows.Forms.TextBox();
             this.enterAmountLabel_Transfer = new System.Windows.Forms.Label();
-            this.findButton_Transfer = new System.Windows.Forms.Button();
-            this.accNumberSearchTextBox_Transfer = new System.Windows.Forms.TextBox();
+            this.FindButton_Transfer = new System.Windows.Forms.Button();
+            this.AccNumberSearchTextBox_Transfer = new System.Windows.Forms.TextBox();
             this.accNumberLabel_Transfer = new System.Windows.Forms.Label();
             this.DetailsPanel = new System.Windows.Forms.Panel();
             this.SearchAccountTextbox_Details = new System.Windows.Forms.TextBox();
@@ -1878,8 +1878,8 @@ namespace BankManagementSystem
             // 
             this.TransferPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.TransferPanel.Controls.Add(this.transferGroupBox_Transfer);
-            this.TransferPanel.Controls.Add(this.findButton_Transfer);
-            this.TransferPanel.Controls.Add(this.accNumberSearchTextBox_Transfer);
+            this.TransferPanel.Controls.Add(this.FindButton_Transfer);
+            this.TransferPanel.Controls.Add(this.AccNumberSearchTextBox_Transfer);
             this.TransferPanel.Controls.Add(this.accNumberLabel_Transfer);
             this.TransferPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TransferPanel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1890,7 +1890,7 @@ namespace BankManagementSystem
             // 
             // transferGroupBox_Transfer
             // 
-            this.transferGroupBox_Transfer.Controls.Add(this.transferButton_Transfer);
+            this.transferGroupBox_Transfer.Controls.Add(this.TransferButton_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.transferErrorLabel);
             this.transferGroupBox_Transfer.Controls.Add(this.senderBalanceLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.AccountOwnerpictureBox_Transfer);
@@ -1898,11 +1898,11 @@ namespace BankManagementSystem
             this.transferGroupBox_Transfer.Controls.Add(this.senderAccOwnerLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.accTypeLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.accOwnerLabel_Transfer);
-            this.transferGroupBox_Transfer.Controls.Add(this.recAccFindButton_Transfer);
-            this.transferGroupBox_Transfer.Controls.Add(this.recAccNumberTextBox_Transfer);
+            this.transferGroupBox_Transfer.Controls.Add(this.RecAccFindButton_Transfer);
+            this.transferGroupBox_Transfer.Controls.Add(this.RecAccNumberTextBox_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.recAccNumberLabel_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.accInfoLabel_Transfer);
-            this.transferGroupBox_Transfer.Controls.Add(this.enterAmountTextBox_Transfer);
+            this.transferGroupBox_Transfer.Controls.Add(this.EnterAmountTextBox_Transfer);
             this.transferGroupBox_Transfer.Controls.Add(this.enterAmountLabel_Transfer);
             this.transferGroupBox_Transfer.ForeColor = System.Drawing.Color.White;
             this.transferGroupBox_Transfer.Location = new System.Drawing.Point(30, 123);
@@ -1913,18 +1913,18 @@ namespace BankManagementSystem
             this.transferGroupBox_Transfer.Text = "Transfer";
             this.transferGroupBox_Transfer.Visible = false;
             // 
-            // transferButton_Transfer
+            // TransferButton_Transfer
             // 
-            this.transferButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.transferButton_Transfer.FlatAppearance.BorderSize = 0;
-            this.transferButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transferButton_Transfer.Location = new System.Drawing.Point(553, 267);
-            this.transferButton_Transfer.Name = "transferButton_Transfer";
-            this.transferButton_Transfer.Size = new System.Drawing.Size(97, 36);
-            this.transferButton_Transfer.TabIndex = 5;
-            this.transferButton_Transfer.Text = "Transfer";
-            this.transferButton_Transfer.UseVisualStyleBackColor = false;
-            this.transferButton_Transfer.Click += new System.EventHandler(this.transferButton_Transfer_Click);
+            this.TransferButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.TransferButton_Transfer.FlatAppearance.BorderSize = 0;
+            this.TransferButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TransferButton_Transfer.Location = new System.Drawing.Point(553, 267);
+            this.TransferButton_Transfer.Name = "TransferButton_Transfer";
+            this.TransferButton_Transfer.Size = new System.Drawing.Size(97, 36);
+            this.TransferButton_Transfer.TabIndex = 5;
+            this.TransferButton_Transfer.Text = "Transfer";
+            this.TransferButton_Transfer.UseVisualStyleBackColor = false;
+            this.TransferButton_Transfer.Click += new System.EventHandler(this.TransferButton_Transfer_Click);
             // 
             // transferErrorLabel
             // 
@@ -1991,28 +1991,28 @@ namespace BankManagementSystem
             this.accOwnerLabel_Transfer.TabIndex = 17;
             this.accOwnerLabel_Transfer.Text = "Account Owner:";
             // 
-            // recAccFindButton_Transfer
+            // RecAccFindButton_Transfer
             // 
-            this.recAccFindButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.recAccFindButton_Transfer.FlatAppearance.BorderSize = 0;
-            this.recAccFindButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.recAccFindButton_Transfer.Location = new System.Drawing.Point(160, 228);
-            this.recAccFindButton_Transfer.Name = "recAccFindButton_Transfer";
-            this.recAccFindButton_Transfer.Size = new System.Drawing.Size(107, 32);
-            this.recAccFindButton_Transfer.TabIndex = 16;
-            this.recAccFindButton_Transfer.Text = "Find";
-            this.recAccFindButton_Transfer.UseVisualStyleBackColor = false;
-            this.recAccFindButton_Transfer.Click += new System.EventHandler(this.recAccFindButton_Transfer_Click);
+            this.RecAccFindButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.RecAccFindButton_Transfer.FlatAppearance.BorderSize = 0;
+            this.RecAccFindButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RecAccFindButton_Transfer.Location = new System.Drawing.Point(160, 228);
+            this.RecAccFindButton_Transfer.Name = "RecAccFindButton_Transfer";
+            this.RecAccFindButton_Transfer.Size = new System.Drawing.Size(107, 32);
+            this.RecAccFindButton_Transfer.TabIndex = 16;
+            this.RecAccFindButton_Transfer.Text = "Find";
+            this.RecAccFindButton_Transfer.UseVisualStyleBackColor = false;
+            this.RecAccFindButton_Transfer.Click += new System.EventHandler(this.RecAccFindButton_Transfer_Click);
             // 
-            // recAccNumberTextBox_Transfer
+            // RecAccNumberTextBox_Transfer
             // 
-            this.recAccNumberTextBox_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.recAccNumberTextBox_Transfer.ForeColor = System.Drawing.Color.White;
-            this.recAccNumberTextBox_Transfer.Location = new System.Drawing.Point(160, 188);
-            this.recAccNumberTextBox_Transfer.MaxLength = 8;
-            this.recAccNumberTextBox_Transfer.Name = "recAccNumberTextBox_Transfer";
-            this.recAccNumberTextBox_Transfer.Size = new System.Drawing.Size(184, 27);
-            this.recAccNumberTextBox_Transfer.TabIndex = 13;
+            this.RecAccNumberTextBox_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.RecAccNumberTextBox_Transfer.ForeColor = System.Drawing.Color.White;
+            this.RecAccNumberTextBox_Transfer.Location = new System.Drawing.Point(160, 188);
+            this.RecAccNumberTextBox_Transfer.MaxLength = 8;
+            this.RecAccNumberTextBox_Transfer.Name = "RecAccNumberTextBox_Transfer";
+            this.RecAccNumberTextBox_Transfer.Size = new System.Drawing.Size(184, 27);
+            this.RecAccNumberTextBox_Transfer.TabIndex = 13;
             // 
             // recAccNumberLabel_Transfer
             // 
@@ -2033,14 +2033,14 @@ namespace BankManagementSystem
             this.accInfoLabel_Transfer.TabIndex = 7;
             this.accInfoLabel_Transfer.Text = "Account Information (Receiver)";
             // 
-            // enterAmountTextBox_Transfer
+            // EnterAmountTextBox_Transfer
             // 
-            this.enterAmountTextBox_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.enterAmountTextBox_Transfer.ForeColor = System.Drawing.Color.White;
-            this.enterAmountTextBox_Transfer.Location = new System.Drawing.Point(513, 229);
-            this.enterAmountTextBox_Transfer.Name = "enterAmountTextBox_Transfer";
-            this.enterAmountTextBox_Transfer.Size = new System.Drawing.Size(184, 27);
-            this.enterAmountTextBox_Transfer.TabIndex = 4;
+            this.EnterAmountTextBox_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.EnterAmountTextBox_Transfer.ForeColor = System.Drawing.Color.White;
+            this.EnterAmountTextBox_Transfer.Location = new System.Drawing.Point(513, 229);
+            this.EnterAmountTextBox_Transfer.Name = "EnterAmountTextBox_Transfer";
+            this.EnterAmountTextBox_Transfer.Size = new System.Drawing.Size(184, 27);
+            this.EnterAmountTextBox_Transfer.TabIndex = 4;
             // 
             // enterAmountLabel_Transfer
             // 
@@ -2051,28 +2051,28 @@ namespace BankManagementSystem
             this.enterAmountLabel_Transfer.TabIndex = 3;
             this.enterAmountLabel_Transfer.Text = "Enter Amount:";
             // 
-            // findButton_Transfer
+            // FindButton_Transfer
             // 
-            this.findButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.findButton_Transfer.FlatAppearance.BorderSize = 0;
-            this.findButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.findButton_Transfer.Location = new System.Drawing.Point(209, 85);
-            this.findButton_Transfer.Name = "findButton_Transfer";
-            this.findButton_Transfer.Size = new System.Drawing.Size(107, 32);
-            this.findButton_Transfer.TabIndex = 12;
-            this.findButton_Transfer.Text = "Find";
-            this.findButton_Transfer.UseVisualStyleBackColor = false;
-            this.findButton_Transfer.Click += new System.EventHandler(this.findButton_Transfer_Click);
+            this.FindButton_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.FindButton_Transfer.FlatAppearance.BorderSize = 0;
+            this.FindButton_Transfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FindButton_Transfer.Location = new System.Drawing.Point(209, 85);
+            this.FindButton_Transfer.Name = "FindButton_Transfer";
+            this.FindButton_Transfer.Size = new System.Drawing.Size(107, 32);
+            this.FindButton_Transfer.TabIndex = 12;
+            this.FindButton_Transfer.Text = "Find";
+            this.FindButton_Transfer.UseVisualStyleBackColor = false;
+            this.FindButton_Transfer.Click += new System.EventHandler(this.FindButton_Transfer_Click);
             // 
-            // accNumberSearchTextBox_Transfer
+            // AccNumberSearchTextBox_Transfer
             // 
-            this.accNumberSearchTextBox_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.accNumberSearchTextBox_Transfer.ForeColor = System.Drawing.Color.White;
-            this.accNumberSearchTextBox_Transfer.Location = new System.Drawing.Point(209, 44);
-            this.accNumberSearchTextBox_Transfer.MaxLength = 8;
-            this.accNumberSearchTextBox_Transfer.Name = "accNumberSearchTextBox_Transfer";
-            this.accNumberSearchTextBox_Transfer.Size = new System.Drawing.Size(184, 27);
-            this.accNumberSearchTextBox_Transfer.TabIndex = 11;
+            this.AccNumberSearchTextBox_Transfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.AccNumberSearchTextBox_Transfer.ForeColor = System.Drawing.Color.White;
+            this.AccNumberSearchTextBox_Transfer.Location = new System.Drawing.Point(209, 44);
+            this.AccNumberSearchTextBox_Transfer.MaxLength = 8;
+            this.AccNumberSearchTextBox_Transfer.Name = "AccNumberSearchTextBox_Transfer";
+            this.AccNumberSearchTextBox_Transfer.Size = new System.Drawing.Size(184, 27);
+            this.AccNumberSearchTextBox_Transfer.TabIndex = 11;
             // 
             // accNumberLabel_Transfer
             // 
@@ -3066,9 +3066,12 @@ namespace BankManagementSystem
             this.ClientSize = new System.Drawing.Size(981, 571);
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.TransferPanel);
+            this.Controls.Add(this.DepositPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DepositPanel);
+            this.Controls.Add(this.DetailsPanel);
+            this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);
@@ -3303,17 +3306,17 @@ namespace BankManagementSystem
         private System.Windows.Forms.Button Findbutton_Withdraw;
         private System.Windows.Forms.TextBox SearchAccounttextBox_Withdraw;
         private System.Windows.Forms.GroupBox transferGroupBox_Transfer;
-        private System.Windows.Forms.Button transferButton_Transfer;
-        private System.Windows.Forms.TextBox enterAmountTextBox_Transfer;
+        private System.Windows.Forms.Button TransferButton_Transfer;
+        private System.Windows.Forms.TextBox EnterAmountTextBox_Transfer;
         private System.Windows.Forms.Label enterAmountLabel_Transfer;
         private System.Windows.Forms.PictureBox AccountOwnerpictureBox_Transfer;
-        private System.Windows.Forms.Button findButton_Transfer;
-        private System.Windows.Forms.TextBox accNumberSearchTextBox_Transfer;
+        private System.Windows.Forms.Button FindButton_Transfer;
+        private System.Windows.Forms.TextBox AccNumberSearchTextBox_Transfer;
         private System.Windows.Forms.Label accNumberLabel_Transfer;
-        private System.Windows.Forms.TextBox recAccNumberTextBox_Transfer;
+        private System.Windows.Forms.TextBox RecAccNumberTextBox_Transfer;
         private System.Windows.Forms.Label recAccNumberLabel_Transfer;
         private System.Windows.Forms.Label accInfoLabel_Transfer;
-        private System.Windows.Forms.Button recAccFindButton_Transfer;
+        private System.Windows.Forms.Button RecAccFindButton_Transfer;
         private System.Windows.Forms.Label accTypeLabel_Transfer;
         private System.Windows.Forms.Label accOwnerLabel_Transfer;
         private Panel ManagerPanel;

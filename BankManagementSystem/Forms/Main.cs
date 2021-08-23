@@ -476,9 +476,10 @@ namespace BankManagementSystem
                 try
                 {
                     double amount = Convert.ToDouble(s);
-                    if (amount <= 0)
+                    Account withdraw = FetchData.GetAccount(Convert.ToInt32(SearchAccounttextBox_Withdraw.Text));
+                    if (amount <= 0 || amount > withdraw.Balance)
                     {
-                        WithdrawErrorLabel.Text = "Amount must be greater than 0.";
+                        WithdrawErrorLabel.Text = "Invalid Input!";
                         return;
                     }
                     int id = Convert.ToInt32(SearchAccounttextBox_Withdraw.Text);
@@ -1439,6 +1440,169 @@ namespace BankManagementSystem
                 }
             }
         }
+
+        #region Transfer
+
+        private void HidetransferGroupBox()
+        {
+            transferGroupBox_Transfer.Hide();
+            FindButton_Transfer.Text = "Find";
+            AccNumberSearchTextBox_Transfer.Enabled = true;
+            EnterAmountTextBox_Transfer.Text = "";
+            AccNumberSearchTextBox_Transfer.Text = "";
+            AccountOwnerpictureBox_Transfer.Image = null;
+            transferErrorLabel.Text = "";
+        }
+        private void ResetTransfer()
+        {
+            RecAccNumberTextBox_Transfer.Text = "";
+            accOwnerLabel_Transfer.Text = "Account Owner: ";
+            accTypeLabel_Transfer.Text = "Account Type";
+            RecAccFindButton_Transfer.Text = "Find";
+            RecAccNumberTextBox_Transfer.Enabled = true;
+            EnterAmountTextBox_Transfer.Text = "";
+            transferErrorLabel.Text = "";
+        }
+        private void FindButton_Transfer_Click(object sender, EventArgs e)
+        {
+            if (FindButton_Transfer.Text == "Find Again")
+            {
+                HidetransferGroupBox();
+                ResetTransfer();
+                return;
+            }
+            string s = AccNumberSearchTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    transferErrorLabel.Text = "";
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    if (c == null || account == null)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        AccNumberSearchTextBox_Transfer.Text = "";
+                        return;
+                    }
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        HidetransferGroupBox();
+                    }
+                    else
+                    {
+                        transferGroupBox_Transfer.Show();
+                    }
+                    AccountOwnerpictureBox_Transfer.ImageLocation = c.ImageDir;
+                    FindButton_Transfer.Text = "Find Again";
+                    AccNumberSearchTextBox_Transfer.Enabled = false;
+                    senderAccOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    senderBalanceLabel_Transfer.Text = "Balance: " + account.Balance;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void RecAccFindButton_Transfer_Click(object sender, EventArgs e)
+        {
+            if (RecAccFindButton_Transfer.Text == "Find Again")
+            {
+                ResetTransfer();
+            }
+            string s = RecAccNumberTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    int senderId = Convert.ToInt32(AccNumberSearchTextBox_Transfer.Text);
+                    if (c == null || account == null || account.AccountID == senderId)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        RecAccNumberTextBox_Transfer.Text = "";
+                        return;
+                    }
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TransferButton_Transfer.Enabled = false;
+                    }
+                    else
+                    {
+                        TransferButton_Transfer.Enabled = true;
+                    }
+                    transferGroupBox_Transfer.Show();
+                    RecAccFindButton_Transfer.Text = "Find Again";
+                    RecAccNumberTextBox_Transfer.Enabled = false;
+                    accOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    accTypeLabel_Transfer.Text = "Account Type: " + account.AccountType;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void TransferButton_Transfer_Click(object sender, EventArgs e)
+        {
+            string s = EnterAmountTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    double amount = Convert.ToDouble(s);
+                    Account send = FetchData.GetAccount(Convert.ToInt32(AccNumberSearchTextBox_Transfer.Text));
+                    if (amount <= 0 || amount.CompareTo(send.Balance)>0)
+                    {
+                        transferErrorLabel.Text = "Invalid Input.";
+                        return;
+                    }
+                    int recId = Convert.ToInt32(RecAccNumberTextBox_Transfer.Text);
+                    int senderId = Convert.ToInt32(AccNumberSearchTextBox_Transfer.Text);
+                    if ((ModifyData.UpdateBalance(recId, amount)) && (ModifyData.UpdateBalance(senderId, (-amount))))
+                    {
+                        if (!ModifyData.UpdateTransactionHistory(currentEmployee.ID, recId, "Transfer", Convert.ToInt32(amount)))
+                        {
+                            MessageBox.Show("Error updating transaction!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HidetransferGroupBox();
+                        accOwnerLabel_Transfer.Text = "Account Owner: ";
+                        accTypeLabel_Transfer.Text = "Account Type";
+                        AccountOwnerpictureBox_Transfer.Image = null;
+                        ResetTransfer();
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        #endregion
+
         private void RegisterButton_Manage_Click(object sender, EventArgs e)
         {
             if (CheckRegisterEmployeeEmptyFields())
@@ -1693,6 +1857,11 @@ namespace BankManagementSystem
                     NumberError_ED.Text = "Number can not contain any character!";
                 }
             }
+        }
+
+        private void transferButton_Transfer_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion

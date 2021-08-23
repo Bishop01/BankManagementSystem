@@ -41,16 +41,7 @@ namespace BankManagementSystem.Database
             }
             return false;
         }
-        public static bool UpdateBalance_Withdraw(int id, double amount)
-        {
-            string query = "update Accounts set balance=balance-" + amount + " where AccountID=" + id;
-            int result = DataHandler.ManipulateData(query);
-            if (result >= 1)
-            {
-                return true;
-            }
-            return false;
-        }
+
         public static bool UpdateTransactionHistory(int eid, int aid, string type, int amount)
         {
             string query = "insert into TransactionHistory(EmployeeID, AccountID, TransactionType, TransactionAmount)" +
