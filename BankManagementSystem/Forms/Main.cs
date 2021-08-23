@@ -1280,9 +1280,18 @@ namespace BankManagementSystem
                     if (c == null || account == null)
                     {
                         MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        accNumberSearchTextBox_Transfer.Text = "";
                         return;
                     }
-                    transferGroupBox_Transfer.Show();
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        HidetransferGroupBox();
+                    }
+                    else
+                    {
+                        transferGroupBox_Transfer.Show();
+                    }
                     AccountOwnerpictureBox_Transfer.ImageLocation = c.ImageDir;
                     findButton_Transfer.Text = "Find Again";
                     accNumberSearchTextBox_Transfer.Enabled = false;
@@ -1323,6 +1332,7 @@ namespace BankManagementSystem
                     }
                     if (account.AccountStatus.Equals("Closed"))
                     {
+                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         transferButton_Transfer.Enabled = false;
                     }
                     else
