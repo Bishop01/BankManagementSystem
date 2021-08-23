@@ -166,7 +166,7 @@ namespace BankManagementSystem.Database
                 return null;
             }
         }
-        public static Client GetClientByNID(int nid)
+        public static Client GetClientByNID(long nid)
         {
             Client client = new Client();
             string query = "select * from Clients where NID='"+nid+"'";

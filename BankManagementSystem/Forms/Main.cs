@@ -122,9 +122,17 @@ namespace BankManagementSystem
                 c.Firstname = FirstnameTextbox.Text;
                 c.Lastname = LastnameTextbox.Text;
                 c.Nationality = NationalityTextbox.Text;
-                c.NID = Convert.ToInt32(NIDTextbox.Text);
+                try
+                {
+                    c.NID = Convert.ToInt64(NIDTextbox.Text);
+                    c.PhoneNumber = Convert.ToInt64(PhoneNumberTextbox.Text);
+                }
+                catch (Exception)
+                {
+                    ValidateErrorLabel.Text = "Invalid NID/Phone Number";
+                    return;
+                }
                 c.Address = AddressTextbox.Text;
-                c.PhoneNumber = Convert.ToInt32(PhoneNumberTextbox.Text);
                 c.Email = EmailTextbox.Text;
                 c.DOB = DOBDateTimePicker.Text;
                 c.Occupation = OccupationTextbox.Text;
