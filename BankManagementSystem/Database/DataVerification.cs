@@ -39,7 +39,7 @@ namespace BankManagementSystem.Database
         {
             {
                 //CloseDataReader();
-                string query = "select Password from Employees where ID = " + Id;
+                string query = "select Password from Employees where ID=" + Id;
                 data = DataHandler.GetRecord(query);
                 try
                 {
@@ -66,7 +66,7 @@ namespace BankManagementSystem.Database
                 }
             }
         }
-        public static bool ValidateReset(int id, string nid, string pass)
+        public static bool ValidateReset(int id, long nid, string pass)
         {
             string query = "select * from employees where id=" + id;
             data = DataHandler.GetRecord(query);
@@ -78,7 +78,7 @@ namespace BankManagementSystem.Database
             else
             {
                 data.Read();
-                string Nid = (string)data["NID"];
+                long Nid = Convert.ToInt64(data["NID"]);
                 string Pass = (string)data["Password"];
 
                 if (nid.Equals(Nid) && pass.Equals(Pass))

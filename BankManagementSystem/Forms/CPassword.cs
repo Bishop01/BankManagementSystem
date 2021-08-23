@@ -21,16 +21,18 @@ namespace BankManagementSystem
         private void ResetButton_Click(object sender, EventArgs e)
         {
             int eid;
+            long nid;
             try
             {
                 eid = Convert.ToInt32(EmployeeIDTextbox.Text);
+                nid = Convert.ToInt64(NIDTextbox.Text);
             }
-            catch (FormatException)
+            catch (Exception)
             {
                 ErrorLabel.Text = "Error! No such employee exists!";
                 return;
             }
-            string nid = NIDTextbox.Text;
+            
             string currPass = CurrPasswordTextbox.Text;
             string newPass = NewPasswordTextbox.Text;
             

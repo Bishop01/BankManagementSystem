@@ -373,7 +373,7 @@ namespace BankManagementSystem
             // 
             this.ManagerLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ManagerLogo.Image = ((System.Drawing.Image)(resources.GetObject("ManagerLogo.Image")));
-            this.ManagerLogo.Location = new System.Drawing.Point(9, 546);
+            this.ManagerLogo.Location = new System.Drawing.Point(9, 574);
             this.ManagerLogo.Name = "ManagerLogo";
             this.ManagerLogo.Size = new System.Drawing.Size(23, 23);
             this.ManagerLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -400,7 +400,7 @@ namespace BankManagementSystem
             // 
             this.AccountLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AccountLogo.Image = ((System.Drawing.Image)(resources.GetObject("AccountLogo.Image")));
-            this.AccountLogo.Location = new System.Drawing.Point(9, 329);
+            this.AccountLogo.Location = new System.Drawing.Point(9, 357);
             this.AccountLogo.Name = "AccountLogo";
             this.AccountLogo.Size = new System.Drawing.Size(23, 23);
             this.AccountLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3064,11 +3064,11 @@ namespace BankManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 571);
+            this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.TransferPanel);
             this.Controls.Add(this.DashboardPanel);
             this.Controls.Add(this.WithdrawPanel);
             this.Controls.Add(this.DepositPanel);
-            this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.ManagerPanel);
             this.Controls.Add(this.RecoverAccountPanel);
             this.Controls.Add(this.CloseAccountPanel);

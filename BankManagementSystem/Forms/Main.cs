@@ -19,9 +19,6 @@ namespace BankManagementSystem
         private Account searchedAccount;
         private Manager manager;
 
-        //TODO: Dummy Data for Employees
-        //TODO: Organize the Methods
-
         public Main(int id, string m=null)
         {
             InitializeComponent();
@@ -51,8 +48,6 @@ namespace BankManagementSystem
                 NameLabel.Text = manager.Name;
             }
         }
-
-        #region Register
         private void UpdateDashboard()
         {
             TotalTransacCounterLabel.Text = FetchData.GetTotalTransations().ToString();
@@ -95,6 +90,9 @@ namespace BankManagementSystem
                 AccountPanel.Show();
             }
         }
+
+        #region Register
+        
         private void CreateButton_Click(object sender, EventArgs e)
         {
             if (CheckEmptyCreateAccountFields())
@@ -275,12 +273,56 @@ namespace BankManagementSystem
             }
             return false;
         }
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            ResetResultGroupBox();
+            string s = RecoverAccountTextBox.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int nid = Convert.ToInt32(s);
+                    List<Account> accounts = FetchData.GetAccountsByNID(nid);
+                    Client client = FetchData.GetClientByNID(nid);
+                    if (accounts == null)
+                    {
+                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else if (accounts.Count > 0)
+                    {
+                        AccountOwnerPictureBox.ImageLocation = client.ImageDir;
+                        int x = 0;
+                        foreach (Account account in accounts)
+                        {
+                            Label l1 = new Label();
+                            l1.AutoSize = true;
+                            l1.Text = "Account ID: " + account.AccountID;
+                            l1.Location = new Point(104, 69 + x * 25);
+                            Label l2 = new Label();
+                            l2.AutoSize = true;
+                            l2.Text = "Account Type: " + account.AccountType;
+                            l2.Location = new Point(380, 69 + x * 25);
+                            AccountsResultGroupBox.Controls.Add(l1);
+                            AccountsResultGroupBox.Controls.Add(l2);
+                            x++;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Insert Valid ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         #endregion Register
 
         #region Account
-
-        #region Deposit
 
         private void FindButton_Deposit_Click(object sender, EventArgs e)
         {
@@ -374,11 +416,6 @@ namespace BankManagementSystem
             AccountOwnerPictureBox_Deposit.Image = null;
             DepositErrorLabel.Text = "";
         }
-
-        #endregion
-
-        #region Withdraw
-
         private void Findbutton_Withdraw_Click(object sender, EventArgs e)
         {   
             if (Findbutton_Withdraw.Text == "Find Again")
@@ -472,6 +509,222 @@ namespace BankManagementSystem
             SearchAccounttextBox_Withdraw.Text = "";
             AccountOwnerpictureBox_Withdraw.Image = null;
             WithdrawErrorLabel.Text = "";
+        }
+        private void HidetransferGroupBox()
+        {
+            transferGroupBox_Transfer.Hide();
+            findButton_Transfer.Text = "Find";
+            accNumberSearchTextBox_Transfer.Enabled = true;
+            enterAmountTextBox_Transfer.Text = "";
+            accNumberSearchTextBox_Transfer.Text = "";
+            AccountOwnerpictureBox_Transfer.Image = null;
+            transferErrorLabel.Text = "";
+        }
+        private void findButton_Transfer_Click(object sender, EventArgs e)
+        {
+            if (findButton_Transfer.Text == "Find Again")
+            {
+                HidetransferGroupBox();
+                ResetTransfer();
+                return;
+            }
+            string s = accNumberSearchTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    transferErrorLabel.Text = "";
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    if (c == null || account == null)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        accNumberSearchTextBox_Transfer.Text = "";
+                        return;
+                    }
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        HidetransferGroupBox();
+                    }
+                    else
+                    {
+                        transferGroupBox_Transfer.Show();
+                    }
+                    AccountOwnerpictureBox_Transfer.ImageLocation = c.ImageDir;
+                    findButton_Transfer.Text = "Find Again";
+                    accNumberSearchTextBox_Transfer.Enabled = false;
+                    senderAccOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    senderBalanceLabel_Transfer.Text = "Balance: " + account.Balance;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void recAccFindButton_Transfer_Click(object sender, EventArgs e)
+        {
+            if (recAccFindButton_Transfer.Text == "Find Again")
+            {
+                ResetTransfer();
+            }
+            string s = recAccNumberTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client c = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+                    int senderId = Convert.ToInt32(accNumberSearchTextBox_Transfer.Text);
+                    if (c == null || account == null || account.AccountID == senderId)
+                    {
+                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        recAccNumberTextBox_Transfer.Text = "";
+                        return;
+                    }
+                    if (account.AccountStatus.Equals("Closed"))
+                    {
+                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transferButton_Transfer.Enabled = false;
+                    }
+                    else
+                    {
+                        transferButton_Transfer.Enabled = true;
+                    }
+                    transferGroupBox_Transfer.Show();
+                    recAccFindButton_Transfer.Text = "Find Again";
+                    recAccNumberTextBox_Transfer.Enabled = false;
+                    accOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
+                    accTypeLabel_Transfer.Text = "Account Type: " + account.AccountType;
+                }
+                catch
+                {
+                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+        }
+        private void transferButton_Transfer_Click(object sender, EventArgs e)
+        {
+            string s = enterAmountTextBox_Transfer.Text;
+            if (s == "")
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    double amount = Convert.ToDouble(s);
+                    if (amount <= 0)
+                    {
+                        transferErrorLabel.Text = "Amount must be greater than 0.";
+                        return;
+                    }
+                    int recId = Convert.ToInt32(recAccNumberTextBox_Transfer.Text);
+                    int senderId = Convert.ToInt32(accNumberSearchTextBox_Transfer.Text);
+                    if ((ModifyData.UpdateBalance(recId, amount)) && (ModifyData.UpdateBalance(senderId, (-amount))))
+                    {
+                        if (!ModifyData.UpdateTransactionHistory(currentEmployee.ID, recId, "Transfer", Convert.ToInt32(amount)))
+                        {
+                            MessageBox.Show("Error updating transaction!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HidetransferGroupBox();
+                        accOwnerLabel_Transfer.Text = "Account Owner: ";
+                        accTypeLabel_Transfer.Text = "Account Type";
+                        AccountOwnerpictureBox_Transfer.Image = null;
+                        ResetTransfer();
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void ShowAccountDetails(Client client, Account account)
+        {
+            AccountDeatilsAccountIDLabel.Text = "AccountID: " + account.AccountID.ToString();
+            AccountDeatilsFirstNameLabel.Text = "Firstname: " + client.Firstname;
+            AccountDeatilsLastNameLabel.Text = "Lastname: " + client.Lastname;
+            AccountDeatilsGenderLabel.Text = "Gender: " + client.Gender;
+            AccountDeatilsNationalityLabel.Text = "Nationality: " + client.Nationality;
+            AccountDeatilsNIDLabel.Text = "NID: " + client.NID;
+            AccountDeatilsOccupationLabel.Text = "Occupation: " + client.Occupation;
+            AccountDeatilsEmailLabel.Text = "Email: " + client.Email;
+            AccountDeatilsDOBLabel.Text = "Date of Birth: " + client.DOB;
+            AccountDetailsPhoneNumberLabel.Text = "Phone Numebr: " + client.PhoneNumber;
+            AccountDeatilsAddressLabel.Text = "Address: " + client.Address;
+            AccountDeatilsAccountTypeLabel.Text = "Account Type: " + account.AccountType;
+            AccountDeatilsAccountStatusLabel.Text = "Account Status: " + account.AccountStatus;
+            ClientPictureBox.ImageLocation = client.ImageDir;
+
+            AccountDetailsGroupBox.Show();
+        }
+        private void SearchAccountTextbox_Details_TextChanged(object sender, EventArgs e)
+        {
+            string s = SearchAccountTextbox_Details.Text;
+            if (s == "")
+            {
+                ResetGroupBoxControls(AccountDetailsGroupBox_Details);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    int id = Convert.ToInt32(s);
+                    Client client = FetchData.GetClientByAccountID(id);
+                    Account account = FetchData.GetAccount(id);
+
+                    if (client == null || account == null)
+                    {
+                        //AccountDetailsGroupBox_Details.Controls.Clear();
+                        ResetGroupBoxControls(AccountDetailsGroupBox_Details);
+                        return;
+                    }
+                    else
+                    {
+                        AccountIDLabel_Details.Text = "AccountID: " + account.AccountID.ToString();
+                        FirstNameLabel_Details.Text = "Firstname: " + client.Firstname;
+                        LastNameLabel_Details.Text = "Lastname: " + client.Lastname;
+                        GenderLabel_Details.Text = "Gender: " + client.Gender;
+                        NationalityLabel_Details.Text = "Nationality: " + client.Nationality;
+                        NIDLabel_Details.Text = "NID: " + client.NID;
+                        OccupationLabel_Details.Text = "Occupation: " + client.Occupation;
+                        EmailLabel_Details.Text = "Email: " + client.Email;
+                        DOBLabel_Details.Text = "Date of Birth: " + client.DOB;
+                        PhoneNumberLabel_Details.Text = "Phone Numebr: " + client.PhoneNumber;
+                        AddressLabel_Details.Text = "Address: " + client.Address;
+                        AccountTypeLabel_Details.Text = "Account Type: " + account.AccountType;
+                        AccountStatusLabel_Details.Text = "Account Status: " + account.AccountStatus;
+                        AccountOwnerPictureBox_Details.ImageLocation = client.ImageDir;
+                        BalanceLabel_Details.Text = "Balance: " + account.Balance;
+                        DueLabelDetails.Text = "Due: " + account.Due;
+                        CreateDateLabel_Details.Text = "Create Date: " + account.CreateDate;
+                    }
+                }
+                catch (Exception)
+                {
+                    //AccountDetailsGroupBox_Details.Controls.Clear();
+                    ResetGroupBoxControls(AccountDetailsGroupBox_Details);
+                    return;
+                }
+            }
         }
 
         #endregion
@@ -592,10 +845,86 @@ namespace BankManagementSystem
             FemaleRadioButton.Checked = false;
             ImageRegister.Image = null;
         }
+        private void ResetPanelControls(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    control.Text = "";
+                }
+                else if (control is Label)
+                {
+                    if (control.Name.StartsWith("label"))
+                        continue;
+                    else
+                        control.Text = "";
+                }
+                else if (control is RadioButton)
+                {
+                    ((RadioButton)control).Checked = false;
+                }
+                else if (control is DateTimePicker)
+                {
+                    ((DateTimePicker)control).ResetText();
+                }
+                else if (control is PictureBox)
+                {
+                    ((PictureBox)control).ImageLocation = null;
+                }
+            }
+        }
+        private void ResetGroupBoxControls(GroupBox groupBox)
+        {
+            foreach (Control control in groupBox.Controls)
+            {
+                if (control is TextBox)
+                {
+                    control.Text = "";
+                }
+                else if (control is Label)
+                {
+                    if (groupBox.Name.Equals("RegisterEmployeeGroupBox"))
+                        continue;
+                    else if (control.Name.StartsWith("label"))
+                        continue;
+                    else
+                        control.Text = "";
+                }
+                else if (control is RadioButton)
+                {
+                    ((RadioButton)control).Checked = false;
+                }
+                else if (control is DateTimePicker)
+                {
+                    ((DateTimePicker)control).ResetText();
+                }
+                else if (control is PictureBox)
+                {
+                    ((PictureBox)control).ImageLocation = null;
+                }
+            }
+        }
+        private void ResetTransfer()
+        {
+            recAccNumberTextBox_Transfer.Text = "";
+            accOwnerLabel_Transfer.Text = "Account Owner: ";
+            accTypeLabel_Transfer.Text = "Account Type";
+            recAccFindButton_Transfer.Text = "Find";
+            recAccNumberTextBox_Transfer.Enabled = true;
+            enterAmountTextBox_Transfer.Text = "";
+            transferErrorLabel.Text = "";
+        }
+        private void ResetResultGroupBox()
+        {
+            foreach (Control control in AccountsResultGroupBox.Controls)
+            {
+                control.Text = null;
+            }
+            AccountOwnerPictureBox.Image = null;
+        }
 
         #endregion Reset
-
-        #endregion Account
 
         private void SubmenuButtonsHandler(object sender, EventArgs e)
         {
@@ -782,131 +1111,6 @@ namespace BankManagementSystem
         {
             AccountDetailsGroupBox.Hide();
         }
-        private void ShowAccountDetails(Client client, Account account)
-        {
-            AccountDeatilsAccountIDLabel.Text = "AccountID: " + account.AccountID.ToString();
-            AccountDeatilsFirstNameLabel.Text = "Firstname: " + client.Firstname;
-            AccountDeatilsLastNameLabel.Text = "Lastname: " + client.Lastname;
-            AccountDeatilsGenderLabel.Text = "Gender: " + client.Gender;
-            AccountDeatilsNationalityLabel.Text = "Nationality: " + client.Nationality;
-            AccountDeatilsNIDLabel.Text = "NID: " + client.NID;
-            AccountDeatilsOccupationLabel.Text = "Occupation: " + client.Occupation;
-            AccountDeatilsEmailLabel.Text = "Email: " + client.Email;
-            AccountDeatilsDOBLabel.Text = "Date of Birth: " + client.DOB;
-            AccountDetailsPhoneNumberLabel.Text = "Phone Numebr: " + client.PhoneNumber;
-            AccountDeatilsAddressLabel.Text = "Address: " + client.Address;
-            AccountDeatilsAccountTypeLabel.Text = "Account Type: " + account.AccountType;
-            AccountDeatilsAccountStatusLabel.Text = "Account Status: " + account.AccountStatus;
-            ClientPictureBox.ImageLocation = client.ImageDir;
-
-            AccountDetailsGroupBox.Show();
-        }
-        private void FindButton_Click(object sender, EventArgs e)
-        {
-            ResetResultGroupBox();
-            string s = RecoverAccountTextBox.Text;
-            if(s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    int nid = Convert.ToInt32(s);
-                    List<Account> accounts = FetchData.GetAccountsByNID(nid);
-                    Client client = FetchData.GetClientByNID(nid);
-                    if(accounts == null)
-                    {
-                        MessageBox.Show("No client found!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else if(accounts.Count > 0)
-                    {
-                        AccountOwnerPictureBox.ImageLocation = client.ImageDir;
-                        int x = 0;
-                        foreach(Account account in accounts)
-                        {
-                            Label l1 = new Label();
-                            l1.AutoSize = true;
-                            l1.Text = "Account ID: " + account.AccountID;
-                            l1.Location = new Point(104, 69 + x * 25);
-                            Label l2 = new Label();
-                            l2.AutoSize = true;
-                            l2.Text = "Account Type: " + account.AccountType;
-                            l2.Location = new Point(380, 69 + x * 25);
-                            AccountsResultGroupBox.Controls.Add(l1);
-                            AccountsResultGroupBox.Controls.Add(l2);
-                            x++;
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Insert Valid ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-        private void ResetResultGroupBox()
-        {
-            foreach(Control control in AccountsResultGroupBox.Controls)
-            {
-                control.Text = null;
-            }
-            AccountOwnerPictureBox.Image = null;
-        }
-        
-        private void SearchAccountTextbox_Details_TextChanged(object sender, EventArgs e)
-        {
-            string s = SearchAccountTextbox_Details.Text;
-            if (s == "")
-            {
-                ResetGroupBoxControls(AccountDetailsGroupBox_Details);
-                return;
-            }
-            else
-            {
-                try
-                {
-                    int id = Convert.ToInt32(s);
-                    Client client = FetchData.GetClientByAccountID(id);
-                    Account account = FetchData.GetAccount(id);
-                    
-                    if(client == null || account == null)
-                    {
-                        //AccountDetailsGroupBox_Details.Controls.Clear();
-                        ResetGroupBoxControls(AccountDetailsGroupBox_Details);
-                        return;
-                    }
-                    else
-                    {
-                        AccountIDLabel_Details.Text = "AccountID: " + account.AccountID.ToString();
-                        FirstNameLabel_Details.Text = "Firstname: " + client.Firstname;
-                        LastNameLabel_Details.Text = "Lastname: " + client.Lastname;
-                        GenderLabel_Details.Text = "Gender: " + client.Gender;
-                        NationalityLabel_Details.Text = "Nationality: " + client.Nationality;
-                        NIDLabel_Details.Text = "NID: " + client.NID;
-                        OccupationLabel_Details.Text = "Occupation: " + client.Occupation;
-                        EmailLabel_Details.Text = "Email: " + client.Email;
-                        DOBLabel_Details.Text = "Date of Birth: " + client.DOB;
-                        PhoneNumberLabel_Details.Text = "Phone Numebr: " + client.PhoneNumber;
-                        AddressLabel_Details.Text = "Address: " + client.Address;
-                        AccountTypeLabel_Details.Text = "Account Type: " + account.AccountType;
-                        AccountStatusLabel_Details.Text = "Account Status: " + account.AccountStatus;
-                        AccountOwnerPictureBox_Details.ImageLocation = client.ImageDir;
-                        BalanceLabel_Details.Text = "Balance: " + account.Balance;
-                        DueLabelDetails.Text = "Due: " + account.Due;
-                        CreateDateLabel_Details.Text = "Create Date: " + account.CreateDate;
-                    }
-                }
-                catch(Exception)
-                {
-                    //AccountDetailsGroupBox_Details.Controls.Clear();
-                    ResetGroupBoxControls(AccountDetailsGroupBox_Details);
-                    return;
-                }
-            }
-        }
         private bool VerifyEmail(string email)
         {
             //int indx = email.IndexOf('@');
@@ -961,6 +1165,8 @@ namespace BankManagementSystem
                 return false;
             }
         }
+
+        #region Manager
 
         private void ManagerButton_Click(object sender, EventArgs e)
         {
@@ -1233,168 +1439,6 @@ namespace BankManagementSystem
                 }
             }
         }
-
-        #region Transfer
-
-        private void HidetransferGroupBox()
-        {
-            transferGroupBox_Transfer.Hide();
-            findButton_Transfer.Text = "Find";
-            accNumberSearchTextBox_Transfer.Enabled = true;
-            enterAmountTextBox_Transfer.Text = "";
-            accNumberSearchTextBox_Transfer.Text = "";
-            AccountOwnerpictureBox_Transfer.Image = null;
-            transferErrorLabel.Text = "";
-        }
-        private void ResetTransfer()
-        {
-            recAccNumberTextBox_Transfer.Text = "";
-            accOwnerLabel_Transfer.Text = "Account Owner: ";
-            accTypeLabel_Transfer.Text = "Account Type";
-            recAccFindButton_Transfer.Text = "Find";
-            recAccNumberTextBox_Transfer.Enabled = true;
-            enterAmountTextBox_Transfer.Text = "";
-            transferErrorLabel.Text = "";
-        }
-        private void findButton_Transfer_Click(object sender, EventArgs e)
-        {
-            if (findButton_Transfer.Text == "Find Again")
-            {
-                HidetransferGroupBox();
-                ResetTransfer();
-                return;
-            }
-            string s = accNumberSearchTextBox_Transfer.Text;
-            if (s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    transferErrorLabel.Text = "";
-                    int id = Convert.ToInt32(s);
-                    Client c = FetchData.GetClientByAccountID(id);
-                    Account account = FetchData.GetAccount(id);
-                    if (c == null || account == null)
-                    {
-                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        accNumberSearchTextBox_Transfer.Text = "";
-                        return;
-                    }
-                    if (account.AccountStatus.Equals("Closed"))
-                    {
-                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        HidetransferGroupBox();
-                    }
-                    else
-                    {
-                        transferGroupBox_Transfer.Show();
-                    }
-                    AccountOwnerpictureBox_Transfer.ImageLocation = c.ImageDir;
-                    findButton_Transfer.Text = "Find Again";
-                    accNumberSearchTextBox_Transfer.Enabled = false;
-                    senderAccOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
-                    senderBalanceLabel_Transfer.Text = "Balance: " + account.Balance;
-                }
-                catch
-                {
-                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-        }
-        private void recAccFindButton_Transfer_Click(object sender, EventArgs e)
-        {
-            if (recAccFindButton_Transfer.Text == "Find Again")
-            {
-                ResetTransfer();
-            }
-            string s = recAccNumberTextBox_Transfer.Text;
-            if (s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    int id = Convert.ToInt32(s);
-                    Client c = FetchData.GetClientByAccountID(id);
-                    Account account = FetchData.GetAccount(id);
-                    int senderId = Convert.ToInt32(accNumberSearchTextBox_Transfer.Text);
-                    if (c == null || account == null || account.AccountID == senderId)
-                    {
-                        MessageBox.Show("Invalid Account ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        recAccNumberTextBox_Transfer.Text = "";
-                        return;
-                    }
-                    if (account.AccountStatus.Equals("Closed"))
-                    {
-                        MessageBox.Show("Account Closed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        transferButton_Transfer.Enabled = false;
-                    }
-                    else
-                    {
-                        transferButton_Transfer.Enabled = true;
-                    }
-                    transferGroupBox_Transfer.Show();
-                    recAccFindButton_Transfer.Text = "Find Again";
-                    recAccNumberTextBox_Transfer.Enabled = false;
-                    accOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
-                    accTypeLabel_Transfer.Text = "Account Type: " + account.AccountType;
-                }
-                catch
-                {
-                    MessageBox.Show("Enter Valid Account Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-        }
-        private void transferButton_Transfer_Click(object sender, EventArgs e)
-        {
-            string s = enterAmountTextBox_Transfer.Text;
-            if (s == "")
-            {
-                return;
-            }
-            else
-            {
-                try
-                {
-                    double amount = Convert.ToDouble(s);
-                    if (amount <= 0)
-                    {
-                        transferErrorLabel.Text = "Amount must be greater than 0.";
-                        return;
-                    }
-                    int recId = Convert.ToInt32(recAccNumberTextBox_Transfer.Text);
-                    int senderId = Convert.ToInt32(accNumberSearchTextBox_Transfer.Text);
-                    if ((ModifyData.UpdateBalance(recId, amount)) && (ModifyData.UpdateBalance(senderId, (-amount))))
-                    {
-                        if (!ModifyData.UpdateTransactionHistory(currentEmployee.ID, recId, "Transfer", Convert.ToInt32(amount)))
-                        {
-                            MessageBox.Show("Error updating transaction!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        MessageBox.Show("Amount successfully added!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        HidetransferGroupBox();
-                        accOwnerLabel_Transfer.Text = "Account Owner: ";
-                        accTypeLabel_Transfer.Text = "Account Type";
-                        AccountOwnerpictureBox_Transfer.Image = null;
-                        ResetTransfer();
-                        return;
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Amount must be numeric!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        #endregion
-
         private void RegisterButton_Manage_Click(object sender, EventArgs e)
         {
             if (CheckRegisterEmployeeEmptyFields())
@@ -1465,25 +1509,6 @@ namespace BankManagementSystem
 
             return true;
         }
-        //TODO
-        /*private void ClearManagerPanelManageControls()
-        {
-            foreach(Control control in RegisterEmployeeGroupBox.Controls)
-            {
-                if(control is TextBox)
-                {
-                    control.Text = "";
-                }
-                else if(control is RadioButton)
-                {
-                    ((RadioButton)control).Checked = false;
-                }
-                else
-                {
-                    DateTimePicker_Employee.ResetText();
-                }
-            }
-        }*/
         private void FindButton_RemoveEmployee_Click(object sender, EventArgs e)
         {
             string s = FindEmployeeTextbox_RemoveEmployee.Text;
@@ -1554,67 +1579,6 @@ namespace BankManagementSystem
             }
             
         }
-        private void ResetPanelControls(Panel panel)
-        {
-            foreach(Control control in panel.Controls)
-            {
-                if (control is TextBox)
-                {
-                    control.Text = "";
-                }
-                else if (control is Label)
-                {
-                    if (control.Name.StartsWith("label"))
-                        continue;
-                    else
-                        control.Text = "";
-                }
-                else if (control is RadioButton)
-                {
-                    ((RadioButton)control).Checked = false;
-                }
-                else if (control is DateTimePicker)
-                {
-                    ((DateTimePicker)control).ResetText();
-                }
-                else if(control is PictureBox)
-                {
-                    ((PictureBox)control).ImageLocation = null;
-                }
-            }
-        }
-        private void ResetGroupBoxControls(GroupBox groupBox)
-        {
-            foreach (Control control in groupBox.Controls)
-            {
-                if (control is TextBox)
-                {
-                    control.Text = "";
-                }
-                else if (control is Label)
-                {
-                    if(groupBox.Name.Equals("RegisterEmployeeGroupBox"))
-                        continue;
-                    else if (control.Name.StartsWith("label"))
-                        continue;
-                    else
-                        control.Text = "";
-                }
-                else if (control is RadioButton)
-                {
-                    ((RadioButton)control).Checked = false;
-                }
-                else if(control is DateTimePicker)
-                {
-                    ((DateTimePicker)control).ResetText();
-                }
-                else if (control is PictureBox)
-                {
-                    ((PictureBox)control).ImageLocation = null;
-                }
-            }
-        }
-
         private void FindButton_ED_Click(object sender, EventArgs e)
         {
             if (FindButton_ED.Text == "Find Again")
@@ -1730,5 +1694,7 @@ namespace BankManagementSystem
                 }
             }
         }
+
+        #endregion
     }
 }

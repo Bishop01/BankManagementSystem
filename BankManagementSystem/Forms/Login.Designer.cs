@@ -95,10 +95,12 @@ namespace BankManagementSystem
             // ManagerCheckBox
             // 
             this.ManagerCheckBox.AutoSize = true;
+            this.ManagerCheckBox.FlatAppearance.BorderSize = 0;
+            this.ManagerCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ManagerCheckBox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManagerCheckBox.Location = new System.Drawing.Point(398, 73);
+            this.ManagerCheckBox.Location = new System.Drawing.Point(416, 30);
             this.ManagerCheckBox.Name = "ManagerCheckBox";
-            this.ManagerCheckBox.Size = new System.Drawing.Size(95, 24);
+            this.ManagerCheckBox.Size = new System.Drawing.Size(92, 24);
             this.ManagerCheckBox.TabIndex = 11;
             this.ManagerCheckBox.Text = "Manager";
             this.ManagerCheckBox.UseVisualStyleBackColor = true;
