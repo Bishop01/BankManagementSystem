@@ -479,9 +479,15 @@ namespace BankManagementSystem
                     Account withdraw = FetchData.GetAccount(Convert.ToInt32(SearchAccounttextBox_Withdraw.Text));
                     if (amount <= 0 || amount > withdraw.Balance)
                     {
-                        WithdrawErrorLabel.Text = "Invalid Input!";
+                        WithdrawErrorLabel.Text = "Amount must be greater than 0";
                         return;
                     }
+                    else if (amount > withdraw.Balance)
+                    {
+                        WithdrawErrorLabel.Text = "Not Enough Balance available ";
+                        return;
+                    }
+
                     int id = Convert.ToInt32(SearchAccounttextBox_Withdraw.Text);
                     if (ModifyData.UpdateBalance(id, (-amount)))
                     {
