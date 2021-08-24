@@ -119,20 +119,6 @@ namespace BankManagementSystem.Database
                         account.AccountStatus = data["AccountStatus"].ToString();
                         account.AccountType = data["AccountType"].ToString();
                         accounts.Add(account);
-                        //client.Firstname = data["FirstName"].ToString();
-                        //client.Lastname = data["LastName"].ToString();
-                        //client.Email = data["Email"].ToString();
-                        //client.Gender = data["Gender"].ToString();
-                        //client.DOB = data["DateOfBirth"].ToString();
-                        //client.NID = data["NID"].ToString();
-                        //client.PhoneNumber = data["PhoneNumber"].ToString();
-                        //client.Nationality = data["Nationality"].ToString();
-                        //client.Occupation = data["Occupation"].ToString();
-                        //client.AccountStatus = data["AccountStatus"].ToString();
-                        //client.AccountType = data["AccountType"].ToString();
-                        //client.ImageDir = data["ImageDirectory"].ToString();
-                        //client.Address = data["Address"].ToString();
-                        //clients.Add(client);
                     }
 
                     return accounts;

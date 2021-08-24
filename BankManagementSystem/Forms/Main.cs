@@ -477,7 +477,7 @@ namespace BankManagementSystem
                 {
                     double amount = Convert.ToDouble(s);
                     Account withdraw = FetchData.GetAccount(Convert.ToInt32(SearchAccounttextBox_Withdraw.Text));
-                    if (amount <= 0 || amount > withdraw.Balance)
+                    if (amount <= 0)
                     {
                         WithdrawErrorLabel.Text = "Amount must be greater than 0";
                         return;
@@ -849,6 +849,10 @@ namespace BankManagementSystem
             {
                 if (control is TextBox)
                 {
+                    if (control.Equals(InitialDepositTextbox))
+                    {
+                        continue;
+                    }
                     ((TextBox)control).Text = "";
                 }
             }
@@ -1473,8 +1477,15 @@ namespace BankManagementSystem
                     employee.Name = NameTextBox_Employee.Text;
                     employee.Address = AddressTextBox_Employee.Text;
                     employee.Password = PasswordTextBox_Employee.Text;
-                    employee.NID = Convert.ToInt32(NIDTextBox_Employee.Text);
-                    employee.PhoneNumber = Convert.ToInt64(PhoneNumberTextBox_Employee.Text);
+                    try
+                    {
+                        employee.NID = Convert.ToInt32(NIDTextBox_Employee.Text);
+                        employee.PhoneNumber = Convert.ToInt64(PhoneNumberTextBox_Employee.Text);
+                    }
+                    catch (Exception)
+                    {
+                        ErrorLabel_Employee.Text = "Invalid NID/Phone Number!";
+                    }
                     employee.Email = EmailTextBox_Employee.Text;
                     if (MaleRadioButton_Employee.Checked)
                         employee.Gender = MaleRadioButton_Employee.Text;
