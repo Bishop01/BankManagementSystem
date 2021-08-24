@@ -477,7 +477,7 @@ namespace BankManagementSystem
                 {
                     double amount = Convert.ToDouble(s);
                     Account withdraw = FetchData.GetAccount(Convert.ToInt32(SearchAccounttextBox_Withdraw.Text));
-                    if (amount <= 0 || amount > withdraw.Balance)
+                    if (amount <= 0)
                     {
                         WithdrawErrorLabel.Text = "Amount must be greater than 0";
                         return;
