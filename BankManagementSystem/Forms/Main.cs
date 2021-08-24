@@ -1485,6 +1485,7 @@ namespace BankManagementSystem
                     catch (Exception)
                     {
                         ErrorLabel_Employee.Text = "Invalid NID/Phone Number!";
+                        return;
                     }
                     employee.Email = EmailTextBox_Employee.Text;
                     if (MaleRadioButton_Employee.Checked)
