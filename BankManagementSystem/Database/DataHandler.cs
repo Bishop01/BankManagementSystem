@@ -4,10 +4,8 @@ using System.Configuration;
 
 namespace BankManagementSystem.Database
 {
-    public delegate void CloseSql();
     static class DataHandler
     {
-        public static CloseSql closeSql = DataHandler.CloseConnection;
         private static SqlConnection sqlConnection;
         private static SqlCommand sqlCommand;
         private static SqlDataReader data;
