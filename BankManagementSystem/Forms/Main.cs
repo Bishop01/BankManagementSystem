@@ -513,13 +513,13 @@ namespace BankManagementSystem
         }
         private void HidetransferGroupBox()
         {
-            transferGroupBox_Transfer.Hide();
+            TransferGroupBox_Transfer.Hide();
             FindButton_Transfer.Text = "Find";
             AccNumberSearchTextBox_Transfer.Enabled = true;
             EnterAmountTextBox_Transfer.Text = "";
             AccNumberSearchTextBox_Transfer.Text = "";
             AccountOwnerpictureBox_Transfer.Image = null;
-            transferErrorLabel.Text = "";
+            TransferErrorLabel.Text = "";
         }
         private void FindButton_Transfer_Click(object sender, EventArgs e)
         {
@@ -538,7 +538,7 @@ namespace BankManagementSystem
             {
                 try
                 {
-                    transferErrorLabel.Text = "";
+                    TransferErrorLabel.Text = "";
                     int id = Convert.ToInt32(s);
                     Client c = FetchData.GetClientByAccountID(id);
                     Account account = FetchData.GetAccount(id);
@@ -555,13 +555,13 @@ namespace BankManagementSystem
                     }
                     else
                     {
-                        transferGroupBox_Transfer.Show();
+                        TransferGroupBox_Transfer.Show();
                     }
                     AccountOwnerpictureBox_Transfer.ImageLocation = c.ImageDir;
                     FindButton_Transfer.Text = "Find Again";
                     AccNumberSearchTextBox_Transfer.Enabled = false;
                     senderAccOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
-                    senderBalanceLabel_Transfer.Text = "Balance: " + account.Balance;
+                    SenderBalanceLabel_Transfer.Text = "Balance: " + account.Balance;
                 }
                 catch
                 {
@@ -604,7 +604,7 @@ namespace BankManagementSystem
                     {
                         TransferButton_Transfer.Enabled = true;
                     }
-                    transferGroupBox_Transfer.Show();
+                    TransferGroupBox_Transfer.Show();
                     RecAccFindButton_Transfer.Text = "Find Again";
                     RecAccNumberTextBox_Transfer.Enabled = false;
                     accOwnerLabel_Transfer.Text = "Account Owner: " + c.Firstname + " " + c.Lastname;
@@ -628,10 +628,16 @@ namespace BankManagementSystem
             {
                 try
                 {
+                    Account account = FetchData.GetAccount(Convert.ToInt32(AccNumberSearchTextBox_Transfer.Text));
                     double amount = Convert.ToDouble(s);
                     if (amount <= 0)
                     {
-                        transferErrorLabel.Text = "Amount must be greater than 0.";
+                        TransferErrorLabel.Text = "Amount must be greater than 0.";
+                        return;
+                    }
+                    else if (amount.CompareTo(account.Balance) > 0)
+                    {
+                        TransferErrorLabel.Text = "Sender does not have enough balance!";
                         return;
                     }
                     int recId = Convert.ToInt32(RecAccNumberTextBox_Transfer.Text);
@@ -914,7 +920,7 @@ namespace BankManagementSystem
             RecAccFindButton_Transfer.Text = "Find";
             RecAccNumberTextBox_Transfer.Enabled = true;
             EnterAmountTextBox_Transfer.Text = "";
-            transferErrorLabel.Text = "";
+            TransferErrorLabel.Text = "";
         }
         private void ResetResultGroupBox()
         {
